@@ -1,0 +1,12 @@
+.btn {
+  width: 207px;
+  height: 52px;
+  background-color: $colorprimary;
+  color: $colorgray-dark-xx;
+  @include fontGeorgia;
+  font-size: $fontsizebtn;
+  border-radius: 100px;
+  &:hover {
+    background-color: $colorprimary-light;
+  }
+}
