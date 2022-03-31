@@ -1,0 +1,38 @@
+
+/* Header
+============= */
+.header {
+  width: 100%;
+  max-width: 1280px;
+  height: 60px;
+  margin-top: 60px;
+}
+
+.header__content {
+  width: 100%;
+  height: 4em;
+  background: rgb(61, 46, 46);
+  @include flexHeader();
+}
+.header__logo {
+  margin-top: 5px;
+  width: 186px;
+  .logo__title {
+    @include fontGeorgia;
+    letter-spacing: 2.8px;
+    line-height: 1.2;
+    margin: 0;
+    color: $colorprimary;
+    font-size: 2.142rem;
+    margin-bottom: 8px;
+  }
+}
+.logo__subtitle {
+  width: 100%;
+  text-align: center;
+  @include fontArial;
+  color: $colorwhite;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  letter-spacing: 1.2px;
+}

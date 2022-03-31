@@ -1,0 +1,35 @@
+.start__screen {
+  margin-top: 60px;
+  color: $colorwhite;
+}
+.start__content {
+  @include flexHeader;
+  height: auto;
+}
+.start__description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  width: 100%;
+  max-width: 460px;
+}
+.content__title {
+  @include fontGeorgia;
+  width: 100%;
+  max-width: 312px;
+  color: $colorwhite;
+  font-size: $fontsizstart;
+  letter-spacing: 1.6px;
+  line-height: 1.4;
+}
+.start__text p {
+  line-height: 1.7;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+.start__image {
+  margin-top: 180px;
+  width: 100%;
+  max-width: 698px;
+  height: 728px;
+}

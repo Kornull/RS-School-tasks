@@ -15,7 +15,7 @@ const nameImg = () => {
   if (isDev) {
     return `[name][ext]`
   } else {
-    return `[name][contenthash][ext]`
+    return `[name].[contenthash][ext]`
   }
 };
 
