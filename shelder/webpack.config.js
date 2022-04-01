@@ -162,12 +162,19 @@ module.exports = {
         }
       },
       {
-        test: /\.(?:woff(2)|eot|ttf|otf)$/i,
+        test: /\.(?:woff2|woff|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
           filename: `assets/fonts/${nameImg()}`
         }
       },
+      // {
+      //   test: /\.(woff)$/i,
+      //   type: 'asset/resource',
+      //   generator: {
+      //     filename: `./assets/fonts/${nameImg()}`
+      //   }
+      // },
     ],
   },
 };
