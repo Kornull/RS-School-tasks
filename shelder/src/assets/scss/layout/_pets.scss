@@ -1,5 +1,5 @@
 .pets {
-  background-color: $colorgray-light-l;
+  background-color:$colorgray-light-l;
   &__content {
     @include flexHeader;
     flex-direction: column;
@@ -8,7 +8,7 @@
 
 
 .title--pets {
-  padding-top: 80px;
+  padding-top: 85px;
   text-align: center;
   width: 100%;
   max-width: 400px;

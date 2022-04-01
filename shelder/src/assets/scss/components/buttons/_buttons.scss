@@ -6,22 +6,44 @@
   color: $colorgray-dark-xx;
   @include fontGeorgia;
   font-size: $fontsizebtn;
+  letter-spacing: 1.2px;
   border-radius: 100px;
-  transition: background-color .2s ease-in;
+  transition: background-color 0.2s ease-in;
   &:hover {
     background-color: $colorprimary-light;
   }
-}
+  &__white {
+    width: 187px;
+    background: #ffffff00;
+    text-align: center;
+    border: 2px solid $colorprimary-light;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1.2px;
+  }
+  &__pets {
+    width: 100%;
+    max-width: 261px;
+    height: 52px;
+    margin-bottom: 100px;
+  }
 
-.btn__white {
-  width: 187px;
-  background: #ffffff00;
-  text-align: center;
-  border: 2px solid $colorprimary-light;
-  margin-bottom: 20px;
-}
-.btn--pets {
-  width: 100%;
-  max-width: 261px;
-  height: 52px;
+  &__left,&__right {
+    position: absolute;
+    content: "";
+    width: 52px;
+    height: 52px;
+    top: 193px;
+    border-radius: 100px;
+    background: #ffffff00;
+    text-align: center;
+    border: 2px solid $colorprimary-light;
+
+  }
+  &__left {
+    left: 0;
+  }
+  &__right{
+    right: 0;
+  }
 }

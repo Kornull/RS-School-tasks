@@ -1,38 +1,44 @@
 .pets__slider {
-  @include flexHeader;
+  position: relative;
+
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
-
+.slider__cards {
+  @include flexHeader;
+  justify-content: center;
+  column-gap: 90px;
+  width: 1000px;
+  margin: 0 auto;
+}
 .slider__blocks {
   @include flexHeader;
   flex-direction: column;
   align-items: center;
-  // column-gap: 50px;
-  letter-spacing: 1.2;
   width: 100%;
   max-width: 270px;
   border-radius: 10px;
+  letter-spacing: 1.8px;
   background-color: $colorgray-light-s;
   margin-bottom: 70px;
-  transition: background-color .2s ease-in,
-  box-shadow .2s linear;
+  transition: background-color 0.2s ease-in, box-shadow 0.4s linear;
   &:hover {
     cursor: pointer;
     background-color: $colorwhite;
-    box-shadow: 0 0 10px $colorgray-dark-xx;
+    box-shadow: 0 0 10px #dddcdc;
   }
 }
 .slider__img {
   width: 100%;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
 }
 .slider__title {
   width: auto;
   @include fontGeorgia;
   font-size: 20px;
   line-height: 1.1;
-  margin-bottom: 30px;
-// .btn__white {
+  margin-bottom: 33px;
+
+  // .btn__white {
 }
