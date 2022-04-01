@@ -20,13 +20,16 @@
   max-width: 270px;
   border-radius: 10px;
   letter-spacing: 1.8px;
-  background-color: $colorgray-light-s;
+  background-color: $colorgray-light-l;
   margin-bottom: 70px;
-  transition: background-color 0.2s ease-in, box-shadow 0.4s linear;
+  transition: background-color 0.3s ease-in, box-shadow 0.4s linear;
   &:hover {
     cursor: pointer;
     background-color: $colorwhite;
     box-shadow: 0 0 10px #dddcdc;
+    .btn__white {
+      background-color: $colorprimary-light;
+    }
   }
 }
 .slider__img {
