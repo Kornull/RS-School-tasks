@@ -1,44 +1,36 @@
 .about__content {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas:
-  "a a b b";
-  align-content: space-between;
-  justify-content: space-around;
-  grid-gap: 10px;
-
+  display: flex;
+  justify-content: center;
+  column-gap: 120px;
 }
 .about__image{
   width: 100%;
   max-width: 300px;
   height:408px ;
-  grid-area: a;
-  margin-left: auto;
 }
 .about__descr {
-  grid-area: b;
   width: 100%;
   max-width: 430px;
 }
 .about__title {
   width: 100%;
   max-width: 370px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 .title{
   @include fontGeorgia;
   font-size: $fontsizetitle;
   font-weight: 400;
   letter-spacing: 1.3px;
-  line-height: 1.1;
-  margin-bottom: 10px;
+  line-height: 1.15;
+  // margin-bottom: 10px;
 
 }
 .about__text {
   @include fontArial;
   font-size: $fontsizeall;
   p{
-    line-height: 1.5;
-    padding-bottom: 24px;
+    line-height: 1.6;
+    padding-bottom: 12px;
   }
 }

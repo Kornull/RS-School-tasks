@@ -1,0 +1,21 @@
+.pets {
+  background-color: $colorgray-light-l;
+  &__content {
+    @include flexHeader;
+    flex-direction: column;
+  }
+}
+
+
+.title--pets {
+  padding-top: 80px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  color: $colorgray-dark-xx;
+  .title{
+    line-height: 1.2;
+  }
+}

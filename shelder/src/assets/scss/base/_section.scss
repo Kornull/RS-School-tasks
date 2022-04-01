@@ -4,8 +4,12 @@ section {
 }
 .section__title {
   @include fontGeorgia;
-  font-size:$fontsizetitle;
+  font-size: $fontsizetitle;
   color: $colorgray-dark-l;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.pets {
+  background-color: rgb(255, 188, 188);
 }
