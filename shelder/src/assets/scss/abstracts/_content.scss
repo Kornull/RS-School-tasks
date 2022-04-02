@@ -8,3 +8,7 @@
   width: 100%;
   max-width: 1200px;
 }
+.title {
+  @include fontGeorgia;
+  color: $colorgray-dark-xx;
+}
