@@ -28,31 +28,33 @@
     letter-spacing: 0.9px;
     margin-bottom: 20px;
     }
+    &__card {
+      @include flexHeader;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 348px;
+      height: 43px;
+      font-size: 20px;
+      background-color: $colorprimary;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: background-color .2s linear;
+      &:hover {
+        background-color: $colorprimary-light;
+      }
+    }
+    &__number {
+      color: $colorgray-dark-xx;
+      padding-left: 50px;
+      letter-spacing: 1.2px;
+    }
+    &__descr {
+      color: $colorgray-dark-w;
+      font-size: 12px;
+      font-style: italic;
+    }
 }
 
-.donation__card {
-  @include flexHeader;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 348px;
-  height: 43px;
-  font-size: 20px;
-  background-color: $colorprimary;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition: background-color .2s linear;
-  &:hover {
-    background-color: $colorprimary-light;
-  }
-}
-.donation__number {
-  color: $colorgray-dark-xx;
-  padding-left: 50px;
-  letter-spacing: 1.2px;
-}
-.donation__descr {
-  color: $colorgray-dark-w;
-  font-size: 12px;
-  font-style: italic;
-}
+
+
