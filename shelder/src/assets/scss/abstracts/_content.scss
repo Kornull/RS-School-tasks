@@ -4,9 +4,12 @@
   max-width: 1200px;
 }
 .container {
-  margin: 80px auto;
+  margin:0 auto 80px;
   width: 100%;
   max-width: 1200px;
+  &__help {
+    margin-bottom: 45px;
+  }
 }
 .title {
   @include fontGeorgia;

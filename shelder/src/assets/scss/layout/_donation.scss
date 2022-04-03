@@ -1,0 +1,58 @@
+.donation {
+  @include fontGeorgia;
+  background-color: $colorgray-light-l;
+  &__content {
+    @include flexHeader;
+    column-gap: 30px;
+    margin-bottom: 80px;
+    width: 100%;
+    max-width: 915px;
+    padding-top: 65px;
+    margin: 0 auto;
+  }
+  &__img {
+    width: 100%;
+    max-width: 505px;
+  }
+  &__pay {
+    width: 100%;
+    max-width: 380px;
+  }
+  &__title {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  &__subtitle {
+    font-size: $fontsizeall;
+    letter-spacing: 0.9px;
+    margin-bottom: 20px;
+    }
+}
+
+.donation__card {
+  @include flexHeader;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 348px;
+  height: 43px;
+  font-size: 20px;
+  background-color: $colorprimary;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: background-color .2s linear;
+  &:hover {
+    background-color: $colorprimary-light;
+  }
+}
+.donation__number {
+  color: $colorgray-dark-xx;
+  padding-left: 50px;
+  letter-spacing: 1.2px;
+}
+.donation__descr {
+  color: $colorgray-dark-w;
+  font-size: 12px;
+  font-style: italic;
+}

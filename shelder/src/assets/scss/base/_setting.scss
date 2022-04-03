@@ -41,7 +41,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  background: #e0e0e0;
+  background: $colorgray-dark-s;
 }
 
 *,
@@ -116,5 +116,5 @@ p {
   margin: 0 auto;
   width: 100%;
   max-width: 1280px;
-  background: rgb(255, 255, 255);
+  background: $colorwhite;
 }

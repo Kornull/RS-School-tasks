@@ -1,12 +1,21 @@
 .icon {
   width: 15px;
   height: 10px;
+  &__color {
+    fill: $colorgray-dark-xx;
+  }
+
 }
 
-.icon__color {
-  fill: red
-}
 .help__icon {
   width: 60px;
   height: 60px;
+}
+
+.donation__icon {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  width: 30px;
+  height: 23px;
 }
