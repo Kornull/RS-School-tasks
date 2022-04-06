@@ -22,7 +22,6 @@ footer {
     a {
       font-size: 20px;
       color: $colorprimary-light;
-      text-decoration: none;
       transition: color 0.2s ease,
       text-decoration 2s linear;
       &:hover {
@@ -32,7 +31,7 @@ footer {
     }
   }
   &__title {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
   }
   &__contact {
     width: 278px;
@@ -57,16 +56,17 @@ footer {
 }
 .title__contact {
   color: $colorwhite;
+  line-height: 1.2;
 }
 .title__place {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 
 }
 .footer__mail,
 .footer__phone {
   padding-left: 35px;
   position: relative;
-  margin-bottom: 43px;
+  margin-bottom: 45px;
   text-align: center;
 }
 .footer__phone {
@@ -74,11 +74,12 @@ footer {
 }
 .footer__place--boston{
   font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 1.1px;
   position: relative;
   padding-left: 18px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   span{
     padding-left: 18px;
   }
