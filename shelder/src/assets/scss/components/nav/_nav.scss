@@ -18,6 +18,7 @@
 }
 .link {
   color: $colornav-main;
+  transition: color .2s linear;
   &:hover {
     color: $colorwhite;
   }
