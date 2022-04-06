@@ -23,7 +23,16 @@
     color: $colorwhite;
   }
 }
+.link--our {
+  color: $colorgray-dark-l;
+  &:hover{
+    color: $colorgray-dark-xx;
+  }
 
+}
+.active--link-our {
+  color: $colorgray-dark-xx;
+}
 .active--link {
   color: $colorwhite;
 }
