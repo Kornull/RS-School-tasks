@@ -12,21 +12,29 @@
 }
 .nav__link {
   position: relative;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
-a{
+}
+.link {
+  color: $colornav-main;
+  &:hover {
+    color: $colorwhite;
+  }
+}
+
+.active--link {
   color: $colorwhite;
 }
-}
+
 .active {
   &:after {
-   content: '';
-   position: absolute;
-   width: 100%;
-   height: 3px;
-   bottom:-5px;
-   left: 0;
-   background-color: $colorprimary;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: $colorprimary;
   }
- }
+}
