@@ -7,7 +7,7 @@
     margin-bottom: 80px;
     width: 100%;
     max-width: 915px;
-    padding-top: 65px;
+    padding-top: 66px;
     padding-bottom: 94px;
     margin:0 auto;
   }
@@ -23,12 +23,12 @@
   &__title {
     width: 100%;
     max-width: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
   &__subtitle {
     font-size: $fontsizeall;
     letter-spacing: 0.9px;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     }
     &__card {
       @include flexHeader;
@@ -40,7 +40,7 @@
       font-size: 20px;
       background-color: $colorprimary;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 21px;
       transition: background-color .2s linear;
       &:hover {
         background-color: $colorprimary-light;
