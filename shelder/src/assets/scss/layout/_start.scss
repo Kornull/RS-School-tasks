@@ -1,6 +1,11 @@
 .start__screen {
   margin-top: 60px;
   color: $colorwhite;
+  // background-color: black;
+  background-image: url('../img/start-screen-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .start__content {
   @include flexHeader;

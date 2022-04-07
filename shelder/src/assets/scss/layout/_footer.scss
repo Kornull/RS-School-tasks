@@ -17,7 +17,8 @@ footer {
     @include fontGeorgia;
     @include flexHeader;
     letter-spacing: 1.2px;
-    padding-top: 40px;
+    padding-top: 38px;
+    line-height: 1.6;
     margin: 0 auto;
     a {
       font-size: 20px;
@@ -31,7 +32,7 @@ footer {
     }
   }
   &__title {
-    margin-bottom: 40px;
+    margin-bottom: 42px;
   }
   &__contact {
     width: 278px;
@@ -57,16 +58,17 @@ footer {
 .title__contact {
   color: $colorwhite;
   line-height: 1.2;
+  letter-spacing:1.6px;
 }
 .title__place {
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 
 }
 .footer__mail,
 .footer__phone {
   padding-left: 35px;
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   text-align: center;
 }
 .footer__phone {
@@ -79,7 +81,7 @@ footer {
   position: relative;
   padding-left: 18px;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 31px;
   span{
     padding-left: 18px;
   }
