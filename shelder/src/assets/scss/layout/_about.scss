@@ -24,6 +24,7 @@
     @include fontArial;
     font-size: $fontsizeall;
     p {
+      color: $colorgray-dark-x;
       line-height: 1.6;
       padding-bottom: 14px;
     }
