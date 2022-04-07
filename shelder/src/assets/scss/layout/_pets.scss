@@ -52,8 +52,8 @@
   background-color: $colorprimary-light;
 }
 .inactive {
-  border:2px solid $colorgray-dark-w;
-  color: $colorgray-dark-w;
+  border:2px solid $colorgray-dark-s;
+  color: $colorgray-dark-s;
   &:disabled{
     cursor:not-allowed;
     background-color: #ffffff00;
