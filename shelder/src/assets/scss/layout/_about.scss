@@ -3,20 +3,19 @@
   &__content {
     display: flex;
     justify-content: center;
+    padding-top: 80px;
     column-gap: 120px;
   }
   &__image {
-    width: 100%;
-    max-width: 300px;
+    width: 25%;
     height: 408px;
   }
   &__descr {
-    width: 100%;
+    width: 36%;
     max-width: 430px;
   }
   &__title {
-    width: 100%;
-    max-width: 370px;
+    width: 370px;
     margin-bottom: 27px;
   }
 
@@ -35,6 +34,6 @@
   font-size: $fontsizetitle;
   font-weight: 400;
   letter-spacing: 1.6px;
-  line-height: 1.15;
+  line-height: 1.2;
   // margin-bottom: 10px;}
 }

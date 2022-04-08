@@ -35,14 +35,14 @@ footer {
     margin-bottom: 42px;
   }
   &__contact {
-    width: 278px;
+    width: 24%;
     height: 240px;
     color: $colorwhite;
     margin-bottom: 30px;
   }
   &__adress {
     position: relative;
-    width: 302px;
+    width: 25.8%;
     height: 234px;
     margin-bottom: 35px;
   }
@@ -66,24 +66,24 @@ footer {
 }
 .footer__mail,
 .footer__phone {
-  padding-left: 35px;
+  padding-left: 25px;
   position: relative;
   margin-bottom: 40px;
   text-align: center;
 }
 .footer__phone {
-  padding-left: 22px;
+  padding-left: 12px;
 }
 .footer__place--boston{
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 1.1px;
   position: relative;
-  padding-left: 18px;
+  padding-left: 10px;
   text-align: center;
   margin-bottom: 31px;
   span{
-    padding-left: 17px;
+    padding-left: 13px;
   }
 }
 .footer__place--london{
