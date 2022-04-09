@@ -29,7 +29,7 @@ const plugins = () => {
       }
     }),
     new HtmlWebpackPlugin({
-      filename: 'pets.html',
+      filename: 'pages/pets.html',
       template: './main/pets.html',
       minify: {
         collapseWhitespace: isProd
@@ -151,14 +151,14 @@ module.exports = {
         test: /\.(gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: `./assets/img/${nameImg()}`
+          filename: `assets/img/${nameImg()}`
         }
       },
       {
         test: /\.(svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: `./assets/icons/${nameImg()}`
+          filename: `assets/icons/${nameImg()}`
         }
       },
       {
