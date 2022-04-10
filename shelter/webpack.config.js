@@ -10,14 +10,7 @@ const path = require('path');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
-
-const nameImg = () => {
-  if (isDev) {
-    return `[name][ext]`
-  } else {
-    return `[name].[contenthash][ext]`
-  }
-};
+const nameImg = () => isDev ? `[name][ext]` : `[name].[contenthash][ext]`;
 
 const plugins = () => {
   const basePlugins = [
@@ -61,29 +54,6 @@ const optimization = () => {
           implementation: ImageMinimizerPlugin.squooshMinify,
         },
       }),
-
-      // Without loss of quality
-      // new ImageMinimizerPlugin({
-      //   minimizer: {
-      //     implementation: ImageMinimizerPlugin.squooshMinify,
-      //     options: {
-      //       encodeOptions: {
-      //         mozjpeg: {
-      //           // That setting might be close to lossless, but it’s not guaranteed
-      //           // https://github.com/GoogleChromeLabs/squoosh/issues/85
-      //           quality: 100,
-      //         },
-      //         webp: {
-      //           lossless: 1,
-      //         },
-      //         avif: {
-      //           // https://github.com/GoogleChromeLabs/squoosh/blob/dev/codecs/avif/enc/README.md
-      //           cqLevel: 0,
-      //         },
-      //       },
-      //     },
-      //   },
-      // }),
     ]
   }
   console.log(configObj)
@@ -168,13 +138,6 @@ module.exports = {
           filename: `assets/fonts/${nameImg()}`
         }
       },
-      // {
-      //   test: /\.(woff)$/i,
-      //   type: 'asset/resource',
-      //   generator: {
-      //     filename: `./assets/fonts/${nameImg()}`
-      //   }
-      // },
     ],
   },
 };
