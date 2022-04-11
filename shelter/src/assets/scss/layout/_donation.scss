@@ -1,5 +1,6 @@
 .donation {
   @include fontGeorgia;
+  color: $colorgray-dark-l;
   background-color: $colorgray-light-l;
   &__content {
     @include flexHeader;
@@ -47,11 +48,12 @@
       }
     }
     &__number {
-      color: $colorgray-dark-xx;
+      color: $colorgray-dark-l;
       padding-left: 50px;
       letter-spacing: 1.2px;
     }
     &__descr {
+      @include fontArial;
       color: $colorgray-dark-w;
       font-size: 12px;
       font-style: italic;

@@ -22,12 +22,10 @@ footer {
     margin: 0 auto;
     a {
       font-size: 20px;
-      color: $colorprimary-light;
-      transition: color 0.2s ease,
-      text-decoration 2s linear;
+      color: $colorprimary;
+      transition: color 0.2s ease;
       &:hover {
-        text-decoration: underline;
-        color: $colorprimary;
+        color: $colorprimary-light;
       }
     }
   }
