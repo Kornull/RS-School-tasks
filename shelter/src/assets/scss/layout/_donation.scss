@@ -9,13 +9,13 @@
     width: 100%;
     max-width: 915px;
     padding-top: 66px;
-    padding-bottom: 95px;
+    padding-bottom: 91px;
     margin:0 auto;
   }
   &__img {
     width: 56%;
     max-width: 505px;
-    margin-top: 10px;
+    margin-top: 5px;
   }
   &__pay {
     width: 42%;
@@ -57,6 +57,7 @@
       color: $colorgray-dark-w;
       font-size: 12px;
       font-style: italic;
+      line-height: 1.5;
     }
 }
 
