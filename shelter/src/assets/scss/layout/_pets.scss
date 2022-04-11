@@ -56,7 +56,7 @@
   border:2px solid $colorgray-dark-s;
   color: $colorgray-dark-s;
   &:disabled{
-    cursor:alias;
+    cursor:unset;
     background-color: #ffffff00;
   }
 }
