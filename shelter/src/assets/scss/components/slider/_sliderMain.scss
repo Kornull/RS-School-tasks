@@ -8,11 +8,10 @@
   @include flexHeader;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 90px;
+  column-gap: 90px;
   max-width: 1000px;
   margin: 0 auto;
   @media (max-width: 1279px) {
-
     gap: 40px;
   }
   @media (max-width:1055px) {
@@ -40,10 +39,6 @@
       background-color: $colorprimary-light;
     }
   }
-  @media (max-width:1279px) {
-
-  }
-
 }
 .slider__img {
   width: 100%;
@@ -62,11 +57,18 @@
 
 .slider__cards--our {
   width: 100%;
+  max-width: 1200px;
   column-gap: 40px;
   flex-wrap: wrap;
+  @media (max-width:1279px){
+    margin-bottom: 15px;
+    }
 }
 .slider--our {
   margin-bottom: 40px;
+  @media (max-width:1279px){
+  margin: 0;
+  }
 }
 
 .our--title {
