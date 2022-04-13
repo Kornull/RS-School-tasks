@@ -3,16 +3,27 @@
   &__content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap-reverse;
     padding-top: 80px;
     column-gap: 120px;
+    @media (max-width: 1279px) {
+      padding-top: 64px;
+    }
   }
   &__image {
     width: 25%;
     height: 408px;
+    @media (max-width:1279px) {
+      width: 43%;
+      margin-top: 57px;
+    }
   }
   &__descr {
     width: 36%;
     max-width: 430px;
+    @media (max-width: 1279px) {
+      width: 61%;
+    }
   }
   &__title {
     width: 370px;
