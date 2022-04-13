@@ -37,6 +37,9 @@
     background: #ffffff00;
     text-align: center;
     border: 2px solid $colorprimary-light;
+    @media (max-width:1279px) {
+      top:189px
+    }
 
   }
   &__left {

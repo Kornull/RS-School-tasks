@@ -11,7 +11,14 @@
   gap: 90px;
   max-width: 1000px;
   margin: 0 auto;
+  @media (max-width: 1279px) {
+    .none {
+      display: none;
+    }
+    gap: 40px;
+  }
 }
+
 .slider__blocks {
   @include flexHeader;
   flex-direction: column;
@@ -25,11 +32,15 @@
   &:hover {
     cursor: pointer;
     background-color: $colorwhite;
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     .btn__white {
       background-color: $colorprimary-light;
     }
   }
+  @media (max-width:1279px) {
+
+  }
+
 }
 .slider__img {
   width: 100%;
@@ -51,15 +62,14 @@
   column-gap: 40px;
   flex-wrap: wrap;
 }
-.slider--our{
+.slider--our {
   margin-bottom: 40px;
 }
 
-
 .our--title {
   margin-bottom: 29px;
-  }
+}
 
-.our__pets--slider{
+.our__pets--slider {
   letter-spacing: 1.2px;
 }
