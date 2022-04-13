@@ -12,10 +12,13 @@
   max-width: 1000px;
   margin: 0 auto;
   @media (max-width: 1279px) {
+
+    gap: 40px;
+  }
+  @media (max-width:1055px) {
     .none {
       display: none;
     }
-    gap: 40px;
   }
 }
 

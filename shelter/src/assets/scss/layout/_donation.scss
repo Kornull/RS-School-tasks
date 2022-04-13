@@ -5,21 +5,32 @@
   &__content {
     @include flexHeader;
     column-gap: 30px;
+    flex-wrap: wrap-reverse;
     margin-bottom: 80px;
     width: 100%;
     max-width: 915px;
     padding-top: 66px;
     padding-bottom: 90px;
-    margin:0 auto;
+    margin: 0 auto;
+    @media (max-width: 1279px) {
+      justify-content: center;
+    }
   }
   &__img {
     width: 56%;
     max-width: 505px;
     margin-top: 5px;
+    @media (max-width:1279px) {
+      width: 100%;
+      margin-top: 50px;
+    }
   }
   &__pay {
     width: 42%;
     max-width: 380px;
+    @media (max-width:1279px) {
+      width: 100%;
+    }
   }
   &__title {
     width: 100%;
@@ -30,36 +41,33 @@
     font-size: $fontsizeall;
     letter-spacing: 0.9px;
     margin-bottom: 17px;
+  }
+  &__card {
+    @include flexHeader;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 348px;
+    height: 43px;
+    font-size: 20px;
+    background-color: $colorprimary;
+    border-radius: 10px;
+    margin-bottom: 21px;
+    transition: background-color 0.2s linear;
+    &:hover {
+      background-color: $colorprimary-light;
     }
-    &__card {
-      @include flexHeader;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 348px;
-      height: 43px;
-      font-size: 20px;
-      background-color: $colorprimary;
-      border-radius: 10px;
-      margin-bottom: 21px;
-      transition: background-color .2s linear;
-      &:hover {
-        background-color: $colorprimary-light;
-      }
-    }
-    &__number {
-      color: $colorgray-dark-l;
-      padding-left: 50px;
-      letter-spacing: 1.2px;
-    }
-    &__descr {
-      @include fontArial;
-      color: $colorgray-dark-w;
-      font-size: 12px;
-      font-style: italic;
-      line-height: 1.5;
-    }
+  }
+  &__number {
+    color: $colorgray-dark-l;
+    padding-left: 50px;
+    letter-spacing: 1.2px;
+  }
+  &__descr {
+    @include fontArial;
+    color: $colorgray-dark-w;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.5;
+  }
 }
-
-
-
