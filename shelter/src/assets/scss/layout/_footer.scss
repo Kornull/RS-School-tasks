@@ -101,6 +101,9 @@ footer {
   span {
     padding-left: 13px;
   }
+  @media (max-width: 1279px) {
+    padding-left: 17px;
+  }
 }
 .footer__place--london {
   position: relative;
