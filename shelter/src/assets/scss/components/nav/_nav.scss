@@ -9,6 +9,7 @@
 }
 .list__nav {
   @include flexHeader;
+  gap:35px;
 }
 .nav__link {
   position: relative;

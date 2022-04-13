@@ -2,6 +2,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+
 }
 .container {
   margin:0 auto;
@@ -9,6 +10,9 @@
   max-width: 1200px;
   &__help {
     margin-bottom: 45px;
+  }
+  @media (max-width: 1279px) {
+    padding: 0 30px;
   }
 }
 .title {
