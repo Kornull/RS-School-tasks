@@ -12,11 +12,12 @@
     }
   }
   &__image {
-    width: 25%;
-    height: 408px;
+    width: 300px;
+    height: 410px;
+    margin-bottom: 10px;
     @media (max-width:1279px) {
-      width: 43%;
-      margin-top: 57px;
+      margin-top: 55px;
+      margin-bottom: 0;
     }
   }
   &__descr {
