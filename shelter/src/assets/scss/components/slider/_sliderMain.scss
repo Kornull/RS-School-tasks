@@ -7,14 +7,14 @@
 .slider__cards {
   @include flexHeader;
   justify-content: center;
-  column-gap: 90px;
-  width: 1000px;
+  flex-wrap: wrap;
+  gap: 90px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .slider__blocks {
   @include flexHeader;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   width: 270px;
   border-radius: 10px;
