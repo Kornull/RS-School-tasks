@@ -18,6 +18,7 @@ footer {
   &__content {
     @include fontGeorgia;
     @include flexHeader;
+    flex-wrap: wrap;
     letter-spacing: 1.2px;
     padding-top: 38px;
     line-height: 1.6;
@@ -30,21 +31,31 @@ footer {
         color: $colorprimary-light;
       }
     }
+    @media (max-width: 1279px) {
+      justify-content: center;
+      column-gap: 38px;
+      padding-top: 31px;
+    }
   }
   &__title {
     margin-bottom: 42px;
   }
   &__contact {
-    width: 24%;
     height: 240px;
     color: $colorwhite;
     margin-bottom: 30px;
   }
   &__adress {
     position: relative;
-    width: 25.8%;
     height: 234px;
     margin-bottom: 35px;
+  }
+  &__contact,
+  &__adress {
+    width: 300px;
+    @media (max-width: 1279px) {
+      margin-bottom: 58px;
+    }
   }
   &__img {
     width: 300px;
@@ -69,9 +80,15 @@ footer {
   position: relative;
   margin-bottom: 40px;
   text-align: center;
+  @media (max-width: 1279px) {
+    padding-left: 12px;
+  }
 }
 .footer__phone {
   padding-left: 12px;
+  @media (max-width: 1279px) {
+    padding-left: 2px;
+  }
 }
 .footer__place--boston {
   font-size: 20px;
