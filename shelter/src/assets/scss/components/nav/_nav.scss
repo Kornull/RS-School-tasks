@@ -6,6 +6,9 @@
 }
 .nav {
   height: 27px;
+  @media (max-width:767px) {
+    display: none;
+  }
 }
 .list__nav {
   @include flexHeader;
