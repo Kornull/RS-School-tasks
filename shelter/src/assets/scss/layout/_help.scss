@@ -7,6 +7,10 @@
   margin-top: 80px;
   margin-bottom: 59px;
   line-height: 1.25;
+  @media (max-width: 767px) {
+    margin-top: 45px;
+    margin-bottom: 40px;
+  }
 }
 
 .help {
@@ -20,8 +24,12 @@
     width: 100%;
     max-width: 1026px;
     margin: 0 auto;
-    @media (max-width:1279px) {
+    @media (max-width: 1279px) {
       column-gap: 68px;
+    }
+    @media (max-width: 767px) {
+      column-gap: 26px;
+      justify-content: space-between;
     }
   }
   &__cards {
@@ -35,14 +43,25 @@
     @media (max-width: 1279px) {
       width: 23%;
     }
+    @media (max-width: 767px) {
+      width: 45%;
+      height: 90px;
+      margin-bottom: 27px;
+    }
   }
   &__img {
     width: auto;
     margin-bottom: 22px;
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+    }
   }
   &__title {
     letter-spacing: 0.8px;
     line-height: 1.2;
     width: 100%;
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
   }
 }
