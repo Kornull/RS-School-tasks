@@ -1,5 +1,10 @@
 .about {
   margin-bottom: 90px;
+  @media (max-width: 767px) {
+
+    margin-bottom: -60px;
+
+  }
   &__content {
     display: flex;
     justify-content: center;
@@ -15,6 +20,7 @@
       justify-content: initial;
       padding: 26px 0 0;
       margin-bottom: 101px;
+
     }
   }
   &__image {

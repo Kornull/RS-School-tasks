@@ -39,6 +39,11 @@
       background-color: $colorprimary-light;
     }
   }
+  @media (max-width:767px){
+    margin-bottom: 122px;
+  }
+
+
 }
 .slider__img {
   width: 100%;
@@ -77,4 +82,10 @@
 
 .our__pets--slider {
   letter-spacing: 1.2px;
+}
+
+@media (max-width:767px) {
+  .none-320{
+    display: none;
+  }
 }

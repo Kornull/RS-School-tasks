@@ -25,6 +25,9 @@
     width: 261px;
     height: 52px;
     margin-bottom: 100px;
+    @media(max-width:767px){
+      margin-bottom: 41px;
+    }
   }
 
   &__left,&__right {
@@ -40,13 +43,22 @@
     @media (max-width:1279px) {
       top:191px
     }
+    @media (max-width:767px) {
+      top:455px
+    }
 
   }
   &__left {
     left: 0px;
+    @media (max-width:767px) {
+      left:57px;
+    }
   }
   &__right{
     right: 0px;
+    @media (max-width:767px) {
+      right:57px;
+    }
   }
 }
 
