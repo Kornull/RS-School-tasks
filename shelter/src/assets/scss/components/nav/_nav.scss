@@ -3,24 +3,33 @@
 .header__nav {
   width: 443px;
   @media (max-width: 767px) {
-    // display: none;
     position: absolute;
     top: 0;
     right: 0;
-    width: 80%;
-    height: 100%;
+    width: 85%;
+    height: 100vh;
     background: #292929;
     overflow: auto;
   }
-  @media (max-width: 377px) {
+  @media (max-width: 374px) {
     width: 100%;
   }
+  &.active{
+    display: block;
+  }
+}
+.header__nav--pets{
+  background: #fff;
+  color: $colorgray-dark-xx;
 }
 .nav {
   height: 27px;
   @media (max-width: 767px) {
-    // display: none;
+    display: none;
     width: 100%;
+  }
+  &.active{
+    display: block;
   }
 }
 .list__nav {

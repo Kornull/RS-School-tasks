@@ -1,12 +1,15 @@
 /* Burger */
 .burger {
+  position: absolute;
+  right: 10px;
+  top: 47px;
   display: none;
   width: 30px;
   height: 22px;
   margin-right: 43px;
   cursor: pointer;
   z-index: 600;
-  @media(max-width:767px){
+  @media (max-width: 767px) {
     display: block;
   }
   &__logo {
@@ -15,7 +18,7 @@
     margin-left: 10px;
     opacity: 0;
     transition: 1s;
-    &.active{
+    &.active {
       opacity: 1;
       transition: 1s;
     }
@@ -28,28 +31,44 @@
   top: 50%;
   width: 100%;
   height: 2px;
-  background: red;
-  transition: transform .3s ease-in;
-
+  background: $colorprimary;
+  transition: transform 0.3s ease-in;
 }
 
 .burger span::after,
-.burger span::before{
-  content: '';
+.burger span::before {
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  background: red;
+  background: $colorprimary;
 }
 
-.burger span::after{
+.burger span::after {
   bottom: 10px;
 }
 
-.burger span::before{
-top: 10px;
+.burger span::before {
+  top: 10px;
 }
 
 .burger span.active {
   transform: rotate(270deg);
+}
+
+.burger-our {
+  & span {
+    background: #000;
+  }
+  & span::after,
+  & span::before {
+  background: #000;
+  }
+}
+.logo--pets.active {
+
+  display: block;
+  .logo__title,
+  .logo__subtitle{
+  color:#000;}
 }
