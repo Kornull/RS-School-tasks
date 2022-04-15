@@ -5,7 +5,9 @@
   height: 60px;
   margin-top: 60px;
   @media (max-width: 1279px) {
-    margin-top: 30px;
+    margin-top: 27px;
+  }@media (max-width: 767px) {
+    margin-top: 25px;
   }
 }
 
@@ -13,8 +15,11 @@
   width: 100%;
   height: 4em;
   @include flexHeader();
+  @media (max-width:767px) {
+  flex-wrap: wrap;}
 }
 .header__logo {
+  // display: none;
   margin-top: 5px;
   .logo__title {
     @include fontGeorgia;
@@ -29,6 +34,9 @@
   .title--our {
     color: $colorgray-dark-l;
   }
+}
+.header__logo.activ{
+  display: none;
 }
 
 .header--our {
