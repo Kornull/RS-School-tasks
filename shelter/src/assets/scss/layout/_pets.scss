@@ -30,7 +30,7 @@
     padding-top: 84px;
     margin-bottom: 30px;
   }
-  @media (max-width: 1279px) {
+  @media (max-width: 767px) {
     padding-top: 44px;
     margin-bottom: 42px;
   }
@@ -42,14 +42,15 @@
   align-items: start;
   column-gap: 20px;
   width: 340px;
-  margin: 0 auto 99px;
+  margin: 0 auto;
+  padding-bottom: 99px;
   @media (max-width: 1279px) {
-    margin-bottom: 80px;
+    padding-bottom: 80px;
   }
   @media (max-width: 767px) {
     width: 300px;
     column-gap: 12px;
-    margin: 0 auto 42px;
+    padding-bottom: 42px;
   }
 }
 .btn__our-pets,
@@ -86,7 +87,7 @@
 }
 .pets__content--our {
   margin-bottom: 33px;
-  @media (max-width:767px) {
-  margin-bottom: 41px;
+  @media (max-width: 767px) {
+    margin-bottom: 41px;
   }
 }
