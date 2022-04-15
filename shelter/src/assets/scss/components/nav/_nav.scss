@@ -3,6 +3,7 @@
 .header__nav {
   width: 443px;
   @media (max-width: 767px) {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -19,6 +20,7 @@
   }
 }
 .header__nav--pets{
+  // display: none;
   background: #fff;
   color: $colorgray-dark-xx;
 }

@@ -34,7 +34,6 @@
     font-size: 2.142rem;
     width: 186px;
     opacity: 1;
-    transition: 1s;
     margin: 0;
     margin-bottom: 5px;
   }
@@ -45,7 +44,9 @@
 .header__logo.active {
   display: none;
 }
-
+.header__logo--pets{
+  margin-top: 0;
+}
 .header--our {
   position: fixed;
   top: 0;
@@ -103,6 +104,8 @@
 }
 
 .block__color--our {
+  display: none;
+  width: 100%;
   background: -moz-linear-gradient(
     top,
     rgba(255, 255, 255, 1) 0%,

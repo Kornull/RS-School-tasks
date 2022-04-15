@@ -12,13 +12,17 @@
   @media (max-width: 767px) {
     display: block;
   }
-  &__logo {
+  &__logo,
+  &__logo--pets {
     width: 186px;
     margin-top: 30px;
     margin-left: 10px;
     opacity: 0;
     transition: 1s;
-    &.active {
+    &.active__logo {
+      display: block;
+      margin-top: 30px;
+      margin-left: 10px;
       opacity: 1;
       transition: 1s;
     }
@@ -62,13 +66,16 @@
   }
   & span::after,
   & span::before {
-  background: #000;
+    background: #000;
   }
 }
-.logo--pets.active {
-
+.logo--pets.active__logo {
   display: block;
+  width: 186px;
+  margin-top: 30px;
+  margin-left: 10px;
   .logo__title,
-  .logo__subtitle{
-  color:#000;}
+  .logo__subtitle {
+    color: #000;
+  }
 }
