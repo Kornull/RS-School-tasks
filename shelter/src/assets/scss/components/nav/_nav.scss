@@ -3,23 +3,24 @@
 .header__nav {
   width: 443px;
   @media (max-width: 767px) {
-    display: none;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 85%;
     height: 100vh;
     background: #292929;
+    transition: right .5s ease 0s;
     overflow: auto;
   }
   @media (max-width: 374px) {
     width: 100%;
   }
-  &.active{
+  &.active {
+    z-index: 600;
     display: block;
-  }
-}
-.header__nav--pets{
+    right: 0;
+}}
+.header__nav--pets {
   // display: none;
   background: #fff;
   color: $colorgray-dark-xx;
@@ -30,7 +31,7 @@
     display: none;
     width: 100%;
   }
-  &.active{
+  &.active {
     display: block;
   }
 }
@@ -62,7 +63,6 @@
       background-color: $colorprimary;
     }
   }
-
 }
 .link {
   color: $colornav-main;
@@ -83,4 +83,3 @@
 .active--link {
   color: $colorwhite;
 }
-
