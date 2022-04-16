@@ -53,11 +53,16 @@
     margin: 100px 0 0 140px;
   }
   @media (max-width:767px) {
-    width: 260px;
-    height: 276px;
+    width: 400px;
+    height: 408px;
+
     margin: 0 auto;
     margin-top: 100px;
     // margin: 100px auto  0 40px;
+  }
+  @media(max-width:467px){
+    width: 260px;
+    height: 276px;
   }
   @media (max-width:375px) {
     width: 260px;

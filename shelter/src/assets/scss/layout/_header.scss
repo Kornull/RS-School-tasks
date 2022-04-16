@@ -24,6 +24,7 @@
 }
 .header__logo {
   // display: none;
+  opacity: 1;
 
   margin-top: 5px;
   .logo__title {
@@ -42,9 +43,10 @@
   }
 }
 .header__logo.active {
-  display: none;
+  // display: none;op
+  opacity: 0;
 }
-.header__logo--pets{
+.header__logo--pets {
   margin-top: 0;
 }
 .header--our {
@@ -74,10 +76,13 @@
   height: 120px;
   position: fixed;
   top: 0;
+  background-color: #292929;
 
   z-index: 600;
   &.active {
     display: block;
   }
 }
-
+.block__color--white {
+  background-color: #fff;
+}
