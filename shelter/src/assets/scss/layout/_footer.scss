@@ -142,3 +142,9 @@
   padding-left: 42px;
   margin-bottom: 30px;
 }
+.img__bloock{
+  padding-left:10px;
+  @media (max-width:1279px) {
+    padding: 0;
+  }
+}
