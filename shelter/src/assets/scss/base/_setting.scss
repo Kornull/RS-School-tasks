@@ -123,24 +123,17 @@ body.active {
 
 .shadow {
   display: none;
-  width: 100%;
+  width: 100vh;
   height: 100vh;
   background: rgba(0, 0, 0, 0.509);
-  &.active {
-    display: block;
-    position: absolute;
-    top: -25px;
-    left: -50px;
+  z-index: -500;
+  &.active {display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
   }
 }
-.shadow--pets {
+.shadow--pets{
   background: rgba(255, 255, 255, 0.26);
-  &.active {
-    display: block;
-    position: absolute;
-    top: 120px;
-    left: -50px;
-    z-index: 100;
-  }
 }
