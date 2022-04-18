@@ -29,7 +29,7 @@ aside {
   display: block;
 }
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -114,14 +114,33 @@ p {
 }
 
 /*=========================*/
-
+body {
+  position: relative;
+}
 body.active {
   overflow: hidden;
 }
 
-.claaaas {
-  width: 100px;
-  height: 100px;
-  background: #000;
-  margin: 50px;
+.shadow {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.509);
+  &.active {
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    z-index: 100;
+  }
+}
+.shadow--pets {
+  background: rgba(255, 255, 255, 0.26);
+  &.active {
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: -50px;
+    z-index: 100;
+  }
 }

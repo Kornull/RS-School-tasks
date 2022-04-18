@@ -5,7 +5,7 @@ const burgerIcon = headerElements.querySelector('span')
 const nav = headerElements.querySelector('.nav')
 const navLink = nav.querySelectorAll('.nav__link')
 const logoBurger = headerElements.querySelector('.burger__logo')
-
+const shadow = document.querySelector('.shadow')
 
 
 if (btnBurger) {
@@ -15,6 +15,7 @@ if (btnBurger) {
     blocksHeader.forEach(x => x.classList.toggle('active'));
     burgerIcon.classList.toggle('active')
     logoBurger.classList.toggle('active__logo')
+    shadow.classList.toggle('active')
   }
 }
 navLink.forEach(x => x.onclick = (el) => {
@@ -23,6 +24,7 @@ navLink.forEach(x => x.onclick = (el) => {
   blocksHeader.forEach(x => x.classList.remove('active'));
   burgerIcon.classList.remove('active')
   logoBurger.classList.remove('active__logo')
+  shadow.classList.remove('active')
 })
 
 
@@ -32,11 +34,12 @@ window.addEventListener("orientationchange", function (ev) {
   blocksHeader.forEach(x => x.classList.remove('active'));
   burgerIcon.classList.remove('active')
   logoBurger.classList.remove('active__logo')
+  shadow.classList.remove('active')
 });
 
 let widthWindow;
 
-setInterval(() => {
+window.addEventListener('resize', function (el) {
   widthWindow = window.innerWidth
   if (widthWindow > 767) {
     document.body.classList.remove('active')
@@ -44,14 +47,6 @@ setInterval(() => {
     blocksHeader.forEach(x => x.classList.remove('active'));
     burgerIcon.classList.remove('active')
     logoBurger.classList.remove('active__logo')
-    count = 0;
+    shadow.classList.remove('active')
   }
-
-}, 30);
-
-// const f = window.screen.width
-// console.log(f)
-
-
-
-
+});

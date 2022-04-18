@@ -1,2 +1,3 @@
 import './burger'
-import './popup'
+// import './sliderMain'
+// import './popup'

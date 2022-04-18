@@ -30,6 +30,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "json-minimizer-webpack-plugin": "^3.3.0",
     "mini-css-extract-plugin": "^2.6.0",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "focus-visible": "^5.2.0",
+    "node-fetch": "^3.2.3",
     "normalize.css": "^8.0.1"
   }
 }
