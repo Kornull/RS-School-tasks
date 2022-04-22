@@ -11,16 +11,17 @@
     position: relative;
     width: 900px;
     height: 500px;
-    background-color: #dddddd;
+    background-color: $colorgray-light-s;
+    ;
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     margin-top: 15%;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   &__close {
     cursor: pointer;
     position: absolute;
     top: -50px;
-    right: -48px;
+    right: -40px;
     width: 52px;
     height: 52px;
     border-radius: 50px;
@@ -45,6 +46,9 @@
     &:hover {
       background-color: $colorprimary-light;
     }
+  }
+  &__img{
+    width: 55.5%;
   }
 }
 // body.act {
