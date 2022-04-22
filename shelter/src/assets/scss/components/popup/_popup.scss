@@ -24,15 +24,16 @@
     width: 52px;
     height: 52px;
     border-radius: 50px;
-    border: 2px solid $colorprimary;
+    border: 2px solid $colorprimary-light;
+    transition: background-color .2s linear;
     &::after,
     &::before {
       content: "";
       position: absolute;
-      width: 25px;
+      width: 15px;
       height: 2px;
       top: 45%;
-      left: 22%;
+      left: 34%;
       background-color: #000;
     }
     &::after {
@@ -40,6 +41,9 @@
     }
     &::before {
       rotate: -45deg;
+    }
+    &:hover {
+      background-color: $colorprimary-light;
     }
   }
 }
