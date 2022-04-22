@@ -75,6 +75,21 @@
     margin-left: 30px;
     letter-spacing:0.06em;
     line-height: 1.15;
+    margin-bottom: 38px;
+  }
+  &__list{
+    margin-left: 42px;
+  }
+  &__info{
+    font-size: 15px;
+    font-weight: bold;
+    @include fontGeorgia;
+    letter-spacing:0.12em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    span{
+      font-weight: normal;
+    }
   }
 }
 .popup--color {
