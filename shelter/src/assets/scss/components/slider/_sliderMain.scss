@@ -50,7 +50,8 @@
   width: 100%;
   margin-bottom: 30px;
 }
-.slider__title {
+.slider__title,
+.popup__title {
   width: auto;
   @include fontGeorgia;
   font-size: 20px;
@@ -60,7 +61,9 @@
 
   // .btn__white {
 }
-
+.popup__title{
+  letter-spacing: 0.04em;
+}
 .slider__cards--our {
   width: 100%;
   max-width: 1200px;
