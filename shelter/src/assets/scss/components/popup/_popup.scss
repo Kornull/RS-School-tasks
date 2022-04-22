@@ -13,7 +13,6 @@
     width: 900px;
     height: 500px;
     background-color: $colorgray-light-s;
-    box-shadow: 0px 2px 35px 14px #0d0d0d0a;
     margin-top: 15%;
     border-radius: 10px;
   }
@@ -69,27 +68,27 @@
     margin-left: 27px;
     margin-bottom: 40px;
   }
-  &__text{
+  &__text {
     width: 100%;
     @include fontGeorgia;
     font-size: 15px;
     margin-left: 28px;
-    letter-spacing:0.06em;
+    letter-spacing: 0.06em;
     line-height: 1.15;
     margin-bottom: 38px;
   }
-  &__list{
+  &__list {
     margin-left: 42px;
   }
-  &__info{
+  &__info {
     position: relative;
     font-size: 15px;
     font-weight: bold;
     @include fontGeorgia;
-    letter-spacing:0.115em;
+    letter-spacing: 0.115em;
     line-height: 1.2;
     margin-bottom: 10px;
-    span{
+    span {
       font-weight: normal;
     }
     &::before {
@@ -102,8 +101,43 @@
       left: -15px;
     }
   }
+  @media (max-width: 1279px) {
+    &__card {
+      width: 630px;
+      height: 350px;
+    }
+    &__close {
+      top: -52px;
+      right: -46px;
+    }
+    &__img {
+      width: 70.5%;
+    }
+    &__descr {
+      margin-top: 10px;
+    }
+    &__name,
+    &__title,
+    &__text {
+      margin-left: 10px;
+    }
+    &__title {
+      margin-bottom: 17px;
+    }
+    &__text {
+      font-size: 13px;
+      width: 95%;
+      margin-bottom: 15px;
+    }
+    &__list {
+      margin-left: 25px;
+    }
+    &__info {
+      margin-bottom: 4px;
+      letter-spacing: 0.14em;
+    }
+  }
 }
 .popup--color {
   color: #000;
 }
-
