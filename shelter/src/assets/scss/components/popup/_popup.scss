@@ -66,6 +66,15 @@
   }
   &__title {
     margin-left: 27px;
+    margin-bottom: 40px;
+  }
+  &__text{
+    width: 100%;
+    @include fontGeorgia;
+    font-size: 15px;
+    margin-left: 30px;
+    letter-spacing:0.06em;
+    line-height: 1.15;
   }
 }
 .popup--color {
