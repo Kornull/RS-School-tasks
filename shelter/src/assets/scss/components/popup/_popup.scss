@@ -48,6 +48,8 @@
     }
   }
   &__img {
+    border-radius: 10px;
+    overflow: hidden;
     width: 55.5%;
   }
   &__descr {
@@ -104,6 +106,4 @@
 .popup--color {
   color: #000;
 }
-// body.act {
-//   overflow-y: hidden;
-// }
+
