@@ -37,10 +37,10 @@
       background-color: #000;
     }
     &::after {
-      rotate: 45deg;
+      transform: rotate(45deg) ;
     }
     &::before {
-      rotate: -45deg;
+      transform: rotate(-45deg) ;
     }
     &:hover {
       background-color: $colorprimary-light;
@@ -135,6 +135,54 @@
     &__info {
       margin-bottom: 4px;
       letter-spacing: 0.14em;
+    }
+  }
+  @media (max-width:767px) {
+    &__card {
+      justify-content: center;
+      text-align: center;
+      width: 240px;
+      height: 341px;
+    }
+    &__close {
+      top: -52px;
+      right: -30px;
+    }
+    &__img {
+      display: none;
+    }
+    &__descr {
+      margin-top: 10px;
+    }
+    &__name,
+    &__title,
+    &__text {
+      margin-left: 5px;
+    }
+    &__name{
+      font-size: 35px;
+    }
+    &__title {
+      margin-bottom: 19px;
+    }
+    &__text {
+      text-align:left;
+      font-size: 13px;
+      width: 95%;
+      line-height: 1.1;
+      margin-left: 12px;
+      margin-bottom: 22px;
+    }
+    &__list {
+      text-align-last: left;
+      margin-left: 25px;
+    }
+    &__info {
+      margin-bottom: 3px;
+      letter-spacing: 0.14em;
+    }
+    .title--size{
+      font-size: 35px;
     }
   }
 }
