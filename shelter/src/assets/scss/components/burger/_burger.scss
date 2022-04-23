@@ -60,7 +60,8 @@
   transform: rotate(270deg);
 }
 
-.burger-our {
+.burger-our{
+  position: fixed;
   & span {
     background: #000;
   }
@@ -68,6 +69,7 @@
   & span::before {
     background: #000;
   }
+
 }
 .logo--pets.active__logo {
   display: block;

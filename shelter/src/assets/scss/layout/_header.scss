@@ -50,13 +50,16 @@
   margin-top: 0;
 }
 .header--our {
-  position: fixed;
+  position:fixed;
   top: 0;
   margin: 0 auto;
   padding-top: 30px;
   height: 120px;
   background-color: #fff;
   z-index: 500;
+}
+.header--our.active {
+  right: -100%;
 }
 .logo__subtitle {
   width: 100%;

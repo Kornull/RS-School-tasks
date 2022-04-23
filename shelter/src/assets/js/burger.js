@@ -1,5 +1,6 @@
 const headerElements = document.querySelector('.header');
 const btnBurger = document.querySelector('.burger');
+const burgerWhite = document.querySelector('.header--our');
 const blocksHeader = headerElements.querySelectorAll('div');
 const burgerIcon = headerElements.querySelector('span');
 const nav = headerElements.querySelector('.nav');
@@ -14,6 +15,7 @@ function removeClass(){
   nav.classList.remove('active');
   blocksHeader.forEach(x => x.classList.remove('active'));
   burgerIcon.classList.remove('active');
+  burgerWhite.classList.remove('active');
   logoBurger.classList.remove('active__logo');
   shadow.classList.remove('active');
   i++
@@ -25,6 +27,8 @@ if (btnBurger) {
     nav.classList.toggle('active');
     blocksHeader.forEach(x => x.classList.toggle('active'));
     burgerIcon.classList.toggle('active');
+  burgerWhite.classList.toggle('active');
+
     logoBurger.classList.toggle('active__logo');
     shadow.classList.toggle('active');
   }
