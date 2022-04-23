@@ -9,19 +9,13 @@
     width: 320px;
     height: 100vh;
     background: #292929;
-    transition: right .3s linear,
-    display 5s linear;
+    transition: right 0.3s linear, display 5s linear;
     overflow: auto;
     z-index: 600;
   }
   &.active {
     right: 0;
   }
-}
-.header__nav--pets {
-  // display: none;
-  background: #fff;
-  color: $colorgray-dark-xx;
 }
 .nav {
   height: 27px;
