@@ -36,7 +36,7 @@
   width: 100%;
   height: 2px;
   background: $colorprimary;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in,  background .2s linear;
 }
 
 .burger span::after,
@@ -64,13 +64,26 @@
   position: fixed;
   & span {
     background: #000;
+
   }
   & span::after,
   & span::before {
     background: #000;
+  transition: background .2s linear;
+
   }
 
 }
+.burger-our.active{
+  position: fixed;
+  & span {
+
+    background: $colorprimary;
+  }
+  & span::after,
+  & span::before {
+    background: $colorprimary;
+  }}
 .logo--pets.active__logo {
   display: block;
   width: 186px;

@@ -10,7 +10,7 @@ const shadow = document.querySelector('.shadow');
 let widthWindow;
 
 i = 0
-function removeClass(){
+function removeClass() {
   document.body.classList.remove('active');
   nav.classList.remove('active');
   blocksHeader.forEach(x => x.classList.remove('active'));
@@ -18,8 +18,9 @@ function removeClass(){
   burgerWhite.classList.remove('active');
   logoBurger.classList.remove('active__logo');
   shadow.classList.remove('active');
+
   i++
-  console.log(`ddddddd`,i)
+  console.log(`ddddddd`, i)
 };
 if (btnBurger) {
   btnBurger.onclick = () => {
@@ -27,12 +28,18 @@ if (btnBurger) {
     nav.classList.toggle('active');
     blocksHeader.forEach(x => x.classList.toggle('active'));
     burgerIcon.classList.toggle('active');
-  burgerWhite.classList.toggle('active');
-
+    burgerWhite.classList.toggle('active');
     logoBurger.classList.toggle('active__logo');
     shadow.classList.toggle('active');
+    if (logoBurger.classList.contains('logo--pets')){
+      logoBurger.classList.remove('logo--pets')
+    }else{
+      logoBurger.classList.add('logo--pets')
+    }
+
   }
-};
+}
+
 navLink.forEach(x => x.onclick = (el) => {
   removeClass();
 });;
@@ -42,6 +49,6 @@ window.addEventListener("orientationchange", removeClass);
 window.addEventListener('resize', function (el) {
   widthWindow = window.innerWidth
   if (widthWindow > 767) {
-  removeClass();
+    removeClass();
   }
 });
