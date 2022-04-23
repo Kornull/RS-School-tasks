@@ -9,12 +9,13 @@ const logoBurger = headerElements.querySelector('.burger__logo');
 const shadow = document.querySelector('.shadow');
 let widthWindow;
 
+
+// Remove all classes
 function removeClass() {
   document.body.classList.remove('active');
   nav.classList.remove('active');
   blocksHeader.forEach(x => x.classList.remove('active'));
   burgerIcon.classList.remove('active');
-  burgerWhite.classList.remove('active');
   logoBurger.classList.remove('active__logo');
   shadow.classList.remove('active');
   navLink.forEach(x => {
@@ -28,10 +29,12 @@ function removeClass() {
     }
   });
   if (burgerWhite) {
+    burgerWhite.classList.remove('active');
     logoBurger.classList.add('logo--pets');
   }
-
 };
+
+// Click
 if (btnBurger) {
   btnBurger.onclick = () => {
     document.body.classList.toggle('active');
@@ -67,9 +70,11 @@ if (btnBurger) {
 
 navLink.forEach(x => x.onclick = (el) => {
   removeClass();
-});;
+});
 
 
+
+// Remove
 window.addEventListener("orientationchange", removeClass);
 window.addEventListener('resize', function (el) {
   widthWindow = window.innerWidth
@@ -77,3 +82,5 @@ window.addEventListener('resize', function (el) {
     removeClass();
   }
 });
+
+shadow.addEventListener('click', removeClass);
