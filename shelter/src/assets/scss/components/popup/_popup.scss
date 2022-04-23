@@ -1,6 +1,6 @@
 .popup {
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: center;
   top: 0;
   width: 100%;
@@ -189,3 +189,9 @@
 .popup--color {
   color: #000;
 }
+
+// body.act{
+//   overflow: hidden;
+// }
+// .popup.active{
+//   display: flex;}
