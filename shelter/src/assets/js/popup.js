@@ -38,3 +38,8 @@ const openPopup = (el) => {
     }
   });
 };
+
+popup.addEventListener('click',(ev)=>{
+ ev.target.classList.forEach(x => x === 'popup'? popup.classList.remove('active'): false)
+});
+popup.querySelector('.popup__close').onclick = () => popup.classList.remove('active');

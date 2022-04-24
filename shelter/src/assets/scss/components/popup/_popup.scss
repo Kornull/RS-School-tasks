@@ -7,7 +7,14 @@
   height: 100vh;
   background: #29292964;
   z-index: 1000;
+  &:hover{
+    .popup__close{
+      background: $colorprimary;
+    }
+  }
   &__card {
+    cursor:no-drop;
+
     display: flex;
     position: relative;
     width: 900px;
@@ -15,6 +22,14 @@
     background-color: $colorgray-light-s;
     margin-top: 200px;
     border-radius: 10px;
+    &:hover{
+      .popup__close{
+        background: none;
+      }
+      .popup__close:hover{
+        background-color: $colorprimary-light;
+      }
+    }
   }
   &__close {
     cursor: pointer;
@@ -47,11 +62,15 @@
     }
   }
   &__img {
+    cursor:no-drop;
+
     border-radius: 10px;
     overflow: hidden;
     width: 55.5%;
   }
   &__descr {
+    cursor:no-drop;
+
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -195,5 +214,8 @@
 // body.act{
 //   overflow: hidden;
 // }
+.popup__close:hover{
+  background: #000;
+}
 .popup.active{
   display: flex;}
