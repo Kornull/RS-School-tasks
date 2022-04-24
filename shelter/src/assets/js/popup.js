@@ -1,20 +1,16 @@
 import petsConfig from '../../main/pets.json';
 
 const popupPets = document.querySelector('.popup--pets');
-const slider = document.querySelector('.pets__slider');
+const slider = document.querySelector('.slider__carousel');
 const popup = document.querySelector('.popup');
-const id = Array.from(document.all).map(i => i.id).filter(i => i != "");
-const arrIdBlock = ['help', 'footer', 'text-our', 'pets', 'friend']
-const arrId = [];
+// const id = Array.from(document.all).map(i => i.id).filter(i => i != "");
 
-id.forEach(i => {
-  if (!arrIdBlock.includes(i)) arrId.push(i)
-});
+const arrId = ["img", "name", "type", "breed", "description", "age", "inoculations", "diseases", "parasites" ];
 
 (function () {
-  slider.querySelectorAll('.slider__blocks').forEach(el => {
+  slider.querySelectorAll('.slider__block').forEach(el => {
     el.addEventListener('click', function (x) {
-      let namePet = el.querySelector('h3').textContent;
+      let namePet = el.id;
       popup.classList.add('active');
       document.body.style.overflow = 'hidden';
       openPopup(namePet)
@@ -23,8 +19,9 @@ id.forEach(i => {
 }())
 
 const openPopup = (el) => {
+  const namePets = el.slice(0,1).toUpperCase() + el.slice(1);
   petsConfig.forEach(j => {
-    if (el === j.name) {
+    if (namePets === j.name) {
       arrId.forEach(i => {
         if (i === 'img') {
           if (popupPets) {

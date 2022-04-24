@@ -132,49 +132,125 @@
             are looking for a house</h2>
         </div>
 
-        <div class="pets__slider">
-          <button class="btn btn__left">
+        <div class="pets__slider" id="pets-slider">
+          <button class="btn btn__left" type="button" id="btn__left">
             <svg class="icon">
               <use class="icon__color" xlink:href="../assets/icons/left.svg#left"></use>
             </svg>
           </button>
-          <ul class="slider__cards">
-            <li class="slider__blocks">
-              <div class="slider__img">
-                <img src="../assets/img/pets-katrine.png" alt="">
-              </div>
-              <div class="slider__title">
-                <h3 class="our__pets--slider">Katrine</h3>
-              </div>
-              <button class="btn btn__white">
-                Learn more
-              </button>
-            </li>
-            <li class="slider__blocks none-320">
-              <div class="slider__img">
-                <img src="../assets/img/pets-jennifer.png" alt="">
-              </div>
-              <div class="slider__title">
-                <h3 class="our__pets--slider">Jennifer</h3>
-              </div>
-              <button class="btn btn__white">
-                Learn more
-              </button>
-            </li>
-            <li class="slider__blocks none">
-              <div class="slider__img">
-                <img src="../assets/img/pets-woody.png" alt="">
-              </div>
-              <div class="slider__title">
-                <h3 class="our__pets--slider">Woody</h3>
-              </div>
-              <button class="btn btn__white">
-                Learn more
-              </button>
-            </li>
-          </ul>
+          <div class="slider__cards" id="slider cards">
 
-          <button class="btn btn__right">
+            <div class="slider__carousel" id="slider__carousel">
+              <div class="item" id="item-left">
+                <div class="slider__block" id="katrine">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-katrine.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Katrine</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+                <div class="slider__block" id="jennifer">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-jennifer.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Jennifer</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+                <div class="slider__block" id="woody">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-woody.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Woody</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+              </div>
+              <div class="item" id="item-active">
+                <div class="slider__block" id="charly">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-charly.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Charly</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+                <div class="slider__block" id="freddie">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-freddie.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Freddie</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+                <div class="slider__block" id="scarlet">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-scarlet.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Scarlet</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+              </div>
+
+              <div class="item" id="item-right">
+                <div class="slider__block" id="sophia">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-sophia.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Sophia</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+                <div class="slider__block" id="timmy">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-timmy.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Timmy</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+                <div class="slider__block" id="katrine">
+                  <div class="slider__img">
+                    <img src="../assets/img/pets-katrine.png" alt="">
+                  </div>
+                  <div class="slider__title">
+                    <h3 class="our__pets--slider">Katrine</h3>
+                  </div>
+                  <button class="btn btn__white">
+                    Learn more
+                  </button>
+                </div>
+              </div>
+            </div> <!-- ./slider__carousel -->
+          </div> <!-- slider__cards -->
+
+          <button class="btn btn__right" type="button" id="btn__right">
             <svg class="icon">
               <use class="icon__color" xlink:href="../assets/icons/right.svg#right"></use>
             </svg>
@@ -385,30 +461,28 @@
   <div class="popup">
     <div class="popup__card">
       <div class="popup__close"></div>
-      <div class="popup__img"  id="img">
-        <img src="../assets/img/pets-jennifer.png" alt=".">
+      <div class="popup__img" id="img">
       </div>
       <div class="popup__descr">
         <div class="popup__name">
-          <h2 class="title popup--color title--size" id="name">Jennifer</h2>
+          <h2 class="title popup--color title--size" id="name"></h2>
         </div>
         <div class="popup__type">
-          <h3 class="popup__title popup--color"><span id="type">Dog</span> &ndash; <span id="breed">Labrador</span></h3>
+          <h3 class="popup__title popup--color"><span id="type"></span> &ndash; <span id="breed"></span></h3>
         </div>
         <div class="popup__text" id="description">
-          Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl
-          really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if
-          she has all of her favorite toys.
+
         </div>
         <ul class="popup__list">
           <li class="popup__info">
-            Age&#58; <span id="age">2 months </span></li>
+            Age&#58; <span id="age"></span></li>
           <li class="popup__info">
-            <p>Inoculations&#58; <span id="inoculations">none</span></p></li>
+            <p>Inoculations&#58; <span id="inoculations"></span></p>
+          </li>
           <li class="popup__info">
-            Diseases&#58; <span id="diseases">none</span></li>
+            Diseases&#58; <span id="diseases"></span></li>
           <li class="popup__info">
-            Parasites&#58; <span id="parasites">none</span></li>
+            Parasites&#58; <span id="parasites"></span></li>
         </ul>
 
       </div>
