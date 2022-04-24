@@ -16,6 +16,7 @@ id.forEach(i => {
     el.addEventListener('click', function (x) {
       let namePet = el.querySelector('h3').textContent;
       popup.classList.add('active');
+      document.body.style.overflow = 'hidden';
       openPopup(namePet)
     });
   })
@@ -38,8 +39,10 @@ const openPopup = (el) => {
     }
   });
 };
+const closePopup = ()=> {
+  popup.classList.remove('active');
+  document.body.style.overflow = '';
 
-popup.addEventListener('click',(ev)=>{
- ev.target.classList.forEach(x => x === 'popup'? popup.classList.remove('active'): false)
-});
-popup.querySelector('.popup__close').onclick = () => popup.classList.remove('active');
+};
+popup.addEventListener('click', closePopup);
+popup.querySelector('.popup__close').addEventListener('click', closePopup);

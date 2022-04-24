@@ -8,6 +8,7 @@
   background: #29292964;
   z-index: 1000;
   &:hover{
+    cursor: pointer;
     .popup__close{
       background: $colorprimary;
     }
