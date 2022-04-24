@@ -13,7 +13,7 @@
     width: 900px;
     height: 500px;
     background-color: $colorgray-light-s;
-    margin-top: 15%;
+    margin-top: 200px;
     border-radius: 10px;
   }
   &__close {
@@ -105,6 +105,7 @@
     &__card {
       width: 630px;
       height: 350px;
+      margin-top: 150px;
     }
     &__close {
       top: -52px;
@@ -142,7 +143,8 @@
       justify-content: center;
       text-align: center;
       width: 240px;
-      height: 341px;
+      height: 400px  ;
+      margin-top: 35%;
     }
     &__close {
       top: -52px;
