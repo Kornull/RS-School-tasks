@@ -4,7 +4,7 @@ const popupPets = document.querySelector('.popup--pets');
 const slider = document.querySelector('.pets__slider');
 const popup = document.querySelector('.popup');
 const id = Array.from(document.all).map(i => i.id).filter(i => i != "");
-const arrIdBlock = ['help', 'footer', 'text-our', 'pets','friend']
+const arrIdBlock = ['help', 'footer', 'text-our', 'pets', 'friend']
 const arrId = [];
 
 id.forEach(i => {
@@ -39,10 +39,15 @@ const openPopup = (el) => {
     }
   });
 };
-const closePopup = ()=> {
+const closePopup = () => {
   popup.classList.remove('active');
   document.body.style.overflow = '';
 
 };
-popup.addEventListener('click', closePopup);
+popup.addEventListener('click', (ev) => {
+  ev.target.classList.forEach(x => {
+    if (x === 'popup') closePopup();
+  });
+});
+
 popup.querySelector('.popup__close').addEventListener('click', closePopup);
