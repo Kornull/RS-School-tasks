@@ -4,7 +4,7 @@ const popupPets = document.querySelector('.popup--pets');
 const slider = document.querySelector('.pets__slider');
 const popup = document.querySelector('.popup');
 const id = Array.from(document.all).map(i => i.id).filter(i => i != "");
-const arrIdBlock = ['help', 'footer', 'text-our', 'pets']
+const arrIdBlock = ['help', 'footer', 'text-our', 'pets','friend']
 const arrId = [];
 
 id.forEach(i => {
