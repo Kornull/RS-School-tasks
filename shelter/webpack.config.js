@@ -10,7 +10,7 @@ const path = require('path');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
-const nameImg = () => isDev ? `[name][ext]` : `[name].[contenthash][ext]`;
+const nameImg = () => isDev ? `[name][ext]` : `[name][ext]`;
 
 const plugins = () => {
   const basePlugins = [
