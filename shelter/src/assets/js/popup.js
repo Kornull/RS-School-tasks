@@ -7,7 +7,7 @@ const popup = document.querySelector('.popup');
 
 const arrId = ["img", "name", "type", "breed", "description", "age", "inoculations", "diseases", "parasites" ];
 
-(function () {
+export function popurRun() {
   slider.querySelectorAll('.slider__block').forEach(el => {
     el.addEventListener('click', function (x) {
       let namePet = el.id;
@@ -16,7 +16,7 @@ const arrId = ["img", "name", "type", "breed", "description", "age", "inoculatio
       openPopup(namePet)
     });
   })
-}())
+}
 
 const openPopup = (el) => {
   const namePets = el.slice(0,1).toUpperCase() + el.slice(1);
@@ -46,5 +46,5 @@ popup.addEventListener('click', (ev) => {
     if (x === 'popup') closePopup();
   });
 });
-
+popurRun()
 popup.querySelector('.popup__close').addEventListener('click', closePopup);
