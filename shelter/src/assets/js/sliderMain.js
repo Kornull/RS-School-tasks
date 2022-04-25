@@ -23,7 +23,7 @@ const lengthItem = (numCards) => item.forEach((x) => {
 const widthWindow = () => {
   let size = window.innerWidth;
   if (size > 1279) numCards = 3;
-  if (size <= 1279) {
+  if (size <= 1279 && size > 767) {
     numCards = 2;
     lengthItem(numCards)
   };
@@ -117,7 +117,7 @@ CAROUSEL.addEventListener("animationend", (ev) => {
 
   for (let i = 0; i < numCards; i++) {
     const card = newCard();
-    itemChange.appendChild(card)
+    itemChange.append(card)
     popurRun()
   }
 });
