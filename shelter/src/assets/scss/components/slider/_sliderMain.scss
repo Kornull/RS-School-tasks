@@ -40,7 +40,7 @@
   height: 435px;
 
   @media (max-width: 1279px) {
-    margin: 0 25px;
+    margin: 0 35px;
     gap: 40px;
   }
 }
@@ -51,7 +51,7 @@
     }
 
     to {
-      left: -1000px;
+      left: -1020px;
     }
   }
 
@@ -66,7 +66,7 @@
     }
 
     to {
-      left: 1000px;
+      left: 1020px;
     }
   }
 
@@ -82,7 +82,7 @@
     }
 
     to {
-      left: -670px;
+      left: -650px;
     }
   }
 
@@ -97,7 +97,7 @@
     }
 
     to {
-      left: 670px;
+      left: 650px;
     }
   }
 
@@ -113,7 +113,7 @@
     }
 
     to {
-      left: -320px;
+      left: -340px;
     }
   }
 
@@ -128,7 +128,7 @@
     }
 
     to {
-      left: 320px;
+      left: 340px;
     }
   }
 
