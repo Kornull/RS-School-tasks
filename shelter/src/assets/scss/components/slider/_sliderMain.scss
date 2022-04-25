@@ -24,13 +24,18 @@
 .slider__carousel {
   position: relative;
   display: flex;
+
+}
+.item {
+  display: flex;
+  gap: 80px;
+  margin: 0 15px;
+  @media (max-width:1279px) {
+    margin: 0 25px;
+  }
 }
 @media (min-width: 1280px) {
-  .item {
-    display: flex;
-    gap: 80px;
-    margin: 0 15px;
-  }
+
 
   @keyframes move-right {
     from {
@@ -62,6 +67,70 @@
     animation-duration: 3s;
   }
 }
+@media (max-width: 1279px) {
+
+  @keyframes move-right {
+    from {
+      left: -0px;
+    }
+
+    to {
+      left: -670px;
+    }
+  }
+
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 3s;
+  }
+
+  @keyframes move-left {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 670px;
+    }
+  }
+
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 3s;
+  }
+}
+@media (max-width: 767px) {
+
+  @keyframes move-right {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: -320px;
+    }
+  }
+
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 3s;
+  }
+
+  @keyframes move-left {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 320px;
+    }
+  }
+
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 3s;
+  }
+}
 .slider__block {
   @include flexHeader;
   flex-direction: column;
@@ -81,7 +150,7 @@
     }
   }
   @media (max-width: 767px) {
-    margin-bottom: 122px;
+    margin-bottom: 20px;
   }
 }
 .slider__img {
@@ -130,9 +199,14 @@
   letter-spacing: 1.2px;
 }
 
-@media (max-width: 767px) {
-  .none-320 {
-    display: none;
+@media(max-width:1279px) {
+  .none768{
+     display: none;
+  }
+}
+@media(max-width:1279px) {
+  .none320{
+     display: none;
   }
 }
 
