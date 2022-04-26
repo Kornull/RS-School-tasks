@@ -13,16 +13,17 @@ let petObj = {};
 const arrDesctop = [];
 const arrTouch = [];
 const arrMobile = [];
+
 function paginationNumbers(counts) {
   BUTNS.addEventListener('click', (ev) => {
     if (ev.target.className === 'btn__our-pets pets--right') {
 
-      let numPageForward = +numberStr.textContent + 1;
-      numberStr.innerHTML = numPageForward;
+      let numPageForward = +numberStr.textContent;
+      numberStr.innerHTML = numPageForward + 1;
       allPagBtns.forEach(x => x.classList.remove('inactive'))
       pageCards(numPageForward)
 
-      if (+numberStr.textContent !== 1 && +numberStr.textContent !== counts) {
+      if (+numberStr.textContent !== 1 && +numberStr.textContent !== arrDesctop.length) {
         allPagBtns.forEach(x => x.classList.remove('inactive'))
         allPagBtns.forEach(x => x.removeAttribute('disabled'))
       }
@@ -33,14 +34,14 @@ function paginationNumbers(counts) {
       allPagBtns.forEach(x => x.classList.remove('inactive'))
       pageCards(numPageBack)
 
-      if (+numberStr.textContent !== 1 && +numberStr.textContent !== 6) {
+      if (+numberStr.textContent !== 1 && +numberStr.textContent !== arrDesctop.length) {
         allPagBtns.forEach(x => x.classList.remove('inactive'))
       }
 
     }
     if (ev.target.className === 'btn__our-pets pets--all__right' || ev.target.className === 'btn__our-pets pets--left__all') {
       allPagBtns.forEach(x => x.classList.remove('inactive'))
-      numberStr.innerHTML = 6;
+      numberStr.innerHTML = arrDesctop.length;
       pageCards(arrDesctop.length)
     }
     if (ev.target.className === 'btn__our-pets pets--left__all') {
@@ -49,7 +50,7 @@ function paginationNumbers(counts) {
       pageCards(1)
     }
 
-    if (+numberStr.textContent === 6) {
+    if (+numberStr.textContent === arrDesctop.length) {
       btnR.classList.add('inactive')
       btnR.setAttribute("disabled", "disabled")
       btnAllR.classList.add('inactive')
@@ -75,8 +76,8 @@ function newArrNames() {
   pagBlocks.forEach(x => arrName.push(x.querySelector('.our__pets--slider').textContent))
 }
 newArrNames()
-function desctopArr() {
-  for (let i = 0; i < 6; i++) {
+function desctopArr(len) {
+  for (let i = 0; i < len; i++) {
     let temporaryArr = [];
     while (temporaryArr.length < 8) {
       let num = Math.floor(Math.random() * 8)
@@ -88,8 +89,17 @@ function desctopArr() {
   }
   paginationNumbers(arrDesctop.length);
 }
-
-desctopArr()
+(function () {
+  if (window.innerWidth > 1279) {
+    desctopArr(6)
+  }
+  if (window.innerWidth < 1280 && window.innerWidth > 767){
+    desctopArr(8)
+  }
+  if(window.innerWidth< 678){
+    desctopArr(12)
+  }
+}())
 
 function pageCards(page) {
   let t = []
