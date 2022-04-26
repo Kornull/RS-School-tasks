@@ -1,3 +1,4 @@
-import './burger';
-import './sliderMain';
-import './popup';
+import './burger.js';
+import './popup.js';
+import './sliderMain.js';
+import './pagination.js';
