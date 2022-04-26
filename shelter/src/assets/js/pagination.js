@@ -108,6 +108,7 @@ function pageCards(page) {
       if (arrDesctop[page - 1][numb] === j.name && !t.includes(arrDesctop[page - 1][numb])) {
         t.push(arrDesctop[page - 1][numb])
         item.querySelector('img').src = `.${j.img}`;
+        item.querySelector('h3').innerText = j.name;
         item.id = j.name.toLowerCase()
       }
     }
