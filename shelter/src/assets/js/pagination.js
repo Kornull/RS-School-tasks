@@ -12,7 +12,6 @@ const btnAllL = document.querySelector('.pets--left__all');
 const arrays = [];
 const bigArrays = [];
 BUTNS.addEventListener('click', (ev) => {
-  console.log(ev.target)
   if (ev.target.className === 'btn__our-pets pets--right') {
     numberStr.innerHTML = +numberStr.textContent + 1;
     allPagBtns.forEach(x => x.classList.remove('inactive'))
@@ -73,8 +72,4 @@ function randName() {
   for (let i = 0; i < arrays.length; i++) {
     let arrN = [];
 
-  }
-}
-console.log(arrays)
-console.log(obj)
-popurRun()
+  }}

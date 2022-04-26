@@ -13,8 +13,6 @@ export function popurRun() {
     slider.querySelectorAll('.slider__block').forEach(el => {
       el.addEventListener('click', function (x) {
         let namePet = el.id;
-        console.log(el.id)
-
         popup.classList.add('active');
         document.body.style.overflow = 'hidden';
         openPopup(namePet)
@@ -24,7 +22,6 @@ export function popurRun() {
     pagin.querySelectorAll('.pagination__block').forEach(el => {
       el.addEventListener('click', function (x) {
         let namePet = el.id;
-        console.log(el.target)
         popup.classList.add('active');
         document.body.style.overflow = 'hidden';
         openPopup(namePet)
