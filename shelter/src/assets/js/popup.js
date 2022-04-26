@@ -1,13 +1,13 @@
 import petsConfig from '../../main/pets.json';
-const slide = document.querySelector('.pets__slider')
-const pagin = document.querySelector('.pets__pagination')
+const slide = document.querySelector('.pets__slider');
+const paginSlide = document.querySelector('.slide__pagination')
 const popupPets = document.querySelector('.popup--pets');
 const slider = document.querySelector('.slider__carousel');
 const popup = document.querySelector('.popup');
 // const id = Array.from(document.all).map(i => i.id).filter(i => i != "");
 
 const arrId = ["img", "name", "type", "breed", "description", "age", "inoculations", "diseases", "parasites"];
-
+console.log(paginSlide)
 export function popurRun() {
   if (slide) {
     slider.querySelectorAll('.slider__block').forEach(el => {
@@ -18,9 +18,11 @@ export function popurRun() {
         openPopup(namePet)
       });
     })
-  } if (pagin){
-    pagin.querySelectorAll('.pagination__block').forEach(el => {
+  } else if (paginSlide){
+    paginSlide.querySelectorAll('.pagination__block').forEach(el => {
+      console.log(el)
       el.addEventListener('click', function (x) {
+        console.log(x.target)
         let namePet = el.id;
         popup.classList.add('active');
         document.body.style.overflow = 'hidden';
