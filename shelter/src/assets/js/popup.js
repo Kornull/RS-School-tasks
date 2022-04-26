@@ -7,7 +7,6 @@ const popup = document.querySelector('.popup');
 // const id = Array.from(document.all).map(i => i.id).filter(i => i != "");
 
 const arrId = ["img", "name", "type", "breed", "description", "age", "inoculations", "diseases", "parasites"];
-console.log(paginSlide)
 export function popurRun() {
   if (slide) {
     slider.querySelectorAll('.slider__block').forEach(el => {
