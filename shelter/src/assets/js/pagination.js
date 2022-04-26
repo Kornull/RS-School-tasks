@@ -9,17 +9,14 @@ const btnAllR = BUTNS.querySelector('.pets--all__right');
 const btnL = document.querySelector('.pets--left');
 const btnAllL = document.querySelector('.pets--left__all');
 const arrName = [];
-let petObj = {};
 const arrDesctop = [];
-const arrTouch = [];
-const arrMobile = [];
 
 function paginationNumbers(counts) {
   BUTNS.addEventListener('click', (ev) => {
     if (ev.target.className === 'btn__our-pets pets--right') {
 
-      let numPageForward = +numberStr.textContent;
-      numberStr.innerHTML = numPageForward + 1;
+      let numPageForward = +numberStr.textContent+1;
+      numberStr.innerHTML = +numberStr.textContent+1;
       allPagBtns.forEach(x => x.classList.remove('inactive'))
       pageCards(numPageForward)
 
@@ -30,11 +27,11 @@ function paginationNumbers(counts) {
 
     } if (ev.target.className === 'btn__our-pets pets--left') {
       let numPageBack = +numberStr.textContent - 1;
-      numberStr.innerHTML = numPageBack;
+      numberStr.innerHTML = +numberStr.textContent - 1;
       allPagBtns.forEach(x => x.classList.remove('inactive'))
       pageCards(numPageBack)
 
-      if (+numberStr.textContent !== 1 && +numberStr.textContent !== arrDesctop.length) {
+      if (+numberStr.textContent !== 1 && +numberStr.textContent !== arrName.length) {
         allPagBtns.forEach(x => x.classList.remove('inactive'))
       }
 
