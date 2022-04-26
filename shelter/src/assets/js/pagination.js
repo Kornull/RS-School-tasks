@@ -18,7 +18,7 @@ function paginationNumbers(counts) {
       let numPageForward = +numberStr.textContent+1;
       numberStr.innerHTML = +numberStr.textContent+1;
       allPagBtns.forEach(x => x.classList.remove('inactive'))
-      pageCards(numPageForward)
+      pageCards(+numberStr.innerHTML)
 
       if (+numberStr.textContent !== 1 && +numberStr.textContent !== arrDesctop.length) {
         allPagBtns.forEach(x => x.classList.remove('inactive'))
@@ -29,14 +29,14 @@ function paginationNumbers(counts) {
       let numPageBack = +numberStr.textContent - 1;
       numberStr.innerHTML = +numberStr.textContent - 1;
       allPagBtns.forEach(x => x.classList.remove('inactive'))
-      pageCards(numPageBack)
+      pageCards(+numberStr.innerHTML)
 
       if (+numberStr.textContent !== 1 && +numberStr.textContent !== arrName.length) {
         allPagBtns.forEach(x => x.classList.remove('inactive'))
       }
 
     }
-    if (ev.target.className === 'btn__our-pets pets--all__right' || ev.target.className === 'btn__our-pets pets--left__all') {
+    if (ev.target.className === 'btn__our-pets pets--all__right') {
       allPagBtns.forEach(x => x.classList.remove('inactive'))
       numberStr.innerHTML = arrDesctop.length;
       pageCards(arrDesctop.length)
