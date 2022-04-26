@@ -95,7 +95,7 @@ function desctopArr(len) {
     desctopArr(8);
   }
   if(window.innerWidth< 678){
-    desctopArr(12);
+    desctopArr(16);
   }
 }())
 
