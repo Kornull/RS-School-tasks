@@ -20,9 +20,7 @@ export function popurRun() {
     })
   } else if (paginSlide){
     paginSlide.querySelectorAll('.pagination__block').forEach(el => {
-      console.log(el)
       el.addEventListener('click', function (x) {
-        console.log(x.target)
         let namePet = el.id;
         popup.classList.add('active');
         document.body.style.overflow = 'hidden';
