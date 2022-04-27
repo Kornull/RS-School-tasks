@@ -36,7 +36,7 @@
   width: 100%;
   height: 2px;
   background: $colorprimary;
-  transition: transform 0.3s ease-in,  background .2s linear;
+  transition: transform 0.2s linear, background 0.2s linear;
 }
 
 .burger span::after,
@@ -57,33 +57,30 @@
 }
 
 .burger span.active {
-  transform: rotate(270deg);
+  transform: rotate(90deg);
 }
 
-.burger-our{
+.burger-our {
   position: fixed;
   & span {
     background: #000;
-
   }
   & span::after,
   & span::before {
     background: #000;
-  transition: background .2s linear;
-
+    transition: background 0.2s linear;
   }
-
 }
-.burger-our.active{
+.burger-our.active {
   position: fixed;
   & span {
-
     background: $colorprimary;
   }
   & span::after,
   & span::before {
     background: $colorprimary;
-  }}
+  }
+}
 .logo--pets.active__logo {
   display: block;
   width: 186px;
