@@ -8,6 +8,7 @@ const BTN_RIGHT = document.querySelector(".btn__right");
 const CAROUSEL = document.querySelector("#slider__carousel");
 const ITEM_LEFT = document.querySelector("#item-left");
 const ITEM_RIGHT = document.querySelector("#item-right");
+const ITEM_ACTIVE = document.querySelector("#item-active");
 const namesPets = ['sophia', 'timmy', 'scarlet', 'freddie', 'charly', 'woody', 'jennifer', 'katrine']
 let arrCards = [];
 let arr = [];
@@ -15,17 +16,41 @@ let num = 0;
 let count = 0;
 let numCards = 0;
 
+let arr2 = [];
 window.onload = () => {
-  ITEM_RIGHT.querySelectorAll('.slider__block').forEach(x => {
+  ITEM_ACTIVE.querySelectorAll('.slider__block').forEach(x => {
     let a = x.id
     arr.push(a);
-  });
-    ITEM_LEFT.querySelectorAll('.slider__block').forEach(x => {
-      let a = x.id;
-      arr.push(a);
-  });
-}
+    arr2.push(a);
 
+  });
+  while (arrCards.length < numCards) {
+    num = Math.floor(Math.random() * 8)
+    if (!arr.includes(namesPets[num]) && !arrCards.includes(namesPets[num])) {
+      arrCards.push(namesPets[num]);
+    }
+  }
+  ITEM_LEFT.innerHTML = '';
+  widthWindow();
+  for (let i = 0; i < numCards; i++) {
+    const card = newCard();
+    ITEM_LEFT.append(card);
+    popurRun();
+  }
+
+  ITEM_LEFT.querySelectorAll('.slider__block').forEach(x => {
+    let b = x.id
+    arr2.push(b);
+  })
+  concatination()
+  ITEM_RIGHT.innerHTML = '';
+  widthWindow();
+  for (let i = 0; i < numCards; i++) {
+    const card = newCard();
+    ITEM_RIGHT.append(card);
+    popurRun();
+  }
+}
 
 const lengthItem = (numCards) => item.forEach((x) => {
   x.querySelectorAll('.slider__block').forEach((i, l) => {
@@ -48,7 +73,10 @@ const widthWindow = () => {
   };
 }
 widthWindow()
-
+function concatination (){
+  count = 0;
+  arr = arr.concat(arr2, arr)
+}
 const newCard = () => {
   if (count === numCards) {
     count = 0;
@@ -56,10 +84,12 @@ const newCard = () => {
     arrCards = [];
   }
   const card = document.createElement('div');
-  while (arrCards.length < numCards) {
-    num = Math.floor(Math.random() * 8)
-    if (!arr.includes(namesPets[num]) && !arrCards.includes(namesPets[num])) {
-      arrCards.push(namesPets[num]);
+  if (arrCards.length !== 3) {
+    while (arrCards.length < numCards) {
+      num = Math.floor(Math.random() * 8)
+      if (!arr.includes(namesPets[num]) && !arrCards.includes(namesPets[num])) {
+        arrCards.push(namesPets[num]);
+      }
     }
   }
   for (let j of cardsObj) {
@@ -136,3 +166,4 @@ if (slide) {
 
   });
 }
+
