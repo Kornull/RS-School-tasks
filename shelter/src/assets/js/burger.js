@@ -56,8 +56,7 @@ if (btnBurger) {
 
     navLink.forEach(x => {
       if (x.querySelector('#text-our')) {
-        x.querySelector('a').classList.toggle('link--our');
-        x.querySelector('a').classList.toggle('link');
+
 
       }
       if (x.querySelector('.active--color')) {

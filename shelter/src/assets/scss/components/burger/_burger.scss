@@ -74,11 +74,11 @@
 .burger-our.active {
   position: fixed;
   & span {
-    background: $colorprimary;
+    background: #000;;
   }
   & span::after,
   & span::before {
-    background: $colorprimary;
+    background: #000;;
   }
 }
 .logo--pets.active__logo {
@@ -90,4 +90,8 @@
   .logo__subtitle {
     color: #000;
   }
+}
+
+.color__white{
+  background-color: white;
 }

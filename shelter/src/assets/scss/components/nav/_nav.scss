@@ -12,10 +12,13 @@
     transition: right 0.3s linear, display 5s linear;
     overflow: auto;
     z-index: 600;
+  }&.white__color{
+    background: white;
   }
   &.active {
     right: 0;
   }
+
 }
 .nav {
   height: 27px;
