@@ -127,7 +127,6 @@ if (slide) {
 
       CAROUSEL.classList.remove("transition-left");
       itemChange = ITEM_LEFT;
-      console.log(itemChange)
       document.querySelector("#item-active").innerHTML = ITEM_LEFT.innerHTML;
     }
     else {
