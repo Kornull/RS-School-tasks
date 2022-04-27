@@ -125,6 +125,7 @@ function pageCards(page) {
     const btn = document.createElement('button');
     const title = document.createElement('h3');
     card.classList.add("pagination__block");
+    card.style.opacity = 1;
     btn.classList.add('btn', 'btn__white');
     btn.innerText = 'Learn more';
     card_text.classList.add('slider__title');
