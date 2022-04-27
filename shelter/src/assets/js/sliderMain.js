@@ -15,15 +15,13 @@ let arr = [];
 let num = 0;
 let count = 0;
 let numCards = 0;
-
-let arr2 = [];
 window.onload = () => {
   ITEM_ACTIVE.querySelectorAll('.slider__block').forEach(x => {
     let a = x.id
     arr.push(a);
   });
+  widthWindow()
 }
-console.log(arr2)
 const lengthItem = (numCards) => item.forEach((x) => {
   x.querySelectorAll('.slider__block').forEach((i, l) => {
     if (l >= numCards) i.remove('div');
@@ -44,7 +42,7 @@ const widthWindow = () => {
 
   };
 }
-
+widthWindow()
 const newCard = () => {
   if (count === numCards) {
     count = 0;
