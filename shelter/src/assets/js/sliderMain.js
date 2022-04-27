@@ -21,37 +21,9 @@ window.onload = () => {
   ITEM_ACTIVE.querySelectorAll('.slider__block').forEach(x => {
     let a = x.id
     arr.push(a);
-    arr2.push(a);
-
   });
-  while (arrCards.length < numCards) {
-    num = Math.floor(Math.random() * 8)
-    if (!arr.includes(namesPets[num]) && !arrCards.includes(namesPets[num])) {
-      arrCards.push(namesPets[num]);
-    }
-  }
-  ITEM_LEFT.innerHTML = '';
-  widthWindow();
-  for (let i = 0; i < numCards; i++) {
-    const card = newCard();
-    ITEM_LEFT.append(card);
-    popurRun();
-  }
-
-  ITEM_LEFT.querySelectorAll('.slider__block').forEach(x => {
-    let b = x.id
-    arr2.push(b);
-  })
-  concatination()
-  ITEM_RIGHT.innerHTML = '';
-  widthWindow();
-  for (let i = 0; i < numCards; i++) {
-    const card = newCard();
-    ITEM_RIGHT.append(card);
-    popurRun();
-  }
 }
-
+console.log(arr2)
 const lengthItem = (numCards) => item.forEach((x) => {
   x.querySelectorAll('.slider__block').forEach((i, l) => {
     if (l >= numCards) i.remove('div');
@@ -72,11 +44,7 @@ const widthWindow = () => {
 
   };
 }
-widthWindow()
-function concatination (){
-  count = 0;
-  arr = arr.concat(arr2, arr)
-}
+
 const newCard = () => {
   if (count === numCards) {
     count = 0;
@@ -120,7 +88,6 @@ const newCard = () => {
         return card;
       }
     }
-
   }
 }
 let itemChange;
@@ -137,16 +104,36 @@ if (slide) {
     BTN_RIGHT.removeEventListener("click", moveRight);
   };
 
-  BTN_LEFT.addEventListener("click", moveLeft);
+  BTN_LEFT.addEventListener("click", () => {
+    ITEM_LEFT.innerHTML = '';
+    widthWindow();
+    for (let i = 0; i < numCards; i++) {
+      const card = newCard();
+      ITEM_LEFT.append(card);
+      popurRun();
+    }
+    moveLeft()
+  });
 
 
-  BTN_RIGHT.addEventListener("click", moveRight);
+  BTN_RIGHT.addEventListener("click", () => {
+    ITEM_RIGHT.innerHTML = '';
+    widthWindow();
+    for (let i = 0; i < numCards; i++) {
+      const card = newCard();
+      ITEM_RIGHT.append(card);
+      popurRun();
+    }
+    moveRight()
+  });
 
   CAROUSEL.addEventListener("animationend", (ev) => {
 
     if (ev["animationName"] === "move-left") {
+
       CAROUSEL.classList.remove("transition-left");
       itemChange = ITEM_LEFT;
+      console.log(itemChange)
       document.querySelector("#item-active").innerHTML = ITEM_LEFT.innerHTML;
     }
     else {
@@ -156,14 +143,8 @@ if (slide) {
     }
     BTN_LEFT.addEventListener("click", moveLeft);
     BTN_RIGHT.addEventListener("click", moveRight);
-    itemChange.innerHTML = '';
-    widthWindow();
-    for (let i = 0; i < numCards; i++) {
-      const card = newCard();
-      itemChange.append(card);
-      popurRun();
-    }
-
   });
 }
 
+
+widthWindow()
