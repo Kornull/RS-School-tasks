@@ -136,6 +136,7 @@ if (slide) {
     }
     BTN_LEFT.addEventListener("click", moveLeft);
     BTN_RIGHT.addEventListener("click", moveRight);
+    popurRun()
   });
 }
 
