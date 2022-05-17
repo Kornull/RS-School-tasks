@@ -108,10 +108,16 @@ function lengthArrs(x) {
   }
   if (window.innerWidth < 1280 && window.innerWidth > 767) {
     lengthArrs(8);
+    pagBlocks.forEach((x, y) => {
+      if (y > 5) x.remove('div');
+    });
 
   }
-  if (window.innerWidth < 678) {
+  if (window.innerWidth < 768) {
     lengthArrs(16);
+    pagBlocks.forEach((x, y) => {
+      if (y > 2) x.remove('div');
+    });
   }
 }())
 
@@ -130,15 +136,15 @@ function pageCards(page) {
     btn.innerText = 'Learn more';
     card_text.classList.add('slider__title');
     title.classList.add('our__pets--slider');
-    img.src = `${arrDesctop2[page-1][i]['img']}`;
+    img.src = `${arrDesctop2[page - 1][i]['img']}`;
     card_img.classList.add('slider__img');
-    title.innerText = arrDesctop2[page-1][i]['name'];
+    title.innerText = arrDesctop2[page - 1][i]['name'];
     card_text.appendChild(title);
     card_img.appendChild(img)
     card.appendChild(card_img);
     card.appendChild(card_text);
     card.appendChild(btn);
-    card.id = `${arrDesctop2[page-1][i]['name'].toLowerCase()}`;
+    card.id = `${arrDesctop2[page - 1][i]['name'].toLowerCase()}`;
 
     blockPagination.appendChild(card)
     popurRun()
