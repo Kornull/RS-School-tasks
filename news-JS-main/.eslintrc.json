@@ -1,7 +1,8 @@
 {
-    "plugins": [ "import"],
+    "plugins": [ "import","@typescript-eslint","prettier"],
     "extends": [
         "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
         "prettier"
     ],
     "parserOptions": {
@@ -17,6 +18,8 @@
         "no-debugger": "off",
         "no-console": 0,
         "no-explicit-any":"off",
-        "class-methods-use-this": "off"
-    }
+        "class-methods-use-this": "off",
+        "@typescript-eslint/no-explicit-any": 2
+    },
+    "ignorePatterns": ["webpack.**"]
 }
