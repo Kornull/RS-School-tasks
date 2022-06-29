@@ -1,21 +1,35 @@
 import AppController from '../controller/controller';
-import { AppView } from '../view/appView';
+import AppView from '../view/appView';
+
+interface GetSource {
+  status: string;
+  sources: object[];
+  totalResults?: number;
+  articles?: object[];
+}
 
 class App {
-    controller: AppController;
-    view: AppView;
-    constructor() {
-        this.controller = new AppController();
-        this.view = new AppView();
-    }
+  controller: AppController;
+  view: AppView;
+  constructor() {
+    this.controller = new AppController();
+    this.view = new AppView();
+  }
 
-    start() {
-        const elHtml = document.querySelector('.sources') as HTMLElement;
-        if (elHtml) {
-            elHtml.addEventListener('click', (e) => this.controller.getNews(e, (data: any) => this.view.drawNews(data)));
-            this.controller.getSources((data: any) => this.view.drawSources(data));
-        }
-    }
+  public start() {
+    const el = document.querySelector('.sources') as HTMLElement | null;
+    if (el !== null)
+      el.addEventListener('click', (e: MouseEvent) =>
+        this.controller.getNews(e, (data: GetSource) => {
+          this.view.drawNews(data);
+        })
+      );
+    this.controller.getSources((data: GetSource) => {
+      // console.log(data)
+      this.view.drawSources(data);
+    });
+  }
 }
 
 export default App;
+
