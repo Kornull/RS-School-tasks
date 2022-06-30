@@ -1,21 +1,24 @@
 import News from './news/news';
 import Sources from './sources/sources';
-
+import { IContentNews, IContentSources, GetContentNews, GetSources } from '../types/index';
 export class AppView {
-    constructor() {
-        this.news = new News();
-        this.sources = new Sources();
-    }
+  news: News;
+  sources: Sources;
+  constructor() {
+    this.news = new News();
+    this.sources = new Sources();
+  }
 
-    drawNews(data) {
-        const values = data?.articles ? data?.articles : [];
-        this.news.draw(values);
-    }
+  drawNews(data: IContentNews) {
+    const values: GetContentNews[] = data?.articles ? data?.articles : [];
+    this.news.draw(values);
+  }
 
-    drawSources(data) {
-        const values = data?.sources ? data?.sources : [];
-        this.sources.draw(values);
-    }
+  drawSources(data: IContentSources) {
+    console.log(data);
+    const values: GetSources[] = data?.sources ? data?.sources : [];
+    this.sources.draw(values);
+  }
 }
 
 export default AppView;
