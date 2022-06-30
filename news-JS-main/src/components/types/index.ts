@@ -11,3 +11,13 @@ export interface GetContentNews {
   content?: string;
   urlToImage?: string;
 }
+
+export type GetSources = {
+  category: string;
+  country: string;
+  description: string;
+  id: string;
+  language: string;
+  name: string;
+  url: string;
+};
