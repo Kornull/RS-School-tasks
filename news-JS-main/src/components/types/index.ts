@@ -1,4 +1,4 @@
-export interface GetContentNews {
+export interface IGetContentNews {
   description: string;
   publishedAt: string;
   source: {
@@ -21,3 +21,9 @@ export type GetSources = {
   name: string;
   url: string;
 };
+
+export interface IViewContentNews {
+  articles: IGetContentNews[];
+  status: string;
+  totalResults: number;
+}
