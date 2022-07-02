@@ -20,6 +20,8 @@ const config = {
     host: 'localhost',
     hot: true,
     compress: true,
+
+
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -42,6 +44,11 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: 'asset',
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
       },
 
       // Add your rules for custom modules here
