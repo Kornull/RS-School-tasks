@@ -2,7 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const EslingPlugin = require('eslint-webpack-plugin');
+// const EslingPlugin = require('eslint-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -16,13 +16,13 @@ const config = {
   devServer: {
     open: true,
     host: 'localhost',
+    hot: true,
+    compress: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    new EslingPlugin({ extensions: 'ts' }),
-
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
