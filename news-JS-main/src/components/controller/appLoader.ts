@@ -1,11 +1,11 @@
 import Loader from './loader';
 
 class AppLoader extends Loader {
-    constructor() {
-        super('https://newsapi.org/v2/', {
-            apiKey: 'f522a8c79f87426cb4ad5026d012501a', // получите свой ключ https://newsapi.org/
-        });
-    }
+  constructor() {
+    super('https://newsapi.org/v2/', {
+      apiKey: 'f21d06b428c744a394db30ad64757c8a', // получите свой ключ https://newsapi.org/
+    });
+  }
 }
 
 export default AppLoader;
