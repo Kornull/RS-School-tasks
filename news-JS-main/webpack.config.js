@@ -12,6 +12,8 @@ const config = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    filename: `index.js`,
+    clean: true,
   },
   devServer: {
     open: true,
