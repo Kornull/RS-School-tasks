@@ -32,3 +32,13 @@ export interface IContentSources {
   status: string;
   sources: GetSources[];
 }
+
+export type Key = {
+  [key: string]: string;
+};
+export type Callback<T> = (data: T) => void;
+
+export interface IResponseLoader {
+  endpoint: string;
+  options?: { sources: string };
+}
