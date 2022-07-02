@@ -1,46 +1,59 @@
+import { Key, Callback, IResponseLoader } from '../types/index';
+
 class Loader {
-    constructor(baseLink, options) {
-        this.baseLink = baseLink;
-        this.options = options;
+  private readonly options: Key;
+  private readonly baseLink: string;
+  constructor(
+    baseLink: string,
+    options: {
+      apiKey: string;
+    }
+  ) {
+    this.baseLink = baseLink;
+    this.options = options;
+  }
+
+  protected getResp<T>(
+    { endpoint, options }: IResponseLoader,
+    callback: Callback<T> = (): void => {
+      console.error('No callback for GET response');
+    }
+  ) {
+    this.load('GET', endpoint, callback, options);
+  }
+
+  protected errorHandler(res: Response) {
+    console.log(res);
+    if (!res.ok) {
+      if (res.status === 401 || res.status === 404)
+        console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+      throw Error(res.statusText);
     }
 
-    getResp(
-        { endpoint, options = {} },
-        callback = () => {
-            console.error('No callback for GET response');
-        }
-    ) {
-        this.load('GET', endpoint, callback, options);
-    }
+    return res;
+  }
 
-    errorHandler(res) {
-        if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
-                console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-            throw Error(res.statusText);
-        }
+  protected makeUrl(options: object, endpoint: string) {
+    const urlOptions: Key = {
+      ...this.options,
+      ...options,
+    };
+    let url = `${this.baseLink}${endpoint}?` as string;
 
-        return res;
-    }
+    Object.keys(urlOptions).forEach((key) => {
+      url += `${key}=${urlOptions[key]}&`;
+    });
 
-    makeUrl(options, endpoint) {
-        const urlOptions = { ...this.options, ...options };
-        let url = `${this.baseLink}${endpoint}?`;
+    return url.slice(0, -1);
+  }
 
-        Object.keys(urlOptions).forEach((key) => {
-            url += `${key}=${urlOptions[key]}&`;
-        });
-
-        return url.slice(0, -1);
-    }
-
-    load(method, endpoint, callback, options = {}) {
-        fetch(this.makeUrl(options, endpoint), { method })
-            .then(this.errorHandler)
-            .then((res) => res.json())
-            .then((data) => callback(data))
-            .catch((err) => console.error(err));
-    }
+  protected load<T>(method: 'GET' | 'POST', endpoint: string, callback: Callback<T>, options: Key = {}): void {
+    fetch(this.makeUrl(options, endpoint), { method })
+      .then(this.errorHandler)
+      .then((res) => res.json())
+      .then((data) => callback(data))
+      .catch((err) => console.error(err));
+  }
 }
 
 export default Loader;
