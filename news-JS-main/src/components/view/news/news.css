@@ -1,11 +1,22 @@
 .news {
   display: flex;
   flex-wrap: wrap;
+  height: 80vh;
+  overflow: auto;
   width: 74%;
   margin: 0 auto;
   justify-content: center;
 }
+.news::-webkit-scrollbar {
+  width: 7px;
+  background-color: #8aa1e2;
+  border-radius: 50%;
+}
 
+.news::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 50%;
+}
 
 .news__item {
   display: flex;
