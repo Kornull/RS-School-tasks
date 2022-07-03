@@ -6,6 +6,8 @@
   width: 74%;
   margin: 0 auto;
   justify-content: center;
+  border: 2px solid #8aa1e2;
+  border-radius: 10px;
 }
 .news::-webkit-scrollbar {
   width: 7px;
