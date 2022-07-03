@@ -1,5 +1,5 @@
 import AppController from '../controller/controller';
-import { IContentNews, IContentSources } from '../types';
+import { IContentNews } from '../types';
 import AppView from '../view/appView';
 
 class App {
@@ -14,11 +14,11 @@ class App {
     const el = document.querySelector('.sources') as HTMLElement | null;
     if (el !== null)
       el.addEventListener('click', (e: MouseEvent) =>
-        this.controller.getNews(e, (data: IContentNews) => {
+        this.controller.getNews(e, (data: Partial<IContentNews>) => {
           this.view.drawNews(data);
         })
       );
-    this.controller.getSources((data: IContentSources) => {
+    this.controller.getSources((data: Partial<IContentNews>) => {
       this.view.drawSources(data);
     });
   }
