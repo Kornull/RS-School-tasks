@@ -1,8 +1,8 @@
 import AppLoader from './appLoader';
-import { IContentNews, IContentSources, Callback } from '../types';
+import { IContentNews, Callback } from '../types';
 
 class AppController extends AppLoader {
-  public getSources(callback: Callback<IContentSources>): void {
+  public getSources(callback: Callback<IContentNews>): void {
     super.getResp(
       {
         endpoint: 'sources',
