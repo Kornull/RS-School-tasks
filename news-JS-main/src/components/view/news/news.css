@@ -8,6 +8,7 @@
   justify-content: center;
   border: 2px solid #8aa1e2;
   border-radius: 10px;
+  background-image: url('../../../img/HugeDomains_com.jpeg');
 }
 .news::-webkit-scrollbar {
   width: 7px;
