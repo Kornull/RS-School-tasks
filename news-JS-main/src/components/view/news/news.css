@@ -31,6 +31,7 @@
   font-family: Arial, sans-serif;
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .news__item:hover .news__meta-photo {
