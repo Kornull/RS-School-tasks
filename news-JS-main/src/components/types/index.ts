@@ -26,10 +26,6 @@ export interface IContentNews {
   articles: GetContentNews[];
   status: string;
   totalResults: number;
-}
-
-export interface IContentSources {
-  status: string;
   sources: GetSources[];
 }
 
