@@ -2,7 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const EslingPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -27,8 +27,12 @@ const config = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new CopyPlugin({
+      patterns: [
+        { from: "src/img", to: "img" },
+        // { from: "other", to: "public" },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -50,9 +54,17 @@ const config = {
         enforce: 'pre',
         use: ['source-map-loader'],
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: "[name].[ext]"
+            }
+          }
+        ]
+      },
     ],
   },
   resolve: {
