@@ -1,5 +1,9 @@
 import { Key, Callback, IResponseLoader } from '../types/index';
 
+enum HandlerError {
+  Error_401 = 401,
+  Error_404 = 404,
+}
 class Loader {
   private readonly options: Key;
   private readonly baseLink: string;
@@ -24,7 +28,7 @@ class Loader {
 
   protected errorHandler(res: Response) {
     if (!res.ok) {
-      if (res.status === 401 || res.status === 404)
+      if (res.status === HandlerError.Error_401 || res.status === HandlerError.Error_404)
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
       throw Error(res.statusText);
     }
