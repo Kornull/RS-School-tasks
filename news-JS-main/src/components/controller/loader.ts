@@ -26,7 +26,7 @@ class Loader {
     this.load('GET', endpoint, callback, options);
   }
 
-  protected errorHandler(res: Response) {
+  private errorHandler(res: Response) {
     if (!res.ok) {
       if (res.status === HandlerError.Error_401 || res.status === HandlerError.Error_404)
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -36,7 +36,7 @@ class Loader {
     return res;
   }
 
-  protected makeUrl(options: object, endpoint: string) {
+  private makeUrl(options: object, endpoint: string) {
     const urlOptions: Key = {
       ...this.options,
       ...options,
@@ -50,7 +50,7 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  protected load<T>(method: 'GET' | 'POST', endpoint: string, callback: Callback<T>, options: Key = {}): void {
+  private load<T>(method: 'GET' | 'POST', endpoint: string, callback: Callback<T>, options: Key = {}): void {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())
