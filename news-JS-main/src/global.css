@@ -1,35 +1,70 @@
 body {
-    color: #fff;
-    background: #17181c;
-    font-family: sans-serif;
+  color: #fff;
+  background: #17181c;
+  font-family: sans-serif;
 }
 
 header {
-    padding: 10px 30px;
+  padding: 10px 30px;
 }
 
 header h1 {
-    font-size: 40px;
-    font-weight: 800;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+main {
+  display: flex;
 }
 
 footer {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
 }
+
 footer .copyright a {
-    color: #444;
+  color: #444;
 }
+
 footer .copyright a:hover {
-    color: #555;
+  color: #555;
 }
+
 footer .copyright:before {
-    content: '©';
+  content: '©';
+}
+
+.section__footer {
+  display: flex;
+  justify-content: space-around;
+  width: 45%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.github__link{
+  width: 70px;
+  height: 50px
+}
+
+.rs__link {
+  width: 85px;
+  height: 65px;
+  /* width: 86px;
+  height: 65px; */
+}
+
+@media (max-width:940px) {
+  main {
+    flex-direction: column;
+  }
 }
