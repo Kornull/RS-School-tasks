@@ -51,8 +51,8 @@
   .sources {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 1rem;
-    height: 8.5rem;
+    margin-bottom: 16px;
+    height: 155px;
   }
 
   .sources::-webkit-scrollbar-thumb {
@@ -61,8 +61,8 @@
 
   .source__item {
     max-width: 44%;
-    padding: 0.7rem 0.5rem;
-    margin: 0.3rem auto;
+    padding: 10px 8px;
+    margin: 5px auto;
   }
 
 }
