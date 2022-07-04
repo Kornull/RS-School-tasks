@@ -59,8 +59,6 @@ footer .copyright:before {
 .rs__link {
   width: 85px;
   height: 65px;
-  /* width: 86px;
-  height: 65px; */
 }
 
 @media (max-width:940px) {
