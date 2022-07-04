@@ -1,11 +1,15 @@
 import AppLoader from './appLoader';
 import { IContentNews, Callback } from '../types';
 
+enum Endpoint {
+  endpointSource = 'sources',
+  endpointEverything = 'everything',
+}
 class AppController extends AppLoader {
   public getSources(callback: Callback<IContentNews>): void {
     super.getResp(
       {
-        endpoint: 'sources',
+        endpoint: Endpoint.endpointSource,
       },
       callback
     );
@@ -22,7 +26,7 @@ class AppController extends AppLoader {
           newsContainer.setAttribute('data-source', sourceId);
           super.getResp(
             {
-              endpoint: 'everything',
+              endpoint: Endpoint.endpointEverything,
               options: {
                 sources: sourceId,
               },
