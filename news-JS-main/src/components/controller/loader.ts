@@ -28,9 +28,7 @@ class Loader {
 
   private errorHandler(res: Response) {
     if (!res.ok) {
-      if (res.status === HandlerError.Error_401 || res.status === HandlerError.Error_404)
-        console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-      throw Error(res.statusText);
+      if (res.status === HandlerError.Error_401 || res.status === HandlerError.Error_404) throw Error(res.statusText);
     }
 
     return res;
