@@ -20,7 +20,7 @@ class Loader {
   protected getResp<T>(
     { endpoint, options }: Pick<IResponseLoader, 'endpoint' | 'options'>,
     callback: Callback<T> = (): void => {
-      console.error('No callback for GET response');
+      throw new Error('No callback for GET response');
     }
   ) {
     this.load('GET', endpoint, callback, options);
