@@ -25,8 +25,8 @@
   width: 100%;
   max-width: 46%;
   flex-direction: column;
-  margin: 0 0.45rem;
-  margin-bottom: 0.9rem;
+  margin: 0 7px;
+  margin-bottom: 14px;
   background: #fff;
   color: #333;
   line-height: 1.4;
@@ -74,12 +74,12 @@
   color: #fff;
   padding: 10px;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 
 .news__item .news__description {
-  padding: 1rem;
+  padding: 16px;
   background: #fff;
   position: relative;
   z-index: 1;
@@ -88,11 +88,11 @@
 .news__item .news__description h2 {
   line-height: 1;
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 23px;
 }
 
 .news__item .news__description h3 {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
   color: #a2a2a2;
@@ -125,11 +125,11 @@
 }
 
 .news__item p {
-  margin: 1rem 0 0;
+  margin: 16px 0 0;
 }
 
 .news__item p:first-of-type {
-  margin-top: 1.25rem;
+  margin-top: 19px;
   position: relative;
 }
 
@@ -139,7 +139,7 @@
   height: 5px;
   background: #5ad67d;
   width: 35px;
-  top: -0.75rem;
+  top: -12px;
   border-radius: 3px;
 }
 
@@ -161,7 +161,7 @@
   }
 
   .news__item .news__description h2 {
-    font-size: 1.4rem;
+    font-size: 19px;
   }
 }
 
@@ -224,7 +224,7 @@
   height: 80vh;
   overflow: auto;
   align-items: center;
-  font: 300 1em 'Fira Sans', sans-serif;
+  font: 300 16px 'Fira Sans', sans-serif;
   border: 2px solid #0006ff;
   border-radius: 20px 10px 10px 20px;
 }
@@ -244,9 +244,9 @@
   border: 2px solid #30c5ff;
   font: inherit;
   line-height: 1;
-  margin: 0.3rem;
+  margin: 5px;
   width: 100%;
-  padding: 1em 2em;
+  padding: 16px 30px;
   color: #ffffff;
   transition: 0.25s;
   cursor: pointer;
@@ -257,8 +257,8 @@
 .source__item:focus {
   border-color: #3fcc59;
   color: #69db7e;
-  box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
-  transform: translateY(-0.25em);
+  box-shadow: 0 9px 9px -7px #3fcc59;
+  transform: translateY(-4px);
 }
 
 .source__item-name {
@@ -270,8 +270,8 @@
   .sources {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 1rem;
-    height: 8.5rem;
+    margin-bottom: 16px;
+    height: 155px;
   }
 
   .sources::-webkit-scrollbar-thumb {
@@ -280,8 +280,8 @@
 
   .source__item {
     max-width: 44%;
-    padding: 0.7rem 0.5rem;
-    margin: 0.3rem auto;
+    padding: 10px 8px;
+    margin: 5px auto;
   }
 
 }
@@ -351,12 +351,10 @@ footer .copyright:before {
 .rs__link {
   width: 85px;
   height: 65px;
-  /* width: 86px;
-  height: 65px; */
 }
 
 @media (max-width:940px) {
-  main {
+ .main {
     flex-direction: column;
   }
 }
