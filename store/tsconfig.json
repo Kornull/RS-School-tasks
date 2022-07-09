@@ -13,5 +13,7 @@
     "allowJs": true,
     "moduleResolution": "node",
     "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   }
 }
