@@ -1,21 +1,8 @@
 @import "../node_modules/normalize.css/normalize.css";
+@import "./base/body/_body";
 @import './components/_wrapper';
 @import './components/_header';
 @import './components/_basket';
 @import './components/_footer';
-@import './components/_main';
+@import './base/main/_main';
 
-* {
-  box-sizing: border-box;
-}
-.boby{
-  min-height: 100%;
-}
-.container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px;
-}
