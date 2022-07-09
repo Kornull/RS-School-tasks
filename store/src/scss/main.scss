@@ -3,11 +3,14 @@
 @import './components/_header';
 @import './components/_basket';
 @import './components/_footer';
+@import './components/_main';
 
 * {
   box-sizing: border-box;
 }
-
+.boby{
+  min-height: 100%;
+}
 .container {
   display: flex;
   justify-content: space-between;

@@ -46,7 +46,6 @@ const optimization = () => {
             }),
         ]
     }
-    console.log(configObj)
     return configObj;
 };
 
