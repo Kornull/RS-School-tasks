@@ -1,7 +1,3 @@
-import './index.html';
 import './global.scss';
+import './index.html';
 import './components/main';
-
-for (let i = 0; i < 5; i++) {
-  console.log(i);
-}

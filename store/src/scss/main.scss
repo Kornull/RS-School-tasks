@@ -1,0 +1,18 @@
+@import "../node_modules/normalize.css/normalize.css";
+@import './components/wrapper';
+@import './components/header';
+@import './components/basket';
+@import './components/footer';
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px;
+}
