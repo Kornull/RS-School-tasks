@@ -1,0 +1,623 @@
+[
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo IdeaPad 3 15ITL05 (81X8007GRE)",
+    "number": 12,
+    "image": "lenovo_ideapad_3_15itl05.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Pentium Gold 7505"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics Xe G4"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$512.0"
+      }
+    ]
+  },
+   {
+    "brand": "Asus",
+    "model": "Asus TUF Gaming F15 FX507ZM-HN001",
+    "number": 10,
+    "image": "asus_tuf_gaming_f15_fx507zm-hn001.jpg",
+    "year": "2022",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "144 Hz"
+      },
+      {
+        "Processor model": "Intel Core i7-12700H"
+      },
+      {
+        "The amount of RAM": "16 GB"
+      },
+      {
+        "SSD": "1024 GB"
+      },
+      {
+        "Type of video card": "Discrete"
+      },
+      {
+        "Video card model": "NVIDIA GeForce RTX 3060"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$2343.0"
+      }
+    ]
+  },
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo IdeaPad 5 15ITL05 (82FG00VFRE)",
+    "number": 8,
+    "image": "lenovo_ideapad_5_15itl05.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Core i3-1115G4"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "512 GB"
+      },
+      {
+        "Type of video card": "Discrete"
+      },
+      {
+        "Video card model": "NVIDIA GeForce MX450"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$915.0"
+      }
+    ]
+  },
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo IdeaPad 5 Pro 16ACH6 (82L5009FRE)",
+    "number": 15,
+    "image": "lenovo_ideapad_5_pro_16ach6.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "16.0"
+      },
+      {
+        "Screen resolution": "2560x1600 (WQXGA)"
+      },
+      {
+        "Screen update": "120 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 5 5600H"
+      },
+      {
+        "The amount of RAM": "16 GB"
+      },
+      {
+        "SSD": "512 GB (M.2 2280 PCIe 3.0x4 NVMe)"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 7"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$1208.0"
+      }
+    ]
+  },
+  {
+    "brand": "Acer",
+    "model": "Acer Aspire 3 A315-34-C786 (NX.HE3EU.063)",
+    "number": 14,
+    "image": "acer_aspire_3_a315-34-c786.jpg",
+    "year": "2020",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Celeron N4020"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics 600"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$439.0"
+      }
+    ]
+  },
+  {
+    "brand": "HP",
+    "model": "HP 250 G8 (45R37ES)",
+    "number": 4,
+    "image": "hp_250_g8.jpg",
+    "year": "2020",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Core i5-1135G7"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "512 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Iris Xe Graphics G7"
+      },
+      {
+        "Operating system": "Windows 10"
+      },
+      {
+        "Cost": "$842.0"
+      }
+    ]
+  },
+  {
+    "brand": "Acer",
+    "model": "Acer Aspire 3 A315-34-P0X8 (NX.HE3EU.05A)",
+    "number": 3,
+    "image": "acer_aspire_3_a315-34-p0x8.jpg",
+    "year": "2020",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Pentium Silver N5030"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics 600"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$512.0"
+      }
+    ]
+  },
+  {
+    "brand": "Asus",
+    "model": "Asus VivoBook X543MA-DM1370",
+    "number": 3,
+    "image": "asus_vivobook_x543ma-dm1370.jpg",
+    "year": "2019",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Celeron N4020"
+      },
+      {
+        "The amount of RAM": "4 GB"
+      },
+      {
+        "HDD": "1 TB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics 600"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$402.0"
+      }
+    ]
+  },
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo IdeaPad L3 15ITL6 (82HL006RRE)",
+    "number": 13,
+    "image": "lenovo_ideapad_l3_15itl6.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Pentium Gold 7505"
+      },
+      {
+        "The amount of RAM": "8 GB (4GB Soldered DDR4-2933 + 4GB SO-DIMM DDR4-2933)"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$512.0"
+      }
+    ]
+  },
+  {
+    "brand": "Asus",
+    "model": "Asus VivoBook Flip 14 TP1401KA-BZ063",
+    "number": 8,
+    "image": "asus_vivobook_flip_14_tp1401ka-bz063.jpg",
+    "year": "2022",
+    "description": [
+      {
+        "Screen diagonal": "14.0"
+      },
+      {
+        "Screen resolution": "1366x768 (HD)"
+      },
+      {
+        "Processor model": "Intel Pentium Silver N6000"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$622.0"
+      }
+    ]
+  },
+  {
+    "brand": "HP",
+    "model": "HP 255 G8 (3V5F3EA)",
+    "number": 14,
+    "image": "hp_255_g8.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 3 5300U"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 6"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$805.0"
+      }
+    ]
+  },
+  {
+    "brand": "Honor",
+    "model": "Honor MagicBook X15 (BBR-WAH9)",
+    "number": 8,
+    "image": "honor_magicbook_x15.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Core i5-10210U"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "512 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics 620"
+      },
+      {
+        "Operating system": "Windows 10"
+      },
+      {
+        "Cost": "$1061.0"
+      }
+    ]
+  },
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo IdeaPad L3 15ITL6 (82HL006TRE)",
+    "number": 9,
+    "image": "lenovo_ideapad_l3_15itl6.jpg",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Intel Celeron 6305"
+      },
+      {
+        "The amount of RAM": "4 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Intel UHD Graphics"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$549.0"
+      }
+    ]
+  },
+  {
+    "brand": "Apple",
+    "model": "Apple MacBook Air 13",
+    "number": 2,
+    "image": "apple_macbook_air_13.jpg",
+    "year": "2020",
+    "description": [
+      {
+        "Screen diagonal": "13.3"
+      },
+      {
+        "Screen resolution": "2560x1600 (Retina 13)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "Apple M1"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "Apple M1 GPU"
+      },
+      {
+        "Operating system": "macOS"
+      },
+      {
+        "Cost": "$1904.0"
+      }
+    ]
+  },
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo V15-ADA (82C7000YRU)",
+    "number": 7,
+    "image": "lenovo_v15-ada.jpg",
+    "year": "2020",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 5 3500U"
+      },
+      {
+        "The amount of RAM": "8 GB"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 8"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$732.0"
+      }
+    ]
+  },
+  {
+    "brand": "HP",
+    "model": "HP 15s-eq1328ur (3C8N9EA)",
+    "number": 5,
+    "image": "hp_15s-eq1328ur.jpg",
+    "year": "2020",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Athlon Silver 3050U"
+      },
+      {
+        "The amount of RAM": "8 GB (1x8GB)"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 2"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$512.0"
+      }
+    ]
+  },
+]
