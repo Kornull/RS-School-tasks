@@ -6,7 +6,7 @@ class Basket {
     this.count = 0;
   }
 
-  basketEl(): HTMLDivElement {
+  create(): HTMLDivElement {
     const basket = <HTMLDivElement>document.createElement('div');
     basket.className = 'header__basket basket';
     const basketCounts = <HTMLDivElement>document.createElement('div');

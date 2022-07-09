@@ -11,7 +11,7 @@ class Main {
     this.product = new Products();
     this.search = new Search();
   }
-  mainCreate() {
+  create() {
     const main = document.createElement('main');
     main.className = 'main';
     const containerElements = this.container.createContainer();

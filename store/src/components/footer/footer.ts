@@ -1,5 +1,5 @@
 class Footer {
-  createFooter(): HTMLElement {
+  create(): HTMLElement {
     const footer = <HTMLElement>document.createElement('footer');
     footer.className = 'footer';
     return footer;

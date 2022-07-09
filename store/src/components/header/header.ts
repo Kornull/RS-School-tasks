@@ -10,8 +10,8 @@ class Header {
     this.basket = new Basket();
   }
 
-  Head(): HTMLElement {
-    this.basket.basketEl();
+  create(): HTMLElement {
+    this.basket.create();
     this.basket.basketEndCount();
     this.basket.countIncrement();
     const cont = this.container.createContainer();
@@ -20,7 +20,7 @@ class Header {
     logo.className = 'header__logo';
     head.className = 'header';
     cont.appendChild(logo);
-    cont.appendChild(this.basket.basketEl());
+    cont.appendChild(this.basket.create());
     head.appendChild(cont);
     // cont.createContainer().appendChild();
     // this.countIncrement();
