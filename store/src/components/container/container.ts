@@ -1,7 +1,9 @@
-function contain(): HTMLDivElement {
-  const container = <HTMLDivElement>document.createElement('div');
-  container.className = 'container';
-  return container;
+class Container {
+  createContainer() {
+    const container = <HTMLDivElement>document.createElement('div');
+    container.className = 'container';
+    return container;
+  }
 }
 
-export default contain();
+export default Container;

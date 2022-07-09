@@ -13,13 +13,16 @@ class Basket {
     basketCounts.className = 'basket__count';
     this.basket = basketCounts;
     basket.appendChild(this.basket);
+    this.basketEndCount();
     return basket;
   }
   countIncrement() {
     this.count += 1;
+    this.basketEndCount();
   }
   countDecrement() {
     this.count -= 1;
+    this.basketEndCount();
   }
   basketEndCount(): void {
     if (this.basket instanceof HTMLDivElement) {
