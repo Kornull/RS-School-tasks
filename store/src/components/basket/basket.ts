@@ -28,5 +28,4 @@ class Basket {
   }
 }
 
-const basket = new Basket();
 export default Basket;
