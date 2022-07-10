@@ -21,11 +21,13 @@ class Cards {
         li.innerHTML = `${arrK[0]} - ${arrV[0]}`;
         ul.appendChild(li);
       }
-
+      const stock = document.createElement('div');
+      stock.innerHTML = `In stock - ${_el.number}`;
       const year = document.createElement('div');
       year.innerHTML = `Year - ${_el.year}`;
       card.appendChild(img);
       card.appendChild(ul);
+      card.appendChild(stock);
       card.appendChild(year);
       fragnent.append(card);
     });
