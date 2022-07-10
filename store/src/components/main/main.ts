@@ -18,6 +18,7 @@ class Main {
     containerElements.className = 'main__container container';
     containerElements.appendChild(this.search.create());
     containerElements.appendChild(this.product.create());
+
     main.appendChild(containerElements);
     return main;
   }

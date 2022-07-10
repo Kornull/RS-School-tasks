@@ -1,0 +1,9 @@
+.filter{
+  display: flex;
+  &__name{
+    width: 40%;
+    height: 33.333%;
+    background: #d8b4b4;
+    padding-left: 20px;
+  }
+}
