@@ -1,9 +1,8 @@
-@import "../node_modules/normalize.css/normalize.css";
-@import "./base/body/_body";
-@import './components/_wrapper';
-@import './components/_header';
-@import './components/_basket';
-@import './components/_footer';
-@import './base/main/_main';
-@import './base/cards/_card';
-
+@import "../scss/base/_normalize";
+@import "./base/_body";
+@import "./base/_wrapper";
+@import "./layout/header/_header";
+@import "./components/basket/_basket";
+@import "./layout/footer/_footer";
+@import "./layout/main/_main";
+@import "./components/cards/_card";
