@@ -1,0 +1,23 @@
+.card{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+  border: 2px solid red;
+  &__img{
+    display: block;
+    width: 120px;
+    height: 80px;
+    margin: 0 auto;
+  }
+  &>div{
+    text-align-last: left;
+  }
+}
+.card>div {
+  width: 100%;
+  text-align: left;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
