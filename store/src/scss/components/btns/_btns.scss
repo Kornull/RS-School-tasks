@@ -1,0 +1,12 @@
+.btn{
+  display: block;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 0 5px 5px 0;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid red;
+  &:hover{
+    background:#fff;
+  }
+
+}
