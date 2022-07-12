@@ -133,6 +133,7 @@ class Filters extends Products {
           this.newSortArr();
           this.zeroSort('color', btn.id);
         } else {
+          this.sortArr = this.sortArr.filter((el) => el.color !== btn.id);
           this.newSorArr.splice(this.newSorArr.indexOf(btn.id), 1);
           this.getColor = this.getColor.filter((i) => i !== btn.id);
           this.setColor = [];
@@ -171,13 +172,10 @@ class Filters extends Products {
           this.newSortArr();
           this.zeroSort('ram', btn.id);
         } else {
+          this.sortArr = this.sortArr.filter((el) => el.ram !== btn.id);
           this.setRam = [];
           this.newSorArr.splice(this.newSorArr.indexOf(btn.id), 1);
           this.getRam = this.getRam.filter((i) => i !== btn.id);
-          if (this.getRam.length === 0) {
-            console.log('00000000000000000000');
-            console.log(this.getRam);
-          }
           this.newSortArr();
           console.log(this.getRam, 'getram');
         }
