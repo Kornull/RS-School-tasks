@@ -16,5 +16,15 @@
       box-shadow: 2px 2px  red;
     }
   }
+  &__ram{
+    width: 50px;
+    height: 25px;
+    background: #fff;
+    text-align: center;
+    padding: 2.5px;
+    &:hover{
+      width: 45px;
+    }
+  }
 
 }

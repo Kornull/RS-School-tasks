@@ -1,5 +1,5 @@
 import employee from '../../../laptop.json';
-import { Laptop } from '../../types';
+import { Key, Laptop } from '../../types';
 import Products from '../products/product';
 
 class Filters extends Products {
@@ -14,7 +14,11 @@ class Filters extends Products {
   filterBtn: HTMLDivElement;
   btnDescr: HTMLDivElement;
   getBrand: string[];
+  getRam: string[];
   setColor: Laptop[];
+  setRam: Laptop[];
+  memoryRam: string[];
+  sortZeroArr: Laptop[];
   constructor() {
     super();
     this.filter = document.createElement('div');
@@ -24,11 +28,15 @@ class Filters extends Products {
     this.btnDescr = document.createElement('div');
     this.brandArr = [];
     this.getBrand = [];
+    this.getRam = [];
     this.newSorArr = [];
     this.sortArr = [];
     this.colorArr = [];
     this.getColor = [];
     this.setColor = [];
+    this.setRam = [];
+    this.memoryRam = [];
+    this.sortZeroArr = [];
   }
 
   filterName(): HTMLDivElement {
@@ -89,6 +97,7 @@ class Filters extends Products {
           this.newSortArr();
         } else {
           this.sortArr = [];
+
           this.newSorArr.splice(this.newSorArr.indexOf(btn.id), 1);
           this.getBrand = this.getBrand.filter((i) => i !== btn.id);
           this.newSortArr();
@@ -122,6 +131,7 @@ class Filters extends Products {
           this.newSorArr.push(btn.id);
           this.getColor.push(btn.id);
           this.newSortArr();
+          this.zeroSort('color', btn.id);
         } else {
           this.newSorArr.splice(this.newSorArr.indexOf(btn.id), 1);
           this.getColor = this.getColor.filter((i) => i !== btn.id);
@@ -137,28 +147,91 @@ class Filters extends Products {
     return this.filter;
   }
 
+  filterRam() {
+    this.filterBtn = document.createElement('div');
+    this.filterBtn.className = 'filter__btn--ram';
+    this.btnDescr = document.createElement('div');
+    this.btnDescr.innerText = 'RAM: ';
+    this.fragment.append(this.btnDescr);
+    employee.forEach((el) => {
+      if (!this.memoryRam.includes(el.ram)) {
+        this.memoryRam.push(el.ram);
+      }
+    });
+    this.memoryRam.forEach((el) => {
+      const btn: HTMLButtonElement = document.createElement('button');
+      btn.className = 'btn btn__ram';
+      btn.innerText = el;
+      btn.id = el;
+      btn.addEventListener('click', () => {
+        if (!this.newSorArr.includes(btn.id)) {
+          this.newSorArr.push(btn.id);
+          this.getRam.push(btn.id);
+          console.log(this.getRam, '1');
+          this.newSortArr();
+          this.zeroSort('ram', btn.id);
+        } else {
+          this.setRam = [];
+          this.newSorArr.splice(this.newSorArr.indexOf(btn.id), 1);
+          this.getRam = this.getRam.filter((i) => i !== btn.id);
+          if (this.getRam.length === 0) {
+            console.log('00000000000000000000');
+            console.log(this.getRam);
+          }
+          this.newSortArr();
+          console.log(this.getRam, 'getram');
+        }
+      });
+      this.fragment.append(btn);
+    });
+    this.filterBtn.appendChild(this.fragment);
+    this.filter.appendChild(this.filterBtn);
+    return this.filter;
+  }
+
   newSortArr(): void {
+    console.log('new', this.sortArr);
+    console.log('newB', this.getBrand);
     if (this.getBrand.length !== 0) {
       this.getBrand.forEach((x) => {
         employee.forEach((e) => {
           if (e.brand.toLowerCase() === x.toLowerCase() && !this.sortArr.includes(e)) this.sortArr.push(e);
-        });
-        if (this.getColor.length !== 0) {
-          this.getColor.forEach((x) => {
-            this.sortArr.forEach((el) => {
-              if (el.color === x && !this.setColor.includes(el)) {
-                this.setColor.push(el);
-                this.createCard(this.setColor);
-              }
-            });
-          });
-        } else {
           this.createCard(this.sortArr);
-        }
+        });
       });
+      if (this.getRam.length !== 0) {
+        this.getRam.forEach((x) => {
+          this.sortArr.forEach((el) => {
+            if (el.ram === x && !this.setRam.includes(el)) {
+              this.setRam.push(el);
+              this.createCard(this.setRam);
+            }
+          });
+        });
+      } else if (this.getColor.length !== 0) {
+        this.getColor.forEach((x) => {
+          this.sortArr.forEach((el) => {
+            if (el.color === x && !this.setColor.includes(el)) {
+              this.setColor.push(el);
+              this.createCard(this.setColor);
+            }
+          });
+        });
+      } else {
+        this.createCard(this.sortArr);
+      }
     }
     if (this.sortArr.length !== 0) {
-      if (this.getColor.length !== 0) {
+      if (this.getRam.length !== 0) {
+        this.getRam.forEach((x) => {
+          this.sortArr.forEach((el) => {
+            if (el.ram === x && !this.setRam.includes(el)) {
+              this.setRam.push(el);
+              this.createCard(this.setRam);
+            }
+          });
+        });
+      } else if (this.getColor.length !== 0) {
         this.getColor.forEach((x) => {
           this.sortArr.forEach((el) => {
             if (el.color === x && !this.setColor.includes(el)) {
@@ -172,6 +245,23 @@ class Filters extends Products {
       }
     } else {
       this.createCard(employee);
+    }
+  }
+
+  zeroSort(key: string, str: string): void {
+    console.log(key, str);
+    if (this.sortArr.length === 0) {
+      employee.forEach((el) => {
+        for (const k in el) {
+          if (k === 'ram' || k === 'color') {
+            if (el[k] === str) {
+              this.sortArr.push(el);
+              console.log(this.sortArr);
+              this.createCard(this.sortArr);
+            }
+          }
+        }
+      });
     }
   }
 }

@@ -11,6 +11,7 @@ class Search {
     search.appendChild(this.nameFilter.filterName());
     search.appendChild(this.nameFilter.filterBrand());
     this.nameFilter.filterColor();
+    this.nameFilter.filterRam();
 
     return search;
   }
