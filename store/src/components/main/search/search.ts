@@ -10,6 +10,8 @@ class Search {
     search.className = 'main__filter filter';
     search.appendChild(this.nameFilter.filterName());
     search.appendChild(this.nameFilter.filterBrand());
+    this.nameFilter.filterColor();
+
     return search;
   }
 }

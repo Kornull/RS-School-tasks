@@ -8,5 +8,13 @@
   &:hover{
     background:#fff;
   }
+  &__color {
+    width: 40px;
+    border:1px solid #fff ;
+    &:hover{
+      width: 50px;
+      box-shadow: 2px 2px  red;
+    }
+  }
 
 }

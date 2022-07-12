@@ -22,6 +22,9 @@
   &__btn > div {
     margin-right: 5px;
   }
+  &__btn--color{
+    display: flex;
+  }
 }
 
 #search {
