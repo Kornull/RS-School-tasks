@@ -8,4 +8,10 @@ export interface Laptop {
   image: string;
   year: string;
   description: object[];
+  ram: string;
 }
+
+export type Key<T, U> = {
+  key: T;
+  sort: U;
+};
