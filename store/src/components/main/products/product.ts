@@ -38,7 +38,6 @@ class Products {
   }
 
   createCard(data: Laptop[]): void {
-    // console.log('data', data);
     const fragnent: DocumentFragment = document.createDocumentFragment();
     data.forEach((_el: Laptop) => {
       const card = document.createElement('div');
