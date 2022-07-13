@@ -4,6 +4,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const keysTransformer = require('ts-transformer-keys/transformer').default;
 const path = require('path');
 
 
@@ -85,6 +86,13 @@ module.exports = {
         test: /\.(ts|tsx)$/i,
         loader: 'ts-loader',
         exclude: ['/node_modules'],
+        options: {
+          getCustomTransformers: program => ({
+              before: [
+                  keysTransformer(program)
+              ]
+          })
+        }
       },
       {
         test: /\.html$/i,

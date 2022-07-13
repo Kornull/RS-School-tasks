@@ -50,6 +50,7 @@
   "dependencies": {
     "focus-visible": "^5.2.0",
     "node-fetch": "^3.2.3",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "ts-transformer-keys": "^0.4.3"
   }
 }
