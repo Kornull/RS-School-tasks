@@ -5,26 +5,20 @@ import { keys } from 'ts-transformer-keys';
 
 class Filters extends Products {
   filter: HTMLDivElement;
-  brandArr: string[];
-  colorArr: string[];
-
   fragment: DocumentFragment;
-  sortArr: Laptop[];
-  getColor: string[];
   filterSearch: HTMLDivElement;
   filterBtn: HTMLDivElement;
   btnDescr: HTMLDivElement;
-  getBrand: string[];
-  getRam: string[];
-  setColor: Laptop[];
-  setRam: Laptop[];
-  memoryRam: string[];
 
+  brandArr: string[];
+  colorArr: string[];
+  memoryRam: string[];
   sortAll: string[];
-  copySortArr: Laptop[];
-  copySortLeng: Laptop[];
   keyname: string[];
   brandCount: string[];
+
+  sortArr: Laptop[];
+  copySortLeng: Laptop[];
   constructor() {
     super();
     this.filter = document.createElement('div');
@@ -33,15 +27,9 @@ class Filters extends Products {
     this.filterBtn = document.createElement('div');
     this.btnDescr = document.createElement('div');
     this.brandArr = [];
-    this.getBrand = [];
-    this.getRam = [];
     this.sortArr = [];
     this.colorArr = [];
-    this.getColor = [];
-    this.setColor = [];
-    this.setRam = [];
     this.memoryRam = [];
-    this.copySortArr = [];
 
     this.sortAll = [];
     this.copySortLeng = [];
@@ -60,21 +48,23 @@ class Filters extends Products {
     input.id = 'search';
     label.setAttribute('for', input.id);
     label.innerText = 'Brand';
-    // input.addEventListener('input', () => {
-    //   this.sortArr = [];
-    //   if (input.value.length === 0) {
-    //     this.createCard(employee);
-    //     this.sortArr = [];
-    //   } else {
-    //     employee.forEach((el) => {
-    //       if (el.brand.toLowerCase().includes(input.value.toLowerCase())) {
-    //         this.sortArr.push(el);
-    //         this.newSortColor.push(el.brand);
-    //         // this.newSortArr();
-    //       }
-    //     });
-    //   }
-    // });
+    input.addEventListener('input', () => {
+      this.sortArr = [];
+      if (input.value.length === 0) {
+        this.createCard(employee);
+        this.sortArr = [];
+        this.brandCount = [];
+      } else {
+        employee.forEach((el) => {
+          if (el.brand.toLowerCase().includes(input.value.toLowerCase())) {
+            if (!this.sortAll.includes(el.brand)) this.sortAll.push(el.brand);
+            this.sortAll = this.sortAll.filter((el) => el.toLowerCase().includes(input.value.toLowerCase()));
+            if (!this.brandCount.includes('brand')) this.brandCount.push('brand');
+          }
+        });
+        this.newSortArr();
+      }
+    });
 
     form.append(label);
     form.append(input);
@@ -105,13 +95,11 @@ class Filters extends Products {
           if (!this.brandCount.includes('brand')) this.brandCount.push('brand');
           this.sortAll.push(btn.id);
           this.keyname.push('brand');
-          console.log('key', this.keyname);
           this.newSortArr();
         } else {
           this.sortAll.splice(this.sortAll.indexOf(btn.id), 1);
           this.keyname.splice(this.keyname.indexOf('brand'), 1);
           if (!this.keyname.includes('brand')) this.brandCount.splice(this.brandCount.indexOf('brand'), 1);
-          console.log('else', this.sortAll);
           this.newSortArr();
         }
       });
@@ -143,13 +131,11 @@ class Filters extends Products {
           if (!this.brandCount.includes('color')) this.brandCount.push('color');
           this.keyname.push('color');
           this.sortAll.push(btn.id);
-          console.log('BCOUNT', this.brandCount);
           this.newSortArr();
         } else {
           this.sortAll.splice(this.sortAll.indexOf(btn.id), 1);
           this.keyname.splice(this.keyname.indexOf('color'), 1);
           if (!this.keyname.includes('color')) this.brandCount.splice(this.brandCount.indexOf('color'), 1);
-          console.log('else', this.sortAll);
           this.newSortArr();
         }
       });
@@ -181,13 +167,11 @@ class Filters extends Products {
           if (!this.brandCount.includes('ram')) this.brandCount.push('ram');
           this.keyname.push('ram');
           this.sortAll.push(btn.id);
-          console.log('BCOUNT', this.brandCount);
           this.newSortArr();
         } else {
           this.sortAll.splice(this.sortAll.indexOf(btn.id), 1);
           this.keyname.splice(this.keyname.indexOf('ram'), 1);
           if (!this.keyname.includes('ram')) this.brandCount.splice(this.brandCount.indexOf('ram'), 1);
-          console.log('ram', this.sortAll);
           this.newSortArr();
         }
       });
@@ -199,12 +183,10 @@ class Filters extends Products {
   }
 
   newSortArr(): void {
-    console.log(employee);
     this.sortArr = [];
     this.copySortLeng = [];
 
     const keysOfLaptop = keys<Laptop>();
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11');
 
     employee.forEach((lapEl) => {
       let count = 0;
@@ -213,18 +195,14 @@ class Filters extends Products {
           if (lapEl[key] === el1) {
             count++;
             if (count === this.brandCount.length) {
-              console.log(this.brandCount.length, 'this.brandCount.length');
               this.sortArr.push(lapEl);
             }
           }
         });
       });
     });
-    console.log('SORT', this.sortArr);
 
-    console.log('COPYSORT', this.sortArr);
-
-    this.copySortLeng = [];
+    // this.copySortLeng = [];
     this.sortArr.forEach((lapEl) => {
       let count = 0;
 
@@ -233,7 +211,6 @@ class Filters extends Products {
           if (lapEl[key] === el1) {
             count++;
             if (count === this.brandCount.length) {
-              console.log(this.brandCount.length, 'this.brandCount.length');
               this.copySortLeng.push(lapEl);
             }
           }
@@ -246,8 +223,6 @@ class Filters extends Products {
     } else {
       this.createCard(this.copySortLeng);
     }
-    console.log('SORT -2', this.sortArr);
-    console.log('COPYSORT-2', this.copySortLeng);
   }
 }
 export default Filters;
