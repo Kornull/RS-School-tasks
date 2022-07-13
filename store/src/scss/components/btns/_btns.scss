@@ -1,30 +1,34 @@
-.btn{
+.btn {
   display: block;
   border-radius: 15px;
   padding: 5px;
   margin: 0 5px 5px 0;
   background: rgba(0, 0, 0, 0);
   border: 1px solid red;
-  &:hover{
-    background:#fff;
+  &:hover {
+    background: #fff;
   }
   &__color {
     width: 40px;
-    border:1px solid #fff ;
-    &:hover{
+    border: 1px solid #fff;
+    &:hover {
       width: 50px;
-      box-shadow: 2px 2px  red;
+      box-shadow: 2px 2px red;
     }
   }
-  &__ram{
+  &__ram {
     width: 50px;
     height: 25px;
     background: #fff;
     text-align: center;
     padding: 2.5px;
-    &:hover{
+    &:hover {
       width: 45px;
     }
   }
-
+}
+.active {
+  -webkit-box-shadow: -1px 3px 4px 11px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: -1px 3px 4px 11px rgba(0, 0, 0, 0.64);
+  box-shadow: -1px 3px 4px 11px rgba(0, 0, 0, 0.64);
 }

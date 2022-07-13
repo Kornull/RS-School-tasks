@@ -19,6 +19,8 @@ class Filters extends Products {
 
   sortArr: Laptop[];
   copySortLeng: Laptop[];
+  availabilityCheck: number[];
+  copySortAll: string[];
   constructor() {
     super();
     this.filter = document.createElement('div');
@@ -32,9 +34,11 @@ class Filters extends Products {
     this.memoryRam = [];
 
     this.sortAll = [];
+    this.copySortAll = [];
     this.copySortLeng = [];
     this.keyname = [];
     this.brandCount = [];
+    this.availabilityCheck = [];
   }
 
   filterName(): HTMLDivElement {
@@ -51,18 +55,35 @@ class Filters extends Products {
     input.addEventListener('input', () => {
       this.sortArr = [];
       if (input.value.length === 0) {
-        this.createCard(employee);
+        this.sortAll = [];
+        this.sortAll = [...this.copySortAll];
         this.sortArr = [];
-        this.brandCount = [];
+        this.keyname.splice(this.keyname.indexOf('brand'), 1);
+
+        this.brandCount.splice(this.brandCount.indexOf('brand'), 1);
+        this.newSortArr();
       } else {
+        this.availabilityCheck = [];
         employee.forEach((el) => {
+          let count = 0;
           if (el.brand.toLowerCase().includes(input.value.toLowerCase())) {
+            count++;
+            this.keyname.splice(this.keyname.indexOf('brand'), 1);
+            this.keyname.push('brand');
             if (!this.sortAll.includes(el.brand)) this.sortAll.push(el.brand);
-            this.sortAll = this.sortAll.filter((el) => el.toLowerCase().includes(input.value.toLowerCase()));
+            this.sortAll = this.sortAll.filter((e) => e.toLowerCase().includes(input.value.toLowerCase()));
             if (!this.brandCount.includes('brand')) this.brandCount.push('brand');
+            this.availabilityCheck.push(count);
+          } else {
+            this.availabilityCheck.push(count);
           }
         });
-        this.newSortArr();
+        this.sortAll = this.sortAll.concat(this.copySortAll);
+        if (!this.availabilityCheck.includes(1)) {
+          this.emptyArr();
+        } else {
+          this.newSortArr();
+        }
       }
     });
 
@@ -91,6 +112,8 @@ class Filters extends Products {
       btn.innerText = el;
       btn.id = el;
       btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+
         if (!this.sortAll.includes(btn.id)) {
           if (!this.brandCount.includes('brand')) this.brandCount.push('brand');
           this.sortAll.push(btn.id);
@@ -127,13 +150,18 @@ class Filters extends Products {
       btn.id = el;
       btn.style.backgroundColor = el;
       btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
         if (!this.sortAll.includes(btn.id)) {
-          if (!this.brandCount.includes('color')) this.brandCount.push('color');
+          if (!this.brandCount.includes('color')) {
+            this.brandCount.push('color');
+            this.copySortAll.push(btn.id);
+          }
           this.keyname.push('color');
           this.sortAll.push(btn.id);
           this.newSortArr();
         } else {
           this.sortAll.splice(this.sortAll.indexOf(btn.id), 1);
+          this.copySortAll.splice(this.sortAll.indexOf(btn.id), 1);
           this.keyname.splice(this.keyname.indexOf('color'), 1);
           if (!this.keyname.includes('color')) this.brandCount.splice(this.brandCount.indexOf('color'), 1);
           this.newSortArr();
@@ -163,14 +191,20 @@ class Filters extends Products {
       btn.innerText = el;
       btn.id = el;
       btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+
         if (!this.sortAll.includes(btn.id)) {
-          if (!this.brandCount.includes('ram')) this.brandCount.push('ram');
+          if (!this.brandCount.includes('ram')) {
+            this.brandCount.push('ram');
+            this.copySortAll.push(btn.id);
+          }
           this.keyname.push('ram');
           this.sortAll.push(btn.id);
           this.newSortArr();
         } else {
           this.sortAll.splice(this.sortAll.indexOf(btn.id), 1);
           this.keyname.splice(this.keyname.indexOf('ram'), 1);
+          this.copySortAll.splice(this.sortAll.indexOf(btn.id), 1);
           if (!this.keyname.includes('ram')) this.brandCount.splice(this.brandCount.indexOf('ram'), 1);
           this.newSortArr();
         }
@@ -185,7 +219,6 @@ class Filters extends Products {
   newSortArr(): void {
     this.sortArr = [];
     this.copySortLeng = [];
-
     const keysOfLaptop = keys<Laptop>();
 
     employee.forEach((lapEl) => {
@@ -223,6 +256,10 @@ class Filters extends Products {
     } else {
       this.createCard(this.copySortLeng);
     }
+  }
+
+  emptyArr() {
+    this.createCard([]);
   }
 }
 export default Filters;
