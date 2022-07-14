@@ -1,7 +1,7 @@
 .filter {
   display: flex;
   justify-content: space-between;
-  &__name {
+  &__input {
     width: 40%;
     height: 33.333%;
     background: #d8b4b4;
@@ -9,9 +9,10 @@
   }
   &__brand {
     width: 100%;
-    max-width: 60%;
   }
   &__btn {
+    width: 60%;
+    height: 150px;
     display: flex;
     flex-wrap: wrap;
     margin-left: 10px;
@@ -22,9 +23,12 @@
   &__btn > div {
     margin-right: 5px;
   }
+  &__btn--brand,
   &__btn--color,
   &__btn--ram {
     display: flex;
+    align-items: center;
+    height: 45px;
     & > div {
       margin-right: 15px;
     }
