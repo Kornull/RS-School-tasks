@@ -15,3 +15,21 @@ export type Key<T, U> = {
   key: T;
   sort: U;
 };
+
+export type ConstructorDiv = {
+  filter: HTMLDivElement;
+  fragment: DocumentFragment;
+  filterSearch: HTMLDivElement;
+  filterBtn: HTMLDivElement;
+  btnDescr: HTMLDivElement;
+  brandArr: string[];
+  colorArr: string[];
+  memoryRam: string[];
+  sortAll: string[];
+  keyname: string[];
+  brandCount: string[];
+  sortArr: Laptop[];
+  copySortLeng: Laptop[];
+  availabilityCheck: number[];
+  copySortAll: string[];
+};

@@ -1,3 +1,6 @@
 import './global.scss';
 import './index.html';
-import './components/main';
+import Main from './components/app/main';
+
+const main = new Main();
+main.createHtml();
