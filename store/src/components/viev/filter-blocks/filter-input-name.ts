@@ -62,12 +62,14 @@ class InputName extends FilterBlocksDiv {
     });
     if (this.local !== undefined) {
       input.value = this.local.get('ValueInput')[0];
+      if (this.local.get('ValueInput').length === 0) {
+        input.value = '';
+      }
     }
     form.append(label);
     form.append(input);
     this.filterSearch.appendChild(form);
     this.filter.appendChild(this.filterSearch);
-
     return this.filter;
   }
 }

@@ -42,7 +42,7 @@ class Main {
       this.local.set('CountSortedGet', ['1']);
       setTimeout(() => {
         this.local.set('CountSortedGet', []);
-      }, 500);
+      }, 1500);
     }
     this.body.appendChild(this.header.create());
     this.body.append(this.create());
