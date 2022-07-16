@@ -33,23 +33,23 @@ class Main {
     containerElements.className = 'main__container container';
     containerElements.appendChild(this.search.create());
     containerElements.appendChild(this.product.create());
-    this.search.runSearch();
+    // this.search.runSearch();
     main.appendChild(containerElements);
     return main;
   }
   createHtml() {
+    if (this.local.get('CountSortedGet').length === 0) {
+      this.local.set('CountSortedGet', ['1']);
+      setTimeout(() => {
+        this.local.set('CountSortedGet', []);
+      }, 500);
+    }
     this.body.appendChild(this.header.create());
     this.body.append(this.create());
     this.body.appendChild(this.footer.create());
   }
   localStore() {
-    if (this.local.get('SortAll').length !== 0) {
-      const arrStor: string[] = this.local.get('SortAll');
-      const countStor = this.local.get('BrandCount')[0];
-      this.sort.newSortArr(arrStor, Number(countStor));
-    } else {
-      this.sort.newSortArr(['Lenovo', 'Asus', 'Acer', 'HP', 'Honor', 'Apple'], 1);
-    }
+    this.sort.newSortArr();
   }
 }
 
