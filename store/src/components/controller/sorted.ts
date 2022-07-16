@@ -2,16 +2,23 @@ import { keys } from 'ts-transformer-keys';
 import employee from '../../laptop.json';
 import { Laptop } from '../types';
 import Products from './products/product';
+import { LocalStor } from './storage/storage';
+
 class SortedCard {
   product: Products;
   sortArr: Laptop[];
   copySortLeng: Laptop[];
+  storage: LocalStor;
   constructor() {
+    this.storage = new LocalStor();
+
     this.product = new Products();
     this.sortArr = [];
     this.copySortLeng = [];
   }
   newSortArr(data: string[], count: number): void {
+    this.storage.set('SortAll', data);
+    this.storage.set('BrandCount', [count]);
     this.sortArr = [];
     const keysOfLaptop = keys<Laptop>();
     employee.forEach((lapEl) => {
