@@ -51,6 +51,7 @@
     "focus-visible": "^5.2.0",
     "node-fetch": "^3.2.3",
     "normalize.css": "^8.0.1",
+    "nouislider": "^15.6.0",
     "ts-transformer-keys": "^0.4.3"
   }
 }
