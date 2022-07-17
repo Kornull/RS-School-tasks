@@ -90,7 +90,6 @@ class SortedCard {
     } else {
       this.product.createCard(this.copySortLeng);
     }
-    setTimeout(() => this.newSortArr(), 200);
   }
   emptyArr() {
     this.product.createCard([]);

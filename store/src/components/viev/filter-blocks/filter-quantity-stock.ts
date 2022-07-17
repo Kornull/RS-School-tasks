@@ -73,6 +73,7 @@ class FilterStock extends FilterBlocksDiv {
         console.log(countSort);
         this.local?.set('CountSortedGet', countSort);
       }
+      setTimeout(() => this.sortedCards.newSortArr(), 200);
     });
 
     this.filter.appendChild(this.value1);
