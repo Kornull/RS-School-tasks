@@ -37,7 +37,7 @@ class FilterYear extends FilterBlocksDiv {
       },
     });
     let yearsArr: string[] = [];
-    const skipValues: HTMLElement[] = [this.value2, this.value1];
+    const skipValues: HTMLElement[] = [this.value1, this.value2];
     this.filterYear.noUiSlider?.on('update', (values, handle: number, callback) => {
       yearsArr = [];
       skipValues[handle].innerHTML = Math.floor(+values[handle]).toString();
