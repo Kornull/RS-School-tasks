@@ -2,7 +2,7 @@
   {
     "brand": "Lenovo",
     "model": "Lenovo IdeaPad 3 15ITL05 (81X8007GRE)",
-    "number": 12,
+    "number": 16,
     "ram": "8",
     "color": "silver",
     "image": "lenovo_ideapad_3_15itl05.jpg",
@@ -371,7 +371,7 @@
   {
     "brand": "Lenovo",
     "model": "Lenovo IdeaPad Gaming 3 (82K200J2RE)",
-    "number": 12,
+    "number": 2,
     "year": "2021",
     "ram": "16",
     "color": "black",
@@ -456,7 +456,7 @@
   {
     "brand": "Acer",
     "model": "Acer Aspire 3 A315-34-P0X8 (NX.HE3EU.05A)",
-    "number": 3,
+    "number": 7,
     "ram": "8",
     "color": "black",
     "image": "acer_aspire_3_a315-34-p0x8.jpg",
@@ -497,7 +497,7 @@
   {
     "brand": "Asus",
     "model": "Asus VivoBook X543MA-DM1370",
-    "number": 3,
+    "number": 9,
     "ram": "4",
     "color": "gray",
     "image": "asus_vivobook_x543ma-dm1370.jpg",
@@ -822,7 +822,7 @@
   {
     "brand": "HP",
     "model": "HP 15s-eq1328ur (3C8N9EA)",
-    "number": 5,
+    "number": 11,
     "ram": "8",
     "color": "gray",
     "image": "hp_15s-eq1328ur.jpg",

@@ -5,6 +5,7 @@ import BtnsRam from './filter-ram';
 import FilterYear from './filter-year';
 import FilterStock from './filter-quantity-stock';
 import SortList from './list-sorted';
+import CheckboxSort from './filter-checkbox';
 
 class Filters {
   btnB: BtnsBrand;
@@ -14,6 +15,7 @@ class Filters {
   filterYears: FilterYear;
   filterStock: FilterStock;
   sortList: SortList;
+  sortCheckbox: CheckboxSort;
 
   constructor() {
     this.btnB = new BtnsBrand();
@@ -23,6 +25,7 @@ class Filters {
     this.filterYears = new FilterYear();
     this.filterStock = new FilterStock();
     this.sortList = new SortList();
+    this.sortCheckbox = new CheckboxSort();
   }
   runSearch() {
     const search: HTMLDivElement = document.createElement('div');
@@ -32,6 +35,7 @@ class Filters {
     search.append(this.filterYears.filterName());
     search.append(this.filterStock.filterName());
     search.append(this.sortList.filterName());
+    search.append(this.sortCheckbox.filterName());
     return search;
   }
   runBtn() {

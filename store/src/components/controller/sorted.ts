@@ -116,6 +116,9 @@ class SortedCard {
         });
         break;
     }
+    if (this.storage.get('PopularCheckBox').length === 1) {
+      this.copySortLeng = this.copySortLeng.filter((el) => el.number <= 5);
+    }
     if (data.length === 0) {
       this.product.createCard(employee);
     } else {
