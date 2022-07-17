@@ -38,6 +38,10 @@ class Main {
     return main;
   }
   createHtml() {
+    if (this.local.get('UiSliderCallback').length === 0) {
+      this.local.set('UiSliderCallback', [2019, 2022.5]);
+      this.local.set('CountSortedGet', ['5']);
+    }
     if (this.local.get('CountSortedGet').length === 0) {
       this.local.set('CountSortedGet', ['1']);
       setTimeout(() => {
