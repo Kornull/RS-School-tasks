@@ -42,7 +42,6 @@ class SortedCard {
     }
     this.storage.get('BtnInputId').forEach((el) => {
       if (this.storage.get('BtnBrandId').includes(el)) {
-        console.log(el);
         data = [
           ...this.storage.get('BtnBrandId'),
           ...this.storage.get('BtnBrandColor'),
@@ -54,8 +53,6 @@ class SortedCard {
       }
     });
     data = Array.from(new Set(data));
-    console.log('data', data);
-    console.log('data', count);
     this.sortArr = [];
     const keysOfLaptop = keys<Laptop>();
     employee.forEach((lapEl) => {

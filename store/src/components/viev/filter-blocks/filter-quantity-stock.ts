@@ -53,9 +53,7 @@ class FilterStock extends FilterBlocksDiv {
     this.filterStock.noUiSlider?.on('update', (values, handle: number, callback) => {
       stockArr = [];
       skipValues[handle].innerHTML = Math.floor(+values[handle]).toString();
-      console.log(noUiSlider.default);
       this.local?.set('UiSliderCallbackStock', callback);
-      console.log(values[0]);
       for (let i = Math.floor(+values[0]); i <= Math.floor(+values[1]); i++) {
         stockArr.push(i);
       }
@@ -70,7 +68,6 @@ class FilterStock extends FilterBlocksDiv {
           countSort.push('6');
         }
         countSort = Array.from(new Set(countSort));
-        console.log(countSort);
         this.local?.set('CountSortedGet', countSort);
       }
       setTimeout(() => this.sortedCards.newSortArr(), 200);

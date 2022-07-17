@@ -41,9 +41,7 @@ class FilterYear extends FilterBlocksDiv {
     this.filterYear.noUiSlider?.on('update', (values, handle: number, callback) => {
       yearsArr = [];
       skipValues[handle].innerHTML = Math.floor(+values[handle]).toString();
-      console.log(noUiSlider.default);
       this.local?.set('UiSliderCallback', callback);
-      console.log(values[0]);
       for (let i = Math.floor(+values[0]); i <= Math.floor(+values[1]); i++) {
         yearsArr.push(i.toString());
       }
@@ -58,7 +56,6 @@ class FilterYear extends FilterBlocksDiv {
           countSort.push('5');
         }
         countSort = Array.from(new Set(countSort));
-        console.log(countSort);
         this.local?.set('CountSortedGet', countSort);
       }
       setTimeout(() => this.sortedCards.newSortArr(), 200);

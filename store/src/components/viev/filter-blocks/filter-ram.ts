@@ -37,11 +37,9 @@ class BtnsRam extends FilterBlocksDiv {
         btn.classList.toggle('active');
         for (const i of btns) {
           if (i.classList.contains('active')) {
-            console.log(i.id);
             btnRam.push(i.id);
           }
         }
-        console.log(btnRam);
         if (this.local !== undefined) {
           this.local.set('BtnBrandRam', btnRam);
           let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
@@ -51,7 +49,6 @@ class BtnsRam extends FilterBlocksDiv {
             countSort.push('3');
           }
           countSort = Array.from(new Set(countSort));
-          console.log(countSort);
           this.local?.set('CountSortedGet', countSort);
         }
         if (this.sortedCards !== undefined) {

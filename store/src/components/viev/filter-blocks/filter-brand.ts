@@ -35,11 +35,9 @@ export default class BtnsBrand extends FilterBlocksDiv {
         btn.classList.toggle('active');
         for (const i of btns) {
           if (i.classList.contains('active')) {
-            console.log(i.id);
             btnId.push(i.id);
           }
         }
-        console.log(btnId);
         if (this.local !== undefined) {
           this.local.set('BtnBrandId', btnId);
           let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
@@ -49,7 +47,6 @@ export default class BtnsBrand extends FilterBlocksDiv {
             countSort.push('1');
           }
           countSort = Array.from(new Set(countSort));
-          console.log(countSort);
           this.local?.set('CountSortedGet', countSort);
         }
         if (this.sortedCards !== undefined) {
