@@ -82,6 +82,47 @@
     ]
   },
   {
+    "brand": "Dell",
+    "model": "Dell Vostro 15 3515-284698",
+    "number": 4,
+    "ram": "16",
+    "year": "2021",
+    "color": "black",
+    "image": "dell_vostro_15_3515-284698_42.jpg",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 7 3700U"
+      },
+      {
+        "RAM": "16 GB (1x16 GB)"
+      },
+      {
+        "SSD": "512 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 10"
+      },
+      {
+        "Operating system": "Ubuntu"
+      },
+      {
+        "Cost": "$1135.0"
+      }
+    ]
+  },
+  {
     "brand": "Lenovo",
     "model": "Lenovo IdeaPad 5 15ITL05 (82FG00VFRE)",
     "number": 8,
@@ -119,6 +160,47 @@
       },
       {
         "Cost": "$915.0"
+      }
+    ]
+  },
+  {
+    "brand": "Honor",
+    "model": "Honor MagicBook 16 (HYM-W56)",
+    "image": "honor_magicbook_16_17.jpg",
+    "number": 4,
+    "ram": "16",
+    "color": "silver",
+    "year": "2021",
+    "description": [
+      {
+        "Screen diagonal": "16.1"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 5 5600H"
+      },
+      {
+        "RAM": "16 GB"
+      },
+      {
+        "SSD": "512 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 7"
+      },
+      {
+        "Operating system": "Windows 11 Home"
+      },
+      {
+        "Cost": "$1208.0"
       }
     ]
   },
@@ -205,6 +287,47 @@
     ]
   },
   {
+    "brand": "Honor",
+    "model": "Honor MagicBook 15 2021 (BMH-WDQ9HN)",
+    "image": "honor_magicbook_15_2021_22.jpg",
+    "number": 6,
+    "year": "2021",
+    "color": "gray",
+    "ram": "8",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 5 5500U"
+      },
+      {
+        "RAM": "8 GB"
+      },
+      {
+        "SSD": "512 GB"
+      },
+      {
+        "Type of video card": "built -in"
+      },
+      {
+        "Video card model": "AMD Radeon Vega 7"
+      },
+      {
+        "Operating system": "Windows 10"
+      },
+      {
+        "Cost": "$952.0"
+      }
+    ]
+  },
+  {
     "brand": "HP",
     "model": "HP 250 G8 (45R37ES)",
     "number": 4,
@@ -245,6 +368,91 @@
       }
     ]
   },
+  {
+    "brand": "Lenovo",
+    "model": "Lenovo IdeaPad Gaming 3 (82K200J2RE)",
+    "number": 12,
+    "year": "2021",
+    "ram": "16",
+    "color": "black",
+    "image": "lenovo_ideapad_gaming_3_57.jpg",
+    "description": [
+      {
+        "Screen diagonal": "15.6"
+      },
+      {
+        "Screen resolution": "1920x1080 (FullHD)"
+      },
+      {
+        "Screen update": "60 Hz"
+      },
+      {
+        "Processor model": "AMD Ryzen 5 5600H"
+      },
+      {
+        "RAM": "16 GB (1x 16 GB)"
+      },
+      {
+        "SSD": "256 GB"
+      },
+      {
+        "HDD": "1000 GB"
+      },
+      {
+        "Type of video card": "Discrete"
+      },
+      {
+        "Video card model": "NVIDIA GeForce RTX 3050"
+      },
+      {
+        "Operating system": "DOS"
+      },
+      {
+        "Cost": "$1354.0"
+      }
+    ]
+  },
+  {
+    "brand": "Asus",
+    "model": "Asus ROG Strix G15 G513IH-HN014",
+    "image": "asus_rog_strix_g15_g513ih-hn014_16.jpg",
+    "number":5,
+    "year":"2021",
+    "ram":"16",
+    "color":"black",
+    "description": [
+        {
+            "Screen diagonal": "15.6"
+        },
+        {
+            "Screen resolution": "1920x1080 (FullHD)"
+        },
+        {
+            "Screen update": "144 Hz"
+        },
+        {
+            "Processor model": "AMD Ryzen 7 4800H"
+        },
+        {
+            "RAM": "16 GB"
+        },
+        {
+            "SSD": "512 GB"
+        },
+        {
+            "Type of video card": "Discrete"
+        },
+        {
+            "Video card model": "NVIDIA GeForce GTX 1650"
+        },
+        {
+            "Operating system": "DOS"
+        },
+        {
+            "Cost": "$1538.0"
+        }
+    ]
+},
   {
     "brand": "Acer",
     "model": "Acer Aspire 3 A315-34-P0X8 (NX.HE3EU.05A)",
