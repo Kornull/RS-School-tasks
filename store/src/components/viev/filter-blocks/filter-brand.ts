@@ -12,7 +12,6 @@ export default class BtnsBrand extends FilterBlocksDiv {
     this.sortedCards = new SortedCard();
   }
   filterBrand() {
-    this.filter = document.createElement('div');
     this.filter.className = 'filter__brand';
     this.filterBtn.className = 'filter__btn--brand';
     this.btnDescr.innerText = "Brand's";

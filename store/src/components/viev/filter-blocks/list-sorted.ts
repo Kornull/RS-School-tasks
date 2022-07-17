@@ -16,7 +16,6 @@ export default class SortList extends FilterBlocksDiv {
   }
   filterName() {
     let count = 0;
-    this.filter = document.createElement('div');
     this.filter.className = 'filter__list list';
     const listSort = document.createElement('select');
     listSort.name = 'user_brand';

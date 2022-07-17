@@ -14,9 +14,9 @@ class InputName extends FilterBlocksDiv {
   filterName(): HTMLDivElement {
     this.filter.className = 'filter__name';
     this.filterSearch.className = 'filter__search';
-    const form = document.createElement('form');
-    const label = document.createElement('label');
-    const input = document.createElement('input');
+    const form: HTMLFormElement = document.createElement('form');
+    const label: HTMLLabelElement = document.createElement('label');
+    const input: HTMLInputElement = document.createElement('input');
 
     input.type = 'text';
     input.id = 'search';

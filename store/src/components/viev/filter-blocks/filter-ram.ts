@@ -13,9 +13,7 @@ class BtnsRam extends FilterBlocksDiv {
   }
 
   filterRam() {
-    this.filter = document.createElement('div');
     this.filter.className = 'filter__ram';
-    this.filterBtn = document.createElement('div');
     this.filterBtn.className = 'filter__btn--ram';
     this.btnDescr.innerText = 'RAM: ';
     this.fragment.append(this.btnDescr);

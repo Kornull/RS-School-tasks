@@ -12,9 +12,7 @@ export default class BtnsColor extends FilterBlocksDiv {
     this.sortedCards = new SortedCard();
   }
   filterColor() {
-    this.filter = document.createElement('div');
     this.filter.className = 'filter__color';
-    this.filterBtn = document.createElement('div');
     this.filterBtn.className = 'filter__btn--color';
     this.btnDescr.innerText = 'Search for color: ';
     this.fragment.append(this.btnDescr);

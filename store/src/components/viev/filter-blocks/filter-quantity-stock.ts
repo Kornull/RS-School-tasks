@@ -18,9 +18,7 @@ class FilterStock extends FilterBlocksDiv {
     this.sortedCards = new SortedCard();
   }
   filterName() {
-    this.filter = document.createElement('div');
     this.filter.className = 'slider__stock slider';
-    this.filterBtn = document.createElement('div');
     this.filterStock.className = 'slider-stock';
     this.filterStock.id = 'slider-round';
     this.value1.className = 'slider__stock--value1';

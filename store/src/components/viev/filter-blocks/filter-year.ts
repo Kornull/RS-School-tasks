@@ -18,9 +18,7 @@ class FilterYear extends FilterBlocksDiv {
     this.sortedCards = new SortedCard();
   }
   filterName() {
-    this.filter = document.createElement('div');
     this.filter.className = 'slider__year slider';
-    this.filterBtn = document.createElement('div');
     this.filterYear.className = 'slider-year';
     this.filterYear.id = 'slider-round';
     this.value1.className = 'slider__year--value1';
