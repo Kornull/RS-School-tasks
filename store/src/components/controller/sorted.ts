@@ -16,9 +16,37 @@ class SortedCard {
     this.sortArr = [];
     this.copySortLeng = [];
   }
-  newSortArr(data: string[], count: number): void {
-    this.storage.set('SortAll', data);
-    this.storage.set('BrandCount', [count]);
+  newSortArr(): void {
+    let count = this.storage.get('CountSortedGet');
+    const arrSearch: string[] = ['BtnBrandId', 'BtnBrandColor', 'BtnBrandRam', 'BtnInputId', 'YearsBrand'];
+    let data: string[] = [];
+
+    for (const i of arrSearch) {
+      if (this.storage.get(i)) {
+        data = [...data, ...this.storage.get(i)];
+      }
+    }
+    if (data.length === 0) {
+      data = [...['Lenovo', 'Asus', 'Acer', 'HP', 'Honor', 'Apple']];
+    }
+    if (count.length === 0) {
+      count.length = 1;
+    }
+    this.storage.get('BtnInputId').forEach((el) => {
+      if (this.storage.get('BtnBrandId').includes(el)) {
+        console.log(el);
+        data = [
+          ...this.storage.get('BtnBrandId'),
+          ...this.storage.get('BtnBrandColor'),
+          ...this.storage.get('BtnBrandRam'),
+          ...this.storage.get('YearsBrand'),
+        ];
+        count = count.filter((e) => e !== '4');
+      }
+    });
+    data = Array.from(new Set(data));
+    console.log('data', data);
+    console.log('data', count);
     this.sortArr = [];
     const keysOfLaptop = keys<Laptop>();
     employee.forEach((lapEl) => {
@@ -27,7 +55,7 @@ class SortedCard {
         keysOfLaptop.forEach((key: keyof Laptop) => {
           if (lapEl[key] === el1) {
             counts++;
-            if (counts === count) {
+            if (counts === count.length) {
               this.sortArr.push(lapEl);
             }
           }
@@ -41,7 +69,7 @@ class SortedCard {
         keysOfLaptop.forEach((key: keyof Laptop) => {
           if (lapEl[key] === el1) {
             counts++;
-            if (counts === count) {
+            if (counts === count.length) {
               this.copySortLeng.push(lapEl);
             }
           }
@@ -53,6 +81,7 @@ class SortedCard {
     } else {
       this.product.createCard(this.copySortLeng);
     }
+    setTimeout(() => this.newSortArr(), 200);
   }
   emptyArr() {
     this.product.createCard([]);
