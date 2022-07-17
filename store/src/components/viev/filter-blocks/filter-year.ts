@@ -27,7 +27,7 @@ class FilterYear extends FilterBlocksDiv {
     this.value2.className = 'slider__year--value2';
 
     noUiSlider.create(this.filterYear, {
-      start: this.local.get('UiSliderCallback'),
+      start: this.local.get('UiSliderCallbackYears'),
       connect: true,
       range: {
         min: 2019,
@@ -41,7 +41,7 @@ class FilterYear extends FilterBlocksDiv {
     this.filterYear.noUiSlider?.on('update', (values, handle: number, callback) => {
       yearsArr = [];
       skipValues[handle].innerHTML = Math.floor(+values[handle]).toString();
-      this.local?.set('UiSliderCallback', callback);
+      this.local?.set('UiSliderCallbackYears', callback);
       for (let i = Math.floor(+values[0]); i <= Math.floor(+values[1]); i++) {
         yearsArr.push(i.toString());
       }

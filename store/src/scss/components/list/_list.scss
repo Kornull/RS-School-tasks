@@ -1,0 +1,18 @@
+.list {
+  width: 90%;
+  margin: 0 auto;
+  &__sort {
+    display: block;
+    width: 80%;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px;
+    border: 1px solid rgb(255, 35, 35);
+    height: 34px;
+    margin: 0 auto;
+  }
+  &__sort > option {
+    border-radius: 5%;
+  }
+}

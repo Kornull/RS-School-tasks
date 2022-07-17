@@ -1,8 +1,8 @@
-import Filters from '../../viev/filter-blocks/filter';
-import FilterBlocksDiv from '../../viev/filter-blocks/filters-blocks';
-import SortedCard from '../sorted';
-import FilterYear from '../../viev/filter-blocks/filter-year';
-import { LocalStor } from '../storage/storage';
+import Filters from '../filter-blocks/filter';
+import FilterBlocksDiv from '../filter-blocks/filters-blocks';
+import SortedCard from '../../controller/sorted';
+import FilterYear from '../filter-blocks/filter-year';
+import { LocalStor } from '../../controller/storage/storage';
 
 class Search extends FilterBlocksDiv {
   local: LocalStor;

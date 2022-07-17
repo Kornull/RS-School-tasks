@@ -1,6 +1,6 @@
 import Container from '../viev/container/container';
 import Products from '../controller/products/product';
-import Search from '../controller/search/search';
+import Search from '../viev/search/search';
 import Header from '../viev/header/header';
 import Footer from '../viev/footer/footer';
 import { LocalStor } from '../controller/storage/storage';
@@ -38,8 +38,8 @@ class Main {
     return main;
   }
   createHtml() {
-    if (this.local.get('UiSliderCallback').length === 0) {
-      this.local.set('UiSliderCallback', [2019, 2022.5]);
+    if (this.local.get('UiSliderCallbackYears').length === 0) {
+      this.local.set('UiSliderCallbackYears', [2019, 2022.5]);
       this.local.set('CountSortedGet', ['5']);
     }
     if (this.local.get('UiSliderCallbackStock').length === 0) {
