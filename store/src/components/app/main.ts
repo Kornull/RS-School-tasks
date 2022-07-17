@@ -46,6 +46,9 @@ class Main {
       this.local.set('UiSliderCallbackStock', [1, 16.5]);
       this.local.set('CountSortedGet', ['6']);
     }
+    if (this.local.get('ListValue').length === 0) {
+      this.local.set('ListValue', [1]);
+    }
     if (this.local.get('CountSortedGet').length === 0) {
       this.local.set('CountSortedGet', ['1']);
       setTimeout(() => {

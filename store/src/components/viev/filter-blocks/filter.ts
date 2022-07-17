@@ -4,6 +4,7 @@ import InputName from './filter-input-name';
 import BtnsRam from './filter-ram';
 import FilterYear from './filter-year';
 import FilterStock from './filter-quantity-stock';
+import SortList from './list-sorted';
 
 class Filters {
   btnB: BtnsBrand;
@@ -12,6 +13,7 @@ class Filters {
   input: InputName;
   filterYears: FilterYear;
   filterStock: FilterStock;
+  sortList: SortList;
 
   constructor() {
     this.btnB = new BtnsBrand();
@@ -20,6 +22,7 @@ class Filters {
     this.input = new InputName();
     this.filterYears = new FilterYear();
     this.filterStock = new FilterStock();
+    this.sortList = new SortList();
   }
   runSearch() {
     const search: HTMLDivElement = document.createElement('div');
@@ -28,6 +31,7 @@ class Filters {
     search.append(this.input.filterName());
     search.append(this.filterYears.filterName());
     search.append(this.filterStock.filterName());
+    search.append(this.sortList.filterName());
     return search;
   }
   runBtn() {

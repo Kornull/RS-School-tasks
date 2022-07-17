@@ -5,10 +5,10 @@ import Products from './products/product';
 import { LocalStor } from './storage/storage';
 
 class SortedCard {
-  product: Products;
-  sortArr: Laptop[];
-  copySortLeng: Laptop[];
-  storage: LocalStor;
+  public product: Products;
+  private sortArr: Laptop[];
+  private copySortLeng: Laptop[];
+  private storage: LocalStor;
   constructor() {
     this.storage = new LocalStor();
 
@@ -16,8 +16,10 @@ class SortedCard {
     this.sortArr = [];
     this.copySortLeng = [];
   }
-  newSortArr(): void {
-    let count = this.storage.get('CountSortedGet');
+  public newSortArr(): void {
+    let counts = 0;
+
+    let count: string[] = this.storage.get('CountSortedGet');
     const arrSearch: string[] = [
       'BtnBrandId',
       'BtnBrandColor',
@@ -56,7 +58,7 @@ class SortedCard {
     this.sortArr = [];
     const keysOfLaptop = keys<Laptop>();
     employee.forEach((lapEl) => {
-      let counts = 0;
+      counts = 0;
       data.forEach((el1) => {
         keysOfLaptop.forEach((key: keyof Laptop) => {
           if (lapEl[key] === el1) {
@@ -70,7 +72,7 @@ class SortedCard {
     });
     this.copySortLeng = [];
     this.sortArr.forEach((lapEl) => {
-      let counts = 0;
+      counts = 0;
       data.forEach((el1) => {
         keysOfLaptop.forEach((key: keyof Laptop) => {
           if (lapEl[key] === el1) {
@@ -82,14 +84,43 @@ class SortedCard {
         });
       });
     });
+
+    const listNumValue: string = this.storage.get('ListValue')[0];
+    switch (Number(listNumValue)) {
+      case 1:
+        this.copySortLeng.sort(function (a, b) {
+          const x = a.brand.toLowerCase();
+          const y = b.brand.toLowerCase();
+          return x < y ? -1 : x > y ? 1 : 0;
+        });
+        break;
+      case 2:
+        this.copySortLeng.sort(function (a, b) {
+          const x = a.brand.toLowerCase();
+          const y = b.brand.toLowerCase();
+          return x > y ? -1 : x < y ? 1 : 0;
+        });
+        break;
+      case 3:
+        this.copySortLeng.sort(function (a, b) {
+          const x = a.year.toLowerCase();
+          const y = b.year.toLowerCase();
+          return x < y ? -1 : x > y ? 1 : 0;
+        });
+        break;
+      case 4:
+        this.copySortLeng.sort(function (a, b) {
+          const x = a.year.toLowerCase();
+          const y = b.year.toLowerCase();
+          return x > y ? -1 : x < y ? 1 : 0;
+        });
+        break;
+    }
     if (data.length === 0) {
       this.product.createCard(employee);
     } else {
       this.product.createCard(this.copySortLeng);
     }
-  }
-  emptyArr() {
-    this.product.createCard([]);
   }
 }
 
