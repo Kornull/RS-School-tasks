@@ -42,6 +42,10 @@ class Main {
       this.local.set('UiSliderCallback', [2019, 2022.5]);
       this.local.set('CountSortedGet', ['5']);
     }
+    if (this.local.get('UiSliderCallbackStock').length === 0) {
+      this.local.set('UiSliderCallbackStock', [1, 16.5]);
+      this.local.set('CountSortedGet', ['6']);
+    }
     if (this.local.get('CountSortedGet').length === 0) {
       this.local.set('CountSortedGet', ['1']);
       setTimeout(() => {

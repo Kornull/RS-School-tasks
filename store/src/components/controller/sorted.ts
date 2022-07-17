@@ -18,7 +18,15 @@ class SortedCard {
   }
   newSortArr(): void {
     let count = this.storage.get('CountSortedGet');
-    const arrSearch: string[] = ['BtnBrandId', 'BtnBrandColor', 'BtnBrandRam', 'BtnInputId', 'YearsBrand'];
+    const arrSearch: string[] = [
+      'BtnBrandId',
+      'BtnBrandColor',
+      'BtnBrandRam',
+      'BtnInputId',
+      'YearsBrand',
+      'StockBrands',
+    ];
+    this.storage.get('StockBrands').filter((e) => Number(e));
     let data: string[] = [];
 
     for (const i of arrSearch) {
@@ -40,6 +48,7 @@ class SortedCard {
           ...this.storage.get('BtnBrandColor'),
           ...this.storage.get('BtnBrandRam'),
           ...this.storage.get('YearsBrand'),
+          ...this.storage.get('StockBrands'),
         ];
         count = count.filter((e) => e !== '4');
       }

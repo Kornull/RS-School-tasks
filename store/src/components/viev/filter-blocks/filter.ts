@@ -5,6 +5,7 @@ import BtnsColor from './filter-color';
 import InputName from './filter-input-name';
 import BtnsRam from './filter-ram';
 import FilterYear from './filter-year';
+import FilterStock from './filter-quantity-stock';
 
 class Filters {
   btnB: BtnsBrand;
@@ -12,6 +13,7 @@ class Filters {
   btnR: BtnsRam;
   input: InputName;
   filterYears: FilterYear;
+  filterStock: FilterStock;
 
   constructor() {
     this.btnB = new BtnsBrand();
@@ -19,6 +21,7 @@ class Filters {
     this.btnR = new BtnsRam();
     this.input = new InputName();
     this.filterYears = new FilterYear();
+    this.filterStock = new FilterStock();
   }
   runSearch() {
     const search: HTMLDivElement = document.createElement('div');
@@ -26,6 +29,7 @@ class Filters {
 
     search.append(this.input.filterName());
     search.append(this.filterYears.filterName());
+    search.append(this.filterStock.filterName());
     return search;
   }
   runBtn() {
