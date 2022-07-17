@@ -1,20 +1,21 @@
-// import noUiSlider from 'nouislider';
 import * as noUiSlider from 'nouislider';
-// import Search from '../../controller/search/search';
-
 import FilterBlocksDiv from './filters-blocks';
-
+import SortedCard from '../../controller/sorted';
+import { LocalStor } from '../../controller/storage/storage';
 class FilterYear extends FilterBlocksDiv {
   value1: HTMLDivElement;
   value2: HTMLDivElement;
   filterYear: noUiSlider.target;
+  local: LocalStor;
+  sortedCards: SortedCard;
   // search: Search;
   constructor() {
     super();
     this.value1 = document.createElement('div');
     this.value2 = document.createElement('div');
     this.filterYear = document.createElement('div');
-    // this.search = new Search();
+    this.local = new LocalStor();
+    this.sortedCards = new SortedCard();
   }
   filterName() {
     this.filter = document.createElement('div');
@@ -24,8 +25,9 @@ class FilterYear extends FilterBlocksDiv {
     this.filterYear.id = 'slider-round';
     this.value1.className = 'slider__year--value1';
     this.value2.className = 'slider__year--value2';
+
     noUiSlider.create(this.filterYear, {
-      start: [2019, 2022.5],
+      start: this.local.get('UiSliderCallback'),
       connect: true,
       range: {
         min: 2019,
@@ -34,10 +36,31 @@ class FilterYear extends FilterBlocksDiv {
         max: 2022.5,
       },
     });
+    let yearsArr: string[] = [];
     const skipValues: HTMLElement[] = [this.value2, this.value1];
-
-    this.filterYear.noUiSlider?.on('update', (values, handle: number) => {
+    this.filterYear.noUiSlider?.on('update', (values, handle: number, callback) => {
+      yearsArr = [];
       skipValues[handle].innerHTML = Math.floor(+values[handle]).toString();
+      console.log(noUiSlider.default);
+      this.local?.set('UiSliderCallback', callback);
+      console.log(values[0]);
+      for (let i = Math.floor(+values[0]); i <= Math.floor(+values[1]); i++) {
+        yearsArr.push(i.toString());
+      }
+      yearsArr = Array.from(new Set(yearsArr));
+      if (this.local !== undefined) {
+        this.local.set('YearsBrand', yearsArr);
+        let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
+        if (yearsArr.length === 0) {
+          countSort = countSort.filter((e) => e !== '5');
+        } else {
+          // countSort = countSort.filter((e) => e !== '1');
+          countSort.push('5');
+        }
+        countSort = Array.from(new Set(countSort));
+        console.log(countSort);
+        this.local?.set('CountSortedGet', countSort);
+      }
     });
 
     this.filter.appendChild(this.value1);
