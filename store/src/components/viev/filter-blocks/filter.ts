@@ -1,5 +1,3 @@
-import { Laptop } from '../../types';
-import Products from '../../controller/products/product';
 import BtnsBrand from './filter-brand';
 import BtnsColor from './filter-color';
 import InputName from './filter-input-name';
