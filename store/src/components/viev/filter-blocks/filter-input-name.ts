@@ -3,16 +3,17 @@ import FilterBlocksDiv from './filters-blocks';
 import SortedCard from '../../controller/sorted';
 import { LocalStor } from '../../controller/storage/storage';
 class InputName extends FilterBlocksDiv {
-  local: LocalStor | undefined;
-  sortedCards: SortedCard | undefined;
+  private local: LocalStor;
+  private sortedCards: SortedCard;
   constructor() {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
 
-  filterName(): HTMLDivElement {
+  public filterName(): HTMLDivElement {
     this.filter.className = 'filter__name';
+    this.filterBtn.className = 'filter__clean';
     this.filterSearch.className = 'filter__search';
     const form: HTMLFormElement = document.createElement('form');
     const label: HTMLLabelElement = document.createElement('label');
@@ -21,10 +22,13 @@ class InputName extends FilterBlocksDiv {
     input.type = 'text';
     input.id = 'search';
     input.placeholder = 'enter brand';
+    input.autocomplete = 'off';
+    input.setAttribute('autofocus', 'true');
     label.setAttribute('for', input.id);
     label.innerText = 'Brand';
+
+    let countSort: number[] | string[] = [];
     input.addEventListener('keyup', () => {
-      let countSort: number[] | string[] = [];
       let count = 0;
       let btnId: string[] = [];
 
@@ -48,12 +52,15 @@ class InputName extends FilterBlocksDiv {
           countSort.push('4');
         }
         if (input.value.length === 0) {
+          this.filterBtn.classList.add('active');
           this.local.set('ValueInput', []);
-          this.local?.set('BtnInputId', []);
+          this.local.set('BtnInputId', []);
           countSort = countSort.filter((e) => e !== '4');
+        } else {
+          this.filterBtn.classList.remove('active');
         }
         countSort = Array.from(new Set(countSort));
-        this.local?.set('CountSortedGet', countSort);
+        this.local.set('CountSortedGet', countSort);
       }
 
       if (this.sortedCards !== undefined) {
@@ -66,9 +73,30 @@ class InputName extends FilterBlocksDiv {
         input.value = '';
       }
     }
+    this.filterBtn.addEventListener('click', () => {
+      countSort = [...this.local.get('CountSortedGet')];
+      input.value = '';
+      this.filterBtn.classList.remove('active');
+      this.local.set('ValueInput', []);
+      this.local.set('BtnInputId', []);
+      countSort = countSort.filter((e: string) => e !== '4');
+      this.local.set('CountSortedGet', countSort);
+      this.sortedCards.newSortArr();
+      if (input.value.length === 0) {
+        this.filterBtn.classList.add('active');
+      } else {
+        this.filterBtn.classList.remove('active');
+      }
+    });
+    if (input.value.length === 0) {
+      this.filterBtn.classList.add('active');
+    } else {
+      this.filterBtn.classList.remove('active');
+    }
     form.append(label);
     form.append(input);
     this.filterSearch.appendChild(form);
+    this.filterSearch.appendChild(this.filterBtn);
     this.filter.appendChild(this.filterSearch);
     return this.filter;
   }

@@ -7,12 +7,12 @@
     background: #a297c8;
     padding-left: 20px;
   }
-  &__search #search{
+  &__search #search {
     display: block;
     background: rgba(0, 0, 0, 0.398);
-    color:aqua;
+    color: #00ffff;
     width: 80%;
-    border-radius: 15px ;
+    border-radius: 15px;
     margin: 0 auto;
     margin-top: 15px;
     padding-left: 10px;
@@ -21,8 +21,48 @@
       color: #a297c8;
     }
   }
-  &__name{
+  &__name {
+    position: relative;
     margin-bottom: 25px;
+  }
+  &__clean {
+    position: absolute;
+    top: 38px;
+    right: 12%;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    border: 1px solid #00ffff;
+    cursor: pointer;
+    transition: border 0.2s linear;
+    &:hover {
+      border: 1px solid #ff0000;
+      &::after,
+      &::before {
+        background: #ff0000;
+      }
+    }
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      top: 45%;
+      left: 23%;
+      width: 10px;
+      height: 2px;
+      background: #00ffff;
+      transition: background 0.2s linear;
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &.active{
+      display: none;
+    }
   }
   &__brand {
     width: 100%;
@@ -32,7 +72,7 @@
     flex-direction: column;
     justify-content: end;
     width: 60%;
-    height:200px;
+    height: 200px;
     display: flex;
     flex-wrap: wrap;
     margin-left: 10px;
@@ -56,11 +96,14 @@
   &__brand,
   &__color,
   &__ram,
-  &__reset{
+  &__reset {
     width: 100%;
   }
 }
 
 #search {
   width: 100%;
+  height: 25px;
+  padding: 3px;
+  font-size: 19px;
 }
