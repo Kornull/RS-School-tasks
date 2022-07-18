@@ -1,9 +1,11 @@
+import { LocalStor } from '../../controller/storage/storage';
+
 class Basket {
-  private count: number;
+  private local: LocalStor;
   private basket: HTMLDivElement | undefined;
 
   constructor() {
-    this.count = 0;
+    this.local = new LocalStor();
   }
 
   create(): HTMLDivElement {
@@ -16,17 +18,13 @@ class Basket {
     this.basketEndCount();
     return basket;
   }
-  countIncrement() {
-    this.count += 1;
-    this.basketEndCount();
-  }
-  countDecrement() {
-    this.count -= 1;
-    this.basketEndCount();
-  }
   basketEndCount(): void {
     if (this.basket instanceof HTMLDivElement) {
-      this.basket.textContent = `${this.count}`;
+      if (this.local.get('BasketCount').length !== 0) {
+        this.basket.textContent = `${this.local.get('BasketCount')[0]}`;
+      } else {
+        this.basket.textContent = `0`;
+      }
     }
   }
 }

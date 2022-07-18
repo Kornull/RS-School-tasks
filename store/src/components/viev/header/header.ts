@@ -11,9 +11,6 @@ class Header {
   }
 
   create(): HTMLElement {
-    this.basket.create();
-    this.basket.basketEndCount();
-    this.basket.countIncrement();
     const cont = this.container.createContainer();
     const head = <HTMLElement>document.createElement('header');
     const logo = <HTMLDivElement>document.createElement('div');

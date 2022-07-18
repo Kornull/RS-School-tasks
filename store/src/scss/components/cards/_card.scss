@@ -1,10 +1,12 @@
 .card{
+  position: relative;
   padding: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 15px;
   border: 2px solid red;
+  cursor: pointer;
   &__img{
     display: block;
     width: 120px;
@@ -13,6 +15,37 @@
   }
   &>div{
     text-align-last: left;
+  }
+  &:hover{
+    box-shadow: 0 0 10px #000;
+  }
+  &::after,
+  &::before {
+    display: none;
+    position: absolute;
+    content: '';
+    width: 45px;
+    height: 4px;
+    background: rgb(0, 76, 255);
+
+  }
+  &::after{
+    bottom: 10%;
+    width: 20px;
+    right: 10%;
+    transform: rotate(-50deg);
+  }
+  &::before{
+    bottom: 10.4%;
+    right: 13%;
+    width: 25px;
+    transform: rotate(50deg);
+  }
+  &.active {
+    &::before,
+    &::after{
+      display: block;
+    }
   }
 }
 .card>div {
