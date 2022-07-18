@@ -11,6 +11,7 @@ class Basket {
   create(): HTMLDivElement {
     const basket = <HTMLDivElement>document.createElement('div');
     basket.className = 'header__basket basket';
+    // basket.style.background = 'url(.)';
     const basketCounts = <HTMLDivElement>document.createElement('div');
     basketCounts.className = 'basket__count';
     this.basket = basketCounts;
