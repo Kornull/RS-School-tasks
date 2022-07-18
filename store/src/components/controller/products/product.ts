@@ -60,7 +60,7 @@ class Products {
         const li = document.createElement('li');
         const arrK = Object.keys(i);
         const arrV = Object.values(i);
-        li.innerHTML = `${arrK[0]} - ${arrV[0]}`;
+        li.innerHTML = `<b>${arrK[0]}</b> - ${arrV[0]}`;
         ul.appendChild(li);
       }
       productsArr.push(card);
@@ -128,9 +128,9 @@ class Products {
         });
       }
       const stock = document.createElement('div');
-      stock.innerHTML = `In stock - ${_el.number}`;
+      stock.innerHTML = `<b>In stock</b> - ${_el.number}`;
       const year = document.createElement('div');
-      year.innerHTML = `Year - ${_el.year}`;
+      year.innerHTML = `<b>Year</b> - ${_el.year}`;
       card.appendChild(img);
       card.appendChild(ul);
       card.appendChild(stock);

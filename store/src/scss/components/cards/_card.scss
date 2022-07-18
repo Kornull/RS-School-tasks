@@ -1,54 +1,65 @@
-.card{
+.card {
   position: relative;
   padding: 10px;
+  width: 30%;
+  height: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 15px;
-  border: 2px solid red;
+  border: 2px solid #8d8d8d;
+  border-radius: 15px;
+  transition: box-shadow 0.2s linear;
+  @media (max-width:1080px) {
+    height: 480px;
+  }
   cursor: pointer;
-  &__img{
+  &__img {
     display: block;
     width: 120px;
     height: 80px;
     margin: 0 auto;
+    padding: 5px;
   }
-  &>div{
+  & > div {
     text-align-last: left;
   }
-  &:hover{
-    box-shadow: 0 0 10px #000;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.373);
+    background: #eaeaea;
   }
-  &::after,
-  &::before {
+  &.active{
+    background: #fefefe;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.373);
+    &:hover{
+      box-shadow: 0 0 10px rgba(242, 255, 0, 0.864);
+
+    }
+  }
+  &::after
+  {
     display: none;
     position: absolute;
-    content: '';
+    content: "";
     width: 45px;
-    height: 4px;
-    background: rgb(0, 76, 255);
+    height:45px;
+    bottom: 5%;
+    right: 5%;
+    background-image: url('./img/nsdfvbcn-nsd.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-  }
-  &::after{
-    bottom: 10%;
-    width: 20px;
-    right: 10%;
-    transform: rotate(-50deg);
-  }
-  &::before{
-    bottom: 10.4%;
-    right: 13%;
-    width: 25px;
-    transform: rotate(50deg);
-  }
+
   &.active {
     &::before,
-    &::after{
+    &::after {
       display: block;
     }
   }
 }
-.card>div {
+.card > div {
   width: 100%;
   text-align: left;
   padding-left: 30px;
