@@ -21,6 +21,8 @@ class FilterStock extends FilterBlocksDiv {
     this.filter.className = 'slider__stock slider';
     this.filterStock.className = 'slider-stock';
     this.filterStock.id = 'slider-round';
+    this.btnDescr.className = 'slider__description';
+    this.btnDescr.innerText = 'Filter stock';
     this.value1.className = 'slider__stock--value1';
     this.value2.className = 'slider__stock--value2';
 
@@ -71,6 +73,7 @@ class FilterStock extends FilterBlocksDiv {
       setTimeout(() => this.sortedCards.newSortArr(), 200);
     });
 
+    this.filter.appendChild(this.btnDescr);
     this.filter.appendChild(this.value1);
     this.filter.appendChild(this.value2);
     this.filter.appendChild(this.filterStock);

@@ -21,6 +21,8 @@ class FilterYear extends FilterBlocksDiv {
     this.filter.className = 'slider__year slider';
     this.filterYear.className = 'slider-year';
     this.filterYear.id = 'slider-round';
+    this.btnDescr.className = 'slider__description';
+    this.btnDescr.innerText = 'Filter years';
     this.value1.className = 'slider__year--value1';
     this.value2.className = 'slider__year--value2';
 
@@ -58,6 +60,7 @@ class FilterYear extends FilterBlocksDiv {
       }
       setTimeout(() => this.sortedCards.newSortArr(), 200);
     });
+    this.filter.appendChild(this.btnDescr);
     this.filter.appendChild(this.value1);
     this.filter.appendChild(this.value2);
     this.filter.appendChild(this.filterYear);

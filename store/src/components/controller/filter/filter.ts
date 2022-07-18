@@ -48,6 +48,7 @@ class Filters {
     btn.appendChild(this.btnC.filterColor());
     btn.appendChild(this.btnR.filterRam());
     btn.appendChild(this.resetBtn.btnResBrand());
+    btn.appendChild(this.resetBtn.btnResBrand());
 
     return btn;
   }

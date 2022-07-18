@@ -4,21 +4,27 @@
   &__input {
     width: 40%;
     height: 33.333%;
-    background: #a297c8;
     padding-left: 20px;
+  }
+  &__search{
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    padding-top: 5px;
   }
   &__search #search {
     display: block;
-    background: rgba(0, 0, 0, 0.398);
-    color: #00ffff;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
     width: 80%;
     border-radius: 15px;
     margin: 0 auto;
     margin-top: 15px;
     padding-left: 10px;
+    box-shadow: 0 0 10px #000;
     &::placeholder {
       // padding-left: 10px;
-      color: #a297c8;
+      color: #a4a1b0;
     }
   }
   &__name {
@@ -33,7 +39,7 @@
     height: 20px;
     background: #000;
     border-radius: 50%;
-    border: 1px solid #00ffff;
+    border: 1px solid #fff;
     cursor: pointer;
     transition: border 0.2s linear;
     &:hover {
@@ -51,7 +57,7 @@
       left: 23%;
       width: 10px;
       height: 2px;
-      background: #00ffff;
+      background: #fff;
       transition: background 0.2s linear;
     }
     &::after {
@@ -69,26 +75,27 @@
   }
   &__btn {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: end;
     width: 60%;
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
+    height: 290px;
     margin-left: 10px;
     padding-top: 5px;
     align-items: center;
-    font-size: 13px;
+    font-size: 17px;
   }
   &__btn > div {
     margin-right: 5px;
   }
+  &__btn--reset,
   &__btn--brand,
   &__btn--color,
   &__btn--ram {
     display: flex;
     align-items: center;
-    height: 45px;
+    height: 55px;
+    margin-bottom: 10px;
     & > div {
       margin-right: 15px;
     }

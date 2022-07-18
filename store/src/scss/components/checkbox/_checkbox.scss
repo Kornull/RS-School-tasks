@@ -1,14 +1,18 @@
-.filter__checkbox{
-  width: 70px;
+.filter__checkbox {
+  position: relative;
+  width: 70%;
   display: flex;
   align-items: center;
   font-size: 18px;
   margin: 0 auto;
   input {
-    display: block;
+    position: absolute;
+    // display: block;
+    left: 105px;
+    bottom: 3px;
     margin: 0 auto;
     width: 20px;
     height: 20px;
-    border:2px solid red;
+    border: 2px solid red;
   }
 }

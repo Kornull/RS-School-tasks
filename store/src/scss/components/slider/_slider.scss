@@ -7,36 +7,42 @@
   position: relative;
   width: 80%;
   margin: 0 auto;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-bottom: 20px;
   padding: 4px;
   &--value1,
   &--value2 {
     position: absolute;
-    width: 50px;
-    height: 20px;
-    background: #fff;
+    width: 60px;
+    height: 25px;
+    background: #ffffff;
     border-radius: 15px;
     text-align: center;
-    font-size: 12px;
+    box-shadow: 0 0 10px #000;
+    font-size: 14px;
     padding: 2px;
   }
   &--value2{
-    top: -15px;
+    top: -2px;
     right: 30px;
   }
   &--value1{
-    top: -15px;
+    top: -2px;
     left: 30px;
   }
-}
 
+}
+.slider__description{
+  width: 25%;
+  margin: 0 auto;
+  font-size: 16px;
+}
 #slider-round {
   height: 8px;
 }
 
 #slider-round .noUi-connect {
-  background: #48ff00;
+  background: #ff0000;
 }
 .noUi-connect,
 .noUi-connects,
