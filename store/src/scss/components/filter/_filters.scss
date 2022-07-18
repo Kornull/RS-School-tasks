@@ -84,6 +84,9 @@
     padding-top: 5px;
     align-items: center;
     font-size: 17px;
+    @media(max-width:1080px) {
+      font-size: 15px;
+    }
   }
   &__btn > div {
     margin-right: 5px;
