@@ -7,14 +7,14 @@ import { LocalStor } from '../controller/storage/storage';
 import SortedCard from '../controller/sorted';
 
 class Main {
-  local: LocalStor;
-  sort: SortedCard;
-  product: Products;
-  search: Search;
-  container: Container;
-  header: Header;
-  footer: Footer;
-  body: HTMLBodyElement;
+  private local: LocalStor;
+  private sort: SortedCard;
+  private product: Products;
+  private search: Search;
+  private container: Container;
+  private header: Header;
+  private footer: Footer;
+  private body: HTMLBodyElement;
 
   constructor() {
     this.local = new LocalStor();
@@ -26,10 +26,10 @@ class Main {
     this.footer = new Footer();
     this.body = <HTMLBodyElement>document.querySelector('body');
   }
-  create() {
-    const main = document.createElement('main');
+  private create() {
+    const main: HTMLElement = document.createElement('main');
     main.className = 'main';
-    const containerElements = this.container.createContainer();
+    const containerElements: HTMLDivElement = this.container.createContainer();
     containerElements.className = 'main__container container';
     containerElements.appendChild(this.search.create());
     containerElements.appendChild(this.product.create());
@@ -37,7 +37,7 @@ class Main {
     main.appendChild(containerElements);
     return main;
   }
-  createHtml() {
+  public createHtml() {
     if (this.local.get('UiSliderCallbackYears').length === 0) {
       this.local.set('UiSliderCallbackYears', [2019, 2022.5]);
       this.local.set('CountSortedGet', ['5']);
@@ -59,7 +59,7 @@ class Main {
     this.body.append(this.create());
     this.body.appendChild(this.footer.create());
   }
-  localStore() {
+  public localStore() {
     this.sort.newSortArr();
   }
 }

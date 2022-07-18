@@ -4,15 +4,15 @@ import SortedCard from '../../controller/sorted';
 import { LocalStor } from '../../controller/storage/storage';
 
 class BtnsRam extends FilterBlocksDiv {
-  local: LocalStor | undefined;
-  sortedCards: SortedCard | undefined;
+  private local: LocalStor | undefined;
+  private sortedCards: SortedCard | undefined;
   constructor() {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
 
-  filterRam() {
+  public filterRam() {
     this.filter.className = 'filter__ram';
     this.filterBtn.className = 'filter__btn--ram';
     this.btnDescr.innerText = 'RAM: ';
@@ -53,7 +53,7 @@ class BtnsRam extends FilterBlocksDiv {
           this.sortedCards.newSortArr();
         }
       });
-      const btnActive = this.local?.get('BtnBrandRam');
+      const btnActive: string[] | undefined = this.local?.get('BtnBrandRam');
       btnActive?.forEach((el) => {
         btns.forEach((btn) => {
           if (btn.id === el) {
@@ -62,6 +62,7 @@ class BtnsRam extends FilterBlocksDiv {
         });
       });
     });
+
     this.filterBtn.appendChild(this.fragment);
     this.filter.appendChild(this.filterBtn);
     return this.filter;

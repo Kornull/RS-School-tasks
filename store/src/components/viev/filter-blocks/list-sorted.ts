@@ -11,7 +11,7 @@ export default class SortList extends FilterBlocksDiv {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
-    this.listSortedArr = ['sort by name A-Z', 'sort by name Z-A', 'by year ascending', 'by year descending'];
+    this.listSortedArr = ['sort by title A-Z', 'sort by title Z-A', 'by year ascending', 'by year descending'];
     this.optionArr = [];
   }
   filterName() {

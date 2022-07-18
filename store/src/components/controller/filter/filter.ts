@@ -6,6 +6,7 @@ import FilterYear from '../../viev/filter-blocks/filter-year';
 import FilterStock from '../../viev/filter-blocks/filter-quantity-stock';
 import SortList from '../../viev/filter-blocks/list-sorted';
 import CheckboxSort from '../../viev/filter-blocks/filter-checkbox';
+import ResetBtn from '../../viev/filter-blocks/reset-btn';
 
 class Filters {
   btnB: BtnsBrand;
@@ -16,6 +17,7 @@ class Filters {
   filterStock: FilterStock;
   sortList: SortList;
   sortCheckbox: CheckboxSort;
+  resetBtn: ResetBtn;
 
   constructor() {
     this.btnB = new BtnsBrand();
@@ -26,6 +28,7 @@ class Filters {
     this.filterStock = new FilterStock();
     this.sortList = new SortList();
     this.sortCheckbox = new CheckboxSort();
+    this.resetBtn = new ResetBtn();
   }
   runSearch() {
     const search: HTMLDivElement = document.createElement('div');
@@ -44,6 +47,7 @@ class Filters {
     btn.appendChild(this.btnB.filterBrand());
     btn.appendChild(this.btnC.filterColor());
     btn.appendChild(this.btnR.filterRam());
+    btn.appendChild(this.resetBtn.btnResBrand());
 
     return btn;
   }
