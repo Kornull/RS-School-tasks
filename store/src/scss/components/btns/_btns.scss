@@ -8,13 +8,20 @@
   &:hover {
     background: #fff;
   }
+  &__brand {
+    background: #fff;
+    transition: background 0.2s linear, box-shadow 0.2s linear;
+  }
   &__color {
-    width: 40px;
-    height: 15px;
+    width: 60px;
+    height: 20px;
     border: 1px solid #fff;
+    transition: box-shadow 0.2s linear;
     &:hover {
-      width: 50px;
-      box-shadow: 2px 2px red;
+      box-shadow: 0px 0px 10px#1100ff;
+    }
+    &.active {
+      box-shadow: 0 0 10px #ff0000;
     }
   }
   &__ram {
@@ -23,23 +30,32 @@
     background: #fff;
     text-align: center;
     padding: 2.5px;
+    transition: background 0.2s linear, box-shadow 0.2s linear;
+  }
+  &__reset {
+    width: 70px;
+    height: 30px;
+    font-size: 20px;
+    background: #fff;
+    text-align: center;
+    padding: 2.5px;
+    transition: background 0.2s linear, box-shadow .2s linear;
+  }
+  &__reset,
+  &__ram,
+  &__brand {
     &:hover {
-      width: 45px;
+      background: #f2ff00;
+      box-shadow: 0px 0px 10px#1100ff;
     }
-    &__reset{
-      width: 50px;
-      height: 25px;
-      background: #fff;
-      text-align: center;
-      padding: 2.5px;
+    &.active {
+      box-shadow: 0 0 5px #ff0000;
+      background: #000;
+      color: #f2ff00;
+      transition: color 0.2s linear;
       &:hover {
-        width: 45px;
+        color: #fff;
       }
     }
   }
-}
-.active {
-  -webkit-box-shadow: -1px 3px 4px 11px rgba(0, 0, 0, 0.64);
-  -moz-box-shadow: -1px 3px 4px 11px rgba(0, 0, 0, 0.64);
-  box-shadow: -1px 3px 4px 11px rgba(0, 0, 0, 0.64);
 }
