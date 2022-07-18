@@ -1,11 +1,11 @@
-import BtnsBrand from './filter-brand';
-import BtnsColor from './filter-color';
-import InputName from './filter-input-name';
-import BtnsRam from './filter-ram';
-import FilterYear from './filter-year';
-import FilterStock from './filter-quantity-stock';
-import SortList from './list-sorted';
-import CheckboxSort from './filter-checkbox';
+import BtnsBrand from '../../viev/filter-blocks/filter-brand';
+import BtnsColor from '../../viev/filter-blocks/filter-color';
+import InputName from '../../viev/filter-blocks/filter-input-name';
+import BtnsRam from '../../viev/filter-blocks/filter-ram';
+import FilterYear from '../../viev/filter-blocks/filter-year';
+import FilterStock from '../../viev/filter-blocks/filter-quantity-stock';
+import SortList from '../../viev/filter-blocks/list-sorted';
+import CheckboxSort from '../../viev/filter-blocks/filter-checkbox';
 
 class Filters {
   btnB: BtnsBrand;

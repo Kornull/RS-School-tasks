@@ -1,4 +1,4 @@
-import Filters from '../filter-blocks/filter';
+import Filters from '../../controller/filter/filter';
 import FilterBlocksDiv from '../filter-blocks/filters-blocks';
 import SortedCard from '../../controller/sorted';
 import FilterYear from '../filter-blocks/filter-year';
