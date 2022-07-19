@@ -33,7 +33,7 @@
   }
   &__reset-all,
   &__reset {
-    width: 70px;
+    width: 170px;
     height: 30px;
     font-size: 18px;
     background: #fff;
@@ -41,9 +41,7 @@
     padding: 2.5px;
     transition: background 0.2s linear, box-shadow 0.2s linear;
   }
-  &__reset-all {
-    width: 170px;
-  }
+ 
   &__reset-all,
   &__reset,
   &__ram,

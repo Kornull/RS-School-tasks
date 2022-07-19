@@ -16,7 +16,7 @@ class AllResetBtn extends FilterBlocksDiv {
     const btn: HTMLButtonElement = document.createElement('button');
     btn.className = 'btn btn__reset-all';
     btn.id = 'all_reset';
-    btn.innerText = 'reset all';
+    btn.innerText = 'reset settings';
     btn.addEventListener('click', () => {
       this.local.set('YearsBrand', ['2019', '2020', '2021', '2022']);
       this.local.set('BtnBrandColor', []);

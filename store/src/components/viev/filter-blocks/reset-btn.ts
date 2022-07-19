@@ -16,7 +16,7 @@ class ResetBtn extends FilterBlocksDiv {
     const btn: HTMLButtonElement = document.createElement('button');
     btn.className = 'btn btn__reset';
     btn.id = 'reset';
-    btn.innerText = 'reset';
+    btn.innerText = 'reset filters';
     btn.addEventListener('click', () => {
       console.log('t');
       this.local.set('YearsBrand', ['2019', '2020', '2021', '2022']);
