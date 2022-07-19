@@ -22,7 +22,6 @@ class ResetBtn extends FilterBlocksDiv {
       this.local.set('YearsBrand', ['2019', '2020', '2021', '2022']);
       this.local.set('BtnBrandColor', []);
       this.local.set('BtnBrandRam', []);
-      this.local.set('ListValue', [1]);
       this.local.set('ValueInput', []);
       this.local.set('UiSliderCallbackStock', [1, 16.5]);
       this.local.set('StockBrands', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]);
