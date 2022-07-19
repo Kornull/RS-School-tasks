@@ -22,6 +22,7 @@ class AllResetBtn extends FilterBlocksDiv {
       this.local.set('BtnBrandColor', []);
       this.local.set('BasketCount', []);
       this.local.set('FavoriteProduct', []);
+      this.local.set('PopularCheckBox', []);
       this.local.set('BtnBrandRam', []);
       this.local.set('ListValue', [1]);
       this.local.set('ValueInput', []);
