@@ -1,18 +1,18 @@
 import { keys } from 'ts-transformer-keys';
 import employee from '../../laptop.json';
 import { Laptop } from '../types';
-import Products from './products/product';
+import ProductsUpdate from './products/update-product';
 import { LocalStor } from './storage/storage';
 
 class SortedCard {
-  public product: Products;
+  public product: ProductsUpdate;
   private sortArr: Laptop[];
   private copySortLeng: Laptop[];
   private storage: LocalStor;
   constructor() {
     this.storage = new LocalStor();
 
-    this.product = new Products();
+    this.product = new ProductsUpdate();
     this.sortArr = [];
     this.copySortLeng = [];
   }
