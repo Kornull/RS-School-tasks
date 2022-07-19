@@ -4,7 +4,7 @@ class Footer extends Container {
   constructor() {
     super();
   }
-  create(): HTMLElement {
+  public create(): HTMLElement {
     const container = this.createContainer();
     container.className = 'footer__container';
     const footer = <HTMLElement>document.createElement('footer');

@@ -3,14 +3,14 @@ import { LocalStor } from '../../controller/storage/storage';
 import FilterBlocksDiv from './filters-blocks';
 
 class ResetBtn extends FilterBlocksDiv {
-  local: LocalStor;
-  sortedCards: SortedCard;
+  private local: LocalStor;
+  private sortedCards: SortedCard;
   constructor() {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
-  btnResBrand() {
+  public btnResBrand() {
     this.filter.className = 'filter__reset';
     this.filterBtn.className = 'filter__btn--reset';
     const btn: HTMLButtonElement = document.createElement('button');

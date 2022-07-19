@@ -3,12 +3,11 @@ import FilterBlocksDiv from './filters-blocks';
 import SortedCard from '../../controller/sorted';
 import { LocalStor } from '../../controller/storage/storage';
 class FilterStock extends FilterBlocksDiv {
-  value1: HTMLDivElement;
-  value2: HTMLDivElement;
-  filterStock: noUiSlider.target;
-  local: LocalStor;
-  sortedCards: SortedCard;
-  // search: Search;
+  private value1: HTMLDivElement;
+  private value2: HTMLDivElement;
+  private filterStock: noUiSlider.target;
+  private local: LocalStor;
+  private sortedCards: SortedCard;
   constructor() {
     super();
     this.value1 = document.createElement('div');
@@ -17,7 +16,7 @@ class FilterStock extends FilterBlocksDiv {
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
-  filterName() {
+  public filterName() {
     this.filter.className = 'slider__stock slider';
     this.filterStock.className = 'slider-stock';
     this.filterStock.id = 'slider-round';
@@ -64,7 +63,6 @@ class FilterStock extends FilterBlocksDiv {
         if (stockArr.length === 0) {
           countSort = countSort.filter((e) => e !== '6');
         } else {
-          // countSort = countSort.filter((e) => e !== '1');
           countSort.push('6');
         }
         countSort = Array.from(new Set(countSort));

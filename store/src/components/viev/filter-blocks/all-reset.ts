@@ -3,14 +3,14 @@ import { LocalStor } from '../../controller/storage/storage';
 import FilterBlocksDiv from './filters-blocks';
 
 class AllResetBtn extends FilterBlocksDiv {
-  local: LocalStor;
-  sortedCards: SortedCard;
+  private local: LocalStor;
+  private sortedCards: SortedCard;
   constructor() {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
-  btnResBrand() {
+  public btnResBrand() {
     this.filter.className = 'filter__reset';
     this.filterBtn.className = 'filter__btn--reset-all';
     const btn: HTMLButtonElement = document.createElement('button');
@@ -18,7 +18,6 @@ class AllResetBtn extends FilterBlocksDiv {
     btn.id = 'all_reset';
     btn.innerText = 'all reset';
     btn.addEventListener('click', () => {
-      console.log('t');
       this.local.set('YearsBrand', ['2019', '2020', '2021', '2022']);
       this.local.set('BtnBrandColor', []);
       this.local.set('BasketCount', []);

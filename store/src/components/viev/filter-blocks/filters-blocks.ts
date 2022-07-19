@@ -1,23 +1,21 @@
 import { ConstructorDiv, Laptop } from '../../types';
 
 class FilterBlocksDiv implements ConstructorDiv {
-  filter: HTMLDivElement;
-  fragment: DocumentFragment;
-  filterSearch: HTMLDivElement;
-  filterBtn: HTMLDivElement;
-  btnDescr: HTMLDivElement;
-
-  brandArr: string[];
-  colorArr: string[];
-  memoryRam: string[];
-  sortAll: string[];
-  keyname: string[];
-  brandCount: string[];
-
-  sortArr: Laptop[];
-  copySortLeng: Laptop[];
-  availabilityCheck: number[];
-  copySortAll: string[];
+  public filter: HTMLDivElement;
+  public fragment: DocumentFragment;
+  public filterSearch: HTMLDivElement;
+  public filterBtn: HTMLDivElement;
+  public btnDescr: HTMLDivElement;
+  public brandArr: string[];
+  public colorArr: string[];
+  public memoryRam: string[];
+  public sortAll: string[];
+  public keyname: string[];
+  public brandCount: string[];
+  public sortArr: Laptop[];
+  public copySortLeng: Laptop[];
+  public availabilityCheck: number[];
+  public copySortAll: string[];
   constructor() {
     this.filter = document.createElement('div');
     this.fragment = document.createDocumentFragment();

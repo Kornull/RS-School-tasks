@@ -4,14 +4,14 @@ import SortedCard from '../../controller/sorted';
 import { LocalStor } from '../../controller/storage/storage';
 
 export default class BtnsColor extends FilterBlocksDiv {
-  local: LocalStor | undefined;
-  sortedCards: SortedCard | undefined;
+  private local: LocalStor | undefined;
+  private sortedCards: SortedCard | undefined;
   constructor() {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
-  filterColor() {
+  public filterColor() {
     this.filter.className = 'filter__color';
     this.filterBtn.className = 'filter__btn--color';
     this.btnDescr.innerText = 'Search for color: ';
@@ -52,7 +52,7 @@ export default class BtnsColor extends FilterBlocksDiv {
           this.sortedCards.newSortArr();
         }
       });
-      const btnActive = this.local?.get('BtnBrandColor');
+      const btnActive: string[] | undefined = this.local?.get('BtnBrandColor');
       btnActive?.forEach((el) => {
         btns.forEach((btn) => {
           if (btn.id === el) {

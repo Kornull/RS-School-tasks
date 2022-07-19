@@ -10,16 +10,16 @@ import ResetBtn from '../../viev/filter-blocks/reset-btn';
 import AllResetBtn from '../../viev/filter-blocks/all-reset';
 
 class Filters {
-  btnB: BtnsBrand;
-  btnC: BtnsColor;
-  btnR: BtnsRam;
-  input: InputName;
-  filterYears: FilterYear;
-  filterStock: FilterStock;
-  sortList: SortList;
-  sortCheckbox: CheckboxSort;
-  resetBtn: ResetBtn;
-  resetBtnAll: AllResetBtn;
+  private btnB: BtnsBrand;
+  private btnC: BtnsColor;
+  private btnR: BtnsRam;
+  private input: InputName;
+  private filterYears: FilterYear;
+  private filterStock: FilterStock;
+  private sortList: SortList;
+  private sortCheckbox: CheckboxSort;
+  private resetBtn: ResetBtn;
+  private resetBtnAll: AllResetBtn;
 
   constructor() {
     this.btnB = new BtnsBrand();
@@ -33,7 +33,7 @@ class Filters {
     this.resetBtn = new ResetBtn();
     this.resetBtnAll = new AllResetBtn();
   }
-  runSearch() {
+  public runSearch() {
     const search: HTMLDivElement = document.createElement('div');
     search.className = 'filter__input';
 
@@ -44,7 +44,7 @@ class Filters {
     search.append(this.sortCheckbox.filterName());
     return search;
   }
-  runBtn() {
+  public runBtn() {
     const btn: HTMLDivElement = document.createElement('div');
     btn.className = 'filter__btn';
     btn.appendChild(this.btnB.filterBrand());

@@ -3,10 +3,10 @@ import SortedCard from '../../controller/sorted';
 import { LocalStor } from '../../controller/storage/storage';
 
 export default class SortList extends FilterBlocksDiv {
-  local: LocalStor;
-  sortedCards: SortedCard;
-  listSortedArr: string[];
-  optionArr: HTMLOptionElement[];
+  private local: LocalStor;
+  private sortedCards: SortedCard;
+  private listSortedArr: string[];
+  private optionArr: HTMLOptionElement[];
   constructor() {
     super();
     this.local = new LocalStor();
@@ -14,7 +14,7 @@ export default class SortList extends FilterBlocksDiv {
     this.listSortedArr = ['sort by title A-Z', 'sort by title Z-A', 'by year ascending', 'by year descending'];
     this.optionArr = [];
   }
-  filterName() {
+  public filterName() {
     let count = 0;
     this.filter.className = 'filter__list list';
     const listSort = document.createElement('select');

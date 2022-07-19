@@ -1,14 +1,14 @@
 export class LocalStor {
-  localsetItem: string | null;
-  todos!: [];
+  private localsetItem: string | null;
+  private todos!: [];
   constructor() {
     this.localsetItem = localStorage.getItem('');
   }
 
-  set(name: string, lang: string[] | number[]) {
+  public set(name: string, lang: string[] | number[]) {
     localStorage.setItem(name, JSON.stringify(lang));
   }
-  get(name: string): string[] {
+  public get(name: string): string[] {
     this.localsetItem = localStorage.getItem(name);
     if (this.localsetItem == null) {
       this.todos = [];

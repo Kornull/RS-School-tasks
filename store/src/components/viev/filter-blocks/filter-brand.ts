@@ -4,14 +4,14 @@ import { LocalStor } from '../../controller/storage/storage';
 import FilterBlocksDiv from './filters-blocks';
 
 export default class BtnsBrand extends FilterBlocksDiv {
-  local: LocalStor | undefined;
-  sortedCards: SortedCard | undefined;
+  private local: LocalStor | undefined;
+  private sortedCards: SortedCard | undefined;
   constructor() {
     super();
     this.local = new LocalStor();
     this.sortedCards = new SortedCard();
   }
-  filterBrand() {
+  public filterBrand() {
     this.filter.className = 'filter__brand';
     this.filterBtn.className = 'filter__btn--brand';
     this.btnDescr.innerText = "Brand's";

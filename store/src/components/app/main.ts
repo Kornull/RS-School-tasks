@@ -33,7 +33,6 @@ class Main {
     containerElements.className = 'main__container container';
     containerElements.appendChild(this.search.create());
     containerElements.appendChild(this.product.create());
-    // this.search.runSearch();
     main.appendChild(containerElements);
     return main;
   }

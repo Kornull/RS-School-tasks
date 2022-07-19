@@ -12,9 +12,9 @@ class Products {
     const fragnent: DocumentFragment = document.createDocumentFragment();
     // card.className = 'card_list';
     employee.forEach((_el: Laptop) => {
-      const card = document.createElement('div');
-      const img = document.createElement('img');
-      const ul = document.createElement('ul');
+      const card: HTMLDivElement = document.createElement('div');
+      const img: HTMLImageElement = document.createElement('img');
+      const ul: HTMLUListElement = document.createElement('ul');
       card.className = 'card';
       card.id = _el.model;
       img.className = 'card__img';
@@ -22,15 +22,15 @@ class Products {
       card.innerHTML = _el.model;
       img.src = `./assets/img/${_el.image}`;
       for (const i of _el.description) {
-        const li = document.createElement('li');
-        const arrK = Object.keys(i);
-        const arrV = Object.values(i);
+        const li: HTMLLIElement = document.createElement('li');
+        const arrK: string[] = Object.keys(i);
+        const arrV: string[] = Object.values(i);
         li.innerHTML = `${arrK[0]} - ${arrV[0]}`;
         ul.appendChild(li);
       }
-      const stock = document.createElement('div');
+      const stock: HTMLDivElement = document.createElement('div');
       stock.innerHTML = `In stock - ${_el.number}`;
-      const year = document.createElement('div');
+      const year: HTMLDivElement = document.createElement('div');
       year.innerHTML = `Year - ${_el.year}`;
       card.appendChild(img);
       card.appendChild(ul);
@@ -43,16 +43,16 @@ class Products {
   }
 
   public createCard(data: Laptop[]): void {
-    const textBlock = document.createElement('div');
+    const textBlock: HTMLDivElement = document.createElement('div');
     textBlock.className = 'no__product';
     textBlock.innerText = 'Sorry. Nothing found, try another query.';
     const fragnent: DocumentFragment = document.createDocumentFragment();
     const productsArr: HTMLDivElement[] = [];
     let favoriteProductsArr: string[] = [];
     data.forEach((_el: Laptop) => {
-      const card = document.createElement('div');
-      const img = document.createElement('img');
-      const ul = document.createElement('ul');
+      const card: HTMLDivElement = document.createElement('div');
+      const img: HTMLImageElement = document.createElement('img');
+      const ul: HTMLUListElement = document.createElement('ul');
       card.className = 'card';
       card.id = _el.model.split(' ').join('-');
       img.className = 'card__img';
@@ -60,9 +60,9 @@ class Products {
       card.innerHTML = _el.model;
       img.src = `./assets/img/${_el.image}`;
       for (const i of _el.description) {
-        const li = document.createElement('li');
-        const arrK = Object.keys(i);
-        const arrV = Object.values(i);
+        const li: HTMLLIElement = document.createElement('li');
+        const arrK: string[] = Object.keys(i);
+        const arrV: string[] = Object.values(i);
         li.innerHTML = `<b>${arrK[0]}</b> - ${arrV[0]}`;
         ul.appendChild(li);
       }
@@ -120,7 +120,6 @@ class Products {
         if (a !== null) {
           a.innerHTML = this.Local.get('BasketCount')[0];
         }
-        // console.log(productsArr)
       });
       if (this.Local.get('FavoriteProduct').length !== 0) {
         this.Local.get('FavoriteProduct').forEach((el) => {
@@ -131,7 +130,7 @@ class Products {
           });
         });
       }
-      const stock = document.createElement('div');
+      const stock: HTMLDivElement = document.createElement('div');
       stock.innerHTML = `<b>In stock</b> - ${_el.number}`;
       const year = document.createElement('div');
       year.innerHTML = `<b>Year</b> - ${_el.year}`;

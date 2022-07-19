@@ -3,7 +3,6 @@ import { LocalStor } from '../../controller/storage/storage';
 class Basket {
   private local: LocalStor;
   private basket: HTMLDivElement | undefined;
-
   constructor() {
     this.local = new LocalStor();
   }
@@ -11,7 +10,6 @@ class Basket {
   create(): HTMLDivElement {
     const basket = <HTMLDivElement>document.createElement('div');
     basket.className = 'header__basket basket';
-    // basket.style.background = 'url(.)';
     const basketCounts = <HTMLDivElement>document.createElement('div');
     basketCounts.className = 'basket__count';
     this.basket = basketCounts;

@@ -89,29 +89,29 @@ class SortedCard {
     switch (Number(listNumValue)) {
       case 1:
         this.copySortLeng.sort(function (a, b) {
-          const x = a.brand.toLowerCase();
-          const y = b.brand.toLowerCase();
+          const x: string = a.brand.toLowerCase();
+          const y: string = b.brand.toLowerCase();
           return x < y ? -1 : x > y ? 1 : 0;
         });
         break;
       case 2:
         this.copySortLeng.sort(function (a, b) {
-          const x = a.brand.toLowerCase();
-          const y = b.brand.toLowerCase();
+          const x: string = a.brand.toLowerCase();
+          const y: string = b.brand.toLowerCase();
           return x > y ? -1 : x < y ? 1 : 0;
         });
         break;
       case 3:
         this.copySortLeng.sort(function (a, b) {
-          const x = a.year.toLowerCase();
-          const y = b.year.toLowerCase();
+          const x: string = a.year.toLowerCase();
+          const y: string = b.year.toLowerCase();
           return x < y ? -1 : x > y ? 1 : 0;
         });
         break;
       case 4:
         this.copySortLeng.sort(function (a, b) {
-          const x = a.year.toLowerCase();
-          const y = b.year.toLowerCase();
+          const x: string = a.year.toLowerCase();
+          const y: string = b.year.toLowerCase();
           return x > y ? -1 : x < y ? 1 : 0;
         });
         break;
