@@ -78,7 +78,7 @@
     flex-direction: column;
     justify-content: end;
     width: 55%;
-    height: 290px;
+    height: 355px;
     margin-left: 10px;
     padding-top: 5px;
     align-items: center;
@@ -91,6 +91,7 @@
     margin-right: 5px;
   }
   &__btn--reset,
+  &__btn--reset-all,
   &__btn--brand,
   &__btn--color,
   &__btn--ram {

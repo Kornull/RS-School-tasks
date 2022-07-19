@@ -43,7 +43,6 @@ class Products {
   }
 
   public createCard(data: Laptop[]): void {
-    console.log(data);
     const textBlock = document.createElement('div');
     textBlock.className = 'no__product';
     textBlock.innerText = 'Sorry. Nothing found, try another query.';
