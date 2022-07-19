@@ -14,7 +14,7 @@ export default class BtnsColor extends FilterBlocksDiv {
   public filterColor() {
     this.filter.className = 'filter__color';
     this.filterBtn.className = 'filter__btn--color';
-    this.btnDescr.innerText = 'Search for color: ';
+    this.btnDescr.innerText = 'Color: ';
     this.fragment.append(this.btnDescr);
     employee.forEach((el) => {
       if (!this.colorArr.includes(el.color)) {

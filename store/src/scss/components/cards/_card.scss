@@ -2,7 +2,7 @@
   position: relative;
   padding: 10px;
   width: 30%;
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -11,7 +11,8 @@
   border-radius: 15px;
   transition: box-shadow 0.2s linear;
   @media (max-width:1080px) {
-    height: 480px;
+    height: 460px;
+    width: 45%;
   }
   cursor: pointer;
   &__img {

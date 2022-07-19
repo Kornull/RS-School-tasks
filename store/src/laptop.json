@@ -25,9 +25,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "Intel UHD Graphics Xe G4"
       },
       {
@@ -62,9 +59,6 @@
       },
       {
         "SSD": "1024 GB"
-      },
-      {
-        "Type of video card": "Discrete"
       },
       {
         "Video card model": "NVIDIA GeForce RTX 3060"
@@ -103,9 +97,6 @@
         "SSD": "512 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "AMD Radeon Vega 10"
       },
       {
@@ -140,9 +131,6 @@
       },
       {
         "SSD": "512 GB"
-      },
-      {
-        "Type of video card": "Discrete"
       },
       {
         "Video card model": "NVIDIA GeForce MX450"
@@ -181,9 +169,6 @@
         "SSD": "512 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "AMD Radeon Vega 7"
       },
       {
@@ -218,9 +203,6 @@
       },
       {
         "SSD": "512 GB (M.2 2280 PCIe 3.0x4 NVMe)"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "AMD Radeon Vega 7"
@@ -259,9 +241,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "Intel UHD Graphics 600"
       },
       {
@@ -298,9 +277,6 @@
         "SSD": "512 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "AMD Radeon Vega 7"
       },
       {
@@ -335,9 +311,6 @@
       },
       {
         "SSD": "512 GB"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "Iris Xe Graphics G7"
@@ -379,9 +352,6 @@
         "HDD": "1000 GB"
       },
       {
-        "Type of video card": "Discrete"
-      },
-      {
         "Video card model": "NVIDIA GeForce RTX 3050"
       },
       {
@@ -416,9 +386,6 @@
         },
         {
             "SSD": "512 GB"
-        },
-        {
-            "Type of video card": "Discrete"
         },
         {
             "Video card model": "NVIDIA GeForce GTX 1650"
@@ -457,9 +424,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "Intel UHD Graphics 600"
       },
       {
@@ -494,9 +458,6 @@
       },
       {
         "HDD": "1 TB"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "Intel UHD Graphics 600"
@@ -535,9 +496,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "Intel UHD Graphics"
       },
       {
@@ -571,9 +529,6 @@
       },
       {
         "SSD": "256 GB"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "Intel UHD Graphics"
@@ -612,9 +567,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "AMD Radeon Vega 6"
       },
       {
@@ -649,9 +601,6 @@
       },
       {
         "SSD": "512 GB"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "Intel UHD Graphics 620"
@@ -690,9 +639,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "Intel UHD Graphics"
       },
       {
@@ -727,9 +673,6 @@
       },
       {
         "SSD": "256 GB"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "Apple M1 GPU"
@@ -768,9 +711,6 @@
         "SSD": "256 GB"
       },
       {
-        "Type of video card": "built -in"
-      },
-      {
         "Video card model": "AMD Radeon Vega 8"
       },
       {
@@ -805,9 +745,6 @@
       },
       {
         "SSD": "256 GB"
-      },
-      {
-        "Type of video card": "built -in"
       },
       {
         "Video card model": "AMD Radeon Vega 2"

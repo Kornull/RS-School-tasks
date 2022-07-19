@@ -8,32 +8,32 @@
   width: 80%;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 4px;
   &--value1,
   &--value2 {
     position: absolute;
-    width: 60px;
+    width: 45px;
     height: 25px;
     background: #ffffff;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 4px #000;
     font-size: 14px;
     padding: 2px;
   }
   &--value2{
     top: -2px;
-    right: 30px;
+    right: 0px;
     @media(max-width:1080px) {
-      right: 0px;
+      right: -12px;
     }
   }
   &--value1{
     top: -2px;
-    left: 30px;
+    left: 0px;
     @media(max-width:1080px) {
-      left: 0px;
+      left: -12px;
     }
   }
 
@@ -42,9 +42,7 @@
   width: 25%;
   margin: 0 auto;
   font-size: 16px;
-  @media(max-width:1080px) {
     width: 80px;
-  }
 }
 #slider-round {
   height: 8px;
