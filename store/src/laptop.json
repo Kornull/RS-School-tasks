@@ -235,7 +235,7 @@
   },
   {
     "brand": "Acer",
-    "model": "Acer Aspire 3",
+    "model": "Acer Aspire 3.",
     "number": 14,
     "ram": "8",
     "color": "black",
@@ -511,7 +511,7 @@
   },
   {
     "brand": "Lenovo",
-    "model": "Lenovo IdeaPad L3",
+    "model": "Lenovo IdeaPad L3.",
     "number": 13,
     "ram": "8",
     "color": "silver",

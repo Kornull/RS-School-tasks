@@ -43,6 +43,10 @@ class Products {
   }
 
   public createCard(data: Laptop[]): void {
+    console.log(data);
+    const textBlock = document.createElement('div');
+    textBlock.className = 'no__product';
+    textBlock.innerText = 'Sorry. Nothing found, try another query.';
     const fragnent: DocumentFragment = document.createDocumentFragment();
     const productsArr: HTMLDivElement[] = [];
     let favoriteProductsArr: string[] = [];
@@ -96,15 +100,16 @@ class Products {
               favoriteProductsArr.push(el.id);
             }
           });
-          this.Local.set('FavoriteProduct', favoriteProductsArr);
           if (a !== null) {
             let num = Number(a.innerHTML);
             num++;
-            if (num > 5) {
-              num = 5;
-              alert('UPPPPS');
+            if (num > 20) {
+              num = 20;
               card.classList.remove('active');
+              alert('Shopping cart full,\nDelete products');
+              favoriteProductsArr = favoriteProductsArr.filter((e) => e !== card.id);
             }
+            this.Local.set('FavoriteProduct', favoriteProductsArr);
             if (num === 0) {
               this.Local.set('BasketCount', [0]);
             } else {
@@ -137,6 +142,9 @@ class Products {
       card.appendChild(year);
       fragnent.append(card);
     });
+    if (data.length === 0) {
+      fragnent.append(textBlock);
+    }
     const a = document.querySelector('.main__product') as Element;
     a.innerHTML = '';
     a.appendChild(fragnent);
