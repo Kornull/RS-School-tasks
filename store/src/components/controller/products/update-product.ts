@@ -26,9 +26,9 @@ class ProductsUpdate {
       img.src = `./assets/img/${laptopCard.image}`;
       for (const i of laptopCard.description) {
         const li: HTMLLIElement = document.createElement('li');
-        const arrK: string[] = Object.keys(i);
-        const arrV: string[] = Object.values(i);
-        li.innerHTML = `<b>${arrK[0]}</b> - ${arrV[0]}`;
+        const arrKey: string[] = Object.keys(i);
+        const arrValue: string[] = Object.values(i);
+        li.innerHTML = `<b>${arrKey[0]}</b> - ${arrValue[0]}`;
         ul.appendChild(li);
       }
       productsArr.push(card);
