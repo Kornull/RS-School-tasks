@@ -16,32 +16,32 @@ export default class BtnsColor extends FilterBlocksDiv {
     this.filterBtn.className = 'filter__btn--color';
     this.btnDescr.innerText = 'Color: ';
     this.fragment.append(this.btnDescr);
-    employee.forEach((el) => {
-      if (!this.colorArr.includes(el.color)) {
-        this.colorArr.push(el.color);
+    employee.forEach((colorBtn) => {
+      if (!this.colorArr.includes(colorBtn.color)) {
+        this.colorArr.push(colorBtn.color);
       }
     });
     const btns: HTMLElement[] = [];
-    this.colorArr.forEach((el) => {
+    this.colorArr.forEach((colorBtn) => {
       const btn: HTMLButtonElement = document.createElement('button');
       btn.className = 'btn btn__color';
-      btn.id = el;
-      btn.style.backgroundColor = el;
+      btn.id = colorBtn;
+      btn.style.backgroundColor = colorBtn;
       btns.push(btn);
       this.fragment.append(btn);
       btn.addEventListener('click', () => {
         const btnColor: string[] = [];
         btn.classList.toggle('active');
-        for (const i of btns) {
-          if (i.classList.contains('active')) {
-            btnColor.push(i.id);
+        for (const btnBlock of btns) {
+          if (btnBlock.classList.contains('active')) {
+            btnColor.push(btnBlock.id);
           }
         }
         if (this.local !== undefined) {
           this.local.set('BtnBrandColor', btnColor);
           let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
           if (btnColor.length === 0) {
-            countSort = countSort.filter((e) => e !== '2');
+            countSort = countSort.filter((countProduct) => countProduct !== '2');
           } else {
             countSort.push('2');
           }
@@ -53,9 +53,9 @@ export default class BtnsColor extends FilterBlocksDiv {
         }
       });
       const btnActive: string[] | undefined = this.local?.get('BtnBrandColor');
-      btnActive?.forEach((el) => {
+      btnActive?.forEach((activeBtn) => {
         btns.forEach((btn) => {
-          if (btn.id === el) {
+          if (btn.id === activeBtn) {
             btn.classList.add('active');
           }
         });

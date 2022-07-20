@@ -16,32 +16,32 @@ export default class BtnsBrand extends FilterBlocksDiv {
     this.filterBtn.className = 'filter__btn--brand';
     this.btnDescr.innerText = "Brand's";
     this.fragment.append(this.btnDescr);
-    employee.forEach((el) => {
-      if (!this.brandArr.includes(el.brand)) {
-        this.brandArr.push(el.brand);
+    employee.forEach((cardBrand) => {
+      if (!this.brandArr.includes(cardBrand.brand)) {
+        this.brandArr.push(cardBrand.brand);
       }
     });
     const btns: HTMLElement[] = [];
-    this.brandArr.forEach((el) => {
+    this.brandArr.forEach((card) => {
       const btn: HTMLButtonElement = document.createElement('button');
       btn.className = 'btn btn__brand';
-      btn.innerText = el;
-      btn.id = el;
+      btn.innerText = card;
+      btn.id = card;
       btns.push(btn);
       this.fragment.append(btn);
       btn.addEventListener('click', () => {
         const btnId: string[] = [];
         btn.classList.toggle('active');
-        for (const i of btns) {
-          if (i.classList.contains('active')) {
-            btnId.push(i.id);
+        for (const btnBlock of btns) {
+          if (btnBlock.classList.contains('active')) {
+            btnId.push(btnBlock.id);
           }
         }
         if (this.local !== undefined) {
           this.local.set('BtnBrandId', btnId);
           let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
           if (btnId.length === 0) {
-            countSort = countSort.filter((e) => e !== '1');
+            countSort = countSort.filter((countProduct) => countProduct !== '1');
           } else {
             countSort.push('1');
           }
@@ -53,9 +53,9 @@ export default class BtnsBrand extends FilterBlocksDiv {
         }
       });
       const btnActive = this.local?.get('BtnBrandId');
-      btnActive?.forEach((el) => {
+      btnActive?.forEach((card) => {
         btns.forEach((btn) => {
-          if (btn.id === el) {
+          if (btn.id === card) {
             btn.classList.add('active');
           }
         });
