@@ -5,7 +5,6 @@ class Products {
     const product: HTMLDivElement = document.createElement('div');
     product.className = 'main__product';
     const fragnent: DocumentFragment = document.createDocumentFragment();
-    // card.className = 'card_list';
     employee.forEach((_el: Laptop) => {
       const card: HTMLDivElement = document.createElement('div');
       const img: HTMLImageElement = document.createElement('img');

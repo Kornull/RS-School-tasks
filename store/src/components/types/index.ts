@@ -11,11 +11,6 @@ export interface Laptop {
   ram: string;
 }
 
-export type Key<T, U> = {
-  key: T;
-  sort: U;
-};
-
 export type ConstructorDiv = {
   filter: HTMLDivElement;
   fragment: DocumentFragment;
