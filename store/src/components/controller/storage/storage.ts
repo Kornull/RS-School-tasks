@@ -5,8 +5,8 @@ export class LocalStor {
     this.localsetItem = localStorage.getItem('');
   }
 
-  public set(name: string, lang: string[] | number[]) {
-    localStorage.setItem(name, JSON.stringify(lang));
+  public set(name: string, value: string[] | number[]) {
+    localStorage.setItem(name, JSON.stringify(value));
   }
   public get(name: string): string[] {
     this.localsetItem = localStorage.getItem(name);
