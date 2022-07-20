@@ -37,7 +37,7 @@ class SortedCard {
       }
     }
     if (data.length === 0) {
-      data = [...['Lenovo', 'Asus', 'Acer', 'HP', 'Honor', 'Apple']];
+      data = ['Lenovo', 'Asus', 'Acer', 'HP', 'Honor', 'Apple'];
     }
     if (count.length === 0) {
       count.length = 1;
@@ -51,7 +51,7 @@ class SortedCard {
           ...this.storage.get('YearsBrand'),
           ...this.storage.get('StockBrands'),
         ];
-        count = count.filter((number) => number !== '4');
+        count = count.filter((countProducts) => countProducts !== '4');
       }
     });
     data = Array.from(new Set(data));
