@@ -7,14 +7,12 @@ import { LocalStor } from './storage/storage';
 class SortedCard {
   public product: ProductsUpdate;
   private sortArr: Laptop[];
-  private copySortLeng: Laptop[];
   private storage: LocalStor;
   constructor() {
     this.storage = new LocalStor();
 
     this.product = new ProductsUpdate();
     this.sortArr = [];
-    this.copySortLeng = [];
   }
   public newSortArr(): void {
     let counts = 0;
@@ -70,46 +68,32 @@ class SortedCard {
         });
       });
     });
-    this.copySortLeng = [];
-    this.sortArr.forEach((laptop) => {
-      counts = 0;
-      data.forEach((product) => {
-        keysOfLaptop.forEach((key: keyof Laptop) => {
-          if (laptop[key] === product) {
-            counts++;
-            if (counts === count.length) {
-              this.copySortLeng.push(laptop);
-            }
-          }
-        });
-      });
-    });
 
     const listNumValue: string = this.storage.get('ListValue')[0];
     switch (Number(listNumValue)) {
       case 1:
-        this.copySortLeng.sort(function (a, b) {
+        this.sortArr.sort(function (a, b) {
           const x: string = a.brand.toLowerCase();
           const y: string = b.brand.toLowerCase();
           return x < y ? -1 : x > y ? 1 : 0;
         });
         break;
       case 2:
-        this.copySortLeng.sort(function (a, b) {
+        this.sortArr.sort(function (a, b) {
           const x: string = a.brand.toLowerCase();
           const y: string = b.brand.toLowerCase();
           return x > y ? -1 : x < y ? 1 : 0;
         });
         break;
       case 3:
-        this.copySortLeng.sort(function (a, b) {
+        this.sortArr.sort(function (a, b) {
           const x: string = a.year.toLowerCase();
           const y: string = b.year.toLowerCase();
           return x < y ? -1 : x > y ? 1 : 0;
         });
         break;
       case 4:
-        this.copySortLeng.sort(function (a, b) {
+        this.sortArr.sort(function (a, b) {
           const x: string = a.year.toLowerCase();
           const y: string = b.year.toLowerCase();
           return x > y ? -1 : x < y ? 1 : 0;
@@ -117,12 +101,12 @@ class SortedCard {
         break;
     }
     if (this.storage.get('PopularCheckBox').length === 1) {
-      this.copySortLeng = this.copySortLeng.filter((laptop) => laptop.number <= 5);
+      this.sortArr = this.sortArr.filter((laptop) => laptop.number <= 5);
     }
     if (data.length === 0) {
       this.product.createCard(employee);
     } else {
-      this.product.createCard(this.copySortLeng);
+      this.product.createCard(this.sortArr);
     }
   }
 }
