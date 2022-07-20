@@ -61,7 +61,7 @@ class FilterStock extends FilterBlocksDiv {
         this.local.set('StockBrands', stockArr);
         let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
         if (stockArr.length === 0) {
-          countSort = countSort.filter((e) => e !== '6');
+          countSort = countSort.filter((brandCount) => brandCount !== '6');
         } else {
           countSort.push('6');
         }

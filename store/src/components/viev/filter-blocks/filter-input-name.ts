@@ -32,10 +32,10 @@ class InputName extends FilterBlocksDiv {
       let count = 0;
       let btnId: string[] = [];
 
-      employee.forEach((el) => {
-        if (el.brand.toLowerCase().includes(input.value.toLowerCase())) {
+      employee.forEach((laptop) => {
+        if (laptop.brand.toLowerCase().includes(input.value.toLowerCase())) {
           count = 1;
-          btnId.push(el.brand);
+          btnId.push(laptop.brand);
         }
       });
       if (count === 0) {
@@ -47,7 +47,7 @@ class InputName extends FilterBlocksDiv {
         this.local.set('BtnInputId', btnId);
         countSort = [...this.local.get('CountSortedGet')];
         if (btnId.length === 0) {
-          countSort = countSort.filter((e) => e !== '4');
+          countSort = countSort.filter((brandCount) => brandCount !== '4');
         } else {
           countSort.push('4');
         }
@@ -55,7 +55,7 @@ class InputName extends FilterBlocksDiv {
           this.filterBtn.classList.add('active');
           this.local.set('ValueInput', []);
           this.local.set('BtnInputId', []);
-          countSort = countSort.filter((e) => e !== '4');
+          countSort = countSort.filter((brandCount) => brandCount !== '4');
         } else {
           this.filterBtn.classList.remove('active');
         }

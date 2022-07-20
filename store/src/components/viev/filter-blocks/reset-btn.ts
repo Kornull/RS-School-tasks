@@ -18,7 +18,6 @@ class ResetBtn extends FilterBlocksDiv {
     btn.id = 'reset';
     btn.innerText = 'reset filters';
     btn.addEventListener('click', () => {
-      console.log('t');
       this.local.set('YearsBrand', ['2019', '2020', '2021', '2022']);
       this.local.set('BtnBrandColor', []);
       this.local.set('BtnBrandRam', []);

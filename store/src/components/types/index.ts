@@ -24,7 +24,6 @@ export type ConstructorDiv = {
   keyname: string[];
   brandCount: string[];
   sortArr: Laptop[];
-  copySortLeng: Laptop[];
   availabilityCheck: number[];
   copySortAll: string[];
 };

@@ -49,7 +49,7 @@ class FilterYear extends FilterBlocksDiv {
         this.local.set('YearsBrand', yearsArr);
         let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
         if (yearsArr.length === 0) {
-          countSort = countSort.filter((e) => e !== '5');
+          countSort = countSort.filter((brandCount) => brandCount !== '5');
         } else {
           countSort.push('5');
         }

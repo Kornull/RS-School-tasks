@@ -17,17 +17,17 @@ class BtnsRam extends FilterBlocksDiv {
     this.filterBtn.className = 'filter__btn--ram';
     this.btnDescr.innerText = 'RAM: ';
     this.fragment.append(this.btnDescr);
-    employee.forEach((el) => {
-      if (!this.memoryRam.includes(el.ram)) {
-        this.memoryRam.push(el.ram);
+    employee.forEach((ramBtn) => {
+      if (!this.memoryRam.includes(ramBtn.ram)) {
+        this.memoryRam.push(ramBtn.ram);
       }
     });
     const btns: HTMLElement[] = [];
-    this.memoryRam.forEach((el) => {
+    this.memoryRam.forEach((ramBtn) => {
       const btn: HTMLButtonElement = document.createElement('button');
       btn.className = 'btn btn__ram';
-      btn.innerText = el;
-      btn.id = el;
+      btn.innerText = ramBtn;
+      btn.id = ramBtn;
       btns.push(btn);
       this.fragment.append(btn);
       btn.addEventListener('click', () => {
@@ -42,7 +42,7 @@ class BtnsRam extends FilterBlocksDiv {
           this.local.set('BtnBrandRam', btnRam);
           let countSort: number[] | string[] = [...this.local.get('CountSortedGet')];
           if (btnRam.length === 0) {
-            countSort = countSort.filter((e) => e !== '3');
+            countSort = countSort.filter((brandCount) => brandCount !== '3');
           } else {
             countSort.push('3');
           }
@@ -54,9 +54,9 @@ class BtnsRam extends FilterBlocksDiv {
         }
       });
       const btnActive: string[] | undefined = this.local?.get('BtnBrandRam');
-      btnActive?.forEach((el) => {
+      btnActive?.forEach((ramActive) => {
         btns.forEach((btn) => {
-          if (btn.id === el) {
+          if (btn.id === ramActive) {
             btn.classList.add('active');
           }
         });

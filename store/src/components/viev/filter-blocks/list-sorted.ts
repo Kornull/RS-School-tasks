@@ -20,11 +20,11 @@ export default class SortList extends FilterBlocksDiv {
     const listSort = document.createElement('select');
     listSort.name = 'user_brand';
     listSort.className = 'list__sort';
-    this.listSortedArr.forEach((e) => {
+    this.listSortedArr.forEach((sortedOption) => {
       const option = document.createElement('option');
       count++;
       option.value = `${count}`;
-      option.innerText = e;
+      option.innerText = sortedOption;
 
       listSort.appendChild(option);
       this.optionArr.push(option);
