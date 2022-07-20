@@ -31,6 +31,7 @@ class AllResetBtn extends FilterBlocksDiv {
       this.local.set('CountSortedGet', ['5', '6']);
       this.local.set('UiSliderCallbackYears', [2019, 2022.5]);
       this.local.set('BtnBrandId', []);
+      this.local.set('BtnInputId', []);
 
       setTimeout(() => {
         this.sortedCards.newSortArr();
