@@ -1,6 +1,6 @@
 export class LocalStor {
   private localsetItem: string | null;
-  private todos!: [];
+  private acceptedList!: [];
   constructor() {
     this.localsetItem = localStorage.getItem('');
   }
@@ -11,10 +11,10 @@ export class LocalStor {
   public get(name: string): string[] {
     this.localsetItem = localStorage.getItem(name);
     if (this.localsetItem == null) {
-      this.todos = [];
+      this.acceptedList = [];
     } else {
-      this.todos = JSON.parse(this.localsetItem);
+      this.acceptedList = JSON.parse(this.localsetItem);
     }
-    return this.todos;
+    return this.acceptedList;
   }
 }
