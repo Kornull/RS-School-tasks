@@ -14,17 +14,17 @@ class ProductsUpdate {
     const fragnent: DocumentFragment = document.createDocumentFragment();
     const productsArr: HTMLDivElement[] = [];
     let favoriteProductsArr: string[] = [];
-    data.forEach((_el: Laptop) => {
+    data.forEach((laptopCard: Laptop) => {
       const card: HTMLDivElement = document.createElement('div');
       const img: HTMLImageElement = document.createElement('img');
       const ul: HTMLUListElement = document.createElement('ul');
       card.className = 'card';
-      card.id = _el.model.split(' ').join('-');
+      card.id = laptopCard.model.split(' ').join('-');
       img.className = 'card__img';
       ul.className = 'card__list';
-      card.innerHTML = _el.model;
-      img.src = `./assets/img/${_el.image}`;
-      for (const i of _el.description) {
+      card.innerHTML = laptopCard.model;
+      img.src = `./assets/img/${laptopCard.image}`;
+      for (const i of laptopCard.description) {
         const li: HTMLLIElement = document.createElement('li');
         const arrK: string[] = Object.keys(i);
         const arrV: string[] = Object.values(i);
@@ -37,9 +37,9 @@ class ProductsUpdate {
         if (card.classList.contains('active')) {
           favoriteProductsArr = [];
           card.classList.remove('active');
-          productsArr.forEach((el) => {
-            if (el.classList.contains('active')) {
-              favoriteProductsArr.push(el.id);
+          productsArr.forEach((laptop) => {
+            if (laptop.classList.contains('active')) {
+              favoriteProductsArr.push(laptop.id);
             }
           });
           this.Local.set('FavoriteProduct', favoriteProductsArr);
@@ -59,9 +59,9 @@ class ProductsUpdate {
         } else {
           favoriteProductsArr = [];
           card.classList.add('active');
-          productsArr.forEach((el) => {
-            if (el.classList.contains('active')) {
-              favoriteProductsArr.push(el.id);
+          productsArr.forEach((laptop) => {
+            if (laptop.classList.contains('active')) {
+              favoriteProductsArr.push(laptop.id);
             }
           });
           if (baskeNum !== null) {
@@ -87,18 +87,18 @@ class ProductsUpdate {
         }
       });
       if (this.Local.get('FavoriteProduct').length !== 0) {
-        this.Local.get('FavoriteProduct').forEach((el) => {
-          productsArr.forEach((e) => {
-            if (el === e.id) {
-              e.classList.add('active');
+        this.Local.get('FavoriteProduct').forEach((product) => {
+          productsArr.forEach((productCard) => {
+            if (product === productCard.id) {
+              productCard.classList.add('active');
             }
           });
         });
       }
       const stock: HTMLDivElement = document.createElement('div');
-      stock.innerHTML = `<b>In stock</b> - ${_el.number}`;
+      stock.innerHTML = `<b>In stock</b> - ${laptopCard.number}`;
       const year: HTMLDivElement = document.createElement('div');
-      year.innerHTML = `<b>Year</b> - ${_el.year}`;
+      year.innerHTML = `<b>Year</b> - ${laptopCard.year}`;
       card.appendChild(img);
       card.appendChild(ul);
       card.appendChild(stock);
