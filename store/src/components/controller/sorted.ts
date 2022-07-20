@@ -42,8 +42,8 @@ class SortedCard {
     if (count.length === 0) {
       count.length = 1;
     }
-    this.storage.get('BtnInputId').forEach((el) => {
-      if (this.storage.get('BtnBrandId').includes(el)) {
+    this.storage.get('BtnInputId').forEach((productId) => {
+      if (this.storage.get('BtnBrandId').includes(productId)) {
         data = [
           ...this.storage.get('BtnBrandId'),
           ...this.storage.get('BtnBrandColor'),
@@ -51,34 +51,34 @@ class SortedCard {
           ...this.storage.get('YearsBrand'),
           ...this.storage.get('StockBrands'),
         ];
-        count = count.filter((e) => e !== '4');
+        count = count.filter((number) => number !== '4');
       }
     });
     data = Array.from(new Set(data));
     this.sortArr = [];
     const keysOfLaptop = keys<Laptop>();
-    employee.forEach((lapEl) => {
+    employee.forEach((laptop) => {
       counts = 0;
-      data.forEach((el1) => {
+      data.forEach((product) => {
         keysOfLaptop.forEach((key: keyof Laptop) => {
-          if (lapEl[key] === el1) {
+          if (laptop[key] === product) {
             counts++;
             if (counts === count.length) {
-              this.sortArr.push(lapEl);
+              this.sortArr.push(laptop);
             }
           }
         });
       });
     });
     this.copySortLeng = [];
-    this.sortArr.forEach((lapEl) => {
+    this.sortArr.forEach((laptop) => {
       counts = 0;
-      data.forEach((el1) => {
+      data.forEach((product) => {
         keysOfLaptop.forEach((key: keyof Laptop) => {
-          if (lapEl[key] === el1) {
+          if (laptop[key] === product) {
             counts++;
             if (counts === count.length) {
-              this.copySortLeng.push(lapEl);
+              this.copySortLeng.push(laptop);
             }
           }
         });
@@ -117,7 +117,7 @@ class SortedCard {
         break;
     }
     if (this.storage.get('PopularCheckBox').length === 1) {
-      this.copySortLeng = this.copySortLeng.filter((el) => el.number <= 5);
+      this.copySortLeng = this.copySortLeng.filter((laptop) => laptop.number <= 5);
     }
     if (data.length === 0) {
       this.product.createCard(employee);
