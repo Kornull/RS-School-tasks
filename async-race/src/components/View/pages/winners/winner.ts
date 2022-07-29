@@ -1,1 +1,1 @@
-import './_winner.scss'
+import './_winner.scss';

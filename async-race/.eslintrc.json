@@ -23,8 +23,8 @@
   },
   "rules": {
     "no-debugger": "off",
-    "no-console": 0,
     "no-explicit-any": "off",
+    "no-console": 2,
     "class-methods-use-this": "off",
     "@typescript-eslint/no-explicit-any": 2
   },

@@ -1,1 +1,1 @@
-import './_garage.scss'
+import './_garage.scss';

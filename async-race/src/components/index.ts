@@ -1,1 +1,1 @@
-import './Controller/button-page/btn'
+import './Controller/button-page/btn';
