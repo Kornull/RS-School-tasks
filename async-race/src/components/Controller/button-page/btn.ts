@@ -1,4 +1,5 @@
 import './_btn.scss';
+// import { getCarsInfo } from '../GET/api';
 
 function btnPage() {
   const btGarage: HTMLButtonElement = document.createElement('button');
@@ -8,5 +9,5 @@ function btnPage() {
   const body = <HTMLBodyElement>document.querySelector('body');
   body.append(btGarage);
 }
-
+// console.log(getCarsInfo());
 btnPage();
