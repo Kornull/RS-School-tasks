@@ -26,13 +26,13 @@ const plugins = () => {
     new MiniCssExtractPlugin({
       filename: `./assets/css/${filename('css')}`
     }),
-    // new CopyPlugin({
-    //   patterns: [{
-    //     from: `img/*.jpg`,
-    //     to: 'assets',
-    //   }
-    //   ]
-    // })
+    new CopyPlugin({
+      patterns: [{
+        from: `img/*.svg`,
+        to: 'assets',
+      }
+      ]
+    })
   ];
 };
 
@@ -75,7 +75,7 @@ module.exports = {
     open: true,
     hot: true,
     compress: true,
-    port: 3000,
+    port: 8080,
   },
   plugins: plugins(),
   devtool: isProd ? false : "source-map",
@@ -131,13 +131,13 @@ module.exports = {
       //     filename: `assets/img/${nameImg()}`
       //   }
       // },
-      {
-        test: /\.(svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: `assets/icons/${nameImg()}`
-        }
-      },
+      // {
+      //   test: /\.(svg)$/i,
+      //   type: 'asset/resource',
+      //   generator: {
+      //     filename: `assets/icons/${nameImg()}`
+      //   }
+      // },
       {
         test: /\.(?:woff2|woff|eot|ttf|otf)$/i,
         type: 'asset/resource',

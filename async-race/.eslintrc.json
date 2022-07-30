@@ -12,7 +12,7 @@
     "airbnb-typescript/base"
   ],
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
@@ -26,7 +26,8 @@
     "no-explicit-any": "off",
     "no-console": 2,
     "class-methods-use-this": "off",
-    "@typescript-eslint/no-explicit-any": 2
+    "@typescript-eslint/no-explicit-any": 2,
+    "import/prefer-default-export": "off"
   },
   "ignorePatterns": [
     "webpack.**",
