@@ -3,6 +3,23 @@ import { getCountCars } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
 // eslint-disable-next-line import/no-cycle
 import { garageLink } from '../../View/pages/garage/garage';
+// eslint-disable-next-line import/no-cycle
+import { updateEmployee } from '../rest/PUT/put-run';
+
+const updateInput = (id: number, name: string) => {
+  const btnUpdate = <HTMLButtonElement>document.querySelector('.btn__update-car');
+  const inputName = <HTMLInputElement>document.querySelector('#car-name__update');
+  const inputColor = <HTMLInputElement>document.querySelector('#car-color__update');
+  inputName.value = name;
+
+  btnUpdate.addEventListener('click', () => {
+    const obg: CarsAttribute = {
+      name: inputName.value.slice(0, 1).toUpperCase() + inputName.value.slice(1),
+      color: inputColor.value,
+    };
+    updateEmployee(id, obg);
+  });
+};
 
 const createCar = (carChar: CarsAttribute): HTMLDivElement => {
   const car: HTMLDivElement = document.createElement('div');
@@ -16,10 +33,11 @@ const createCar = (carChar: CarsAttribute): HTMLDivElement => {
   car.style.color = `${carChar.color}`;
   car.id = `${carChar.id}`;
 
-  car.addEventListener('click', () => {
-    const input = <HTMLInputElement>document.querySelector('#car-name__update');
-    input.value = car.style.color;
-  });
+  car.addEventListener('click', () => updateInput(Number(car.id), carChar.name));
+  setTimeout(() => {
+    car.removeEventListener('click', () => updateInput(Number(-1), ''));
+  }, 200);
+
   return car;
 };
 
@@ -63,4 +81,5 @@ export const createCars = async () => {
   return racing(colorArr);
 };
 
+export default createCars();
 // document.querySelector('body').append(createCar()) as HTMLBodyElement;

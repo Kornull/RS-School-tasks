@@ -1,17 +1,13 @@
 import { urlGarage } from '../../../templates/urls';
 import { CarsAttribute } from '../../../types/types';
-import { createCars } from '../../car/createCars';
 // eslint-disable-next-line import/no-cycle
-import { garageLink } from '../../../View/pages/garage/garage';
+import { createCars } from '../../car/createCars';
 
 export const getNewCar = async () => {
-  // const form = <HTMLFormElement>document.querySelector('#form-post');
   const color = <HTMLInputElement>document.querySelector('#car-color');
-  // console.log(color);
-
   const name = <HTMLInputElement>document.querySelector('#car-name');
   const objCar: CarsAttribute = {
-    name: name.value,
+    name: name.value.slice(0, 1).toUpperCase() + name.value.slice(1),
     color: color.value,
   };
   await fetch(`${urlGarage()}`, {
@@ -21,5 +17,5 @@ export const getNewCar = async () => {
     },
     body: JSON.stringify(objCar),
   });
-  await createCars();
+  createCars();
 };
