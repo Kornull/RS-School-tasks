@@ -8,7 +8,7 @@ const createCar = (color: string) => {
   const svg: HTMLElement = document.createElement('svg');
   svg.className = 'car__icon';
   car.innerHTML = `<svg class="car__icon" fill="${color}">
-  <use xlink:href="../assets/img/carr.svg#carr"></use>
+  <use xlink:href="../assets/img/car.svg#carview"></use>
   </svg>
   `;
 

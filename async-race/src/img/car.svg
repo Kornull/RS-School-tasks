@@ -1,8 +1,16 @@
-<svg width="0" height="0" class="hidden">
-    <symbol xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" id="carr">
-        <metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017</metadata>
-        <g transform="translate(0.000000,720.000000) scale(0.100000,-0.100000)" stroke="none">
-            <path d="M5775 5093 c-16 -8 -37 -22 -46 -29 -12 -11 -21 -11 -47 -2 -27 11
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ viewBox="0 0 1280.000000 720.000000"
+ preserveAspectRatio="xMidYMid meet"
+ id="carview">
+<metadata>
+Created by potrace 1.15, written by Peter Selinger 2001-2017
+</metadata>
+<g transform="translate(0.000000,720.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M5775 5093 c-16 -8 -37 -22 -46 -29 -12 -11 -21 -11 -47 -2 -27 11
 -35 10 -59 -8 -36 -25 -100 -152 -115 -226 -11 -54 -11 -59 11 -81 12 -14 37
 -33 56 -43 25 -13 33 -24 33 -44 -2 -59 19 -78 218 -195 l156 -92 -36 -22
 c-131 -81 -100 -239 62 -313 34 -16 89 -31 122 -35 33 -3 60 -9 60 -14 0 -16
@@ -34,7 +42,6 @@ c-131 -81 -100 -239 62 -313 34 -16 89 -31 122 -35 33 -3 60 -9 60 -14 0 -16
 -45 -136 -105 -171 -39 -23 -59 -28 -112 -28 -89 1 -157 41 -196 118 -21 40
 -29 119 -15 145 7 12 13 22 14 22 1 0 31 -9 65 -20z m-7890 -80 c77 -24 216
 -27 287 -5 27 8 52 12 57 9 4 -3 8 -24 8 -46 0 -131 -94 -228 -223 -228 -122
-0 -229 125 -211 248 3 23 9 42 13 42 3 0 35 -9 69 -20z"></path>
-        </g>
-    </symbol>
+0 -229 125 -211 248 3 23 9 42 13 42 3 0 35 -9 69 -20z"/>
+</g>
 </svg>
