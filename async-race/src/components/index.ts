@@ -1,4 +1,4 @@
-import './Controller/button-page/btn';
+import './Controller/buttons/btn';
 import { createCars } from './Controller/car/createCars';
 
 createCars();
