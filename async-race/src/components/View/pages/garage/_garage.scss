@@ -1,0 +1,21 @@
+.form{
+  display: flex;
+  width: 330px;
+  flex-wrap: wrap;
+  &__name {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 5px;
+  }
+  &__btns{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+}
+#car-color,
+#car-color__update{
+  margin-bottom: 10px;
+}

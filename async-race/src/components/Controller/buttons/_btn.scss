@@ -24,4 +24,11 @@
     padding: 0;
     margin-left: 10px;
   }
+  &__create-car,
+  &__create-allcar,
+  &__update-car{
+    margin-left: 10px;
+    width: 75px;
+    height: 20px;
+  }
 }

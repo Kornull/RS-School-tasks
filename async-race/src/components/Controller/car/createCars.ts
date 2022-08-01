@@ -4,7 +4,7 @@ import { CarsAttribute } from '../../types/types';
 // eslint-disable-next-line import/no-cycle
 import { garageLink } from '../../View/pages/garage/garage';
 // eslint-disable-next-line import/no-cycle
-import { updateEmployee } from '../rest/PUT/put-run';
+import { updateEmployee } from '../rest/PATCH/put-run';
 
 const updateInput = (id: number, name: string) => {
   const btnUpdate = <HTMLButtonElement>document.querySelector('.btn__update-car');
@@ -80,6 +80,3 @@ export const createCars = async () => {
 
   return racing(colorArr);
 };
-
-export default createCars();
-// document.querySelector('body').append(createCar()) as HTMLBodyElement;

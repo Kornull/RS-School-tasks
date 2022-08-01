@@ -27,7 +27,8 @@
     "no-console": 2,
     "class-methods-use-this": "off",
     "@typescript-eslint/no-explicit-any": 2,
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-plusplus": 0
   },
   "ignorePatterns": [
     "webpack.**",

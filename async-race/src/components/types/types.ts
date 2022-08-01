@@ -3,3 +3,7 @@ export type CarsAttribute = {
   color: string;
   id?: number;
 };
+
+export enum Onehundred {
+  nundred = 100,
+}
