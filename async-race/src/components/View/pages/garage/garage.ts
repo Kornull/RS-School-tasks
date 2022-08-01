@@ -23,15 +23,11 @@ const getFormGarage = (): HTMLDivElement => {
   return form;
 };
 
-export const garageLink = async (main: HTMLElement): Promise<void> => {
-  const body = <HTMLBodyElement>document.querySelector('body');
+export const garageLink = async (): Promise<HTMLElement> => {
   const garage: HTMLDivElement = document.createElement('div');
-  body.innerHTML = '';
   garage.className = 'garage';
   const form = getFormGarage();
-  garage.appendChild(form);
-  garage.appendChild(main);
-  body.appendChild(garage);
+  garage.append(form);
   form.addEventListener('click', (ev) => {
     const message = ev.target as HTMLElement;
     switch (message.id) {
@@ -44,4 +40,5 @@ export const garageLink = async (main: HTMLElement): Promise<void> => {
       // no default
     }
   });
+  return garage;
 };

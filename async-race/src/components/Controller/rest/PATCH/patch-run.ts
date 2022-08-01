@@ -11,7 +11,6 @@ const getUpdateCard = async (id: number, body: CarsAttribute): Promise<void> => 
     },
     body: JSON.stringify(body),
   });
-  // return response.json();
   await createCars();
 };
 

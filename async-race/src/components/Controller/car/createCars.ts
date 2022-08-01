@@ -3,8 +3,6 @@ import { updateInput } from '../rest/PATCH/patch-run';
 import './_car.scss';
 import { getCountCars } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
-// eslint-disable-next-line import/no-cycle
-import { garageLink } from '../../View/pages/garage/garage';
 
 const createCar = (carChar: CarsAttribute): HTMLDivElement => {
   const car: HTMLDivElement = document.createElement('div');
@@ -19,24 +17,21 @@ const createCar = (carChar: CarsAttribute): HTMLDivElement => {
   car.id = `${carChar.id}`;
 
   car.addEventListener('click', () => updateInput(Number(car.id), carChar.name));
-  // setTimeout(() => {
-  //   car.removeEventListener('click', () => updateInput(Number(-1), ''));
-  // }, 200);
 
   return car;
 };
 
-const create = async (carBlock: HTMLElement[]): Promise<void> => {
+const create = async (carBlock: HTMLElement[]): Promise<HTMLElement> => {
   const main: HTMLElement = document.createElement('main');
   main.innerHTML = '';
   main.className = 'main';
   carBlock.forEach((elCar) => {
     main.appendChild(elCar);
   });
-  await garageLink(main);
+  return main;
 };
 
-export const racing = (carsObj: CarsAttribute[]): void => {
+export const racing = async (carsObj: CarsAttribute[]): Promise<HTMLElement> => {
   const ddd: HTMLElement[] = [];
   carsObj.forEach((col: CarsAttribute) => {
     const race = document.createElement('div');
@@ -48,7 +43,7 @@ export const racing = (carsObj: CarsAttribute[]): void => {
     race.append(createCar(col));
     ddd.push(race);
   });
-  create(ddd);
+  return create(ddd);
 };
 
 export const createCars = async () => {

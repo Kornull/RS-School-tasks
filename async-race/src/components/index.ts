@@ -1,4 +1,4 @@
 import './Controller/buttons/btn';
-import { createCars } from './Controller/car/createCars';
+import { App } from './App/App';
 
-createCars();
+App();

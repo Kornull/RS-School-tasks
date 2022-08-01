@@ -15,7 +15,7 @@ const getNewCar = async (objCar: CarsAttribute) => {
   await createCars();
 };
 
-export const getChartersToCar = async () => {
+export const getChartersToCar = async (): Promise<void> => {
   const color = <HTMLInputElement>document.querySelector('#car-color');
   const name = <HTMLInputElement>document.querySelector('#car-name');
   const objCar: CarsAttribute = {
@@ -44,5 +44,5 @@ const getRandomCarCharters = (): void => {
     name: `${name} ${model}`,
     color: colorCar,
   };
-  getNewCar(obg);
+  getNewCar(obg).then((r) => r);
 };
