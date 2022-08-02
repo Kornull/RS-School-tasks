@@ -5,32 +5,36 @@ import { updateCars } from '../../car/createCars';
 
 export const getUpdateCard = async (id: number, body: CarsAttribute): Promise<void> => {
   await fetch(`${urlGarage()}/${id}`, {
-    method: 'PATCH',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
   });
-  setTimeout(() => {
-    for (let i = 0; i < 1; i++) {
-      updateCars();
-    }
-  }, 1000);
+  updateCars();
 };
 
-export const updateInput = (id: number, name: string) => {
-  const btnUpdate = <HTMLButtonElement>document.querySelector('.btn__update-car');
+export const updateInput = () => {
+  let id = 0;
   const inputName = <HTMLInputElement>document.querySelector('#car-name__update');
   const inputColor = <HTMLInputElement>document.querySelector('#car-color__update');
-
-  inputName.value = name;
-  btnUpdate.addEventListener('click', () => {
-    const obg: CarsAttribute = {
-      name: '',
-      color: '',
-    };
-    obg.name = name.slice(0, 1).toUpperCase() + name.slice(1);
-    obg.color = inputColor.value;
-    getUpdateCard(id, obg);
+  const name = inputName.value;
+  const carElements: NodeList = document.querySelectorAll('.car');
+  carElements.forEach((el) => {
+    const newEl = el as HTMLElement;
+    if (newEl.classList.contains('choice')) {
+      id = Number(newEl.id);
+    }
   });
+
+  const obg: CarsAttribute = {
+    name: '',
+    color: '',
+    id: 0,
+  };
+  obg.name = name.slice(0, 1).toUpperCase() + name.slice(1);
+  obg.color = inputColor.value;
+  obg.id = id;
+
+  getUpdateCard(id, obg);
 };

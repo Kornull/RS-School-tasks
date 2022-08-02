@@ -2,6 +2,7 @@ import './_garage.scss';
 // eslint-disable-next-line import/no-cycle
 import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/POST/post-run';
 import { createCars } from '../../../Controller/car/createCars';
+import { updateInput } from '../../../Controller/rest/PATCH/patch-run';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -39,6 +40,9 @@ export const garageLink = async (): Promise<HTMLElement> => {
         break;
       case 'one-hundred-car':
         getOneHundredCars();
+        break;
+      case 'update-car':
+        updateInput();
         break;
       // no default
     }

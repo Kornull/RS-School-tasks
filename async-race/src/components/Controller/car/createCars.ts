@@ -5,11 +5,12 @@ import { getCountCars } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
 
 const updateHasCar = (): HTMLElement => {
+  const arrrBlocks: HTMLElement[] = [];
   const racingBlock = <HTMLElement>document.createElement('div');
-  racingBlock.className = 'rasing__slider';
+  racingBlock.className = 'racing__slider';
   getCountCars().then((cars: CarsAttribute[]) => {
     for (let i = 0; i < cars.length; i++) {
-      const race = <HTMLElement>document.createElement('div');
+      const race = <HTMLDivElement>document.createElement('div');
       race.className = 'racing';
       const carBlock: HTMLDivElement = document.createElement('div');
       carBlock.className = 'car';
@@ -26,16 +27,18 @@ const updateHasCar = (): HTMLElement => {
       <button type="button" class="btn btn__race-stop" id="stop"></button>
       `;
       race.appendChild(carBlock);
+      arrrBlocks.push(carBlock);
       racingBlock.appendChild(race);
       carBlock.addEventListener('click', () => {
-        const arr = <Array<number | string>>Array.from(new Set());
-        const num = Number(carBlock.id);
-        const str: string = carBlock.innerText;
-        arr.push(num);
-        arr.push(str);
-        if (typeof arr[0] === 'number' && typeof arr[1] === 'string') updateInput(arr[0], arr[1]);
+        const input = <HTMLInputElement>document.querySelector('#car-name__update');
+        arrrBlocks.forEach((el) => el.classList.remove('choice'));
+        arrrBlocks.forEach((el) => {
+          if (carBlock.id === el.id) el.classList.add('choice');
+        });
+
+        input.value = carBlock.innerText;
       });
-      carBlock.removeEventListener('click', () => {});
+      carBlock.removeEventListener('click', updateInput);
     }
   });
   return racingBlock;

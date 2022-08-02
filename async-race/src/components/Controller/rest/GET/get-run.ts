@@ -5,6 +5,7 @@ import { urlGarage } from '../../../templates/urls';
 
 export const getCountCars = async () => {
   const response = await fetch(`${urlGarage()}`);
+
   const items: CarsAttribute[] = await response.json();
   return items;
 };
