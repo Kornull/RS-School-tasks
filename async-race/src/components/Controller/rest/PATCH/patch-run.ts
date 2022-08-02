@@ -35,6 +35,9 @@ export const updateInput = () => {
   obg.name = name.slice(0, 1).toUpperCase() + name.slice(1);
   obg.color = inputColor.value;
   obg.id = id;
-
-  getUpdateCard(id, obg);
+  if (id !== 0) {
+    getUpdateCard(id, obg);
+  } else {
+    alert('AHAHA');
+  }
 };

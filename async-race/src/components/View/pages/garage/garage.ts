@@ -3,6 +3,7 @@ import './_garage.scss';
 import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/POST/post-run';
 import { createCars } from '../../../Controller/car/createCars';
 import { updateInput } from '../../../Controller/rest/PATCH/patch-run';
+import { deleteCar } from '../../../Controller/rest/DELETE/delete-run';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -19,6 +20,7 @@ const getFormGarage = (): HTMLDivElement => {
     <input type="color" id="car-color__update" name="color" value="#e66465">
     <div class="form__btns">
     <button type="button" class="btn btn__update-car" id="update-car">Update</button>
+    <button type="button" class="btn btn__delete-car" id="delete-car">del</button>
     </div>
 </form>
   `;
@@ -43,6 +45,9 @@ export const garageLink = async (): Promise<HTMLElement> => {
         break;
       case 'update-car':
         updateInput();
+        break;
+      case 'delete-car':
+        deleteCar();
         break;
       // no default
     }
