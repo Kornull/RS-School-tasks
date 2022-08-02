@@ -2,7 +2,7 @@ import './_garage.scss';
 // eslint-disable-next-line import/no-cycle
 import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/POST/post-run';
 import { createCars } from '../../../Controller/car/createCars';
-import { updateInput } from '../../../Controller/rest/PATCH/patch-run';
+import { updateInput } from '../../../Controller/rest/PUT/patch-run';
 import { deleteCar } from '../../../Controller/rest/DELETE/delete-run';
 
 const getFormGarage = (): HTMLDivElement => {

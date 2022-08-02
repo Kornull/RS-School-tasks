@@ -40,4 +40,5 @@ export const updateInput = () => {
   } else {
     alert('AHAHA');
   }
+  inputName.value = '';
 };

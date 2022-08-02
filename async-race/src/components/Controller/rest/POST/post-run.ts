@@ -18,11 +18,13 @@ const getNewCar = async (objCar: CarsAttribute) => {
 export const getChartersToCar = async (): Promise<void> => {
   const color = <HTMLInputElement>document.querySelector('#car-color');
   const name = <HTMLInputElement>document.querySelector('#car-name');
+  if (name.value.length === 0) name.value = carName[Math.floor(Math.random() * carName.length)];
   const objCar: CarsAttribute = {
     name: name.value.slice(0, 1).toUpperCase() + name.value.slice(1),
     color: color.value,
   };
   await getNewCar(objCar);
+  name.value = '';
 };
 
 export const getOneHundredCars = () => {

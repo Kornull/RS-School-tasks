@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { updateInput } from '../rest/PATCH/patch-run';
+import { updateInput } from '../rest/PUT/patch-run';
 import './_car.scss';
 import { getCountCars } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
