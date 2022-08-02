@@ -1,7 +1,7 @@
 import { urlGarage } from '../../../templates/urls';
-import { CarsAttribute, Onehundred } from '../../../types/types';
+import { CarsAttribute } from '../../../types/types';
 // eslint-disable-next-line import/no-cycle
-import { createCars } from '../../car/createCars';
+import { updateCars } from '../../car/createCars';
 import { carName, carModel, colorChar } from '../../../templates/cars-charters';
 
 const getNewCar = async (objCar: CarsAttribute) => {
@@ -12,7 +12,7 @@ const getNewCar = async (objCar: CarsAttribute) => {
     },
     body: JSON.stringify(objCar),
   });
-  await createCars();
+  updateCars();
 };
 
 export const getChartersToCar = async (): Promise<void> => {
@@ -25,14 +25,14 @@ export const getChartersToCar = async (): Promise<void> => {
   await getNewCar(objCar);
 };
 
-export const getOneHundredCars = async () => {
-  for (let i = 0; i < Onehundred.nundred; i++) {
+export const getOneHundredCars = () => {
+  for (let i = 0; i < 3; i++) {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     getRandomCarCharters();
   }
 };
 
-const getRandomCarCharters = (): void => {
+const getRandomCarCharters = async (): Promise<void> => {
   const name = carName[Math.floor(Math.random() * carName.length)];
   const model = carModel[Math.floor(Math.random() * carModel.length)];
   let colorCar = '#';

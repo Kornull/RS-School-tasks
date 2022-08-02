@@ -1,6 +1,7 @@
 import './_garage.scss';
 // eslint-disable-next-line import/no-cycle
 import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/POST/post-run';
+import { createCars } from '../../../Controller/car/createCars';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -27,7 +28,9 @@ export const garageLink = async (): Promise<HTMLElement> => {
   const garage: HTMLDivElement = document.createElement('div');
   garage.className = 'garage';
   const form = getFormGarage();
+  const main = createCars();
   garage.append(form);
+  garage.appendChild(main);
   form.addEventListener('click', (ev) => {
     const message = ev.target as HTMLElement;
     switch (message.id) {
@@ -40,5 +43,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
       // no default
     }
   });
+  form.removeEventListener('click', getChartersToCar);
+  form.removeEventListener('click', getOneHundredCars);
   return garage;
 };
