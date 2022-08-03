@@ -1,11 +1,11 @@
-// eslint-disable-next-line import/no-cycle
-import { updateInput } from '../rest/PUT/patch-run';
+/* eslint-disable */
+import { updateInput } from '../rest/PUT/put-run';
 import './_car.scss';
 import { getCountAllCars, getPAge } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
-// eslint-disable-next-line import/no-cycle
 import { deleteCar } from '../rest/DELETE/delete-run';
 import { inputUpdateCarName } from '../../templates/input';
+import { getStartOneRace } from '../runRacing/race';
 
 enum StartPgae {
   startpage = 1,
@@ -48,9 +48,9 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       race.appendChild(carBlock);
       arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
-      carBlock.addEventListener('click', (ev) => {
+      race.addEventListener('click', (ev) => {
         const message = ev.target as HTMLElement;
-        switch (message.id){
+        switch (message.id) {
           case 'btn-select':
             addClass(arrBlocks, carBlock);
             break;
@@ -58,6 +58,8 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
             addClass(arrBlocks, carBlock);
             deleteCar();
             break;
+          case 'run':
+            getStartOneRace(Number(carBlock.id), carBlock);
           // no default
         }
       });
@@ -73,7 +75,7 @@ export const createCars = (): HTMLElement => {
   const response = getPAge(1);
 
   main.appendChild(updateHasCar(response));
-  getCountAllCars()
+  getCountAllCars();
   return main;
 };
 

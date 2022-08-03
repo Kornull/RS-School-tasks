@@ -9,6 +9,7 @@ export enum Urls {
   garage = 'http://127.0.0.1:3000/garage',
   engine = 'http://127.0.0.1:3000/engine',
 }
+
 export type Key = {
   key: string;
   value: number;
@@ -17,3 +18,8 @@ export type Key = {
 export enum CountCars {
   cars = 100,
 }
+
+export type Speed = {
+  velocity: number;
+  distance: number;
+};

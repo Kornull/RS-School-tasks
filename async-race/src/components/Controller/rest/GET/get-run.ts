@@ -1,6 +1,5 @@
 import { CarsAttribute, Key, Urls } from '../../../types/types';
 
-
 // export const getCarsInfo = async (): Promise<object> => (await fetch(`${urlGarage()}/1`)).json();
 const str = (queryS: Key[] = []) => {
   if (queryS.length) {
