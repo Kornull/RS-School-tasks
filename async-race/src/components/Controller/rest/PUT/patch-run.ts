@@ -2,6 +2,7 @@ import { urlGarage } from '../../../templates/urls';
 import { CarsAttribute } from '../../../types/types';
 // eslint-disable-next-line import/no-cycle
 import { updateCars } from '../../car/createCars';
+import { inputUpdateCarName } from '../../../templates/input';
 
 export const getUpdateCard = async (id: number, body: CarsAttribute): Promise<void> => {
   await fetch(`${urlGarage()}/${id}`, {
@@ -16,7 +17,7 @@ export const getUpdateCard = async (id: number, body: CarsAttribute): Promise<vo
 
 export const updateInput = () => {
   let id = 0;
-  const inputName = <HTMLInputElement>document.querySelector('#car-name__update');
+  const inputName = inputUpdateCarName();
   const inputColor = <HTMLInputElement>document.querySelector('#car-color__update');
   const name = inputName.value;
   const carElements: NodeList = document.querySelectorAll('.car');

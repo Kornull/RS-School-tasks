@@ -3,10 +3,22 @@ import { updateInput } from '../rest/PUT/patch-run';
 import './_car.scss';
 import { getCountAllCars, getPAge } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
+// eslint-disable-next-line import/no-cycle
+import { deleteCar } from '../rest/DELETE/delete-run';
+import { inputUpdateCarName } from '../../templates/input';
 
 enum StartPgae {
   startpage = 1,
 }
+
+const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement) => {
+  arrBlocks.forEach((el) => el.classList.remove('choice'));
+  arrBlocks.forEach((el) => {
+    if (carBlock.id === el.id) el.classList.add('choice');
+  });
+  const name = <HTMLDivElement>carBlock.querySelector('.car__name');
+  inputUpdateCarName().value = name.innerText;
+};
 
 const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
   const arrBlocks: HTMLElement[] = [];
@@ -17,30 +29,37 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       const race = <HTMLDivElement>document.createElement('div');
       race.className = 'racing';
       const carBlock: HTMLDivElement = document.createElement('div');
+      carBlock.innerHTML = `
+        <div class="car__action">
+        <button type="button" class="btn btn__select" id="btn-select">select</button>
+        <button type="button" class="btn btn__delete" id="btn-delete">delete</button>
+        <div class="car__name">${cars[i].name}</div>
+       </div>
+         <svg class="car__icon" fill="${cars[i].color}" id="">
+           <use xlink:href="../assets/img/car.svg#carview"></use>
+         </svg>`;
       carBlock.className = 'car';
       carBlock.id = `${cars[i].id}`;
       carBlock.style.color = `${cars[i].color}`;
-      carBlock.innerHTML = `
-       <div class="car__name">${cars[i].name}</div>
-         <svg class="car__icon" fill="${cars[i].color}" id="">
-           <use xlink:href="../assets/img/car.svg#carview"></use>
-         </svg>
-      `;
       race.innerHTML = `
-      <button type="button" class="btn btn__race-start" id="run">race</button>
-      <button type="button" class="btn btn__race-stop" id="stop"></button>
+      <button type="button" class="btn btn__race-start" id="run">O</button>
+      <button type="button" class="btn btn__race-stop" id="stop">X</button>
       `;
       race.appendChild(carBlock);
       arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
-      carBlock.addEventListener('click', () => {
-        const input = <HTMLInputElement>document.querySelector('#car-name__update');
-        arrBlocks.forEach((el) => el.classList.remove('choice'));
-        arrBlocks.forEach((el) => {
-          if (carBlock.id === el.id) el.classList.add('choice');
-        });
-
-        input.value = carBlock.innerText;
+      carBlock.addEventListener('click', (ev) => {
+        const message = ev.target as HTMLElement;
+        switch (message.id){
+          case 'btn-select':
+            addClass(arrBlocks, carBlock);
+            break;
+          case 'btn-delete':
+            addClass(arrBlocks, carBlock);
+            deleteCar()
+            break;
+          // no default
+        }
       });
       carBlock.removeEventListener('click', updateInput);
     }
@@ -58,6 +77,7 @@ export const createCars = (): HTMLElement => {
 };
 
 export const updateCars = async (): Promise<void> => {
+  inputUpdateCarName().value = '';
   const main = <HTMLElement>document.querySelector('.main');
   const countPAge = <HTMLElement>document.querySelector('#page-title span');
   const btnRight = <HTMLButtonElement>document.querySelector('#run-right');

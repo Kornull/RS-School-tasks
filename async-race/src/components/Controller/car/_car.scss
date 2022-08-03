@@ -4,12 +4,8 @@
   height: 50px;
   font-size: 10px;
   margin-bottom: 5px;
-  &:hover {
-    cursor: pointer;
-  }
+
   &__name{
-    position: absolute;
-    left: 10px;
     color: #fff;
   }
   &__icon{
@@ -19,8 +15,40 @@
     height: 50px;
 
   }
+  &__action{
+    position: absolute;
+    top: -10px;
+    left: -70px;
+    display: flex;
+  }
 }
 .racing {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 80px;
+}
+
+.btn__delete,
+.btn__select {
+  font-size: 12px;
+  height: 20px;
+  padding: 2px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background: #f8c847;
+  color: blue;
+}
+
+
+.btn__race-start,
+.btn__race-stop{
+  text-align: center;
+  padding:5px;
+  border-radius: 5px;
+  border: 1px solid #00ff00;
+  background: none;
+  font-size: 15px;
+  color: greenyellow;
 }

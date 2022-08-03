@@ -1,6 +1,7 @@
 import { urlGarage } from '../../../templates/urls';
 // eslint-disable-next-line import/no-cycle
 import { updateCars } from '../../car/createCars';
+import { inputUpdateCarName } from '../../../templates/input';
 
 export const getDelCard = async (id: number): Promise<void> => {
   await fetch(`${urlGarage()}/${id}`, {
@@ -15,6 +16,7 @@ export const getDelCard = async (id: number): Promise<void> => {
 export const deleteCar = () => {
   let id = 0;
   const carElements: NodeList = document.querySelectorAll('.car');
+
   carElements.forEach((el) => {
     const newEl = el as HTMLElement;
     if (newEl.classList.contains('choice')) {
@@ -27,4 +29,5 @@ export const deleteCar = () => {
     // eslint-disable-next-line no-alert
     alert('UPS');
   }
+  inputUpdateCarName().value = '';
 };

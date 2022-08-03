@@ -20,7 +20,7 @@ const getFormGarage = (): HTMLDivElement => {
     <input type="color" id="car-color__update" name="color" value="#e66465">
     <div class="form__btns">
     <button type="button" class="btn btn__update-car" id="update-car">Update</button>
-    <button type="button" class="btn btn__delete-car" id="delete-car">del</button>
+<!--    <button type="button" class="btn btn__delete-car" id="delete-car">del</button>-->
     </div>
     <div class="page">        
     <div class="page__text"><h1 id="page-count-cars">Cars(<span></span>)</h1></div>
