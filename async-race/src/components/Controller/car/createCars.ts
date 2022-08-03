@@ -1,14 +1,18 @@
 // eslint-disable-next-line import/no-cycle
 import { updateInput } from '../rest/PUT/patch-run';
 import './_car.scss';
-import { getCountCars } from '../rest/GET/get-run';
+import { getCountAllCars, getPAge } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
 
-const updateHasCar = (): HTMLElement => {
-  const arrrBlocks: HTMLElement[] = [];
+enum StartPgae {
+  startpage = 1,
+}
+
+const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
+  const arrBlocks: HTMLElement[] = [];
   const racingBlock = <HTMLElement>document.createElement('div');
   racingBlock.className = 'racing__slider';
-  getCountCars().then((cars: CarsAttribute[]) => {
+  response.then((cars: CarsAttribute[]) => {
     for (let i = 0; i < cars.length; i++) {
       const race = <HTMLDivElement>document.createElement('div');
       race.className = 'racing';
@@ -27,12 +31,12 @@ const updateHasCar = (): HTMLElement => {
       <button type="button" class="btn btn__race-stop" id="stop"></button>
       `;
       race.appendChild(carBlock);
-      arrrBlocks.push(carBlock);
+      arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
       carBlock.addEventListener('click', () => {
         const input = <HTMLInputElement>document.querySelector('#car-name__update');
-        arrrBlocks.forEach((el) => el.classList.remove('choice'));
-        arrrBlocks.forEach((el) => {
+        arrBlocks.forEach((el) => el.classList.remove('choice'));
+        arrBlocks.forEach((el) => {
           if (carBlock.id === el.id) el.classList.add('choice');
         });
 
@@ -47,13 +51,36 @@ const updateHasCar = (): HTMLElement => {
 export const createCars = (): HTMLElement => {
   const main: HTMLElement = document.createElement('main');
   main.className = 'main';
+  const response = getPAge(1);
 
-  main.appendChild(updateHasCar());
+  main.appendChild(updateHasCar(response));
   return main;
 };
 
-export const updateCars = (): void => {
+export const updateCars = async (): Promise<void> => {
   const main = <HTMLElement>document.querySelector('.main');
+  const countPAge = <HTMLElement>document.querySelector('#page-title span');
+  const btnRight = <HTMLButtonElement>document.querySelector('#run-right');
+  const btnLeft = <HTMLButtonElement>document.querySelector('#run-left');
+
+  let pageNum = Number(countPAge.innerText);
+  const allCars = await getCountAllCars();
+  const pagesCount = Math.ceil(allCars.length / 7);
+  if (pageNum >= pagesCount) {
+    btnRight.setAttribute('disabled', 'disabled');
+    pageNum = pagesCount;
+    countPAge.innerText = `${pageNum}`;
+  } else {
+    btnRight.removeAttribute('disabled');
+  }
+  if (pageNum <= StartPgae.startpage) {
+    btnLeft.setAttribute('disabled', 'disabled');
+    pageNum = StartPgae.startpage;
+    countPAge.innerText = `${pageNum}`;
+  } else {
+    btnLeft.removeAttribute('disabled');
+  }
   main.innerHTML = '';
-  main.appendChild(updateHasCar());
+  const response = getPAge(Number(pageNum));
+  main.appendChild(updateHasCar(response));
 };

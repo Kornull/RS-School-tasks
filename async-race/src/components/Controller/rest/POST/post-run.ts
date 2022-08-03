@@ -46,5 +46,5 @@ const getRandomCarCharters = async (): Promise<void> => {
     name: `${name} ${model}`,
     color: colorCar,
   };
-  getNewCar(obg).then((r) => r);
+  getNewCar(obg);
 };

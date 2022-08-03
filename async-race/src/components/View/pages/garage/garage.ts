@@ -1,7 +1,7 @@
 import './_garage.scss';
 // eslint-disable-next-line import/no-cycle
 import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/POST/post-run';
-import { createCars } from '../../../Controller/car/createCars';
+import { createCars, updateCars } from '../../../Controller/car/createCars';
 import { updateInput } from '../../../Controller/rest/PUT/patch-run';
 import { deleteCar } from '../../../Controller/rest/DELETE/delete-run';
 
@@ -22,6 +22,14 @@ const getFormGarage = (): HTMLDivElement => {
     <button type="button" class="btn btn__update-car" id="update-car">Update</button>
     <button type="button" class="btn btn__delete-car" id="delete-car">del</button>
     </div>
+    <div class="page">        
+    <div class="page__text"><h1 id="page-count-cars">Cars(<span></span>)</h1></div>
+    <div class="page__text"><h1 id="page-title">#PAGE <span>1</span></h1></div>
+    <div class="page__btns">
+    <button type="button" class="page__btn btn btn__left" id="run-left" disabled="disabled">left</button>
+    <button type="button" class="page__btn btn btn__right" id="run-right">right</button>
+    </div>
+    </div>
 </form>
   `;
   return form;
@@ -34,8 +42,11 @@ export const garageLink = async (): Promise<HTMLElement> => {
   const main = createCars();
   garage.append(form);
   garage.appendChild(main);
+  const num = <HTMLElement>form.querySelector('#page-title span');
+
   form.addEventListener('click', (ev) => {
     const message = ev.target as HTMLElement;
+    let res = Number(num.innerText);
     switch (message.id) {
       case 'one-car':
         getChartersToCar();
@@ -48,6 +59,17 @@ export const garageLink = async (): Promise<HTMLElement> => {
         break;
       case 'delete-car':
         deleteCar();
+        break;
+      case 'run-right':
+        res += 1;
+        num.innerText = `${res}`;
+        updateCars();
+        break;
+      case 'run-left':
+        res -= 1;
+        if (res < 1) res = 1;
+        num.innerText = `${res}`;
+        updateCars();
         break;
       // no default
     }

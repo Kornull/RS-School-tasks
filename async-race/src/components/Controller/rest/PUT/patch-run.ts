@@ -38,6 +38,7 @@ export const updateInput = () => {
   if (id !== 0) {
     getUpdateCard(id, obg);
   } else {
+    // eslint-disable-next-line no-alert
     alert('AHAHA');
   }
   inputName.value = '';

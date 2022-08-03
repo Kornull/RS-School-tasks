@@ -24,6 +24,7 @@ export const deleteCar = () => {
   if (id !== 0) {
     getDelCard(id);
   } else {
+    // eslint-disable-next-line no-alert
     alert('UPS');
   }
 };

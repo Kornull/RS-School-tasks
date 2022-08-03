@@ -7,3 +7,7 @@ export type CarsAttribute = {
 export enum Onehundred {
   nundred = 100,
 }
+export type Key = {
+  key: string;
+  value: number;
+};
