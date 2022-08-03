@@ -43,7 +43,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       carBlock.style.color = `${cars[i].color}`;
       race.innerHTML = `
       <button type="button" class="btn btn__race-start" id="run">O</button>
-      <button type="button" class="btn btn__race-stop" id="stop">X</button>
+      <button type="button" class="btn btn__race-stop" id="stop" disabled="disabled">X</button>
       `;
       race.appendChild(carBlock);
       arrBlocks.push(carBlock);
@@ -56,7 +56,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
             break;
           case 'btn-delete':
             addClass(arrBlocks, carBlock);
-            deleteCar()
+            deleteCar();
             break;
           // no default
         }
@@ -73,6 +73,7 @@ export const createCars = (): HTMLElement => {
   const response = getPAge(1);
 
   main.appendChild(updateHasCar(response));
+  getCountAllCars()
   return main;
 };
 

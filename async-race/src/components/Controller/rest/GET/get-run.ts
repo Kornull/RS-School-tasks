@@ -1,5 +1,5 @@
-import { CarsAttribute, Key } from '../../../types/types';
-import { urlGarage } from '../../../templates/urls';
+import { CarsAttribute, Key, Urls } from '../../../types/types';
+
 
 // export const getCarsInfo = async (): Promise<object> => (await fetch(`${urlGarage()}/1`)).json();
 const str = (queryS: Key[] = []) => {
@@ -24,16 +24,25 @@ export const getPAge = async (num: number): Promise<CarsAttribute[]> => {
 };
 
 export const getCountCarsPage = async (queryString: string): Promise<CarsAttribute[]> => {
-  const response = await fetch(`${urlGarage()}${queryString}`);
+  const response = await fetch(`${Urls.garage}${queryString}`);
 
   return response.json();
 };
 export const getCountAllCars = async () => {
-  const response = await fetch(`${urlGarage()}`);
+  const response = await fetch(`${Urls.garage}`);
   const countPAge = <HTMLElement>document.querySelector('#page-count-cars span');
   const data = await response.json();
   countPAge.innerText = `${data.length}`;
 
   return data;
 };
-getCountAllCars();
+
+// const run = async (obj: object) => {
+//   await fetch(`${baseUrl()}/engine`, {
+//     method: 'PATH',
+//     body: JSON.stringify(obj),
+//   });
+//   console.log('err')
+// }
+//
+// run({ id:1, status: 'started' });

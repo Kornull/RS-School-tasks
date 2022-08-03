@@ -1,11 +1,10 @@
-import { urlGarage } from '../../../templates/urls';
-import { CarsAttribute } from '../../../types/types';
+import { CarsAttribute, CountCars, Urls } from '../../../types/types';
 // eslint-disable-next-line import/no-cycle
 import { updateCars } from '../../car/createCars';
 import { carName, carModel, colorChar } from '../../../templates/cars-charters';
 
 const getNewCar = async (objCar: CarsAttribute) => {
-  await fetch(`${urlGarage()}`, {
+  await fetch(`${Urls.garage}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +27,7 @@ export const getChartersToCar = async (): Promise<void> => {
 };
 
 export const getOneHundredCars = () => {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < CountCars.cars; i++) {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     getRandomCarCharters();
   }

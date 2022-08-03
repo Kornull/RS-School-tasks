@@ -1,10 +1,10 @@
-import { urlGarage } from '../../../templates/urls';
 // eslint-disable-next-line import/no-cycle
 import { updateCars } from '../../car/createCars';
 import { inputUpdateCarName } from '../../../templates/input';
+import { Urls } from '../../../types/types';
 
 export const getDelCard = async (id: number): Promise<void> => {
-  await fetch(`${urlGarage()}/${id}`, {
+  await fetch(`${Urls.garage}/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

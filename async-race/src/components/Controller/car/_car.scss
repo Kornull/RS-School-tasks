@@ -51,4 +51,9 @@
   background: none;
   font-size: 15px;
   color: greenyellow;
+  &:disabled {
+    cursor: no-drop;
+    color: #bcbcf1;
+    border: 1px solid #bcbcf1
+  }
 }

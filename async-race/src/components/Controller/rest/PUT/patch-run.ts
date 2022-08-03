@@ -1,11 +1,10 @@
-import { urlGarage } from '../../../templates/urls';
-import { CarsAttribute } from '../../../types/types';
+import { CarsAttribute, Urls } from '../../../types/types';
 // eslint-disable-next-line import/no-cycle
 import { updateCars } from '../../car/createCars';
 import { inputUpdateCarName } from '../../../templates/input';
 
 export const getUpdateCard = async (id: number, body: CarsAttribute): Promise<void> => {
-  await fetch(`${urlGarage()}/${id}`, {
+  await fetch(`${Urls.garage}/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
