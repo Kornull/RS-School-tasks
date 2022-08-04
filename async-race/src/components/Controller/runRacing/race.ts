@@ -2,15 +2,17 @@ import { Speed, Urls } from '../../types/types';
 import { updateCars } from '../car/createCars';
 
 const runRace = async (el: SVGSVGElement, count: number) => {
-  console.log(count);
-  // eslint-disable-next-line no-param-reassign
   el.style.left = `${count}px`;
 };
 
 const getRunRace = async (id: number, speed: number, el: HTMLDivElement) => {
   let count = 0;
+  const raceRoad = <HTMLDivElement>document.querySelector('.racing__slider');
+  const widthRoad: number = raceRoad.offsetWidth;
+  // eslint-disable-next-line no-param-reassign
   const car = el.querySelector('svg') as SVGSVGElement;
   const interval = setInterval(() => {
+    if (count >= widthRoad - 200) clearInterval(interval);
     count += 4;
     runRace(car, count);
   }, speed);
@@ -21,7 +23,6 @@ const getRunRace = async (id: number, speed: number, el: HTMLDivElement) => {
     setTimeout(() => interval, 15000);
   }
   if (response.status === 500) {
-    console.log('FFFFFFFFFFFFFFFFf');
     clearInterval(interval);
   }
   // if(response.status !== 500) interval;

@@ -13,7 +13,7 @@
     top: 8px;
     width: 100%;
     height: 50px;
-    transition: left .1s linear;
+    transition: left .3s linear;
 
   }
   &__action{
@@ -29,6 +29,9 @@
   width: 100%;
   max-width: 100%;
   height: 80px;
+  &__slider {
+    margin: 0 15px;
+  }
 }
 
 .btn__delete,
