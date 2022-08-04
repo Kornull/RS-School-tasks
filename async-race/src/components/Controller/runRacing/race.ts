@@ -2,6 +2,7 @@ import { Speed, Urls } from '../../types/types';
 import { updateCars } from '../car/createCars';
 
 const runRace = async (el: SVGSVGElement, count: number) => {
+  // eslint-disable-next-line no-param-reassign
   el.style.left = `${count}px`;
 };
 

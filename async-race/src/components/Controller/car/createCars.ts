@@ -6,6 +6,7 @@ import { CarsAttribute } from '../../types/types';
 import { deleteCar } from '../rest/DELETE/delete-run';
 import { inputUpdateCarName } from '../../templates/input';
 import { getStartOneRace } from '../runRacing/race';
+import {startStopBtns} from './carBtns/btn-car';
 
 enum StartPgae {
   startpage = 1,
@@ -41,10 +42,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       carBlock.className = 'car';
       carBlock.id = `${cars[i].id}`;
       carBlock.style.color = `${cars[i].color}`;
-      race.innerHTML = `
-      <button type="button" class="btn btn__race-start" id="run">O</button>
-      <button type="button" class="btn btn__race-stop" id="stop" disabled="disabled">X</button>
-      `;
+      race.innerHTML = `${startStopBtns}`;
       race.appendChild(carBlock);
       arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
