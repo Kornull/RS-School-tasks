@@ -1,6 +1,6 @@
 import './_form.scss';
 
-export const formGarage = <HTMLElement><unknown>`
+export const formGarage = <HTMLElement>(<unknown>`
   <form class="form">
     <input type="text" value="" placeholder="name car" id="car-name" name="name" class="form__name">
     <input type="color" id="car-color" name="color" value="#e66465">
@@ -22,4 +22,4 @@ export const formGarage = <HTMLElement><unknown>`
     </div>
     </div>
 </form>
-  `;
+  `);

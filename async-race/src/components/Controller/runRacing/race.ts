@@ -1,5 +1,4 @@
 import { Speed, Urls } from '../../types/types';
-import { updateCars } from '../car/createCars';
 
 const runRace = async (el: SVGSVGElement, count: number) => {
   // eslint-disable-next-line no-param-reassign
@@ -26,9 +25,6 @@ const getRunRace = async (id: number, speed: number, el: HTMLDivElement) => {
   if (response.status === 500) {
     clearInterval(interval);
   }
-  // if(response.status !== 500) interval;
-  // const res = await response.json()
-  // console.log(response.status);
 };
 
 export const getStartOneRace = async (id: number, el: HTMLDivElement) => {
@@ -38,10 +34,6 @@ export const getStartOneRace = async (id: number, el: HTMLDivElement) => {
   if (response.status === 200) {
     const res: Speed = await response.json();
     const speed: number = res.velocity;
-    getRunRace(id, speed, el);
+    await getRunRace(id, speed, el);
   }
 };
-
-// export const getStartOneRace = setInterval(()=> {
-
-// });
