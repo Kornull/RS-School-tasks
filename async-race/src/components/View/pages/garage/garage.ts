@@ -8,6 +8,7 @@ import { formGarage } from './form/form';
 import { RaceCommand } from '../../../types/types';
 import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
 import { popup } from './popup/popup';
+import {closeAllBtns} from '../../../Controller/buttons/closeBtn/close-btn';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -67,6 +68,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
       case 'all-race':
         message.classList.add('run__race');
         getStartRacing(carId, RaceCommand.start);
+        closeAllBtns();
         break;
       case 'all-reset':
         getStopRacing(carId);

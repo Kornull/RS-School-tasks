@@ -1,15 +1,15 @@
 .form {
   display: flex;
-  width: 330px;
+  width: 385px;
   flex-wrap: wrap;
   &__name {
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 15px;
     padding: 5px;
+    height: 25px;
   }
   &__btns {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
@@ -20,12 +20,17 @@
     width: 100%;
   }
 }
+
+
+.btn__create-car,
+.btn__update-car,
 .btn__race-all--car,
 .btn__reset-all--car,
 .btn__create-all--car {
   font-size: 12px;
   margin-left: 7px;
   padding: 10px;
+  width: 97px;
   font-weight: bold;
   background: #71d122;
   color: #ff0000;
@@ -35,5 +40,9 @@
     box-shadow: 0 0 10px #fff;
     color: #fff;
     background: #000;
+  }
+  &:disabled{
+    background: #000;
+    pointer-events:none;
   }
 }
