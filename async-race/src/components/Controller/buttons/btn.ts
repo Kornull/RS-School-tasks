@@ -1,8 +1,6 @@
 import './_btn.scss';
 
 export const btnPage = (): HTMLDivElement => {
-
-
   const btnGarage: HTMLButtonElement = document.createElement('button');
   const btnWin: HTMLButtonElement = document.createElement('button');
   const btnsNavigation: HTMLDivElement = document.createElement('div');
@@ -14,7 +12,7 @@ export const btnPage = (): HTMLDivElement => {
   const garage = document.querySelector('.garage') as HTMLDivElement;
 
   btnWin.addEventListener('click', () => {
-    console.log(garage)
+    console.log(garage);
     garage.style.display = 'none';
   });
   btnsNavigation.appendChild(btnGarage);

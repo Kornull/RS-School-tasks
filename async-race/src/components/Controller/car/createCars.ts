@@ -5,7 +5,7 @@ import { getCountAllCars, getPAge } from '../rest/rest-garage/GET/get-run';
 import { CarsAttribute, RaceCommand } from '../../types/types';
 import { deleteCar } from '../rest/rest-garage/DELETE/delete-run';
 import { inputUpdateCarName } from '../../templates/input';
-import {getStartOneRace, stopCar } from '../runRacing/race';
+import {getStartOneRace, preStopCar } from '../runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
 
@@ -43,7 +43,7 @@ const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTM
       case 'stop':
         stopBtn.setAttribute('disabled', 'disabled')
         runBtn.removeAttribute('disabled')
-        stopCar(Number(carBlock.id))
+        preStopCar(Number(carBlock.id))
         break;
       // no default
     }

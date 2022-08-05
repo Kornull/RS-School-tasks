@@ -8,7 +8,7 @@ import { formGarage } from './form/form';
 import { RaceCommand } from '../../../types/types';
 import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
 import { popup } from './popup/popup';
-import {closeAllBtns} from '../../../Controller/buttons/closeBtn/close-btn';
+import { closeAllBtns } from '../../../Controller/buttons/close-open-btn/close-btn';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
