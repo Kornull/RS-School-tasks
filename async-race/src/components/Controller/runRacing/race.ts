@@ -1,14 +1,14 @@
-import { Interval, Urls } from '../../types/types';
+import { Interval, Speed, Urls } from '../../types/types';
 
 const interval: Interval = {};
 
-async function animation(widthRoad: number, id: number): Promise<void> {
+async function animation(widthRoad: number, id: number, durantion: number): Promise<void> {
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
   let startX = 0;
   const tick = (): void => {
-    startX += 0.5;
+    startX += durantion / 4;
     car.style.transform = `translateX(${startX}px)`;
-    if (startX < widthRoad - 180) {
+    if (startX < widthRoad - 200) {
       interval[id] = requestAnimationFrame(tick);
     }
   };
@@ -38,15 +38,13 @@ export const getStartOneRace = async (id: number, str: string) => {
   });
 
   if (response.status === 200) {
-    // setTimeout(() => runcar(id), 0);
-    // const obj: Speed = await response.json();
-    // const speed = obj.velocity;
+    const obj: Speed = await response.json();
+    const { velocity, distance } = obj;
+    const durantion = Math.floor(distance / velocity / 1000);
     const raceRoad = <HTMLDivElement>document.querySelector('.racing__slider');
     const widthRoad: number = raceRoad.offsetWidth;
-    // const num = widthRoad;
-    // const car = document.querySelector(`#car-${id}`) as HTMLElement;
 
-    animation(widthRoad, id);
+    animation(widthRoad, id, durantion);
     await fetch(`${Urls.engine}/?id=${id}&status=drive`, {
       method: 'PATCH',
     }).then((res) => {
@@ -55,5 +53,4 @@ export const getStartOneRace = async (id: number, str: string) => {
       }
     });
   }
-  // console.log(interval[1]);
 };
