@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
 import { Interval, Speed, Urls } from '../../types/types';
 
 const interval: Interval = {};
@@ -52,5 +54,17 @@ export const getStartOneRace = async (id: number, str: string) => {
         cancelAnimationFrame(interval[id]);
       }
     });
+  }
+};
+
+export const getStartRacing = async (objCarsId: number[], command: string) => {
+  for (const i of objCarsId) {
+    getStartOneRace(i, command);
+  }
+};
+
+export const getStopRacing = async (objCarsId: number[]) => {
+  for (const i of objCarsId) {
+    stopCar(i);
   }
 };

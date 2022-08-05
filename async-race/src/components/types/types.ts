@@ -25,3 +25,7 @@ export type Speed = {
 };
 
 export type Interval = Record<number, number>;
+export enum RaceCommand {
+  start = 'started',
+  stop = 'stopped',
+}

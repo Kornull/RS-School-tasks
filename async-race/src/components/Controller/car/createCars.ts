@@ -2,7 +2,7 @@
 import { updateInput } from '../rest/PUT/put-run';
 import './_car.scss';
 import { getCountAllCars, getPAge } from '../rest/GET/get-run';
-import { CarsAttribute } from '../../types/types';
+import { CarsAttribute, RaceCommand } from '../../types/types';
 import { deleteCar } from '../rest/DELETE/delete-run';
 import { inputUpdateCarName } from '../../templates/input';
 import {getStartOneRace, stopCar } from '../runRacing/race';
@@ -63,7 +63,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
           case 'run':
             runBtn.setAttribute('disabled', 'disabled')
             stopBtn.removeAttribute('disabled')
-            getStartOneRace(Number(carBlock.id), 'started');
+            getStartOneRace(Number(carBlock.id), RaceCommand.start);
             break;
           case 'stop':
             stopBtn.setAttribute('disabled', 'disabled')

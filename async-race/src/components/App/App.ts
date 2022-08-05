@@ -1,8 +1,10 @@
+import { btnPage } from '../Controller/buttons/btn';
 import { garageLink } from '../View/pages/garage/garage';
 
 export async function App() {
   const body = <HTMLElement>document.querySelector('body');
   const form: HTMLElement = await garageLink();
+  body.appendChild(btnPage());
   body.appendChild(form);
 
   return body;

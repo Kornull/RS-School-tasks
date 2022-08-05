@@ -1,4 +1,4 @@
-.form{
+.form {
   display: flex;
   width: 330px;
   flex-wrap: wrap;
@@ -8,10 +8,32 @@
     border-radius: 15px;
     padding: 5px;
   }
-  &__btns{
+  &__btns {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
+  }
+  &__btn-racing--cars {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+.btn__race-all--car,
+.btn__reset-all--car,
+.btn__create-all--car {
+  font-size: 12px;
+  margin-left: 7px;
+  padding: 10px;
+  font-weight: bold;
+  background: #71d122;
+  color: #ff0000;
+  border: 1px solid #1900ff;
+  &:hover {
+    transition: background 0.2s linear, box-shadow 0.2s linear, color 0.2s linear;
+    box-shadow: 0 0 10px #fff;
+    color: #fff;
+    background: #000;
   }
 }

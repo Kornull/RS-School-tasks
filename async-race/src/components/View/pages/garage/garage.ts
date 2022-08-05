@@ -4,8 +4,9 @@ import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/PO
 import { createCars, updateCars } from '../../../Controller/car/createCars';
 import { updateInput } from '../../../Controller/rest/PUT/put-run';
 import { deleteCar } from '../../../Controller/rest/DELETE/delete-run';
-// import { getStartOneRace } from '../../../Controller/runRacing/race';
 import { formGarage } from './form/form';
+import { RaceCommand } from '../../../types/types';
+import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -24,13 +25,17 @@ export const garageLink = async (): Promise<HTMLElement> => {
   const num = <HTMLElement>form.querySelector('#page-title span');
 
   form.addEventListener('click', (ev) => {
+    const carId: number[] = [];
+    main.querySelectorAll('.car').forEach((car: Element) => {
+      carId.push(Number(car.id));
+    });
     const message = ev.target as HTMLElement;
     let res = Number(num.innerText);
     switch (message.id) {
       case 'one-car':
         getChartersToCar();
         break;
-      case 'one-hundred-car':
+      case 'create-cars':
         getOneHundredCars();
         break;
       case 'update-car':
@@ -50,10 +55,14 @@ export const garageLink = async (): Promise<HTMLElement> => {
         num.innerText = `${res}`;
         updateCars();
         break;
+      case 'all-race':
+        getStartRacing(carId, RaceCommand.start);
+        break;
+      case 'all-reset':
+        getStopRacing(carId);
+        break;
       // no default
     }
   });
-  form.removeEventListener('click', getChartersToCar);
-  form.removeEventListener('click', getOneHundredCars);
   return garage;
 };
