@@ -1,7 +1,7 @@
 import './_btn.scss';
 
 export const btnPage = (): HTMLDivElement => {
-  const garage = document.querySelector('.garage') as HTMLDivElement;
+
 
   const btnGarage: HTMLButtonElement = document.createElement('button');
   const btnWin: HTMLButtonElement = document.createElement('button');
@@ -11,11 +11,15 @@ export const btnPage = (): HTMLDivElement => {
   btnWin.className = 'btn btn__win';
   btnGarage.innerHTML = 'GARAGE';
   btnWin.innerHTML = 'WINNERS';
-  btnsNavigation.appendChild(btnGarage);
-  btnsNavigation.appendChild(btnWin);
+  const garage = document.querySelector('.garage') as HTMLDivElement;
+
   btnWin.addEventListener('click', () => {
+    console.log(garage)
     garage.style.display = 'none';
   });
+  btnsNavigation.appendChild(btnGarage);
+  btnsNavigation.appendChild(btnWin);
+
   // btnGarage.addEventListener('click', () => {
   //   garage.style.display = 'none';
   // });
@@ -23,4 +27,3 @@ export const btnPage = (): HTMLDivElement => {
   // body.append(btGarage);
   return btnsNavigation;
 };
-// console.log(getCarsInfo());

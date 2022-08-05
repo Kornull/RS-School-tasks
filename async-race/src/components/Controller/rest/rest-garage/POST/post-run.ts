@@ -1,7 +1,7 @@
-import { CarsAttribute, CountCars, Urls } from '../../../types/types';
+import { CarsAttribute, CountCars, Urls } from '../../../../types/types';
 // eslint-disable-next-line import/no-cycle
-import { updateCars } from '../../car/createCars';
-import { carName, carModel, colorChar } from '../../../templates/cars-charters';
+import { updateCars } from '../../../car/createCars';
+import { carName, carModel, colorChar } from '../../../../templates/cars-charters';
 
 const getNewCar = async (objCar: CarsAttribute) => {
   await fetch(`${Urls.garage}`, {

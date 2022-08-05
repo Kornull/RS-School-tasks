@@ -1,12 +1,16 @@
 .btn__race-start,
 .btn__race-stop{
+  width: 30px;
+  height: 30px;
   text-align: center;
-  padding:5px;
   border-radius: 5px;
   border: 1px solid #00ff00;
   background: none;
   font-size: 15px;
   color: greenyellow;
+  margin-left: 10px;
+  padding:5px;
+
   &:disabled {
     cursor: no-drop;
     color: #bcbcf1;

@@ -1,9 +1,9 @@
 /* eslint-disable */
-import { updateInput } from '../rest/PUT/put-run';
+import { updateInput } from '../rest/rest-garage/PUT/put-run';
 import './_car.scss';
-import { getCountAllCars, getPAge } from '../rest/GET/get-run';
+import { getCountAllCars, getPAge } from '../rest/rest-garage/GET/get-run';
 import { CarsAttribute, RaceCommand } from '../../types/types';
-import { deleteCar } from '../rest/DELETE/delete-run';
+import { deleteCar } from '../rest/rest-garage/DELETE/delete-run';
 import { inputUpdateCarName } from '../../templates/input';
 import {getStartOneRace, stopCar } from '../runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';

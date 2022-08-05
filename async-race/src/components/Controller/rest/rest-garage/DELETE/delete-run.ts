@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-cycle
-import { updateCars } from '../../car/createCars';
-import { inputUpdateCarName } from '../../../templates/input';
-import { Urls } from '../../../types/types';
+import { updateCars } from '../../../car/createCars';
+import { inputUpdateCarName } from '../../../../templates/input';
+import { Urls } from '../../../../types/types';
 
 export const getDelCard = async (id: number): Promise<void> => {
   await fetch(`${Urls.garage}/${id}`, {

@@ -1,9 +1,9 @@
 import './_garage.scss';
 // eslint-disable-next-line import/no-cycle
-import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/POST/post-run';
+import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/rest-garage/POST/post-run';
 import { createCars, updateCars } from '../../../Controller/car/createCars';
-import { updateInput } from '../../../Controller/rest/PUT/put-run';
-import { deleteCar } from '../../../Controller/rest/DELETE/delete-run';
+import { updateInput } from '../../../Controller/rest/rest-garage/PUT/put-run';
+import { deleteCar } from '../../../Controller/rest/rest-garage/DELETE/delete-run';
 import { formGarage } from './form/form';
 import { RaceCommand } from '../../../types/types';
 import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
