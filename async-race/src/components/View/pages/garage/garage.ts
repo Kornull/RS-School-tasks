@@ -7,6 +7,7 @@ import { deleteCar } from '../../../Controller/rest/DELETE/delete-run';
 import { formGarage } from './form/form';
 import { RaceCommand } from '../../../types/types';
 import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
+import { popup } from './popup/popup';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -14,14 +15,22 @@ const getFormGarage = (): HTMLDivElement => {
   form.innerHTML = `${formGarage}`;
   return form;
 };
+const getPopup = (): HTMLDivElement => {
+  const pop: HTMLDivElement = document.createElement('div');
+  pop.className = 'popup block';
+  pop.innerHTML = `${popup}`;
+  return pop;
+};
 
 export const garageLink = async (): Promise<HTMLElement> => {
   const garage: HTMLDivElement = document.createElement('div');
   garage.className = 'garage';
   const form = getFormGarage();
   const main = createCars();
+  const popupBlock = getPopup();
   garage.append(form);
   garage.appendChild(main);
+  garage.appendChild(popupBlock);
   const num = <HTMLElement>form.querySelector('#page-title span');
 
   form.addEventListener('click', (ev) => {

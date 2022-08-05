@@ -42,6 +42,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
          </svg>`;
       carBlock.className = 'car';
       carBlock.id = `${cars[i].id}`;
+      carBlock.title = `${cars[i].name}`
       carBlock.style.color = `${cars[i].color}`;
       race.innerHTML = `${startStopBtns}${finishFlag}`;
       race.appendChild(carBlock);

@@ -2,16 +2,39 @@
 /* eslint-disable no-restricted-syntax */
 import { Interval, Speed, Urls } from '../../types/types';
 
+let countRace: number[] = [];
+const errorCountRace: number[] = [];
 const interval: Interval = {};
 
+const winner = (time: string) => {
+  if (countRace.length === 1) {
+    const win = document.querySelector(`#car-${countRace[0]}`) as HTMLElement;
+    const pop = document.querySelector('.popup') as HTMLDivElement;
+    const poptext = document.querySelector('.popup__text') as HTMLDivElement;
+    poptext.innerText = `${win.parentElement?.title} ${time} sec.`;
+    pop.style.display = 'block';
+    setTimeout(() => {
+      pop.style.display = 'none';
+    }, 3500);
+    // console.log(pop.lastChild.)
+  }
+};
+
 async function animation(widthRoad: number, id: number, durantion: number): Promise<void> {
+  const start = new Date().getTime();
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
+  countRace = [];
   let startX = 0;
   const tick = (): void => {
     startX += durantion / 4;
     car.style.transform = `translateX(${startX}px)`;
     if (startX < widthRoad - 200) {
       interval[id] = requestAnimationFrame(tick);
+    } else {
+      const end = new Date().getTime();
+      countRace.push(id);
+      const time = ((end - start) / 1000).toFixed(3);
+      winner(time);
     }
   };
   tick();
@@ -52,6 +75,7 @@ export const getStartOneRace = async (id: number, str: string) => {
     }).then((res) => {
       if (res.status === 500) {
         cancelAnimationFrame(interval[id]);
+        if (!(id in errorCountRace)) errorCountRace.push(id);
       }
     });
   }
