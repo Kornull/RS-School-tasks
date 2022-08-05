@@ -23,3 +23,5 @@ export type Speed = {
   velocity: number;
   distance: number;
 };
+
+export type Interval = Record<number, number>;

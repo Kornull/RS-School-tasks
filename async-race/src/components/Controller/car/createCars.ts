@@ -5,9 +5,9 @@ import { getCountAllCars, getPAge } from '../rest/GET/get-run';
 import { CarsAttribute } from '../../types/types';
 import { deleteCar } from '../rest/DELETE/delete-run';
 import { inputUpdateCarName } from '../../templates/input';
-import { getStartOneRace } from '../runRacing/race';
-import {startStopBtns} from './carBtns/btn-car';
-import {finishFlag} from './flag/flag';
+import {getStartOneRace, stopCar } from '../runRacing/race';
+import { startStopBtns } from './carBtns/btn-car';
+import { finishFlag } from './flag/flag';
 
 enum StartPgae {
   startpage = 1,
@@ -37,7 +37,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
         <button type="button" class="btn btn__delete" id="btn-delete">delete</button>
         <div class="car__name">${cars[i].name}</div>
        </div>
-         <svg class="car__icon" fill="${cars[i].color}" id="">
+         <svg class="car__icon" fill="${cars[i].color}" id="car-${cars[i].id}">
            <use xlink:href="../assets/img/car.svg#carview"></use>
          </svg>`;
       carBlock.className = 'car';
@@ -47,7 +47,10 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       race.appendChild(carBlock);
       arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
+
       race.addEventListener('click', (ev) => {
+        const runBtn = <HTMLButtonElement>race.querySelector('#run')
+        const stopBtn = <HTMLButtonElement>race.querySelector('#stop')
         const message = ev.target as HTMLElement;
         switch (message.id) {
           case 'btn-select':
@@ -58,7 +61,15 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
             deleteCar();
             break;
           case 'run':
-            getStartOneRace(Number(carBlock.id), carBlock);
+            runBtn.setAttribute('disabled', 'disabled')
+            stopBtn.removeAttribute('disabled')
+            getStartOneRace(Number(carBlock.id), 'started');
+            break;
+          case 'stop':
+            stopBtn.setAttribute('disabled', 'disabled')
+            runBtn.removeAttribute('disabled')
+            stopCar(Number(carBlock.id))
+            break;
           // no default
         }
       });
