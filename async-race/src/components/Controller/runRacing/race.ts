@@ -16,11 +16,11 @@ const winner = (time: string) => {
     setTimeout(() => {
       pop.style.display = 'none';
     }, 3500);
-    // console.log(pop.lastChild.)
   }
 };
 
 async function animation(widthRoad: number, id: number, durantion: number): Promise<void> {
+  const btnRacing = document.querySelector('#all-race') as HTMLElement;
   const start = new Date().getTime();
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
   countRace = [];
@@ -34,7 +34,10 @@ async function animation(widthRoad: number, id: number, durantion: number): Prom
       const end = new Date().getTime();
       countRace.push(id);
       const time = ((end - start) / 1000).toFixed(3);
-      winner(time);
+      if (btnRacing.classList.contains('run__race')) {
+        winner(time);
+        btnRacing.classList.remove('run__race');
+      }
     }
   };
   tick();

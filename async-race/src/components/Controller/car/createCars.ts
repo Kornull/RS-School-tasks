@@ -22,6 +22,35 @@ const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement) => {
   inputUpdateCarName().value = name.innerText;
 };
 
+const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTMLElement[] ) => {
+  race.addEventListener('click', (ev) => {
+    const runBtn = <HTMLButtonElement>race.querySelector('#run')
+    const stopBtn = <HTMLButtonElement>race.querySelector('#stop')
+    const message = ev.target as HTMLElement;
+    switch (message.id) {
+      case 'btn-select':
+        addClass(arrBlocks, carBlock);
+        break;
+      case 'btn-delete':
+        addClass(arrBlocks, carBlock);
+        deleteCar();
+        break;
+      case 'run':
+        runBtn.setAttribute('disabled', 'disabled')
+        stopBtn.removeAttribute('disabled')
+        getStartOneRace(Number(carBlock.id), RaceCommand.start);
+        break;
+      case 'stop':
+        stopBtn.setAttribute('disabled', 'disabled')
+        runBtn.removeAttribute('disabled')
+        stopCar(Number(carBlock.id))
+        break;
+      // no default
+    }
+  });
+  carBlock.removeEventListener('click', updateInput);
+}
+
 const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
   const arrBlocks: HTMLElement[] = [];
   const racingBlock = <HTMLElement>document.createElement('div');
@@ -49,32 +78,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
 
-      race.addEventListener('click', (ev) => {
-        const runBtn = <HTMLButtonElement>race.querySelector('#run')
-        const stopBtn = <HTMLButtonElement>race.querySelector('#stop')
-        const message = ev.target as HTMLElement;
-        switch (message.id) {
-          case 'btn-select':
-            addClass(arrBlocks, carBlock);
-            break;
-          case 'btn-delete':
-            addClass(arrBlocks, carBlock);
-            deleteCar();
-            break;
-          case 'run':
-            runBtn.setAttribute('disabled', 'disabled')
-            stopBtn.removeAttribute('disabled')
-            getStartOneRace(Number(carBlock.id), RaceCommand.start);
-            break;
-          case 'stop':
-            stopBtn.setAttribute('disabled', 'disabled')
-            runBtn.removeAttribute('disabled')
-            stopCar(Number(carBlock.id))
-            break;
-          // no default
-        }
-      });
-      carBlock.removeEventListener('click', updateInput);
+      btnClick(race, carBlock, arrBlocks)
     }
   });
   return racingBlock;

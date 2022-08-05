@@ -65,6 +65,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
         updateCars();
         break;
       case 'all-race':
+        message.classList.add('run__race');
         getStartRacing(carId, RaceCommand.start);
         break;
       case 'all-reset':
