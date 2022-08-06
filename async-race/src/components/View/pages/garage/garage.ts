@@ -8,7 +8,7 @@ import { formGarage } from './form/form';
 import { RaceCommand } from '../../../types/types';
 import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
 import { popup } from './popup/popup';
-import { closeAllBtns } from '../../../Controller/buttons/close-open-btn/close-btn';
+import { closeAllBtns, openAllBtns } from '../../../Controller/buttons/close-open-btn/close-btn';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -35,6 +35,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
   const num = <HTMLElement>form.querySelector('#page-title span');
 
   form.addEventListener('click', (ev) => {
+    const reset = <HTMLButtonElement>form.querySelector('#all-race');
     const carId: number[] = [];
     main.querySelectorAll('.car').forEach((car: Element) => {
       carId.push(Number(car.id));
@@ -71,7 +72,9 @@ export const garageLink = async (): Promise<HTMLElement> => {
         closeAllBtns();
         break;
       case 'all-reset':
+        reset.removeAttribute('disabled');
         getStopRacing(carId);
+        openAllBtns();
         break;
       // no default
     }

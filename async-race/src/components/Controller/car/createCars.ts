@@ -122,3 +122,5 @@ export const updateCars = async (): Promise<void> => {
   const response = getPAge(Number(pageNum));
   main.appendChild(updateHasCar(response));
 };
+
+
