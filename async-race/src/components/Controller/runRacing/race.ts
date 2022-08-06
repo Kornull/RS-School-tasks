@@ -1,12 +1,13 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
-import { Interval, Speed, Urls } from '../../types/types';
+// eslint-disable-next-line object-curly-newline
+import { Interval, Speed, SpeedCar, StartStopPosition, Urls, WidthWindow } from '../../types/types';
 import { openAllBtns } from '../buttons/close-open-btn/close-btn';
 
 let countRace: number[] = [];
 let countErr: number[] = [];
 let interval: Interval = {};
-
+let runSpeed = 0;
 const winner = (time: string, id: number) => {
   const win = document.querySelector(`#car-${id}`) as HTMLElement;
   const pop = document.querySelector('.popup') as HTMLDivElement;
@@ -25,21 +26,32 @@ export const preStopCar = async (id: number) => {
   });
   if (stopDrive.status === 200) {
     cancelAnimationFrame(interval[id]);
-    car.style.transform = `translateX(${0}px)`;
+    car.style.transform = `translateX(${StartStopPosition.startPos}px)`;
   }
+};
+
+const stopCar = async (id: number) => {
+  await fetch(`${Urls.engine}/?id=${id}&status=stopped`, {
+    method: 'PATCH',
+  });
 };
 
 async function animation(widthRoad: number, id: number, durantion: number): Promise<void> {
   const btnRacing = document.querySelector('#all-race') as HTMLElement;
   const start = new Date().getTime();
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
-  let startX = 0;
+  let startX = StartStopPosition.startPos;
   const tick = (): void => {
-    startX += durantion / 4;
+    if (window.innerWidth > WidthWindow.max) runSpeed = SpeedCar.hard;
+    // eslint-disable-next-line max-len
+    if (window.innerWidth > WidthWindow.min && window.innerWidth <= WidthWindow.max) runSpeed = SpeedCar.medium;
+    if (window.innerWidth <= WidthWindow.min) runSpeed = SpeedCar.slow;
+    startX += durantion / runSpeed;
     car.style.transform = `translateX(${startX}px)`;
-    if (startX < widthRoad - 200) {
+    if (startX < widthRoad - StartStopPosition.stopPos) {
       interval[id] = requestAnimationFrame(tick);
     } else {
+      stopCar(id);
       const end = new Date().getTime();
       const time = ((end - start) / 1000).toFixed(2);
       countRace.push(id);

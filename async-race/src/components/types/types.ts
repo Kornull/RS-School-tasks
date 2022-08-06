@@ -29,3 +29,19 @@ export enum RaceCommand {
   start = 'started',
   stop = 'stopped',
 }
+
+export enum StartStopPosition {
+  startPos = 0,
+  stopPos = 200,
+}
+
+export enum SpeedCar {
+  hard = 3,
+  medium = 6,
+  slow = 10,
+}
+
+export enum WidthWindow {
+  max = 1200,
+  min = 700,
+}
