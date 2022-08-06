@@ -11,7 +11,7 @@ export const formGarage = <HTMLElement>(<unknown>`
     <input type="text" value="" placeholder="name car" id="car-name__update" name="name"  class="form__name">
     <input type="color" id="car-color__update" name="color" value="#e66465">
     <div class="form__btns">
-    <button type="button" class="btn btn__update-car" id="update-car">Update</button>
+    <button type="button" class="btn btn__update-car" id="update-car" disabled="disabled">Update</button>
     </div>
     <div class="form__btn-racing--cars">
     <button type="button" class="btn btn__race-all--car" id="all-race">start racing</button>

@@ -69,6 +69,7 @@ const driveCar = async (widthRoad: number, id: number, duration: number) => {
   const res = await fetch(`${Urls.engine}/?id=${id}&status=drive`, {
     method: 'PATCH',
   });
+
   if (res.status === 500) {
     cancelAnimationFrame(interval[id]);
     countErr.push(id);

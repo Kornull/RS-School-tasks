@@ -38,7 +38,7 @@ export enum StartStopPosition {
 export enum SpeedCar {
   hard = 3,
   medium = 6,
-  slow = 10,
+  slow = 11,
 }
 
 export enum WidthWindow {

@@ -51,6 +51,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
         break;
       case 'update-car':
         updateInput();
+        message.setAttribute('disabled', 'disabled');
         break;
       case 'delete-car':
         deleteCar();

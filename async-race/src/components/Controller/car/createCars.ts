@@ -4,35 +4,44 @@ import './_car.scss';
 import { getCountAllCars, getPAge } from '../rest/rest-garage/GET/get-run';
 import { CarsAttribute, RaceCommand } from '../../types/types';
 import { deleteCar } from '../rest/rest-garage/DELETE/delete-run';
-import { inputUpdateCarName } from '../../templates/input';
+import { inputUpdateCarColor, inputUpdateCarName } from '../../templates/input';
 import {getStartOneRace, preStopCar } from '../runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
+
+
 
 enum StartPgae {
   startpage = 1,
 }
 
-const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement) => {
+const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement, color: string) => {
+  const upadetCar = <HTMLButtonElement>document.querySelector('#update-car');
+  console.log(upadetCar)
   arrBlocks.forEach((el) => el.classList.remove('choice'));
   arrBlocks.forEach((el) => {
     if (carBlock.id === el.id) el.classList.add('choice');
   });
   const name = <HTMLDivElement>carBlock.querySelector('.car__name');
   inputUpdateCarName().value = name.innerText;
+  inputUpdateCarColor().value = color;
+
 };
 
-const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTMLElement[] ) => {
+const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTMLElement[], color: string ) => {
   race.addEventListener('click', (ev) => {
+  const upadetCar = <HTMLButtonElement>document.querySelector('#update-car');
+
     const runBtn = <HTMLButtonElement>race.querySelector('#run')
     const stopBtn = <HTMLButtonElement>race.querySelector('#stop')
     const message = ev.target as HTMLElement;
     switch (message.id) {
       case 'btn-select':
-        addClass(arrBlocks, carBlock);
+        addClass(arrBlocks, carBlock, color);
+        upadetCar.removeAttribute('disabled')
         break;
       case 'btn-delete':
-        addClass(arrBlocks, carBlock);
+        addClass(arrBlocks, carBlock, color);
         deleteCar();
         break;
       case 'run':
@@ -69,6 +78,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
          <svg class="car__icon" fill="${cars[i].color}" id="car-${cars[i].id}">
            <use xlink:href="../assets/img/car.svg#carview"></use>
          </svg>`;
+         const color = cars[i].color;
       carBlock.className = 'car';
       carBlock.id = `${cars[i].id}`;
       carBlock.title = `${cars[i].name}`
@@ -78,7 +88,7 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
       arrBlocks.push(carBlock);
       racingBlock.appendChild(race);
 
-      btnClick(race, carBlock, arrBlocks)
+      btnClick(race, carBlock, arrBlocks, color)
     }
   });
   return racingBlock;
