@@ -18,7 +18,6 @@ export const getPAge = async (num: number): Promise<CarsAttribute[]> => {
     value: 7,
   };
   const queryStr: string = str([page, limit]);
-  console.log(str([page, limit]))
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   return getCountCarsPage(queryStr);
 };

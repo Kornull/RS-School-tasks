@@ -49,11 +49,6 @@ export enum WidthWindow {
 
 export type Winners = {
   id: number;
-  wins: number;
   time: number;
-};
-
-export type WinText = {
-  name: string;
-  time: string;
+  wins: number;
 };

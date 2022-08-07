@@ -7,7 +7,6 @@ import { CarsAttribute } from '../../../types/types';
 const winnerChar = async () => {
   const winners = await returnWinners();
   const AllCars = await getCountAllCars();
-  console.log('winners', winners);
   const winDescr = document.createElement('div');
   winDescr.className = 'win__car-all';
   for (let i = 0; i < winners.length; i++) {
@@ -56,12 +55,10 @@ export const winnerTable = () => {
   return divWin;
 };
 
-export const getWinnerTable = (): HTMLDivElement => {
-  return winnerTable();
-};
+export const getWinnerTable = (): HTMLDivElement => winnerTable();
 
 export const setWinnerTable = () => {
   const tableWin = document.querySelector('.win__table') as HTMLDivElement;
   tableWin.innerHTML = '';
   tableWin.append(winnerTable());
-}
+};

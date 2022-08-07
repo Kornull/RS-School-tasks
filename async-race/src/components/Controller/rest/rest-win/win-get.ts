@@ -5,6 +5,5 @@ export const returnWinners = async (): Promise<Winners[]> => {
   const countPAge = <HTMLElement>document.querySelector('#page-count-cars span');
   const data = await response.json();
   countPAge.innerText = `${data.length}`;
-  console.log(data);
   return data;
 };

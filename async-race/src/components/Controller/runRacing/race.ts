@@ -1,16 +1,16 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
 // eslint-disable-next-line object-curly-newline
-import { Interval, Speed, SpeedCar, StartStopPosition, Urls, WidthWindow, WinText } from '../../types/types';
+import { Interval, Speed, StartStopPosition, Urls, Winners } from '../../types/types';
 import { openAllBtns } from '../buttons/close-open-btn/close-btn';
+import { setWinnerCar } from '../rest/rest-win/post-win/win-post';
 
 let countRace: number[] = [];
 let countErr: number[] = [];
 let interval: Interval = {};
-let runSpeed = 0;
 
-export const winner = (time: string, id: number) => {
-  const win = document.querySelector(`#car-${id}`) as HTMLElement;
+export const winner = (time: string, carId: number) => {
+  const win = document.querySelector(`#car-${carId}`) as HTMLElement;
   const pop = document.querySelector('.popup') as HTMLDivElement;
   const popText = document.querySelector('.popup__text') as HTMLDivElement;
   const nameWinCar = win.parentElement?.title as string;
@@ -19,11 +19,12 @@ export const winner = (time: string, id: number) => {
   setTimeout(() => {
     pop.style.display = 'none';
   }, 3500);
-  const winObj: WinText = {
-    name: nameWinCar,
-    time,
+  const winObj: Winners = {
+    id: carId,
+    time: Number(time),
+    wins: 1,
   };
-  return winObj;
+  setWinnerCar(winObj);
 };
 
 export const preStopCar = async (id: number) => {
@@ -43,17 +44,13 @@ const stopCar = async (id: number) => {
   });
 };
 
-async function animation(widthRoad: number, id: number, durantion: number): Promise<void> {
+async function animation(widthRoad: number, id: number, duration: number): Promise<void> {
   const btnRacing = document.querySelector('#all-race') as HTMLElement;
   const start = new Date().getTime();
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
   let startX = StartStopPosition.startPos;
   const tick = (): void => {
-    if (window.innerWidth > WidthWindow.max) runSpeed = SpeedCar.hard;
-    // eslint-disable-next-line max-len
-    if (window.innerWidth > WidthWindow.min && window.innerWidth <= WidthWindow.max) runSpeed = SpeedCar.medium;
-    if (window.innerWidth <= WidthWindow.min) runSpeed = SpeedCar.slow;
-    startX += durantion / runSpeed;
+    startX += duration / 3;
     car.style.transform = `translateX(${startX}px)`;
     if (startX < widthRoad - StartStopPosition.stopPos) {
       interval[id] = requestAnimationFrame(tick);
