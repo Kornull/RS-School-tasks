@@ -2,30 +2,31 @@
 .main {
   min-height: 315px;
   max-height: 580px;
-}.car {
+}
+
+.car {
   width: 110px;
   height: 50px;
   font-size: 10px;
   margin-bottom: 5px;
 
-  &__name{
+  &__name {
     color: #fff;
   }
-  &__icon{
+
+  &__icon {
     width: 100%;
     height: 50px;
-
-    transition: transform .3s linear;
-    //transition: translate .2s linear;/
-
   }
-  &__action{
+
+  &__action {
     position: absolute;
     top: -2px;
     left: 10px;
     display: flex;
   }
 }
+
 .racing {
   position: relative;
   display: flex;
@@ -33,19 +34,20 @@
   width: 100%;
   max-width: 100%;
   height: 80px;
+
   &__slider {
     margin: 0 15px;
   }
+
   &::before {
-  position: absolute;
+    position: absolute;
     content: '';
     width: 98%;
     left: 10px;
     bottom: 15px;
     height: 2px;
     background: #dadaff;
-
-}
+  }
 }
 
 .btn__delete,

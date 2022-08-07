@@ -73,9 +73,11 @@ export const garageLink = async (): Promise<HTMLElement> => {
         closeAllBtns();
         break;
       case 'all-reset':
-        reset.removeAttribute('disabled');
         getStopRacing(carId);
         openAllBtns();
+        setTimeout(() => {
+          reset.removeAttribute('disabled');
+        }, 6500);
         break;
       // no default
     }
