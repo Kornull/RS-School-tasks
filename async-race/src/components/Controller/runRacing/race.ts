@@ -52,10 +52,11 @@ async function animation(widthRoad: number, id: number, durantion: number): Prom
       interval[id] = requestAnimationFrame(tick);
     } else {
       stopCar(id);
+      cancelAnimationFrame(interval[id]);
       const end = new Date().getTime();
-      const time = ((end - start) / 1000).toFixed(2);
       countRace.push(id);
       if (btnRacing.classList.contains('run__race')) {
+        const time = ((end - start) / 1000).toFixed(2);
         winner(time, id);
         btnRacing.classList.remove('run__race');
       }

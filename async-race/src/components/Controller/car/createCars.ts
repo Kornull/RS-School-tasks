@@ -60,7 +60,7 @@ const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTM
   carBlock.removeEventListener('click', updateInput);
 }
 
-const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
+const updateHasCar = async (response: Promise<CarsAttribute[]>): Promise<HTMLElement> => {
   const arrBlocks: HTMLElement[] = [];
   const racingBlock = <HTMLElement>document.createElement('div');
   racingBlock.className = 'racing__slider';
@@ -94,19 +94,23 @@ const updateHasCar = (response: Promise<CarsAttribute[]>): HTMLElement => {
   return racingBlock;
 };
 
-export const createCars = (): HTMLElement => {
+export const createCars = async (): Promise<HTMLElement> => {
   const main: HTMLElement = document.createElement('main');
   main.className = 'main';
   const response = getPAge(1);
-
-  main.appendChild(updateHasCar(response));
+  const generateCar = await updateHasCar(response)
+  main.appendChild(generateCar);
   getCountAllCars();
   return main;
 };
 
 export const updateCars = async (): Promise<void> => {
+  setTimeout(() => {
+
+  })
   inputUpdateCarName().value = '';
   const main = <HTMLElement>document.querySelector('.main');
+  main.innerHTML = '';
   const countPAge = <HTMLElement>document.querySelector('#page-title span');
   const btnRight = <HTMLButtonElement>document.querySelector('#run-right');
   const btnLeft = <HTMLButtonElement>document.querySelector('#run-left');
@@ -128,9 +132,12 @@ export const updateCars = async (): Promise<void> => {
   } else {
     btnLeft.removeAttribute('disabled');
   }
-  main.innerHTML = '';
+
+  setTimeout(async () => {
   const response = getPAge(Number(pageNum));
-  main.appendChild(updateHasCar(response));
+  const genCar = await updateHasCar(response)
+    main.appendChild(genCar);
+  }, 1000)
 };
 
 
