@@ -110,7 +110,6 @@ export const updateCars = async (): Promise<void> => {
   })
   inputUpdateCarName().value = '';
   const main = <HTMLElement>document.querySelector('.main');
-  main.innerHTML = '';
   const countPAge = <HTMLElement>document.querySelector('#page-title span');
   const btnRight = <HTMLButtonElement>document.querySelector('#run-right');
   const btnLeft = <HTMLButtonElement>document.querySelector('#run-left');
@@ -132,12 +131,10 @@ export const updateCars = async (): Promise<void> => {
   } else {
     btnLeft.removeAttribute('disabled');
   }
-
-  setTimeout(async () => {
+  main.innerHTML = '';
   const response = getPAge(Number(pageNum));
   const genCar = await updateHasCar(response)
-    main.appendChild(genCar);
-  }, 1000)
+  main.appendChild(genCar);
 };
 
 

@@ -1,0 +1,17 @@
+.win{
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    color: white;
+    background: #002bff;
+  }
+  &__text {
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+    width: 60px;
+    font-size: 14px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0);
+  }
+}

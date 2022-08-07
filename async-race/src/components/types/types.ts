@@ -8,6 +8,7 @@ export enum Urls {
   server = 'http://127.0.0.1:3000',
   garage = 'http://127.0.0.1:3000/garage',
   engine = 'http://127.0.0.1:3000/engine',
+  winners = 'http://127.0.0.1:3000/winners',
 }
 
 export type Key = {
@@ -45,3 +46,14 @@ export enum WidthWindow {
   max = 1200,
   min = 700,
 }
+
+export type Winners = {
+  id: number;
+  wins: number;
+  time: number;
+};
+
+export type WinText = {
+  name: string;
+  time: string;
+};

@@ -1,6 +1,6 @@
 export const closeAllBtns = () => {
   document.querySelectorAll('.btn').forEach((btn) => {
-    if (!btn.classList.contains('btn__win')) {
+    if (!btn.classList.contains('btn__win') && !btn.classList.contains('btn__garage')) {
       btn.setAttribute('disabled', 'disabled');
     }
   });

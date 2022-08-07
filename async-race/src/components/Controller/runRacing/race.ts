@@ -1,22 +1,29 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
 // eslint-disable-next-line object-curly-newline
-import { Interval, Speed, SpeedCar, StartStopPosition, Urls, WidthWindow } from '../../types/types';
+import { Interval, Speed, SpeedCar, StartStopPosition, Urls, WidthWindow, WinText } from '../../types/types';
 import { openAllBtns } from '../buttons/close-open-btn/close-btn';
 
 let countRace: number[] = [];
 let countErr: number[] = [];
 let interval: Interval = {};
 let runSpeed = 0;
-const winner = (time: string, id: number) => {
+
+export const winner = (time: string, id: number) => {
   const win = document.querySelector(`#car-${id}`) as HTMLElement;
   const pop = document.querySelector('.popup') as HTMLDivElement;
-  const poptext = document.querySelector('.popup__text') as HTMLDivElement;
-  poptext.innerText = `${win.parentElement?.title} ${time} sec.`;
+  const popText = document.querySelector('.popup__text') as HTMLDivElement;
+  const nameWinCar = win.parentElement?.title as string;
+  popText.innerText = `${nameWinCar} ${time} sec.`;
   pop.style.display = 'block';
   setTimeout(() => {
     pop.style.display = 'none';
   }, 3500);
+  const winObj: WinText = {
+    name: nameWinCar,
+    time,
+  };
+  return winObj;
 };
 
 export const preStopCar = async (id: number) => {
