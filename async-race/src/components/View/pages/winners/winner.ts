@@ -31,7 +31,7 @@ const winnerChar = async (carList: Winners[]) => {
     AllCarsPage.forEach((car: CarsAttribute) => {
       if (car.id === winners[i].id) {
         winCar.innerHTML = `<svg class="car__icon-win" fill="${car.color}" id="car-${car.id}">
-           <use xlink:href="../assets/img/car.svg#carview"></use>
+           <use xlink:href="./assets/img/car.svg#carview"></use>
          </svg>\``;
         winName.innerHTML = `${car.name}`;
         winCount.innerHTML = `${winners[i].wins}`;
