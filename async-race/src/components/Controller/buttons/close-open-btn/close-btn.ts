@@ -18,3 +18,8 @@ export const openAllBtns = () => {
     if (btn.classList.contains('btn__race-stop')) btn.setAttribute('disabled', 'disabled');
   });
 };
+
+export const closeAllRaceBtn = () => {
+  const allRacinng = document.querySelector('#all-race');
+  allRacinng?.setAttribute('disabled', 'disabled');
+};

@@ -8,6 +8,7 @@ import { inputUpdateCarColor, inputUpdateCarName } from '../../templates/input';
 import {getStartOneRace, preStopCar } from '../runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
+import { closeAllRaceBtn } from '../buttons/close-open-btn/close-btn';
 
 
 
@@ -45,6 +46,7 @@ const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTM
       case 'run':
         runBtn.setAttribute('disabled', 'disabled')
         stopBtn.removeAttribute('disabled')
+        closeAllRaceBtn()
         getStartOneRace(Number(carBlock.id), RaceCommand.start);
         break;
       case 'stop':
