@@ -2,8 +2,8 @@
 import { updateCars } from '../../../car/createCars';
 import { inputUpdateCarName } from '../../../../templates/input';
 import { Urls } from '../../../../types/types';
-import {returnWinners} from '../../rest-win/win-get';
-import {setWinnerTable} from '../../../../View/pages/winners/winner';
+import { returnWinners } from '../../rest-win/win-get';
+import { setWinnerTable } from '../../../../View/pages/winners/winner';
 
 export const getDelCard = async (id: number): Promise<void> => {
   await fetch(`${Urls.garage}/${id}`, {

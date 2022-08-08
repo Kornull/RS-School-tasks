@@ -34,3 +34,11 @@
     background: rgba(0, 0, 0, 0);
   }
 }
+
+#sort-time,
+#sort-win {
+  &:hover {
+    cursor: pointer;
+    color: yellow;
+  }
+}

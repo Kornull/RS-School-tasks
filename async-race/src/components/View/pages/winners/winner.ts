@@ -1,12 +1,12 @@
 import './_winner.scss';
 // eslint-disable-next-line import/no-cycle
 import { getUlEl, pageWinCount, winCarCount } from './header-win/win';
-import { returnWinners, viewCars } from '../../../Controller/rest/rest-win/win-get';
+import { returnWinners, viewCars, viewSort } from '../../../Controller/rest/rest-win/win-get';
 import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-run';
-import { CarsAttribute, StartPage, Winners} from '../../../types/types';
+import { CarsAttribute, Sort, StartPage, Winners } from '../../../types/types';
 
 const winnerChar = async (carList: Winners[]) => {
-  const listCars = await returnWinners()
+  const listCars = carList;
   const winners: Winners[] = await carList;
   const AllCarsPage = await getCountAllCars();
   const winDescr = document.createElement('div');
@@ -21,9 +21,9 @@ const winnerChar = async (carList: Winners[]) => {
     const winCount = document.createElement('div');
     const winTime = document.createElement('div');
     const idCar = winners[i].id;
-    const number = listCars.findIndex((el) => el.id === idCar);
+    let number: number = listCars.findIndex((el) => el.id === idCar);
     winNumber.className = 'win__number';
-    winNumber.innerText = `${number + 1}`;
+    winNumber.innerText = `${(number += 1)}`;
     winCar.className = 'win__car-svg';
     winName.className = 'win__name';
     winCount.className = 'win__count';
@@ -61,10 +61,7 @@ export const winnerTable = async (): Promise<HTMLDivElement> => {
   return divWin;
 };
 
-export const getWinnerTable = async (): Promise<HTMLDivElement> => {
-  returnWinners();
-  return winnerTable();
-};
+export const getWinnerTable = async (): Promise<HTMLDivElement> => winnerTable();
 
 export const setWinnerTable = async () => {
   const allCarsWin = await returnWinners();

@@ -42,9 +42,9 @@ export enum SpeedCar {
   slow = 11,
 }
 
-export enum WidthWindow {
-  max = 1200,
-  min = 700,
+export enum Sort {
+  time = 'time',
+  wins = 'win',
 }
 
 export type Winners = {
@@ -56,3 +56,8 @@ export type Winners = {
 export enum StartPage {
   startpage = 1,
 }
+
+export type KeySort = {
+  key: string;
+  value: string;
+};

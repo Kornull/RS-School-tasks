@@ -20,7 +20,7 @@ export const btnPage = (): HTMLDivElement => {
     returnWinners().then((res: Winners[]) => {
       pageWinCar.innerText = `Cars ${res.length}`;
     });
-    // console.log(garage);
+    setWinnerTable();
     garage.style.display = 'none';
     winPage.style.display = 'block';
   });
@@ -30,6 +30,6 @@ export const btnPage = (): HTMLDivElement => {
   });
   btnsNavigation.appendChild(btnGarage);
   btnsNavigation.appendChild(btnWin);
-  setWinnerTable()
+
   return btnsNavigation;
 };

@@ -1,14 +1,15 @@
 import './_win.scss';
 // eslint-disable-next-line import/no-cycle
 import { setWinnerTable } from '../winner';
-import {updateCars} from '../../../../Controller/car/createCars';
+import { Sort } from '../../../../types/types';
+import { viewSort } from '../../../../Controller/rest/rest-win/win-get';
 
 export const win = <HTMLElement>(<unknown>`
     <li class="win__text">Number</li>
     <li class="win__text">Car</li>
     <li class="win__text">Name</li>
-    <li class="win__text">Wins</li>
-    <li class="win__text">Best time</li>
+    <li class="win__text" id="sort-win">Wins</li>
+    <li class="win__text" id="sort-time">Best time</li>
 `);
 
 export const getUlEl = () => {
@@ -16,6 +17,16 @@ export const getUlEl = () => {
 
   ul.className = 'win__header win';
   ul.innerHTML = `${win}`;
+  ul.addEventListener('click', async (ev) => {
+    const message = ev.target as HTMLElement;
+    switch (message.id) {
+      case 'sort-time':
+        viewSort(Sort.time);
+        setWinnerTable();
+        break;
+        // no default
+      }
+    });
   return ul;
 };
 
@@ -60,18 +71,5 @@ export const pageWinCount = (): HTMLDivElement => {
     pageNum.innerHTML = `${num}`;
     setWinnerTable();
   });
-
   return pageWinCar;
 };
-// case 'run-right':
-// res += 1;
-// num.innerText = `${res}`;
-// updateCars();
-// break;
-// case 'run-left':
-// res -= 1;
-// if (res < 1) res = 1;
-// num.innerText = `${res}`;
-// updateCars();
-// break;
-//
