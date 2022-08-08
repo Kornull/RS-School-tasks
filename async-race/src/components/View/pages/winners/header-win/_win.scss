@@ -3,7 +3,7 @@
 
   &__count-car{
     font-size: 18px;
-    color: white;
+    color: #fff;
     margin: 0 auto;
     width: 100px;
     text-align: center;
@@ -12,7 +12,7 @@
   &__count-page{
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #fff;
     font-size: 18px;
     margin: 0 auto;
     margin-bottom: 20px
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-around;
     width: 500px;
-    color: white;
+    color: #fff;
     background: #002bff;
   }
   &__text {
@@ -30,8 +30,8 @@
     font-weight: bold;
     width: 86px;
     font-size: 14px;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    background: #00000000;
   }
   &__list-cars{
     width: 100%;
@@ -44,6 +44,16 @@
 #sort-win {
   &:hover {
     cursor: pointer;
-    color: yellow;
+    color: #ffff00;
   }
+}
+.page__text--win{
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 152px;
 }

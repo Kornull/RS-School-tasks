@@ -48,7 +48,7 @@ export const pageWinCount = (): HTMLDivElement => {
   const pageWinText: HTMLDivElement = document.createElement('div');
   const pageR: HTMLButtonElement = document.createElement('button');
   const pageL: HTMLButtonElement = document.createElement('button');
-  pageWinText.className = 'page__text';
+  pageWinText.className = 'page__text--win';
   pageWinBtns.className = 'page__btns';
   pageR.className = 'page__btn btn btn__right';
   pageL.className = 'page__btn btn btn__left';
@@ -82,7 +82,7 @@ export const pageWinCount = (): HTMLDivElement => {
 export const winList = (): HTMLDivElement => {
   const list = document.createElement('div');
   list.className = 'win__list-cars';
-  list.id = 'win-list-all-car'
+  list.id = 'win-list-all-car';
 
   return list;
-}
+};

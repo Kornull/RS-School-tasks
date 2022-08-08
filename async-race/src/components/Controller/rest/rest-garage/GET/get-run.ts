@@ -39,13 +39,3 @@ export const getCountAllCars = async () => {
   //
   return data;
 };
-
-// const run = async (obj: object) => {
-//   await fetch(`${baseUrl()}/engine`, {
-//     method: 'PATH',
-//     body: JSON.stringify(obj),
-//   });
-//   console.log('err')
-// }
-//
-// run({ id:1, status: 'started' });

@@ -57,12 +57,12 @@ export const winnerTable = async (): Promise<HTMLDivElement> => {
   divWin.append(winCarCount());
   divWin.append(pageWinCount());
   divWin.append(getUlEl());
-  const list = winList()
+  const list = winList();
   const cars = await viewCars(1);
   winnerChar(cars).then((res) => {
     list.appendChild(res);
   });
-  divWin.appendChild(list)
+  divWin.appendChild(list);
   return divWin;
 };
 

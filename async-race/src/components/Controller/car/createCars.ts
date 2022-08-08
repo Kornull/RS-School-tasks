@@ -9,6 +9,7 @@ import {getStartOneRace, preStopCar } from '../runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
 import { closeAllRaceBtn } from '../buttons/close-open-btn/close-btn';
+import { setWinnerTable } from '../../View/pages/winners/winner';
 
 
 
@@ -16,7 +17,6 @@ import { closeAllRaceBtn } from '../buttons/close-open-btn/close-btn';
 
 const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement, color: string) => {
   const upadetCar = <HTMLButtonElement>document.querySelector('#update-car');
-  console.log(upadetCar)
   arrBlocks.forEach((el) => el.classList.remove('choice'));
   arrBlocks.forEach((el) => {
     if (carBlock.id === el.id) el.classList.add('choice');
@@ -115,8 +115,6 @@ export const updateCars = async (): Promise<void> => {
   const allCars = await getCountAllCars();
   const pagesCount = Math.ceil(allCars.length / 7);
   if (pageNum >= pagesCount) {
-    console.log(pagesCount)
-    console.log(pageNum)
     btnRight.setAttribute('disabled', 'disabled');
     pageNum = pagesCount;
 

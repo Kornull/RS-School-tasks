@@ -9,6 +9,7 @@ import { RaceCommand } from '../../../types/types';
 import { getStartRacing, getStopRacing } from '../../../Controller/runRacing/race';
 import { popup } from './popup/popup';
 import { closeAllBtns, openAllBtns } from '../../../Controller/buttons/close-open-btn/close-btn';
+import { setWinnerTable } from '../winners/winner';
 
 const getFormGarage = (): HTMLDivElement => {
   const form: HTMLDivElement = document.createElement('div');
@@ -52,6 +53,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
       case 'update-car':
         updateInput();
         message.setAttribute('disabled', 'disabled');
+        setWinnerTable();
         break;
       case 'delete-car':
         deleteCar();
@@ -77,7 +79,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
         openAllBtns();
         setTimeout(() => {
           reset.removeAttribute('disabled');
-        }, 6500);
+        }, 3000);
         break;
       // no default
     }

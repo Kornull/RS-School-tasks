@@ -2,6 +2,7 @@
 /* eslint-disable no-restricted-syntax */
 // eslint-disable-next-line object-curly-newline
 import { Interval, Speed, StartStopPosition, Urls, Winners } from '../../types/types';
+import { setWinnerTable } from '../../View/pages/winners/winner';
 import { openAllBtns } from '../buttons/close-open-btn/close-btn';
 import { setWinnerCar } from '../rest/rest-win/post-win/win-post';
 
@@ -25,6 +26,7 @@ export const winner = (time: string, carId: number) => {
     wins: 1,
   };
   setWinnerCar(winObj);
+  setWinnerTable();
 };
 
 export const preStopCar = async (id: number) => {

@@ -36,6 +36,5 @@ export const setWinnerCar = async (win: Winners) => {
     }
   });
   const filterId = carList.filter((car) => car.id === win.id);
-  // console.log('filter', filterId)
   if (filterId.length === 0) getUpdateWin(win);
 };
