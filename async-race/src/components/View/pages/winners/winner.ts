@@ -1,12 +1,15 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable import/no-cycle */
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import './_winner.scss';
-// eslint-disable-next-line import/no-cycle
 import { getUlEl, pageWinCount, winCarCount } from './header-win/win';
 import { returnWinners, viewCars, viewSort } from '../../../Controller/rest/rest-win/win-get';
 import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-run';
-import { CarsAttribute, Sort, StartPage, Winners } from '../../../types/types';
+import { CarsAttribute, StartPage, Winners } from '../../../types/types';
 
 const winnerChar = async (carList: Winners[]) => {
-  const listCars = await returnWinners();
+  const listCars: Winners[] = await returnWinners();
   const winners: Winners[] = carList;
   const AllCarsPage = await getCountAllCars();
   const winDescr = document.createElement('div');
@@ -63,6 +66,16 @@ export const winnerTable = async (): Promise<HTMLDivElement> => {
 
 export const getWinnerTable = async (): Promise<HTMLDivElement> => winnerTable();
 
+export const sortUpdate = async (sort: string, commandSort: string): Promise<void> => {
+  const countPAge = <HTMLElement>document.querySelector('#count-win-page');
+  const pageNum = Number(countPAge.innerText);
+  const tableWin = document.querySelector('#list-win-car') as HTMLDivElement;
+  tableWin.innerHTML = '';
+  winnerChar(await viewSort(pageNum, sort, commandSort)).then((res) => {
+    tableWin.appendChild(res);
+  });
+};
+
 export const setWinnerTable = async () => {
   const allCarsWin = await returnWinners();
   const tableWin = document.querySelector('#list-win-car') as HTMLDivElement;
@@ -87,8 +100,7 @@ export const setWinnerTable = async () => {
   } else {
     btnLeft.removeAttribute('disabled');
   }
-  const cars: Winners[] = await viewCars(pageNum);
-  winnerChar(cars).then((res) => {
+  winnerChar(await viewCars(pageNum)).then((res) => {
     tableWin.appendChild(res);
   });
 };

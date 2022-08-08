@@ -115,7 +115,7 @@ export const getStartRacing = async (objCarsId: number[], command: string) => {
       setTimeout(() => {
         openAllBtns();
         clearInterval(exam);
-      }, 2000);
+      }, 2500);
     }
   }, 1500);
 };

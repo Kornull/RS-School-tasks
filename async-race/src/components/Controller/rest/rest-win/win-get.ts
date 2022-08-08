@@ -1,21 +1,20 @@
-import { Key,KeySort,Urls,Winners } from '../../../types/types';
-import { setWinnerTable } from '../../../View/pages/winners/winner';
+import { Key, Urls, Winners } from '../../../types/types';
 
-let count = 0;
-const strWin = (queryS: Key[] | KeySort[] = []) => {
+const strWin = (queryS: Key[]) => {
   if (queryS.length) {
-    return `?${queryS.map((x: Key | KeySort) => `${x.key}=${x.value}`).join('&')}`;
+    return `?${queryS.map((x: Key) => `${x.key}=${x.value}`).join('&')}`;
   }
   return '';
 };
+
 export const returnWinners = async (): Promise<Winners[]> => {
   const response = await fetch(`${Urls.winners}`);
   const res = await response.json();
   return res;
 };
+
 export const getCountWinCarsPage = async (queryString: string): Promise<Winners[]> => {
   const response = await fetch(`${Urls.winners}${queryString}`);
-  console.log(`${Urls.winners}${queryString}`);
   const res: Winners[] = await response.json();
   return res;
 };
@@ -28,49 +27,25 @@ export const viewCars = async (num: number) => {
     key: '_limit',
     value: 10,
   };
-  const sortOrder: Key = {
-    key: '_order',
-    value: 0,
-  };
-  const sort: Key = {
-    key: '_sort',
-    value: 0,
-  };
-  let queryStr: string = strWin([page, limit]);
-  const btnSort: HTMLElement | null = document.querySelector('#sort-time');
-  if (btnSort !== null) {
-    btnSort.addEventListener('click', () => {
-      count += 1;
-    });
-    if (count % 2 !== 0) {
-      sort.value = 'time';
-      sortOrder.value = 'ASC';
-    } else {
-      sortOrder.value = 'DESC';
-      count = 0;
-    }
-    queryStr = strWin([page, sort, sortOrder]);
-  } else {
-    queryStr = strWin([page, limit]);
-  }
+  const queryStr: string = strWin([page, limit]);
+
   return getCountWinCarsPage(queryStr);
 };
 
-export const viewSort = async (num: string) => {
-  const page: KeySort = {
+export const viewSort = async (countPage: number, sort: string, command: string) => {
+  const numPage: Key = {
+    key: '_page',
+    value: countPage,
+  };
+  const sorted: Key = {
     key: '_sort',
-    value: num,
+    value: sort,
   };
-  const limit: KeySort = {
+  const sortCommand: Key = {
     key: '_order',
-    value: 'ASC',
+    value: command,
   };
-  const queryStr: string = strWin([page,limit]);
+  const queryStr: string = strWin([numPage, sorted, sortCommand]);
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   return getCountWinCarsPage(queryStr);
 };
-
-// export const sort = async (str: string) => {
-//   await fetch(`${Urls.winners}/?_sort=${str}&&_order=ASC`);
-//   viewSort(str);
-// };

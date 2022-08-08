@@ -1,8 +1,11 @@
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import './_win.scss';
 // eslint-disable-next-line import/no-cycle
-import { setWinnerTable } from '../winner';
+import { setWinnerTable, sortUpdate } from '../winner';
 import { Sort } from '../../../../types/types';
-import { viewSort } from '../../../../Controller/rest/rest-win/win-get';
+
+let count = 0;
 
 export const win = <HTMLElement>(<unknown>`
     <li class="win__text">Number</li>
@@ -14,14 +17,18 @@ export const win = <HTMLElement>(<unknown>`
 
 export const getUlEl = () => {
   const ul = document.createElement('ul');
-
   ul.className = 'win__header win';
   ul.innerHTML = `${win}`;
-  ul.addEventListener('click', async (ev) => {
+
+  ul.addEventListener('click', (ev) => {
+    ++count;
     const message = ev.target as HTMLElement;
     switch (message.id) {
       case 'sort-time':
-        setWinnerTable();
+        count % 2 === 0 ? sortUpdate(Sort.time, Sort.asc) : sortUpdate(Sort.time, Sort.desk);
+        break;
+      case 'sort-win':
+        count % 2 === 0 ? sortUpdate(Sort.wins, Sort.asc) : sortUpdate(Sort.wins, Sort.desk);
         break;
       // no default
     }
@@ -56,7 +63,7 @@ export const pageWinCount = (): HTMLDivElement => {
   pageWinCar.appendChild(pageWinText);
   pageWinCar.appendChild(pageWinBtns);
 
-  pageR.addEventListener('click',() => {
+  pageR.addEventListener('click', () => {
     const pageNum = pageWinText.lastChild as HTMLElement;
     let num = Number(pageNum.innerText);
     num += 1;

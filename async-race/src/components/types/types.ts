@@ -45,6 +45,8 @@ export enum SpeedCar {
 export enum Sort {
   time = 'time',
   wins = 'wins',
+  asc = 'ASC',
+  desk = 'DESC',
 }
 
 export type Winners = {
@@ -56,8 +58,3 @@ export type Winners = {
 export enum StartPage {
   startpage = 1,
 }
-
-export type KeySort = {
-  key: string;
-  value: string;
-};

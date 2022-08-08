@@ -1,5 +1,4 @@
 import './_btn.scss';
-import { setWinnerTable } from '../../View/pages/winners/winner';
 import { returnWinners } from '../rest/rest-win/win-get';
 import { Winners } from '../../types/types';
 
@@ -20,7 +19,6 @@ export const btnPage = (): HTMLDivElement => {
     returnWinners().then((res: Winners[]) => {
       pageWinCar.innerText = `Cars ${res.length}`;
     });
-    setWinnerTable();
     garage.style.display = 'none';
     winPage.style.display = 'block';
   });

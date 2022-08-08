@@ -15,5 +15,6 @@ export const openAllBtns = () => {
         btn.removeAttribute('disabled');
       }
     }
+    if (btn.classList.contains('btn__race-stop')) btn.setAttribute('disabled', 'disabled');
   });
 };
