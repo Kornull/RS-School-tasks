@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import './_winner.scss';
-import { getUlEl, pageWinCount, winCarCount } from './header-win/win';
+import { getUlEl, pageWinCount, winCarCount, winList } from './header-win/win';
 import { returnWinners, viewCars, viewSort } from '../../../Controller/rest/rest-win/win-get';
 import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-run';
 import { CarsAttribute, StartPage, Winners } from '../../../types/types';
@@ -57,10 +57,12 @@ export const winnerTable = async (): Promise<HTMLDivElement> => {
   divWin.append(winCarCount());
   divWin.append(pageWinCount());
   divWin.append(getUlEl());
+  const list = winList()
   const cars = await viewCars(1);
   winnerChar(cars).then((res) => {
-    divWin.appendChild(res);
+    list.appendChild(res);
   });
+  divWin.appendChild(list)
   return divWin;
 };
 
@@ -78,7 +80,7 @@ export const sortUpdate = async (sort: string, commandSort: string): Promise<voi
 
 export const setWinnerTable = async () => {
   const allCarsWin = await returnWinners();
-  const tableWin = document.querySelector('#list-win-car') as HTMLDivElement;
+  const tableWin = document.querySelector('#win-list-all-car') as HTMLDivElement;
   tableWin.innerHTML = '';
 
   const countPAge = <HTMLElement>document.querySelector('#count-win-page');

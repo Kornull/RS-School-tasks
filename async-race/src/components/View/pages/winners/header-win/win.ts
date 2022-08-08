@@ -79,3 +79,10 @@ export const pageWinCount = (): HTMLDivElement => {
   });
   return pageWinCar;
 };
+export const winList = (): HTMLDivElement => {
+  const list = document.createElement('div');
+  list.className = 'win__list-cars';
+  list.id = 'win-list-all-car'
+
+  return list;
+}

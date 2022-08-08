@@ -33,6 +33,11 @@
     color: #ffffff;
     background: rgba(0, 0, 0, 0);
   }
+  &__list-cars{
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 25px;
+  }
 }
 
 #sort-time,
