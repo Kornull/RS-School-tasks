@@ -74,7 +74,7 @@ const updateHasCar = async (response: Promise<CarsAttribute[]>): Promise<HTMLEle
         <div class="car__name">${cars[i].name}</div>
        </div>
          <svg class="car__icon" fill="${cars[i].color}" id="car-${cars[i].id}">
-           <use xlink:href="../assets/img/car.svg#carview"></use>
+           <use xlink:href="./assets/img/car.svg#carview"></use>
          </svg>`;
          const color = cars[i].color;
       carBlock.className = 'car';
