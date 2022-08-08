@@ -6,8 +6,8 @@ import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-ru
 import { CarsAttribute, Sort, StartPage, Winners } from '../../../types/types';
 
 const winnerChar = async (carList: Winners[]) => {
-  const listCars = carList;
-  const winners: Winners[] = await carList;
+  const listCars = await returnWinners();
+  const winners: Winners[] = carList;
   const AllCarsPage = await getCountAllCars();
   const winDescr = document.createElement('div');
   winDescr.className = 'win__car-all';

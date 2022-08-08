@@ -21,12 +21,11 @@ export const getUlEl = () => {
     const message = ev.target as HTMLElement;
     switch (message.id) {
       case 'sort-time':
-        viewSort(Sort.time);
         setWinnerTable();
         break;
-        // no default
-      }
-    });
+      // no default
+    }
+  });
   return ul;
 };
 
@@ -57,7 +56,7 @@ export const pageWinCount = (): HTMLDivElement => {
   pageWinCar.appendChild(pageWinText);
   pageWinCar.appendChild(pageWinBtns);
 
-  pageR.addEventListener('click', () => {
+  pageR.addEventListener('click',() => {
     const pageNum = pageWinText.lastChild as HTMLElement;
     let num = Number(pageNum.innerText);
     num += 1;

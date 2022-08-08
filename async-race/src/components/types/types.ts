@@ -13,7 +13,7 @@ export enum Urls {
 
 export type Key = {
   key: string;
-  value: number;
+  value: number | string;
 };
 
 export enum CountCars {
@@ -44,7 +44,7 @@ export enum SpeedCar {
 
 export enum Sort {
   time = 'time',
-  wins = 'win',
+  wins = 'wins',
 }
 
 export type Winners = {
