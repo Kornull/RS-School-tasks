@@ -26,6 +26,10 @@ export const setWinnerCar = async (win: Winners) => {
   carList.forEach((carWin: Winners) => {
     if (carWin.id === win.id) {
       let num: number = carWin.wins;
+      if (carWin.time < win.time) {
+        // eslint-disable-next-line no-param-reassign
+        win.time = carWin.time;
+      }
       // eslint-disable-next-line no-param-reassign
       win.wins = ++num;
       getUpdateOldWin(win);

@@ -2,6 +2,8 @@
 import { updateCars } from '../../../car/createCars';
 import { inputUpdateCarName } from '../../../../templates/input';
 import { Urls } from '../../../../types/types';
+import {returnWinners} from '../../rest-win/win-get';
+import {setWinnerTable} from '../../../../View/pages/winners/winner';
 
 export const getDelCard = async (id: number): Promise<void> => {
   await fetch(`${Urls.garage}/${id}`, {
@@ -10,6 +12,19 @@ export const getDelCard = async (id: number): Promise<void> => {
       'Content-Type': 'application/json',
     },
   });
+  const winarr = await returnWinners();
+  // eslint-disable-next-line no-restricted-syntax
+  for (const car of winarr) {
+    if (car.id === id) {
+      fetch(`${Urls.winners}/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setWinnerTable();
+    }
+  }
   updateCars();
 };
 

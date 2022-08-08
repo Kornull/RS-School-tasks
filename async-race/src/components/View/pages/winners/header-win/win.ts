@@ -50,7 +50,6 @@ export const pageWinCount = (): HTMLDivElement => {
     const pageNum = pageWinText.lastChild as HTMLElement;
     let num = Number(pageNum.innerText);
     num += 1;
-    console.log(num)
     pageNum.innerText = `${num}`;
     setWinnerTable();
   });
@@ -58,7 +57,6 @@ export const pageWinCount = (): HTMLDivElement => {
     const pageNum = pageWinText.lastChild as HTMLElement;
     let num = Number(pageNum.innerText);
     num -= 1;
-    console.log(num)
     pageNum.innerHTML = `${num}`;
     setWinnerTable();
   });
