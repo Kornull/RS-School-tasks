@@ -52,3 +52,7 @@ export type Winners = {
   time: number;
   wins: number;
 };
+
+export enum StartPage {
+  startpage = 1,
+}

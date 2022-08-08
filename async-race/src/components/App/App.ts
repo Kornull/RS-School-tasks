@@ -7,8 +7,8 @@ export async function App() {
   const form: HTMLElement = await garageLink();
   const win = await getWinnerTable();
   body.appendChild(form);
-  body.appendChild(btnPage());
   body.appendChild(win);
+  body.appendChild(btnPage());
 
   return body;
 }

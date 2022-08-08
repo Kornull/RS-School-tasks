@@ -30,10 +30,13 @@ export const getCountCarsPage = async (queryString: string): Promise<CarsAttribu
 
 export const getCountAllCars = async () => {
   const response = await fetch(`${Urls.garage}`);
-  const countPAge = <HTMLElement>document.querySelector('#page-count-cars span');
+  const countPAge: HTMLElement | null = document.querySelector('#page-count-cars span');
   const data = await response.json();
-  countPAge.innerText = `${data.length}`;
+  if (countPAge !== null) {
+    countPAge.innerText = `${data.length}`;
+  }
 
+  //
   return data;
 };
 

@@ -1,6 +1,7 @@
 import './_win.scss';
 // eslint-disable-next-line import/no-cycle
 import { setWinnerTable } from '../winner';
+import {updateCars} from '../../../../Controller/car/createCars';
 
 export const win = <HTMLElement>(<unknown>`
     <li class="win__text">Number</li>
@@ -44,20 +45,35 @@ export const pageWinCount = (): HTMLDivElement => {
   pageWinBtns.appendChild(pageR);
   pageWinCar.appendChild(pageWinText);
   pageWinCar.appendChild(pageWinBtns);
+
   pageR.addEventListener('click', () => {
     const pageNum = pageWinText.lastChild as HTMLElement;
     let num = Number(pageNum.innerText);
     num += 1;
+    console.log(num)
     pageNum.innerText = `${num}`;
-    setWinnerTable(num);
+    setWinnerTable();
   });
   pageL.addEventListener('click', () => {
     const pageNum = pageWinText.lastChild as HTMLElement;
     let num = Number(pageNum.innerText);
-    num--;
-    pageNum.innerText = `${num}`;
-    setWinnerTable(num);
+    num -= 1;
+    console.log(num)
+    pageNum.innerHTML = `${num}`;
+    setWinnerTable();
   });
 
   return pageWinCar;
 };
+// case 'run-right':
+// res += 1;
+// num.innerText = `${res}`;
+// updateCars();
+// break;
+// case 'run-left':
+// res -= 1;
+// if (res < 1) res = 1;
+// num.innerText = `${res}`;
+// updateCars();
+// break;
+//

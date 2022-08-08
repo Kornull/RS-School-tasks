@@ -2,7 +2,7 @@
 import { updateInput } from '../rest/rest-garage/PUT/put-run';
 import './_car.scss';
 import { getCountAllCars, getPAge } from '../rest/rest-garage/GET/get-run';
-import { CarsAttribute, RaceCommand } from '../../types/types';
+import {CarsAttribute, RaceCommand, StartPage} from '../../types/types';
 import { deleteCar } from '../rest/rest-garage/DELETE/delete-run';
 import { inputUpdateCarColor, inputUpdateCarName } from '../../templates/input';
 import {getStartOneRace, preStopCar } from '../runRacing/race';
@@ -11,9 +11,7 @@ import { finishFlag } from './flag/flag';
 
 
 
-enum StartPgae {
-  startpage = 1,
-}
+
 
 const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement, color: string) => {
   const upadetCar = <HTMLButtonElement>document.querySelector('#update-car');
@@ -105,9 +103,6 @@ export const createCars = async (): Promise<HTMLElement> => {
 };
 
 export const updateCars = async (): Promise<void> => {
-  setTimeout(() => {
-
-  })
   inputUpdateCarName().value = '';
   const main = <HTMLElement>document.querySelector('.main');
   const countPAge = <HTMLElement>document.querySelector('#page-title span');
@@ -127,9 +122,9 @@ export const updateCars = async (): Promise<void> => {
   } else {
     btnRight.removeAttribute('disabled');
   }
-  if (pageNum <= StartPgae.startpage) {
+  if (pageNum <= StartPage.startpage) {
     btnLeft.setAttribute('disabled', 'disabled');
-    pageNum = StartPgae.startpage;
+    pageNum = StartPage.startpage;
     countPAge.innerText = `${pageNum}`;
   } else {
     btnLeft.removeAttribute('disabled');
