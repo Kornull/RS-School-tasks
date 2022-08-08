@@ -1,4 +1,17 @@
 .win{
+  &__count-car,
+  &__count-page{
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  &__count-page{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
   &__header {
     display: flex;
     justify-content: space-around;
@@ -9,7 +22,7 @@
   &__text {
     font-family: 'Roboto', serif;
     font-weight: bold;
-    width: 60px;
+    width: 86px;
     font-size: 14px;
     color: #ffffff;
     background: rgba(0, 0, 0, 0);

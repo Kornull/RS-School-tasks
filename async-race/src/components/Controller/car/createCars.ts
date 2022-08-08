@@ -118,8 +118,11 @@ export const updateCars = async (): Promise<void> => {
   const allCars = await getCountAllCars();
   const pagesCount = Math.ceil(allCars.length / 7);
   if (pageNum >= pagesCount) {
+    console.log(pagesCount)
+    console.log(pageNum)
     btnRight.setAttribute('disabled', 'disabled');
     pageNum = pagesCount;
+
     countPAge.innerText = `${pageNum}`;
   } else {
     btnRight.removeAttribute('disabled');

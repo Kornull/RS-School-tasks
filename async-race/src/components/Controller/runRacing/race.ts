@@ -50,7 +50,7 @@ async function animation(widthRoad: number, id: number, duration: number): Promi
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
   let startX = StartStopPosition.startPos;
   const tick = (): void => {
-    startX += duration / 4;
+    startX += widthRoad / (duration * 100);
     car.style.transform = `translateX(${startX}px)`;
     if (startX < widthRoad - StartStopPosition.stopPos) {
       interval[id] = requestAnimationFrame(tick);

@@ -27,6 +27,7 @@ export const getCountCarsPage = async (queryString: string): Promise<CarsAttribu
 
   return response.json();
 };
+
 export const getCountAllCars = async () => {
   const response = await fetch(`${Urls.garage}`);
   const countPAge = <HTMLElement>document.querySelector('#page-count-cars span');

@@ -22,8 +22,8 @@ export const formGarage = <HTMLElement>(<unknown>`
     <div class="page__text"><h1 id="page-count-cars">Cars(<span></span>)</h1></div>
     <div class="page__text"><h1 id="page-title">#PAGE <span>1</span></h1></div>
     <div class="page__btns">
-    <button type="button" class="page__btn btn btn__left" id="run-left" disabled="disabled">left</button>
-    <button type="button" class="page__btn btn btn__right" id="run-right">right</button>
+    <button type="button" class="page__btn btn btn__left" id="run-left" disabled="disabled">❰</button>
+    <button type="button" class="page__btn btn btn__right" id="run-right">❱</button>
     </div>
     </div>
 </form>

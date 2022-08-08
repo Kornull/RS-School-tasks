@@ -1,5 +1,5 @@
 import './_btn.scss';
-import { setWinnerTable } from '../../View/pages/winners/winner';
+import { getWinnerTable } from '../../View/pages/winners/winner';
 
 export const btnPage = (): HTMLDivElement => {
   const btnGarage: HTMLButtonElement = document.createElement('button');
@@ -13,7 +13,7 @@ export const btnPage = (): HTMLDivElement => {
   const garage = document.querySelector('.garage') as HTMLDivElement;
 
   btnWin.addEventListener('click', () => {
-    setWinnerTable();
+    getWinnerTable();
     // console.log(garage);
     garage.style.display = 'none';
   });

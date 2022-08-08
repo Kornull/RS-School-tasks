@@ -1,9 +1,36 @@
-import { Urls, Winners } from '../../../types/types';
+import { Key, Urls, Winners } from '../../../types/types';
 
+const strWin = (queryS: Key[] = []) => {
+  if (queryS.length) {
+    return `?${queryS.map((x: Key) => `${x.key}=${x.value}`).join('&')}`;
+  }
+  return '';
+};
 export const returnWinners = async (): Promise<Winners[]> => {
-  const response = await fetch(`${Urls.winners}/?_page=1&_sort=time`);
-  const countPAge = <HTMLElement>document.querySelector('#page-count-cars span');
-  const data = await response.json();
-  countPAge.innerText = `${data.length}`;
-  return data;
+  const response = await fetch(`${Urls.winners}`);
+  const countWin = document.querySelector('.win__count-car') as HTMLDivElement;
+  const res = await response.json();
+  countWin.innerHTML = `Win cars ${res.length}`;
+
+  return res;
+};
+
+export const viewCars = async (num: number) => {
+  const page: Key = {
+    key: '_page',
+    value: num,
+  };
+  const limit: Key = {
+    key: '_limit',
+    value: 10,
+  };
+  const queryStr: string = strWin([page, limit]);
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  return getCountWinCarsPage(queryStr);
+};
+
+export const getCountWinCarsPage = async (queryString: string): Promise<Winners[]> => {
+  const response = await fetch(`${Urls.winners}${queryString}`);
+  const res: Winners[] = await response.json();
+  return res;
 };

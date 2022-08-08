@@ -1,14 +1,16 @@
 import './_winner.scss';
-import { getUlEl } from './header-win/win';
-import { returnWinners } from '../../../Controller/rest/rest-win/win-get';
+// eslint-disable-next-line import/no-cycle
+import { getUlEl, pageWinCount, winCarCount } from './header-win/win';
+import { viewCars } from '../../../Controller/rest/rest-win/win-get';
 import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-run';
-import { CarsAttribute } from '../../../types/types';
+import { CarsAttribute, Winners } from '../../../types/types';
 
-const winnerChar = async () => {
-  const winners = await returnWinners();
+const winnerChar = async (carList: Winners[]) => {
+  const winners: Winners[] = await carList;
   const AllCars = await getCountAllCars();
   const winDescr = document.createElement('div');
   winDescr.className = 'win__car-all';
+  winDescr.id = 'list-win-car';
   for (let i = 0; i < winners.length; i++) {
     const winCarDescr = document.createElement('div');
     winCarDescr.className = 'win__car';
@@ -33,7 +35,6 @@ const winnerChar = async () => {
         winTime.innerHTML = `${winners[i].time}`;
       }
     });
-
     winCarDescr.appendChild(winNumber);
     winCarDescr.appendChild(winCar);
     winCarDescr.appendChild(winName);
@@ -44,21 +45,26 @@ const winnerChar = async () => {
   return winDescr;
 };
 
-export const winnerTable = () => {
+export const winnerTable = async (): Promise<HTMLDivElement> => {
   const divWin = document.createElement('div');
   divWin.className = 'win__table win';
+  divWin.append(winCarCount());
+  divWin.append(pageWinCount());
   divWin.append(getUlEl());
-  winnerChar().then((res) => {
+  const cars = await viewCars(1);
+  winnerChar(cars).then((res) => {
     divWin.appendChild(res);
   });
-  winnerChar();
   return divWin;
 };
 
-export const getWinnerTable = (): HTMLDivElement => winnerTable();
+export const getWinnerTable = async (): Promise<HTMLDivElement> => winnerTable();
 
-export const setWinnerTable = () => {
-  const tableWin = document.querySelector('.win__table') as HTMLDivElement;
+export const setWinnerTable = async (num: number) => {
+  const tableWin = document.querySelector('#list-win-car') as HTMLDivElement;
   tableWin.innerHTML = '';
-  tableWin.append(winnerTable());
+  const cars: Winners[] = await viewCars(num);
+  winnerChar(cars).then((res) => {
+    tableWin.appendChild(res);
+  });
 };
