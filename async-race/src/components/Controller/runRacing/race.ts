@@ -2,7 +2,6 @@
 /* eslint-disable no-restricted-syntax */
 // eslint-disable-next-line object-curly-newline
 import { Interval, Speed, StartStopPosition, Urls, Winners } from '../../types/types';
-import { winCarCount } from '../../View/pages/winners/header-win/win';
 import { setWinnerTable } from '../../View/pages/winners/winner';
 import { setWinnerCar } from '../rest/rest-win/post-win/win-post';
 import { returnWinners } from '../rest/rest-win/win-get';
@@ -28,13 +27,9 @@ export const winner = async (time: string, carId: number): Promise<void> => {
   };
   setWinnerCar(winObj);
   setTimeout(() => {
+    returnWinners();
     setWinnerTable();
-  }, 1000);
-  setTimeout(() => {
-    returnWinners().then((res: Winners[]) => {
-      winCarCount().innerText = `Cars ${res.length}`;
-    });
-  }, 1000);
+  }, 1500);
 };
 
 export const preStopCar = async (id: number): Promise<void> => {

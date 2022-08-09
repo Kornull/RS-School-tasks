@@ -59,11 +59,10 @@ const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTM
   carBlock.removeEventListener('click', updateInput);
 }
 
-const updateHasCar = async (response: Promise<CarsAttribute[]>): Promise<HTMLElement> => {
+const updateHasCar = (cars:CarsAttribute[]): HTMLElement => {
   const arrBlocks: HTMLElement[] = [];
   const racingBlock = <HTMLElement>document.createElement('div');
   racingBlock.className = 'racing__slider';
-  response.then((cars: CarsAttribute[]) => {
     for (let i = 0; i < cars.length; i++) {
       const race = <HTMLDivElement>document.createElement('div');
       race.className = 'racing';
@@ -89,24 +88,13 @@ const updateHasCar = async (response: Promise<CarsAttribute[]>): Promise<HTMLEle
 
       btnClick(race, carBlock, arrBlocks, color)
     }
-  });
   return racingBlock;
 };
 
-export const createCars = async (): Promise<HTMLElement> => {
-  const main: HTMLElement = document.createElement('main');
-  main.className = 'main';
-  const response:Promise<CarsAttribute[]> = getPAge(1);
-  const generateCar: HTMLElement = await updateHasCar(response)
-  main.appendChild(generateCar);
-  getCountAllCars();
-  return main;
-};
-
 export const updateCars = async (): Promise<void> => {
+  const countPAge = <HTMLElement>document.querySelector('#page-title span');
   inputUpdateCarName().value = '';
   const main = <HTMLElement>document.querySelector('.main');
-  const countPAge = <HTMLElement>document.querySelector('#page-title span');
   const btnRight = <HTMLButtonElement>document.querySelector('#run-right');
   const btnLeft = <HTMLButtonElement>document.querySelector('#run-left');
 
@@ -128,20 +116,37 @@ export const updateCars = async (): Promise<void> => {
   } else {
     btnLeft.removeAttribute('disabled');
   }
-  main.innerHTML = '';
-  const response = getPAge(Number(pageNum));
-  const genCar = await updateHasCar(response)
-  main.appendChild(genCar);
+  Promise.any([getPAge(Number(pageNum))])
+  .then((res) => {
+    main.innerHTML = '';
+    main.appendChild(updateHasCar(res));
+  })
 };
+export const createCars = async (): Promise<HTMLElement> => {
+  const main: HTMLElement = document.createElement('main');
+  main.className = 'main';
+  Promise.any([getPAge(1)])
+  .then((res) => {
+    main.appendChild(updateHasCar(res));
+  })
+  setTimeout(()=>{updateCars()}, 500);
+  return main;
+};
+
 
 export const getCreateCar = async () => {
   const countPAge = <HTMLElement>document.querySelector('#page-title span');
   const main = <HTMLElement>document.querySelector('.main');
   let pageNum = Number(countPAge.innerText);
-  const response = getPAge(Number(pageNum));
-  const genCar = await updateHasCar(response)
-  getCountAllCars();
-
-  main.appendChild(genCar);
-
+  const response: CarsAttribute[] = await getPAge(Number(pageNum));
+  const genCar = updateHasCar(response)
+   Promise.any([getCountAllCars()])
+   .then((res) => {
+    if(res.length >= 0 && res.length < 208) {
+      main.innerHTML = '';
+      main.appendChild(genCar)
+      updateCars()
+      console.log(res);
+    };
+   })
 }

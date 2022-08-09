@@ -81,7 +81,6 @@ export const sortUpdate = async (sort: string, commandSort: string): Promise<voi
 export const setWinnerTable = async () => {
   const allCarsWin = await returnWinners();
   const tableWin = document.querySelector('#win-list-all-car') as HTMLDivElement;
-  tableWin.innerHTML = '';
   const countPAge = <HTMLElement>document.querySelector('#count-win-page');
   const btnRight = <HTMLButtonElement>document.querySelector('#page-r');
   const btnLeft = <HTMLButtonElement>document.querySelector('#page-l');
@@ -101,7 +100,8 @@ export const setWinnerTable = async () => {
   } else {
     btnLeft.removeAttribute('disabled');
   }
-  winnerChar(await viewCars(pageNum)).then((res) => {
+  Promise.any([winnerChar(await viewCars(pageNum))]).then((res) => {
+    tableWin.innerHTML = '';
     tableWin.appendChild(res);
   });
 };

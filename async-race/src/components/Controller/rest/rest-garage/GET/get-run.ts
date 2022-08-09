@@ -36,6 +36,5 @@ export const getCountAllCars = async (): Promise<CarsAttribute[]> => {
     countPAge.innerText = `${data.length}`;
   }
 
-  //
   return data;
 };

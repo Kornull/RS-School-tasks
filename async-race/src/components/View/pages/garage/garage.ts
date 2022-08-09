@@ -1,7 +1,7 @@
 import './_garage.scss';
 // eslint-disable-next-line import/no-cycle
 import { getChartersToCar, getOneHundredCars } from '../../../Controller/rest/rest-garage/POST/post-run';
-import { createCars, updateCars } from './car/createCars';
+import { createCars, getCreateCar, updateCars } from './car/createCars';
 import { updateInput } from '../../../Controller/rest/rest-garage/PUT/put-run';
 import { deleteCar } from '../../../Controller/rest/rest-garage/DELETE/delete-run';
 import { formGarage } from './form/form';
@@ -50,9 +50,7 @@ export const garageLink = async (): Promise<HTMLElement> => {
         break;
       case 'create-cars':
         getOneHundredCars();
-        setTimeout(() => {
-          updateCars();
-        }, 1000);
+        getCreateCar();
         break;
       case 'update-car':
         updateInput();

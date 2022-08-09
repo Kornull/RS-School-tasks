@@ -43,6 +43,7 @@ export const getUlElement = (): HTMLUListElement => {
 export const winCarCount = (): HTMLDivElement => {
   const countWinCar: HTMLDivElement = document.createElement('div');
   countWinCar.className = 'win__count-car';
+  countWinCar.id = '#win-car-count';
   return countWinCar;
 };
 
