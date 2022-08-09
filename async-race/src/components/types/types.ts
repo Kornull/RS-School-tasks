@@ -36,12 +36,6 @@ export enum StartStopPosition {
   stopPos = 200,
 }
 
-export enum SpeedCar {
-  hard = 3,
-  medium = 6,
-  slow = 11,
-}
-
 export enum Sort {
   time = 'time',
   wins = 'wins',
