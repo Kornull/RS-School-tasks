@@ -3,15 +3,16 @@
     height:  360px;
   }
   &__table{
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
   }
   &__car{
     display: flex;
     justify-content: flex-start;
-    font-size: 10px;
+    font-size: 13px;
     width: 500px;
     height: 20px;
     color: #ffff00;

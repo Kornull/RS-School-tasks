@@ -8,8 +8,10 @@ const strWin = (queryS: Key[]): string => {
 };
 
 export const returnWinners = async (): Promise<Winners[]> => {
+  const countWinnersCars: HTMLElement | null = document.querySelector('.win__count-car');
   const response = await fetch(`${Urls.winners}`);
-  const res = await response.json();
+  const res: Winners[] = await response.json();
+  if (countWinnersCars !== null) countWinnersCars.innerHTML = `Cars ${res.length}`;
   return res;
 };
 

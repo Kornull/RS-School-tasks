@@ -35,7 +35,7 @@ const winnerChar = async (carList: Winners[]) => {
       if (car.id === winners[i].id) {
         winCar.innerHTML = `<svg class="car__icon-win" fill="${car.color}" id="car-${car.id}">
            <use xlink:href="./assets/img/car.svg#carview"></use>
-         </svg>\``;
+         </svg>`;
         winName.innerHTML = `${car.name}`;
         winCount.innerHTML = `${winners[i].wins}`;
         winTime.innerHTML = `${winners[i].time}`;
@@ -82,7 +82,6 @@ export const setWinnerTable = async () => {
   const allCarsWin = await returnWinners();
   const tableWin = document.querySelector('#win-list-all-car') as HTMLDivElement;
   tableWin.innerHTML = '';
-
   const countPAge = <HTMLElement>document.querySelector('#count-win-page');
   const btnRight = <HTMLButtonElement>document.querySelector('#page-r');
   const btnLeft = <HTMLButtonElement>document.querySelector('#page-l');
