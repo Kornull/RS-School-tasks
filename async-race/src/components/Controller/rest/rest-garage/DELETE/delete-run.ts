@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { updateCars } from '../../../car/createCars';
+import { updateCars } from '../../../../View/pages/garage/car/createCars';
 import { inputUpdateCarName } from '../../../../templates/input';
 import { Urls, Winners } from '../../../../types/types';
 import { returnWinners } from '../../rest-win/win-get';

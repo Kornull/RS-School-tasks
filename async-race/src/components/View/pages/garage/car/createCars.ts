@@ -1,14 +1,14 @@
 /* eslint-disable */
-import { updateInput } from '../rest/rest-garage/PUT/put-run';
+import { updateInput } from '../../../../Controller/rest/rest-garage/PUT/put-run';
 import './_car.scss';
-import { getCountAllCars, getPAge } from '../rest/rest-garage/GET/get-run';
-import {CarsAttribute, RaceCommand, StartPage} from '../../types/types';
-import { deleteCar } from '../rest/rest-garage/DELETE/delete-run';
-import { inputUpdateCarColor, inputUpdateCarName } from '../../templates/input';
-import {getStartOneRace, preStopCar } from '../runRacing/race';
+import { getCountAllCars, getPAge } from '../../../../Controller/rest/rest-garage/GET/get-run';
+import {CarsAttribute, RaceCommand, StartPage} from '../../../../types/types';
+import { deleteCar } from '../../../../Controller/rest/rest-garage/DELETE/delete-run';
+import { inputUpdateCarColor, inputUpdateCarName } from '../../../../templates/input';
+import {getStartOneRace, preStopCar } from '../../../../Controller/runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
-import { closeAllRaceBtn } from '../buttons/close-open-btn/close-btn';
+import { closeAllRaceBtn } from '../../../../Controller/buttons/close-open-btn/close-btn';
 
 
 
