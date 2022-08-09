@@ -9,7 +9,6 @@ import {getStartOneRace, preStopCar } from '../runRacing/race';
 import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
 import { closeAllRaceBtn } from '../buttons/close-open-btn/close-btn';
-import { setWinnerTable } from '../../View/pages/winners/winner';
 
 
 
@@ -97,8 +96,8 @@ const updateHasCar = async (response: Promise<CarsAttribute[]>): Promise<HTMLEle
 export const createCars = async (): Promise<HTMLElement> => {
   const main: HTMLElement = document.createElement('main');
   main.className = 'main';
-  const response = getPAge(1);
-  const generateCar = await updateHasCar(response)
+  const response:Promise<CarsAttribute[]> = getPAge(1);
+  const generateCar: HTMLElement = await updateHasCar(response)
   main.appendChild(generateCar);
   getCountAllCars();
   return main;
@@ -112,8 +111,8 @@ export const updateCars = async (): Promise<void> => {
   const btnLeft = <HTMLButtonElement>document.querySelector('#run-left');
 
   let pageNum = Number(countPAge.innerText);
-  const allCars = await getCountAllCars();
-  const pagesCount = Math.ceil(allCars.length / 7);
+  const allCars: CarsAttribute[] = await getCountAllCars();
+  const pagesCount: number = Math.ceil(allCars.length / 7);
   if (pageNum >= pagesCount) {
     btnRight.setAttribute('disabled', 'disabled');
     pageNum = pagesCount;

@@ -1,7 +1,7 @@
 import { Winners, Urls } from '../../../../types/types';
 import { returnWinners } from '../win-get';
 
-const getUpdateWin = async (objCar: Winners) => {
+const getUpdateWin = async (objCar: Winners): Promise<void> => {
   await fetch(`${Urls.winners}`, {
     method: 'POST',
     headers: {
@@ -11,7 +11,7 @@ const getUpdateWin = async (objCar: Winners) => {
   });
 };
 
-const getUpdateOldWin = async (win: Winners) => {
+const getUpdateOldWin = async (win: Winners): Promise<void> => {
   await fetch(`${Urls.winners}/${win.id}`, {
     method: 'PUT',
     headers: {
@@ -21,8 +21,8 @@ const getUpdateOldWin = async (win: Winners) => {
   });
 };
 
-export const setWinnerCar = async (win: Winners) => {
-  const carList = await returnWinners();
+export const setWinnerCar = async (win: Winners): Promise<void> => {
+  const carList: Winners[] = await returnWinners();
   carList.forEach((carWin: Winners) => {
     if (carWin.id === win.id) {
       let num: number = carWin.wins;
@@ -35,6 +35,6 @@ export const setWinnerCar = async (win: Winners) => {
       getUpdateOldWin(win);
     }
   });
-  const filterId = carList.filter((car) => car.id === win.id);
+  const filterId: Winners[] = carList.filter((car) => car.id === win.id);
   if (filterId.length === 0) getUpdateWin(win);
 };

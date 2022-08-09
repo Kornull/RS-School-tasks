@@ -27,9 +27,9 @@ const getPopup = (): HTMLDivElement => {
 export const garageLink = async (): Promise<HTMLElement> => {
   const garage: HTMLDivElement = document.createElement('div');
   garage.className = 'garage';
-  const form = getFormGarage();
-  const main = await createCars();
-  const popupBlock = getPopup();
+  const form: HTMLDivElement = getFormGarage();
+  const main: HTMLElement = await createCars();
+  const popupBlock: HTMLDivElement = getPopup();
   garage.append(form);
   garage.appendChild(main);
   garage.appendChild(popupBlock);

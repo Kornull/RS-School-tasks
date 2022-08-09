@@ -1,7 +1,7 @@
 import { CarsAttribute, Key, Urls } from '../../../../types/types';
 
 // export const getCarsInfo = async (): Promise<object> => (await fetch(`${urlGarage()}/1`)).json();
-const str = (queryS: Key[] = []) => {
+const str = (queryS: Key[] = []): string => {
   if (queryS.length) {
     return `?${queryS.map((x: Key) => `${x.key}=${x.value}`).join('&')}`;
   }
@@ -23,15 +23,15 @@ export const getPAge = async (num: number): Promise<CarsAttribute[]> => {
 };
 
 export const getCountCarsPage = async (queryString: string): Promise<CarsAttribute[]> => {
-  const response = await fetch(`${Urls.garage}${queryString}`);
+  const response: Response = await fetch(`${Urls.garage}${queryString}`);
 
   return response.json();
 };
 
-export const getCountAllCars = async () => {
-  const response = await fetch(`${Urls.garage}`);
+export const getCountAllCars = async (): Promise<CarsAttribute[]> => {
+  const response: Response = await fetch(`${Urls.garage}`);
   const countPAge: HTMLElement | null = document.querySelector('#page-count-cars span');
-  const data = await response.json();
+  const data: CarsAttribute[] = await response.json();
   if (countPAge !== null) {
     countPAge.innerText = `${data.length}`;
   }

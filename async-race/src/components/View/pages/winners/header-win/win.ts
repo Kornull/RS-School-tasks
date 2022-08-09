@@ -15,7 +15,7 @@ export const win = <HTMLElement>(<unknown>`
     <li class="win__text" id="sort-time">Best time</li>
 `);
 
-export const getUlEl = () => {
+export const getUlEl = (): HTMLUListElement => {
   const ul = document.createElement('ul');
   ul.className = 'win__header win';
   ul.innerHTML = `${win}`;
@@ -33,6 +33,7 @@ export const getUlEl = () => {
       // no default
     }
   });
+  if (count === 11) count = 1;
   return ul;
 };
 
@@ -80,7 +81,7 @@ export const pageWinCount = (): HTMLDivElement => {
   return pageWinCar;
 };
 export const winList = (): HTMLDivElement => {
-  const list = document.createElement('div');
+  const list: HTMLDivElement = document.createElement('div');
   list.className = 'win__list-cars';
   list.id = 'win-list-all-car';
 

@@ -3,7 +3,7 @@ import { CarsAttribute, CountCars, Urls } from '../../../../types/types';
 import { updateCars } from '../../../car/createCars';
 import { carName, carModel, colorChar } from '../../../../templates/cars-charters';
 
-const getNewCar = async (objCar: CarsAttribute) => {
+const getNewCar = async (objCar: CarsAttribute): Promise<void> => {
   await fetch(`${Urls.garage}`, {
     method: 'POST',
     headers: {
@@ -26,7 +26,7 @@ export const getChartersToCar = async (): Promise<void> => {
   name.value = '';
 };
 
-export const getOneHundredCars = () => {
+export const getOneHundredCars = (): void => {
   for (let i = 0; i < CountCars.cars; i++) {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     getRandomCarCharters();
@@ -34,8 +34,8 @@ export const getOneHundredCars = () => {
 };
 
 const getRandomCarCharters = async (): Promise<void> => {
-  const name = carName[Math.floor(Math.random() * carName.length)];
-  const model = carModel[Math.floor(Math.random() * carModel.length)];
+  const name: string = carName[Math.floor(Math.random() * carName.length)];
+  const model: string = carModel[Math.floor(Math.random() * carModel.length)];
   let colorCar = '#';
   for (let i = 0; i < 6; i++) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

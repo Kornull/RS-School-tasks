@@ -11,19 +11,19 @@ import { CarsAttribute, StartPage, Winners } from '../../../types/types';
 const winnerChar = async (carList: Winners[]) => {
   const listCars: Winners[] = await returnWinners();
   const winners: Winners[] = carList;
-  const AllCarsPage = await getCountAllCars();
-  const winDescr = document.createElement('div');
+  const AllCarsPage: CarsAttribute[] = await getCountAllCars();
+  const winDescr: HTMLDivElement = document.createElement('div');
   winDescr.className = 'win__car-all';
   winDescr.id = 'list-win-car';
   for (let i = 0; i < winners.length; i++) {
-    const winCarDescr = document.createElement('div');
+    const winCarDescr: HTMLDivElement = document.createElement('div');
     winCarDescr.className = 'win__car';
-    const winNumber = document.createElement('div');
-    const winCar = document.createElement('div');
-    const winName = document.createElement('div');
-    const winCount = document.createElement('div');
-    const winTime = document.createElement('div');
-    const idCar = winners[i].id;
+    const winNumber: HTMLDivElement = document.createElement('div');
+    const winCar: HTMLDivElement = document.createElement('div');
+    const winName: HTMLDivElement = document.createElement('div');
+    const winCount: HTMLDivElement = document.createElement('div');
+    const winTime: HTMLDivElement = document.createElement('div');
+    const idCar: number = winners[i].id;
     let number: number = listCars.findIndex((el) => el.id === idCar);
     winNumber.className = 'win__number';
     winNumber.innerText = `${(number += 1)}`;

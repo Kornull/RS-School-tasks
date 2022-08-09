@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { updateCars } from '../../../car/createCars';
 import { inputUpdateCarName } from '../../../../templates/input';
-import { Urls } from '../../../../types/types';
+import { Urls, Winners } from '../../../../types/types';
 import { returnWinners } from '../../rest-win/win-get';
 import { setWinnerTable } from '../../../../View/pages/winners/winner';
 
@@ -12,7 +12,7 @@ export const getDelCard = async (id: number): Promise<void> => {
       'Content-Type': 'application/json',
     },
   });
-  const winarr = await returnWinners();
+  const winarr: Winners[] = await returnWinners();
   // eslint-disable-next-line no-restricted-syntax
   for (const car of winarr) {
     if (car.id === id) {
@@ -28,11 +28,11 @@ export const getDelCard = async (id: number): Promise<void> => {
   updateCars();
 };
 
-export const deleteCar = () => {
+export const deleteCar = (): void => {
   let id = 0;
   const carElements: NodeList = document.querySelectorAll('.car');
 
-  carElements.forEach((el) => {
+  carElements.forEach((el: Node) => {
     const newEl = el as HTMLElement;
     if (newEl.classList.contains('choice')) {
       id = Number(newEl.id);

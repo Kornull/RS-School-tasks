@@ -1,6 +1,6 @@
 import { Key, Urls, Winners } from '../../../types/types';
 
-const strWin = (queryS: Key[]) => {
+const strWin = (queryS: Key[]): string => {
   if (queryS.length) {
     return `?${queryS.map((x: Key) => `${x.key}=${x.value}`).join('&')}`;
   }
@@ -18,7 +18,7 @@ export const getCountWinCarsPage = async (queryString: string): Promise<Winners[
   const res: Winners[] = await response.json();
   return res;
 };
-export const viewCars = async (num: number) => {
+export const viewCars = async (num: number): Promise<Winners[]> => {
   const page: Key = {
     key: '_page',
     value: num,
@@ -32,7 +32,8 @@ export const viewCars = async (num: number) => {
   return getCountWinCarsPage(queryStr);
 };
 
-export const viewSort = async (countPage: number, sort: string, command: string) => {
+// eslint-disable-next-line max-len
+export const viewSort = async (countPage: number, sort: string, command: string): Promise<Winners[]> => {
   const numPage: Key = {
     key: '_page',
     value: countPage,

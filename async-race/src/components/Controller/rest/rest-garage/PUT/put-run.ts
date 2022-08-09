@@ -14,9 +14,9 @@ export const getUpdateCard = async (id: number, body: CarsAttribute): Promise<vo
   updateCars();
 };
 
-export const updateInput = () => {
+export const updateInput = (): void => {
   let id = 0;
-  const inputName = inputUpdateCarName();
+  const inputName: HTMLInputElement = inputUpdateCarName();
   const inputColor = <HTMLInputElement>document.querySelector('#car-color__update');
   const name = inputName.value;
   const carElements: NodeList = document.querySelectorAll('.car');

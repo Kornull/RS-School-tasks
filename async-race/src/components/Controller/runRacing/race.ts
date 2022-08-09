@@ -10,7 +10,7 @@ let countRace: number[] = [];
 let countErr: number[] = [];
 let interval: Interval = {};
 
-export const winner = (time: string, carId: number) => {
+export const winner = (time: string, carId: number): void => {
   const win = document.querySelector(`#car-${carId}`) as HTMLElement;
   const pop = document.querySelector('.popup') as HTMLDivElement;
   const popText = document.querySelector('.popup__text') as HTMLDivElement;
@@ -29,7 +29,7 @@ export const winner = (time: string, carId: number) => {
   setWinnerTable();
 };
 
-export const preStopCar = async (id: number) => {
+export const preStopCar = async (id: number): Promise<void> => {
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
   const stopDrive = await fetch(`${Urls.engine}/?id=${id}&status=stopped`, {
     method: 'PATCH',
@@ -40,7 +40,7 @@ export const preStopCar = async (id: number) => {
   }
 };
 
-const stopCar = async (id: number) => {
+const stopCar = async (id: number): Promise<void> => {
   await fetch(`${Urls.engine}/?id=${id}&status=stopped`, {
     method: 'PATCH',
   });
@@ -48,30 +48,31 @@ const stopCar = async (id: number) => {
 
 async function animation(widthRoad: number, id: number, duration: number): Promise<void> {
   const btnRacing = document.querySelector('#all-race') as HTMLElement;
-  const start = new Date().getTime();
+  const start: number = new Date().getTime();
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
-  let startX = StartStopPosition.startPos;
-  const tick = (): void => {
-    startX += widthRoad / (duration * 100);
-    car.style.transform = `translateX(${startX}px)`;
-    if (startX < widthRoad - StartStopPosition.stopPos) {
+  let startX: number | null = performance.now();
+  const tick = (step: number): void => {
+    if (!startX) startX = step;
+    const progress = (step - startX) / duration;
+    car.style.transform = `translateX(${Math.min(progress)}px)`;
+    if (progress < widthRoad - StartStopPosition.stopPos) {
       interval[id] = requestAnimationFrame(tick);
     } else {
-      stopCar(id);
+      const end: number = new Date().getTime();
       cancelAnimationFrame(interval[id]);
-      const end = new Date().getTime();
+      stopCar(id);
       countRace.push(id);
       if (btnRacing.classList.contains('run__race')) {
-        const time = ((end - start) / 1000).toFixed(2);
+        const time: string = ((end - start) / 1000).toFixed(2);
         winner(time, id);
         btnRacing.classList.remove('run__race');
       }
     }
   };
-  tick();
+  tick(1);
 }
 
-const driveCar = async (widthRoad: number, id: number, duration: number) => {
+const driveCar = async (widthRoad: number, id: number, duration: number): Promise<void> => {
   animation(widthRoad, id, duration);
   const res = await fetch(`${Urls.engine}/?id=${id}&status=drive`, {
     method: 'PATCH',
@@ -83,7 +84,7 @@ const driveCar = async (widthRoad: number, id: number, duration: number) => {
   }
 };
 
-export const getStartOneRace = async (id: number, str: string) => {
+export const getStartOneRace = async (id: number, str: string): Promise<void> => {
   const response = await fetch(`${Urls.engine}/?id=${id}&status=${str}`, {
     method: 'PATCH',
   });
@@ -98,14 +99,14 @@ export const getStartOneRace = async (id: number, str: string) => {
   }
 };
 
-export const getStopRacing = async (objCarsId: number[]) => {
+export const getStopRacing = async (objCarsId: number[]): Promise<void> => {
   for (const i of objCarsId) {
     preStopCar(i);
     interval = {};
   }
 };
 
-export const getStartRacing = async (objCarsId: number[], command: string) => {
+export const getStartRacing = async (objCarsId: number[], command: string): Promise<void> => {
   countErr = [];
   countRace = [];
   for (const i of objCarsId) {
