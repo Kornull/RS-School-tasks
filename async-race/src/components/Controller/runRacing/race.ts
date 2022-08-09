@@ -3,7 +3,6 @@
 // eslint-disable-next-line object-curly-newline
 import { Interval, Speed, StartStopPosition, Urls, Winners } from '../../types/types';
 import { setWinnerTable } from '../../View/pages/winners/winner';
-import { openAllBtns } from '../buttons/close-open-btn/close-btn';
 import { setWinnerCar } from '../rest/rest-win/post-win/win-post';
 
 let countRace: number[] = [];
@@ -62,7 +61,7 @@ async function animation(widthRoad: number, id: number, duration: number): Promi
       cancelAnimationFrame(interval[id]);
       stopCar(id);
       countRace.push(id);
-      if (btnRacing.classList.contains('run__race')) {
+      if (btnRacing.classList.contains('run__race') && !btnRacing.classList.contains('close')) {
         const time: string = ((end - start) / 1000).toFixed(2);
         winner(time, id);
         btnRacing.classList.remove('run__race');
@@ -112,13 +111,4 @@ export const getStartRacing = async (objCarsId: number[], command: string): Prom
   for (const i of objCarsId) {
     getStartOneRace(i, command);
   }
-  const exam = setInterval(() => {
-    const allCount = Array.from(new Set([...countErr, ...countRace]));
-    if (objCarsId.length === allCount.length) {
-      setTimeout(() => {
-        openAllBtns();
-        clearInterval(exam);
-      }, 2500);
-    }
-  }, 1500);
 };
