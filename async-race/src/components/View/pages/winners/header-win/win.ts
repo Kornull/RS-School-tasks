@@ -5,7 +5,8 @@ import './_win.scss';
 import { setWinnerTable, sortUpdate } from '../winner';
 import { Sort } from '../../../../types/types';
 
-let count = 0;
+let countTime = 0;
+let countWin = 0;
 
 export const win = <HTMLElement>(<unknown>`
     <li class="win__text">Number</li>
@@ -21,19 +22,21 @@ export const getUlEl = (): HTMLUListElement => {
   ul.innerHTML = `${win}`;
 
   ul.addEventListener('click', (ev) => {
-    ++count;
     const message = ev.target as HTMLElement;
     switch (message.id) {
       case 'sort-time':
-        count % 2 === 0 ? sortUpdate(Sort.time, Sort.asc) : sortUpdate(Sort.time, Sort.desk);
+        ++countTime;
+        countTime % 2 !== 0 ? sortUpdate(Sort.time, Sort.asc) : sortUpdate(Sort.time, Sort.desk);
         break;
       case 'sort-win':
-        count % 2 === 0 ? sortUpdate(Sort.wins, Sort.asc) : sortUpdate(Sort.wins, Sort.desk);
+        ++countWin;
+        countWin % 2 === 0 ? sortUpdate(Sort.wins, Sort.asc) : sortUpdate(Sort.wins, Sort.desk);
         break;
       // no default
     }
   });
-  if (count === 11) count = 1;
+  if (countWin === 11) countWin = 1;
+  if (countTime === 11) countTime = 1;
   return ul;
 };
 

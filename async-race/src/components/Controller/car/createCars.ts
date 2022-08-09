@@ -134,4 +134,14 @@ export const updateCars = async (): Promise<void> => {
   main.appendChild(genCar);
 };
 
+export const getCreateCar = async () => {
+  const countPAge = <HTMLElement>document.querySelector('#page-title span');
+  const main = <HTMLElement>document.querySelector('.main');
+  let pageNum = Number(countPAge.innerText);
+  const response = getPAge(Number(pageNum));
+  const genCar = await updateHasCar(response)
+  getCountAllCars();
 
+  main.appendChild(genCar);
+
+}

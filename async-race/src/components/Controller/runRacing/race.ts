@@ -9,7 +9,7 @@ let countRace: number[] = [];
 let countErr: number[] = [];
 let interval: Interval = {};
 
-export const winner = (time: string, carId: number): void => {
+export const winner = async (time: string, carId: number): Promise<void> => {
   const win = document.querySelector(`#car-${carId}`) as HTMLElement;
   const pop = document.querySelector('.popup') as HTMLDivElement;
   const popText = document.querySelector('.popup__text') as HTMLDivElement;

@@ -46,9 +46,13 @@ export const garageLink = async (): Promise<HTMLElement> => {
     switch (message.id) {
       case 'one-car':
         getChartersToCar();
+        updateCars();
         break;
       case 'create-cars':
         getOneHundredCars();
+        setTimeout(() => {
+          updateCars();
+        }, 1000);
         break;
       case 'update-car':
         updateInput();
