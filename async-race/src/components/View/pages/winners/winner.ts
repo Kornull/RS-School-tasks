@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import './_winner.scss';
-import { getUlEl, pageWinCount, winCarCount, winList } from './header-win/win';
+import { getUlElement, pageWinCount, winCarCount, winList } from './header-win/win';
 import { returnWinners, viewCars, viewSort } from '../../../Controller/rest/rest-win/win-get';
 import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-run';
 import { CarsAttribute, StartPage, Winners } from '../../../types/types';
@@ -56,7 +56,7 @@ export const winnerTable = async (): Promise<HTMLDivElement> => {
   divWin.className = 'win__table win';
   divWin.append(winCarCount());
   divWin.append(pageWinCount());
-  divWin.append(getUlEl());
+  divWin.append(getUlElement());
   const list = winList();
   const cars = await viewCars(1);
   winnerChar(cars).then((res) => {

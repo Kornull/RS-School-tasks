@@ -3,12 +3,12 @@
 import './_win.scss';
 // eslint-disable-next-line import/no-cycle
 import { setWinnerTable, sortUpdate } from '../winner';
-import { Sort } from '../../../../types/types';
+import { CounterSort, Sort } from '../../../../types/types';
 
-let countTime = 0;
-let countWin = 0;
+let countTime = CounterSort.countStart;
+let countWin = CounterSort.countStart;
 
-export const win = <HTMLElement>(<unknown>`
+export const winListEl = <HTMLElement>(<unknown>`
     <li class="win__text">Number</li>
     <li class="win__text">Car</li>
     <li class="win__text">Name</li>
@@ -16,10 +16,10 @@ export const win = <HTMLElement>(<unknown>`
     <li class="win__text" id="sort-time">Best time</li>
 `);
 
-export const getUlEl = (): HTMLUListElement => {
+export const getUlElement = (): HTMLUListElement => {
   const ul = document.createElement('ul');
   ul.className = 'win__header win';
-  ul.innerHTML = `${win}`;
+  ul.innerHTML = `${winListEl}`;
 
   ul.addEventListener('click', (ev) => {
     const message = ev.target as HTMLElement;
@@ -35,8 +35,8 @@ export const getUlEl = (): HTMLUListElement => {
       // no default
     }
   });
-  if (countWin === 11) countWin = 1;
-  if (countTime === 11) countTime = 1;
+  if (countWin === CounterSort.countStop) countWin = CounterSort.countReset;
+  if (countTime === CounterSort.countStop) countTime = CounterSort.countReset;
   return ul;
 };
 

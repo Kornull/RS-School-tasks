@@ -52,3 +52,9 @@ export type Winners = {
 export enum StartPage {
   startpage = 1,
 }
+
+export enum CounterSort {
+  countStart = 0,
+  countReset = 1,
+  countStop = 11,
+}
