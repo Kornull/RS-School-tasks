@@ -10,10 +10,6 @@ import { startStopBtns } from './carBtns/btn-car';
 import { finishFlag } from './flag/flag';
 import { closeAllRaceBtn } from '../../../../Controller/buttons/close-open-btn/close-btn';
 
-
-
-
-
 const addClass = (arrBlocks: HTMLElement[], carBlock: HTMLDivElement, color: string) => {
   const upadetCar = <HTMLButtonElement>document.querySelector('#update-car');
   arrBlocks.forEach((el) => el.classList.remove('choice'));
