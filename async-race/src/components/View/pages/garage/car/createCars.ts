@@ -53,7 +53,8 @@ const btnClick = (race: HTMLDivElement ,carBlock: HTMLDivElement, arrBlocks: HTM
         runBtn.removeAttribute('disabled')
         preStopCar(Number(carBlock.id))
         break;
-      // no default
+      default:
+        break;
     }
   });
   carBlock.removeEventListener('click', updateInput);

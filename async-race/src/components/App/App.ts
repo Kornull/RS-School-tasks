@@ -1,3 +1,4 @@
+import './_app.scss';
 import { btnPage } from '../Controller/buttons/btn';
 import { garageLink } from '../View/pages/garage/garage';
 import { getWinnerTable } from '../View/pages/winners/winner';

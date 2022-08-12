@@ -7,7 +7,6 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const keysTransformer = require('ts-transformer-keys/transformer').default;
 const path = require('path');
 
-
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
@@ -124,20 +123,6 @@ module.exports = {
           "sass-loader"
         ],
       },
-      // {
-      //   test: /\.(gif|png|jpg|jpeg)$/i,
-      //   type: 'asset/resource',
-      //   generator: {
-      //     filename: `assets/img/${nameImg()}`
-      //   }
-      // },
-      // {
-      //   test: /\.(svg)$/i,
-      //   type: 'asset/resource',
-      //   generator: {
-      //     filename: `assets/icons/${nameImg()}`
-      //   }
-      // },
       {
         test: /\.(?:woff2|woff|eot|ttf|otf)$/i,
         type: 'asset/resource',

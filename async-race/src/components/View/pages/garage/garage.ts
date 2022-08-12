@@ -83,7 +83,8 @@ export const garageLink = async (): Promise<HTMLElement> => {
           reset.removeAttribute('disabled');
         }, 3000);
         break;
-      // no default
+      default:
+        break;
     }
   });
   return garage;
