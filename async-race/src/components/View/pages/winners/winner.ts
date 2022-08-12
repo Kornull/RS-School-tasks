@@ -1,12 +1,12 @@
 /* eslint-disable object-curly-newline */
-/* eslint-disable import/no-cycle */
-/* eslint-disable max-len */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import './_winner.scss';
-import { getUlElement, pageWinCount, winCarCount, winList } from './header-win/win';
+import { winCarCount, winList, winListEl } from './header-win/win';
 import { returnWinners, viewCars, viewSort } from '../../../Controller/rest/rest-win/win-get';
 import { getCountAllCars } from '../../../Controller/rest/rest-garage/GET/get-run';
-import { CarsAttribute, StartPage, Winners } from '../../../types/types';
+import { CarsAttribute, CounterSort, Sort, StartPage, Winners } from '../../../types/types';
+
+let countTime = CounterSort.countStart;
+let countWin = CounterSort.countStart;
 
 const winnerChar = async (carList: Winners[]) => {
   const listCars: Winners[] = await returnWinners();
@@ -51,23 +51,6 @@ const winnerChar = async (carList: Winners[]) => {
   return winDescr;
 };
 
-export const winnerTable = async (): Promise<HTMLDivElement> => {
-  const divWin = document.createElement('div');
-  divWin.className = 'win__table win';
-  divWin.append(winCarCount());
-  divWin.append(pageWinCount());
-  divWin.append(getUlElement());
-  const list = winList();
-  const cars = await viewCars(1);
-  winnerChar(cars).then((res) => {
-    list.appendChild(res);
-  });
-  divWin.appendChild(list);
-  return divWin;
-};
-
-export const getWinnerTable = async (): Promise<HTMLDivElement> => winnerTable();
-
 export const sortUpdate = async (sort: string, commandSort: string): Promise<void> => {
   const countPAge = <HTMLElement>document.querySelector('#count-win-page');
   const pageNum = Number(countPAge.innerText);
@@ -105,3 +88,91 @@ export const setWinnerTable = async () => {
     tableWin.appendChild(res);
   });
 };
+
+const getUlElement = (): HTMLUListElement => {
+  const ul = document.createElement('ul');
+  ul.className = 'win__header win';
+  ul.innerHTML = `${winListEl}`;
+  ul.addEventListener('click', (ev) => {
+    const message = ev.target as HTMLElement;
+    switch (message.id) {
+      case 'sort-time':
+        ++countTime;
+        if (countTime % 2) {
+          sortUpdate(Sort.time, Sort.asc);
+        } else {
+          sortUpdate(Sort.time, Sort.desk);
+        }
+        break;
+      case 'sort-win':
+        ++countWin;
+        if (countWin % 2) {
+          sortUpdate(Sort.wins, Sort.asc);
+        } else {
+          sortUpdate(Sort.wins, Sort.desk);
+        }
+        break;
+      default:
+        break;
+    }
+    if (countWin === CounterSort.countStop) countWin = CounterSort.countReset;
+    if (countTime === CounterSort.countStop) countTime = CounterSort.countReset;
+  });
+  return ul;
+};
+
+const pageWinCount = (): HTMLDivElement => {
+  const pageWinCar: HTMLDivElement = document.createElement('div');
+  const pageWinBtns: HTMLDivElement = document.createElement('div');
+  const pageWinText: HTMLDivElement = document.createElement('div');
+  const pageR: HTMLButtonElement = document.createElement('button');
+  const pageL: HTMLButtonElement = document.createElement('button');
+  pageWinText.className = 'page__text--win';
+  pageWinBtns.className = 'page__btns';
+  pageR.className = 'page__btn btn btn__right';
+  pageL.className = 'page__btn btn btn__left';
+  pageR.id = 'page-r';
+  pageR.innerText = '❱';
+  pageL.id = 'page-l';
+  pageL.innerText = '❰';
+  pageWinCar.className = 'win__count-page';
+  pageWinText.innerHTML = 'Page <span id="count-win-page">1</span>';
+  pageWinBtns.appendChild(pageL);
+  pageWinBtns.appendChild(pageR);
+  pageWinCar.appendChild(pageWinText);
+  pageWinCar.appendChild(pageWinBtns);
+
+  pageR.addEventListener('click', () => {
+    const pageNum = pageWinText.lastChild as HTMLElement;
+    let num = Number(pageNum.innerText);
+    num += 1;
+    pageNum.innerText = `${num}`;
+    setWinnerTable();
+  });
+  pageL.addEventListener('click', () => {
+    const pageNum = pageWinText.lastChild as HTMLElement;
+    let num = Number(pageNum.innerText);
+    num -= 1;
+    pageNum.innerHTML = `${num}`;
+    setWinnerTable();
+  });
+  return pageWinCar;
+};
+
+export const winnerTable = async (): Promise<HTMLDivElement> => {
+  const divWin = document.createElement('div');
+  divWin.className = 'win__table win';
+  const ulBtn = getUlElement();
+  divWin.append(winCarCount());
+  divWin.append(pageWinCount());
+  divWin.append(ulBtn);
+  const list = winList();
+  const cars = await viewCars(1);
+  winnerChar(cars).then((res) => {
+    list.appendChild(res);
+  });
+  divWin.appendChild(list);
+  return divWin;
+};
+
+export const getWinnerTable = async (): Promise<HTMLDivElement> => winnerTable();

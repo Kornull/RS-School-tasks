@@ -1,6 +1,4 @@
-/* eslint-disable no-await-in-loop */
-/* eslint-disable no-restricted-syntax */
-// eslint-disable-next-line object-curly-newline
+/* eslint-disable object-curly-newline */
 import { Interval, Speed, StartStopPosition, Urls, Winners } from '../../types/types';
 import { setWinnerTable } from '../../View/pages/winners/winner';
 import { setWinnerCar } from '../rest/rest-win/post-win/win-post';
@@ -103,16 +101,17 @@ export const getStartOneRace = async (id: number, str: string): Promise<void> =>
 };
 
 export const getStopRacing = async (objCarsId: number[]): Promise<void> => {
-  for (const i of objCarsId) {
-    preStopCar(i);
+  objCarsId.forEach((el: number) => {
+    preStopCar(el);
     interval = {};
-  }
+  });
 };
 
 export const getStartRacing = async (objCarsId: number[], command: string): Promise<void> => {
   countErr = [];
   countRace = [];
-  for (const i of objCarsId) {
-    getStartOneRace(i, command);
-  }
+  objCarsId.forEach((el: number) => {
+    getStartOneRace(el, command);
+    interval = {};
+  });
 };
