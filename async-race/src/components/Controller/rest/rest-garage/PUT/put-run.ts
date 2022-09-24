@@ -39,7 +39,7 @@ export const updateInput = (): void => {
     getUpdateCard(id, obg);
   } else {
     // eslint-disable-next-line no-alert
-    alert('AHAHA');
+    alert('The car is no longer here.');
   }
   inputName.value = '';
 };
