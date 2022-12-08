@@ -1,0 +1,59 @@
+.win{
+  display: none;
+
+  &__count-car{
+    font-size: 18px;
+    color: #fff;
+    margin: 0 auto;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__count-page{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 auto;
+    margin-bottom: 20px
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    color: #fff;
+    background: #002bff;
+  }
+  &__text {
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+    width: 86px;
+    font-size: 14px;
+    color: #fff;
+    background: #00000000;
+  }
+  &__list-cars{
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 25px;
+  }
+}
+
+#sort-time,
+#sort-win {
+  &:hover {
+    cursor: pointer;
+    color: #ffff00;
+  }
+}
+.page__text--win{
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 48px
+}

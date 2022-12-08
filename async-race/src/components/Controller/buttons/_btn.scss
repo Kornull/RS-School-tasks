@@ -1,0 +1,42 @@
+.navigate__btns{
+  position: absolute;
+  top: 10px;
+  display: flex;
+  width: 100px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: block;
+  padding: 15px;
+  font-size: 20px;
+  background: #d6d944;
+  &__garage,
+  &__win {
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-right: 10px;
+    background: #69a53d48;
+    color: #7575ff;
+    border-radius: 15px;
+    border: 1px solid #000;
+    border: 1px solid #f2ff00;
+    &:hover {
+      transition: color .2s linear,
+      box-shadow, .2s linear,
+      background, .2s linear;
+      box-shadow: 0 0 15px #c4ee5b;
+      color: #ff0000;
+      background: #48ff00;
+    }
+    &:disabled {
+      background: #000;
+      pointer-events:none
+    }
+  }
+ }

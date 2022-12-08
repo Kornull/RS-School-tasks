@@ -1,0 +1,38 @@
+
+#car-color,
+#car-color__update{
+  margin-bottom: 10px;
+}
+.garage{
+  margin-top: 100px;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-bottom: 60px;
+  &__text{
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+  }
+  &__btns {
+    display: flex;
+    width: 180px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  &__btn{
+    display: block;
+    margin: 0 auto;
+    background: #65adc4;
+    width: 60px;
+    font-size: 19px;
+    padding: 7px 0;
+    border-radius: 25px;
+  }
+}

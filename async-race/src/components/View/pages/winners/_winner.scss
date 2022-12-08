@@ -1,0 +1,48 @@
+.win {
+  &__car-all{
+    height:  360px;
+  }
+  &__table{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  &__car{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 13px;
+    width: 500px;
+    height: 20px;
+    color: #ffff00;
+    margin-top: 15px;
+    text-align: center;
+}
+  &__car-svg {
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+  }
+  &__number {
+    margin-left: 30px;
+    width: 20px;
+  }
+  &__name {
+    width: 130px;
+    text-align: left;
+    margin-left: 40px;
+  }
+  &__count {
+    width: 20px;
+  }
+  &__time{
+    width: 40px;
+    margin-left: 80px;
+  }
+}
+
+.car__icon-win{
+  width: 40px;
+  height: 20px;
+}
